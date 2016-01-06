@@ -1,5 +1,5 @@
 module Onoma
-  module Migration
+  class Migration
     module Actions
       class NomenclatureCreation < Onoma::Migration::Actions::Base
         attr_reader :nomenclature, :options

@@ -1,5 +1,5 @@
 module Onoma
-  module Migration
+  class Migration
     module Actions
       class ItemCreation < Onoma::Migration::Actions::Base
         attr_reader :nomenclature, :name, :options
@@ -23,7 +23,7 @@ module Onoma
         def label
           "create_item #{@nomenclature}##{@name}" + (@options.any? ? "(#{@options.simple_print})" : '')
         end
-        
+
         def human_name
           updates = []
           updates << "#{@name} as name"

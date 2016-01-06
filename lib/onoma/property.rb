@@ -2,7 +2,7 @@ module Onoma
   class Property
     TYPES = [:boolean, :item, :item_list, :choice, :choice_list, :string_list,
              :date, :decimal, :integer, :nomenclature, :string, :symbol]
-    
+
     attr_reader :nomenclature, :name, :type, :fallbacks, :default, :source
 
     # New item

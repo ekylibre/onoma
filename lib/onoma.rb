@@ -1,10 +1,9 @@
-require "onoma/version"
+require 'onoma/version'
 require 'nokogiri'
 require 'active_support/hash_with_indifferent_access'
 
 require 'onoma/item'
 require 'onoma/migration'
-require 'onoma/migrator'
 require 'onoma/nomenclature'
 require 'onoma/database'
 require 'onoma/property'
@@ -26,11 +25,10 @@ module Onoma
   end
 
   class << self
-
     def root
       Pathname.new(__FILE__).dirname.dirname
     end
-    
+
     def database_path
       root.join('db')
     end
@@ -43,35 +41,24 @@ module Onoma
       database_path.join('reference.xml')
     end
 
-    # Returns version of DB
-    def reference_version
-      return 0 unless reference_path.exist?
-      reference_document.root['version'].to_i
-    end
+    # # Returns version of DB
+    # def reference_version
+    #   return 0 unless reference_path.exist?
+    #   reference_document.root['version'].to_i
+    # end
 
-    def reference_document
-      f = File.open(reference_path, 'rb')
-      document = Nokogiri::XML(f) do |config|
-        config.strict.nonet.noblanks.noent
-      end
-      f.close
-      document
-    end
+    # def reference_document
+    #   f = File.open(reference_path, 'rb')
+    #   document = Nokogiri::XML(f) do |config|
+    #     config.strict.nonet.noblanks.noent
+    #   end
+    #   f.close
+    #   document
+    # end
 
-    # Returns list of Onoma::Migration
-    def migrations
-      Dir.glob(migrations_path.join('*.xml')).sort.collect do |f|
-        Onoma::Migration::Base.parse(Pathname.new(f))
-      end
-    end
-
-    # Returns list of migrations since last done
-    def missing_migrations
+    def connection
       load_database unless database_loaded?
-      last_version = reference_version
-      migrations.select do |m|
-        m.number > last_version
-      end
+      @@set
     end
 
     # Returns the names of the nomenclatures
@@ -97,24 +84,20 @@ module Onoma
       elsif args.size == 1
         return @@set[name].find(args.shift) if @@set[name]
       end
-      return nil
+      nil
     end
 
     def find_or_initialize(name)
       @@set[name] || Nomenclature.new(name, set: @@set)
     end
-    
+
     # Browse all nomenclatures
     def each(&block)
       @@set.each(&block)
     end
 
     def load_database
-      if reference_path.exist?
-        @@set = Database.load_file(reference_path)
-      else
-        @@set = Database.new
-      end
+      @@set = Database.open(reference_path)
       @database_loaded = true
       # Rails.logger.info 'Loaded nomenclatures: ' + Onoma.names.to_sentence
     end

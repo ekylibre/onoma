@@ -1,18 +1,16 @@
-require "bundler/gem_tasks"
-require "rake/testtask"
+require 'bundler/gem_tasks'
+require 'rake/testtask'
 require 'onoma'
 
 Rake::TestTask.new(:test) do |t|
-  t.libs << "test"
-  t.libs << "lib"
+  t.libs << 'test'
+  t.libs << 'lib'
   t.test_files = FileList['test/**/*_test.rb']
 end
 
-task :default => :test
-
+task default: :test
 
 namespace :db do
-
   task :list do
     Onoma.all.each do |n|
       if n.name.to_s.classify.tableize != n.name.to_s
@@ -80,8 +78,12 @@ namespace :db do
     end
   end
 
-  desc 'Generate migration file (in db/migrate) for corresponding '
-  task migrate: 'migrate:reference'
+  desc 'Migrates data'
+  task :migrate do
+    Onoma::Migrator.migrate
+  end
+
+  # task migrate: 'migrate:reference'
   # task :migrate do
   #   Onoma.missing_migrations.each do |migration|
   #     puts migration.name.yellow

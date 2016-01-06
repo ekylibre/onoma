@@ -2,24 +2,22 @@ module Onoma
   # This class represents a set of nomenclature like the reference DB
   class Database
     attr_accessor :version
+    attr_reader :path
 
-    def initialize
+    def initialize(path)
+      @path = Pathname.new(path)
       @nomenclatures = ActiveSupport::HashWithIndifferentAccess.new
       @version = 0
     end
 
-    def self.load_file(file)
-      set = new
-      f = File.open(file, 'rb')
-      document = Nokogiri::XML(f) do |config|
-        config.strict.nonet.noblanks.noent
-      end
-      f.close
-      document.root.children.each do |nomenclature|
-        set.harvest_nomenclature(nomenclature)
-      end
-      set.version = document.root['version'].to_i
-      set
+    def self.open(path)
+      db = new(path)
+      db.parse_file(path) if path.exist?
+      db
+    end
+
+    def write
+      File.write(@path, to_xml)
     end
 
     def nomenclature_names
@@ -99,9 +97,29 @@ module Onoma
       builder.to_xml
     end
 
-    def harvest_nomenclature(element)
-      nomenclature = Nomenclature.harvest(element, set: self)
-      @nomenclatures[nomenclature.name] = nomenclature
+    def exec_action(action)
+      case action.action_name.to_sym
+      when :nomenclature_creation
+        add_nomenclature(action.name, action.options)
+      when :nomenclature_change
+        change_nomenclature(action.nomenclature, action.changes)
+      when :nomenclature_removal
+        remove_nomenclature(action.nomenclature)
+      when :property_creation
+        add_property(action.nomenclature, action.name, action.type, action.options)
+      when :property_change
+        add_property(action.nomenclature, action.name, action.changes)
+      when :item_creation
+        add_item(action.nomenclature, action.name, action.options)
+      when :item_change
+        change_item(action.nomenclature, action.name, action.changes)
+      when :item_merging
+        merge_item(action.nomenclature, action.name, action.into)
+      when :item_removal
+        remove_item(action.nomenclature, action.name)
+      else
+        fail "Unknown action: #{action.action_name}"
+      end
     end
 
     def add_nomenclature(name, options = {})
@@ -166,6 +184,25 @@ module Onoma
     def remove_item(nomenclature_name, item_name)
       nomenclature = find!(nomenclature_name)
       nomenclature.remove_item(item_name)
+    end
+
+    protected
+
+    def harvest_nomenclature(element)
+      nomenclature = Nomenclature.harvest(element, set: self)
+      @nomenclatures[nomenclature.name] = nomenclature
+    end
+
+    def parse_file(file)
+      f = File.open(file, 'rb')
+      document = Nokogiri::XML(f) do |config|
+        config.strict.nonet.noblanks.noent
+      end
+      f.close
+      document.root.children.each do |nomenclature|
+        harvest_nomenclature(nomenclature)
+      end
+      version = document.root['version'].to_i
     end
   end
 end

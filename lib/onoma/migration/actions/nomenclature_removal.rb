@@ -1,5 +1,5 @@
 module Onoma
-  module Migration
+  class Migration
     module Actions
       class NomenclatureRemoval < Onoma::Migration::Actions::Base
         attr_reader :nomenclature
