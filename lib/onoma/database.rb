@@ -20,6 +20,10 @@ module Onoma
       File.write(@path, to_xml)
     end
 
+    def copy(path)
+      File.write(path, to_xml)
+    end
+    
     def nomenclature_names
       @nomenclatures.keys
     end

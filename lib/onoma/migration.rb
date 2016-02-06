@@ -14,6 +14,7 @@ module Onoma
     class << self
       # Parse en XML migration to a Onoma::Migration object
       def parse(file)
+        # puts "Parse #{file}"
         f = File.open(file, 'rb')
         document = Nokogiri::XML(f) do |config|
           config.strict.nonet.noblanks.noent
@@ -67,6 +68,9 @@ module Onoma
       end
       puts "== #{label}: migrated (#{duration.real.round(4)}s)".ljust(80, '=')
       # puts "Write DB in #{Onoma.reference_path.relative_path_from(Onoma.root)}".yellow
+      versions_dir = Onoma.root.join('tmp', 'versions')
+      FileUtils.mkdir_p(versions_dir)
+      conn.copy(versions_dir.join("#{number}.xml"))
     end
   end
 
