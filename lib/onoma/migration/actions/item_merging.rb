@@ -10,6 +10,10 @@ module Onoma
           @into = element['into'].to_s
         end
 
+        def label
+          "merge_item #{@nomenclature}##{@name} into " + @into.to_s
+        end
+
         def human_name
           "Merge item #{@nomenclature}##{@name} into #{@into}"
         end

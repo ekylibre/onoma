@@ -13,7 +13,7 @@ module Onoma
       @klass = Onoma.find(@nomenclature)
     end
 
-    alias_method :model, :active_record
+    alias model active_record
 
     def macro
       :belongs_to

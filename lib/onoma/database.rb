@@ -12,7 +12,7 @@ module Onoma
 
     def self.open(path)
       db = new(path)
-      db.parse_file(path) if path.exist?
+      db.send(:parse_file, path) if path.exist?
       db
     end
 
@@ -23,7 +23,7 @@ module Onoma
     def copy(path)
       File.write(path, to_xml)
     end
-    
+
     def nomenclature_names
       @nomenclatures.keys
     end
@@ -36,8 +36,8 @@ module Onoma
     def [](nomenclature_name)
       @nomenclatures[nomenclature_name]
     end
-    alias_method :find, :[]
-    alias_method :nomenclature, :[]
+    alias find []
+    alias nomenclature []
 
     # Find item
     def item(nomenclature_name, item_name)
@@ -53,7 +53,7 @@ module Onoma
 
     def find!(name)
       unless nomenclature = @nomenclatures[name]
-        fail "Nomenclature #{name} does not exist"
+        raise "Nomenclature #{name} does not exist"
       end
       nomenclature
     end
@@ -122,21 +122,21 @@ module Onoma
       when :item_removal
         remove_item(action.nomenclature, action.name)
       else
-        fail "Unknown action: #{action.action_name}"
+        raise "Unknown action: #{action.action_name}"
       end
     end
 
     def add_nomenclature(name, options = {})
-      fail "Nomenclature #{name} already exists" if @nomenclatures[name]
+      raise "Nomenclature #{name} already exists" if @nomenclatures[name]
       options[:set] = self
       @nomenclatures[name] = Nomenclature.new(name, options)
     end
 
     def move_nomenclature(old_name, new_name)
       unless @nomenclatures[old_name]
-        fail "Nomenclature #{old_name} does not exist"
+        raise "Nomenclature #{old_name} does not exist"
       end
-      fail "Nomenclature #{new_name} already exists" if @nomenclatures[new_name]
+      raise "Nomenclature #{new_name} already exists" if @nomenclatures[new_name]
       @nomenclatures[new_name] = @nomenclatures.delete(old_name)
       @nomenclatures[new_name]
     end
@@ -161,11 +161,11 @@ module Onoma
     end
 
     def change_property(_nomenclature_name, _property_name, _updates = {})
-      fail NotImplementedError
+      raise NotImplementedError
     end
 
     def remove_property(_nomenclature_name, _property_name, _options = {})
-      fail NotImplementedError
+      raise NotImplementedError
     end
 
     def add_item(nomenclature_name, item_name, options = {})
@@ -206,7 +206,7 @@ module Onoma
       document.root.children.each do |nomenclature|
         harvest_nomenclature(nomenclature)
       end
-      version = document.root['version'].to_i
+      self.version = document.root.attr('version').to_i
     end
   end
 end

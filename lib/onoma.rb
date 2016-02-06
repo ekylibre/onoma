@@ -13,7 +13,7 @@ require 'onoma/reflection'
 
 module Onoma
   XMLNS = 'http://www.ekylibre.org/XML/2013/nomenclatures'.freeze
-  NS_SEPARATOR = '-'
+  NS_SEPARATOR = '-'.freeze
 
   class MissingNomenclature < StandardError
   end

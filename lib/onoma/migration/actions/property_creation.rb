@@ -9,7 +9,7 @@ module Onoma
           @name = name.second
           @type = element['type'].to_sym
           unless Property::TYPES.include?(@type)
-            fail ArgumentError, "Property #{name} type is unknown: #{@type.inspect}"
+            raise ArgumentError, "Property #{name} type is unknown: #{@type.inspect}"
           end
           @options = {}
           if element.has_attribute?('fallbacks')

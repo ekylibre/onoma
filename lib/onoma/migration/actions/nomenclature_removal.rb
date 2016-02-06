@@ -6,10 +6,10 @@ module Onoma
 
         def initialize(element)
           @nomenclature = element['nomenclature']
-          fail 'No given nomenclature' if @nomenclature.blank?
+          raise 'No given nomenclature' if @nomenclature.blank?
         end
 
-        alias_method :name, :nomenclature
+        alias name nomenclature
 
         def label
           "remove_nomenclature #{@name}"

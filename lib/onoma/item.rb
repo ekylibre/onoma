@@ -3,7 +3,7 @@ module Onoma
   class Item
     attr_reader :nomenclature, :left, :right, :depth, :aliases, :parent_name
     attr_accessor :name, :attributes
-    alias_method :properties, :attributes
+    alias properties attributes
 
     # New item
     def initialize(nomenclature, name, options = {})
@@ -37,10 +37,10 @@ module Onoma
           item = nomenclature.find!(item.to_s)
         end
         if item.nomenclature != nomenclature
-          fail 'Item must come from same nomenclature'
+          raise 'Item must come from same nomenclature'
         end
         if item.parents.include?(self) || item == self
-          fail 'Circular dependency. Item can be parent of itself.'
+          raise 'Circular dependency. Item can be parent of itself.'
         end
         @parent = item
         @parent_name = @parent.name.to_s
@@ -60,6 +60,19 @@ module Onoma
 
     def parent
       @parent ||= @nomenclature.find(@parent_name)
+    end
+
+    def degree_of_kinship_with(other)
+      other_item = item_for_comparison(other)
+      a = self_and_parents.reverse
+      b = other_item.self_and_parents.reverse
+      return nil if a.first != b.first
+      common_lineage = 0
+      a.size.times do |index|
+        break if a[index].nil? || b[index].nil? || a[index] != b[index]
+        common_lineage += 1
+      end
+      a.size + b.size - 2 * common_lineage
     end
 
     def original_nomenclature_name
@@ -96,7 +109,7 @@ module Onoma
     end
 
     def root
-      self.parent? ? parent.root : self
+      parent? ? parent.root : self
     end
 
     # Returns direct parents from the closest to the farthest
@@ -110,6 +123,12 @@ module Onoma
 
     def self_and_parents
       [self] + parents
+    end
+
+    def rise(&block)
+      result = yield(self)
+      return result if result
+      parent ? parent.rise(&block) : nil
     end
 
     # Computes left/right value for nested set
@@ -139,9 +158,9 @@ module Onoma
     def human_name(options = {})
       "nomenclatures.#{nomenclature.name}.items.#{name}".t(options.merge(default: ["items.#{name}".to_sym, "enumerize.#{nomenclature.name}.#{name}".to_sym, "labels.#{name}".to_sym, name.humanize]))
     end
-    alias_method :humanize, :human_name
-    alias_method :localize, :human_name
-    alias_method :l, :localize
+    alias humanize human_name
+    alias localize human_name
+    alias l localize
 
     def human_notion_name(notion_name, options = {})
       "nomenclatures.#{nomenclature.name}.notions.#{notion_name}.#{name}".t(options.merge(default: ["labels.#{name}".to_sym]))
@@ -192,7 +211,7 @@ module Onoma
     def to_xml_attrs
       attrs = {}
       attrs[:name] = name
-      attrs[:parent] = @parent_name if self.parent?
+      attrs[:parent] = @parent_name if parent?
       properties.each do |pname, pvalue|
         if p = nomenclature.properties[pname.to_s]
           if p.type == :decimal
@@ -233,7 +252,7 @@ module Onoma
           [i.human_name, i.name]
         end
       else
-        fail StandardError, 'Cannot call selection for a non-list property'
+        raise StandardError, 'Cannot call selection for a non-list property'
       end
     end
 
@@ -249,12 +268,16 @@ module Onoma
     end
 
     def set(name, value)
-      fail "Invalid property: #{name.inspect}" if [:name, :parent].include?(name.to_sym)
-      # TODO: check format
-      if property = nomenclature.properties[name]
-        value ||= [] if property.list?
+      raise "Invalid property: #{name.inspect}" if [:name, :parent].include?(name.to_sym)
+      # # TODO: check format
+      # if property = nomenclature.properties[name]
+      #   value ||= [] if property.list?
+      # end
+      if value.nil?
+        @attributes.delete(name)
+      else
+        @attributes[name] = value
       end
-      @attributes[name] = value
     end
 
     private
@@ -266,7 +289,7 @@ module Onoma
     def item_for_comparison(other)
       item = nomenclature[other.is_a?(Item) ? other.name : other]
       unless item
-        fail StandardError, "Invalid operand to compare: #{other.inspect} not in #{nomenclature.name}"
+        raise StandardError, "Invalid operand to compare: #{other.inspect} not in #{nomenclature.name}"
       end
       item
     end
