@@ -103,7 +103,8 @@ eng:
         animals_making_expenses_expenses: "Animals making expenses expenses"
         animals_subsidies: "Animals subsidies"
         associate_social_contribution_expenses: "Associate social contribution expenses"
-        associated_accounts: "Associated accounts"
+        associates_current_accounts: "Associates current accounts"
+        associates_frozen_accounts: "Associates frozen accounts"
         associates_salary: "Associates salary"
         attorneys: "Attorneys"
         banks: "Banks"
@@ -219,7 +220,6 @@ eng:
         living_corporeal_assets: "Living corporeal assets"
         loans: "Loans"
         loans_interests: "Loans interests"
-        locked_associated_accounts: "Locked associated accounts"
         long_cycle_animals_inventory_variations: "Long cycle animals inventory variations"
         long_cycle_cultivation_advances: "Long cycle cultivation advances"
         long_cycle_products_liquors_stock: "Long cycle products liquors stock"
@@ -301,7 +301,7 @@ eng:
         plant_medicine_matter_expenses: "Plant medicine matter expenses"
         plant_medicine_stock: "Plant medicine stock"
         plants_subsidies: "Plants subsidies"
-        principal_associated_accounts: "Principal associated accounts"
+        principal_associates_current_accounts: "Principal associates current accounts"
         processing_products_revenues: "Processing products revenues"
         processing_products_stock: "Processing products stock"
         products_inventory_variations: "Products inventory variations"
@@ -373,12 +373,12 @@ eng:
         transports_expenses: "Transports expenses"
         travels_expenses: "Travels expenses"
         unstorable_expenses: "Unstorable expenses"
-        usual_associated_accounts: "Usual associated accounts"
+        usual_associates_current_accounts: "Usual associates current accounts"
         usual_bank_overdraft: "Usual bank overdraft"
         vat: "Vat"
         vegetals_making_services_expenses: "Vegetals making services expenses"
         veterinary_fees_expenses: "Veterinary fees expenses"
-        waiting_vat: "Waiting vat"
+        waiting_vat: "Waiting VAT"
         water_expenses: "Water expenses"
         young_animal_asset_depreciations: "Young animal asset depreciations"
         young_animal_assets: "Young animal assets"
@@ -396,129 +396,13 @@ eng:
           main: "Main"
           standalone: "Standalone"
       items:
-        accountancy: "Accountancy"                         #< exploitation
-        administrative: "Administrative"                   #< exploitation
-        agricultural_works: "Agricultural works"           #< works
-        alfalfa_crops: "Alfalfa crops"                     #< protein_crops
-        almond_orchards: "Almond orchards"                 #< arboriculture
+        administering: "Administering"
         animal_farming: "Animal farming"
-        animal_housing: "Animal housing"                   #< service
-        apple_orchards: "Apple orchards"                   #< arboriculture
-        arboriculture: "Arboriculture"                     #< vegetal_crops
-        aromatic_and_medicinal_plants: "Aromatic and medicinal plants" #< vegetal_crops
-        artichoke_crops: "Artichoke crops"                 #< market_garden_crops
-        asparagus_crops: "Asparagus crops"                 #< market_garden_crops
-        avocado_crops: "Avocado crops"                     #< market_garden_crops
-        barley_crops: "Barley crops"                       #< cereal_crops
-        bean_crops: "Bean crops"                           #< market_garden_crops
-        beekeeping: "Beekeeping"                           #< animal_farming
-        beet_crops: "Beet crops"                           #< field_crops
-        bere_crops: "Bere crops"                           #< cereal_crops
-        bison_farming: "Bison farming"                     #< animal_farming
-        black_mustard_crops: "Black mustard crops"         #< market_garden_crops
-        blackcurrant_crops: "Blackcurrant crops"           #< arboriculture
-        building_works: "Building works"                   #< works
-        cabbage_crops: "Cabbage crops"                     #< market_garden_crops
-        canary_grass_crops: "Canary grass crops"           #< cereal_crops
-        carob_orchards: "Carob orchards"                   #< arboriculture
-        carrot_crops: "Carrot crops"                       #< market_garden_crops
-        catering: "Catering"                               #< service
-        cattle_farming: "Cattle farming"                   #< animal_farming
-        celery_crops: "Celery crops"                       #< market_garden_crops
-        cereal_crops: "Cereal crops"                       #< field_crops
-        chestnut_orchards: "Chestnut orchards"             #< arboriculture
-        chickpea_crops: "Chickpea crops"                   #< protein_crops
-        chicory_crops: "Chicory crops"                     #< market_garden_crops
-        cichorium_crops: "Cichorium crops"                 #< market_garden_crops
-        citrus_orchards: "Citrus orchards"                 #< arboriculture
-        cocoa_crops: "Cocoa crops"                         #< arboriculture
-        common_wheat_crops: "Common wheat crops"           #< cereal_crops
-        cotton_crops: "Cotton crops"                       #< oilseed_crops
-        durum_wheat_crops: "Durum wheat crops"             #< cereal_crops
-        eggplant_crops: "Eggplant crops"                   #< market_garden_crops
-        equipment_management: "Equipment management"
-        exploitation: "Exploitation"
-        fallow_land: "Fallow land"                         #< field_crops
-        field_crops: "Field crops"                         #< vegetal_crops
-        flax_crops: "Flax crops"                           #< oilseed_crops
-        flower_crops: "Flower crops"                       #< vegetal_crops
-        fodder_crops: "Fodder crops"                       #< field_crops
-        fruits_crops: "Fruits crops"                       #< vegetal_crops
-        garden_pea_crops: "Garden pea crops"               #< market_garden_crops
-        garlic_crops: "Garlic crops"                       #< market_garden_crops
-        goat_farming: "Goat farming"                       #< animal_farming
-        hazel_orchards: "Hazel orchards"                   #< arboriculture
-        hemp_crops: "Hemp crops"                           #< field_crops
-        hop_crops: "Hop crops"                             #< market_garden_crops
-        horsebean_crops: "Horsebean crops"                 #< protein_crops
-        lavender_crops: "Lavender crops"                   #< aromatic_and_medicinal_plants
-        leek_crops: "Leek crops"                           #< market_garden_crops
-        leguminous_crops: "Leguminous crops"               #< protein_crops
-        lentil_crops: "Lentil crops"                       #< protein_crops
-        lettuce_crops: "Lettuce crops"                     #< market_garden_crops
-        lodging: "Lodging"                                 #< service
-        lupin_crops: "Lupin crops"                         #< protein_crops
-        maintenance: "Maintenance"
-        maize_crops: "Corn crops"                          #< cereal_crops
-        market_garden_crops: "Market garden crops"         #< vegetal_crops
-        meadow: "Meadow"                                   #< field_crops
-        muskmelon_crops: "Muskmelon crops"                 #< fruits_crops
-        mussel_farming: "Mussel farming"                   #< animal_farming
-        oat_crops: "Oat crops"                             #< cereal_crops
-        oilseed_crops: "Oilseed crops"                     #< field_crops
-        olive_groves: "Olive groves"                       #< arboriculture
-        olive_orchards: "Olive orchards"                   #< arboriculture
-        onion_crops: "Onion crops"                         #< market_garden_crops
-        ostrich_farming: "Ostrich farming"                 #< animal_farming
-        oyster_farming: "Oyster farming"                   #< animal_farming
-        palmiped_farming: "Palmiped farming"               #< animal_farming
-        parsley_crops: "Parsley crops"                     #< market_garden_crops
-        pea_crops: "Pea crops"                             #< protein_crops
-        peach_orchards: "Peach orchards"                   #< arboriculture
-        peanut_crops: "Peanut crops"                       #< oilseed_crops
-        pear_orchards: "Pear orchards"                     #< arboriculture
-        pig_farming: "Pig farming"                         #< animal_farming
-        pineapple_crops: "Pineapple crops"                 #< fruits_crops
-        pistachio_orchards: "Pistachio orchards"           #< arboriculture
-        plum_orchards: "Plum orchards"                     #< arboriculture
-        poaceae_crops: "Poaceae crops"                     #< cereal_crops
-        potato_crops: "Potato crops"                       #< field_crops
-        poultry_farming: "Poultry farming"                 #< animal_farming
+        plant_farming: "Plant farming"
         processing: "Processing"
-        protein_crops: "Protein crops"                     #< field_crops
-        purchases: "Purchases"                             #< exploitation
-        rabbit_farming: "Rabbit farming"                   #< animal_farming
-        radish_crops: "Radish crops"                       #< field_crops
-        rapeseed_crops: "Rapeseed crops"                   #< oilseed_crops
-        raspberry_crops: "Raspberry crops"                 #< arboriculture
-        redcurrant_crops: "Redcurrant crops"               #< arboriculture
-        renting: "Renting"                                 #< service
-        rice_crops: "Rice crops"                           #< cereal_crops
-        rye_crops: "Rye crops"                             #< cereal_crops
-        saffron_crops: "Saffron crops"                     #< aromatic_and_medicinal_plants
-        sales: "Sales"                                     #< exploitation
-        salmon_farming: "Salmon farming"                   #< animal_farming
-        scallop_farming: "Scallop farming"                 #< animal_farming
-        service: "Service"
-        sheep_farming: "Sheep farming"                     #< animal_farming
-        snail_farming: "Snail farming"                     #< animal_farming
-        sorghum_crops: "Sorghum crops"                     #< cereal_crops
-        soybean_crops: "Soybean crops"                     #< protein_crops
-        stocks: "Stocks"                                   #< exploitation
-        strawberry_crops: "Strawberry crops"               #< fruits_crops
-        sturgeon_farming: "Sturgeon farming"               #< animal_farming
-        sunflower_crops: "Sunflower crops"                 #< oilseed_crops
-        tobacco_crops: "Tobacco crops"                     #< field_crops
-        tomato_crops: "Tomato crops"                       #< market_garden_crops
-        triticale_crops: "Triticale crops"                 #< cereal_crops
-        turnip_crops: "Turnip crops"                       #< market_garden_crops
-        vegetal_crops: "Vegetal crops"
-        vetch_crops: "Vetch crops"                         #< protein_crops
-        vines: "Vines"                                     #< arboriculture
-        walnut_orchards: "Walnut orchards"                 #< arboriculture
-        watermelon_crops: "Watermelon crops"               #< fruits_crops
-        wine: "Wine"                                       #< processing
-        works: "Works"                                     #< service
+        service_delivering: "Service delivering"
+        tool_maintaining: "Tool maintaining"
+        wine_making: "Wine making"                         #< processing
     administrative_area_natures:
       name: "Administrative area natures"
       properties:
@@ -1393,12 +1277,12 @@ eng:
         land_parcel_management: "Land parcel management"
         management: "Management"
         marketing: "Marketing"
+        plant_farming: "Plant farming"
+        processing: "Processing"
         production: "Production"
         reproduction: "Reproduction"
         stock_management: "Stock management"
-        transformation: "Transformation"
-        vegetal_crops: "Vegetal crops"
-        vinification: "Vinification"
+        wine_making: "Wine making"
     document_natures:
       name: "Document natures"
       properties:
@@ -5294,44 +5178,44 @@ eng:
         prunus_armeniaca_abricot_muscat_de_clairac: "Apricot tree Muscat de Clairac" #< prunus_armeniaca
         prunus_armeniaca_abricot_nancy_de_clairac: "Apricot tree Nancy de Clairac" #< prunus_armeniaca
         prunus_armeniaca_abricot_peche_de_nancy: "Apricot tree abricot Pêche de Nancy" #< prunus_armeniaca
-        prunus_avium: "Cherry tree"                        #< prunus
-        prunus_avium_belle_du_berry_ou_petite_joue_vermeille: "Cherry tree Belle du Berry or Petite joue vermeille" #< prunus_avium
-        prunus_avium_blanc_chere: "Cherry tree Blanc Chère" #< prunus_avium
-        prunus_avium_brune_de_romeries: "Cherry tree Brune de Romeries" #< prunus_avium
-        prunus_avium_cerise_blanc_nez: "Cherry tree Blanc nez" #< prunus_avium
-        prunus_avium_cerise_blanche_d_harsigny: "Cherry tree Blanche d'Harsigny" #< prunus_avium
-        prunus_avium_cerise_blanche_de_wavrans_sur_l_aa: "Cherry tree Blanche de Wavrans sur l'Aa" #< prunus_avium
-        prunus_avium_cerise_d_enguinegatte: "Cherry tree d'Enguinegatte" #< prunus_avium
-        prunus_avium_cerise_de_moncheaux: "Cherry tree De Moncheaux" #< prunus_avium
-        prunus_avium_cerise_du_quesnoy: "Cherry tree Du Quesnoy" #< prunus_avium
-        prunus_avium_cerise_du_sars: "Cherry tree Du Sars" #< prunus_avium
-        prunus_avium_cerise_peloa: "Cherry tree Peloa"     #< prunus_avium
-        prunus_avium_coeur_de_pigeon_noir: "Cherry tree Cœur de pigeon noir" #< prunus_avium
-        prunus_avium_gascogne_tardive_de_seninghem: "Cherry tree Gascogne tardive de Seninghem" #< prunus_avium
-        prunus_avium_gros_bigarreau_d_eperlecques: "Cherry tree Gros bigarreau d'Eperlecques" #< prunus_avium
-        prunus_avium_gros_bigarreau_de_la_groise: "Cherry tree Gros Bigarreau de la Groise" #< prunus_avium
-        prunus_avium_grosse_cerise_blanche_de_verchocq: "Cherry tree Grosse cerise blanche de Verchocq" #< prunus_avium
-        prunus_avium_grosse_cerise_tardive: "Cherry tree Grosse cerise tardive" #< prunus_avium
-        prunus_avium_guigne_noire_de_ruesnes: "Cherry tree Guigne noire de Ruesnes" #< prunus_avium
-        prunus_avium_guigne_noire_du_pevele: "Cherry tree Guigne noire du Pévèle" #< prunus_avium
-        prunus_avium_guindoux_du_poitou: "Cherry tree Guindoux du Poitou" #< prunus_avium
-        prunus_avium_marin: "Cherry tree Marin"            #< prunus_avium
-        prunus_avium_merisier: "Cherry tree Merisier"      #< prunus_avium
-        prunus_avium_mourette_amourette: "Cherry tree Mourette - Amourette" #< prunus_avium
-        prunus_avium_muant: "Cherry tree Muant"            #< prunus_avium
-        prunus_avium_noire_d_itxassou_geresi_belxa: "Cherry tree Noire d'Itxassou - Geresi belxa" #< prunus_avium
-        prunus_avium_noire_tardive_a_longue_queue: "Cherry tree Noire tardive à longue queue" #< prunus_avium
-        prunus_avium_petite_noire: "Cherry tree Petite noire" #< prunus_avium
-        prunus_avium_precoce_de_la_marche: "Cherry tree Précoce de la marche" #< prunus_avium
-        prunus_avium_precoce_du_pays: "Cherry tree Précoce du pays" #< prunus_avium
-        prunus_avium_triaux_des_fondettes: "Cherry tree Triaux des Fondettes" #< prunus_avium
-        prunus_avium_xapata_chapata: "Cherry tree Xapata (Chapata)" #< prunus_avium
-        prunus_cerasifera: "Cherry tree"                   #< prunus
-        prunus_cerasus: "Cherry tree"                      #< prunus
-        prunus_cerasus_griotte_de_leme: "Cherry tree Griotte de Lemé" #< prunus_cerasus
-        prunus_cerasus_griotte_du_vieux_conde: "Cherry tree Griotte du Vieux-Condé" #< prunus_cerasus
-        prunus_cerasus_griotte_jaune_d_oullins: "Cherry tree Griotte jaune d'Oullins" #< prunus_cerasus
-        prunus_cerasus_griotte_precoce_de_samer: "Cherry tree Griotte Précoce de Samer" #< prunus_cerasus
+        prunus_avium: "Wild cherry tree"                   #< prunus
+        prunus_avium_belle_du_berry_ou_petite_joue_vermeille: "Wild cherry tree Belle du Berry or Petite joue vermeille" #< prunus_avium
+        prunus_avium_blanc_chere: "Wild cherry tree Blanc Chère" #< prunus_avium
+        prunus_avium_brune_de_romeries: "Wild cherry tree Brune de Romeries" #< prunus_avium
+        prunus_avium_cerise_blanc_nez: "Wild cherry tree Blanc nez" #< prunus_avium
+        prunus_avium_cerise_blanche_d_harsigny: "Wild cherry tree Blanche d'Harsigny" #< prunus_avium
+        prunus_avium_cerise_blanche_de_wavrans_sur_l_aa: "Wild cherry tree Blanche de Wavrans sur l'Aa" #< prunus_avium
+        prunus_avium_cerise_d_enguinegatte: "Wild cherry tree d'Enguinegatte" #< prunus_avium
+        prunus_avium_cerise_de_moncheaux: "Wild cherry tree De Moncheaux" #< prunus_avium
+        prunus_avium_cerise_du_quesnoy: "Wild cherry tree Du Quesnoy" #< prunus_avium
+        prunus_avium_cerise_du_sars: "Wild cherry tree Du Sars" #< prunus_avium
+        prunus_avium_cerise_peloa: "Wild cherry tree Peloa" #< prunus_avium
+        prunus_avium_coeur_de_pigeon_noir: "Wild cherry tree Cœur de pigeon noir" #< prunus_avium
+        prunus_avium_gascogne_tardive_de_seninghem: "Wild cherry tree Gascogne tardive de Seninghem" #< prunus_avium
+        prunus_avium_gros_bigarreau_d_eperlecques: "Wild cherry tree Gros bigarreau d'Eperlecques" #< prunus_avium
+        prunus_avium_gros_bigarreau_de_la_groise: "Wild cherry tree Gros Bigarreau de la Groise" #< prunus_avium
+        prunus_avium_grosse_cerise_blanche_de_verchocq: "Wild cherry tree Grosse cerise blanche de Verchocq" #< prunus_avium
+        prunus_avium_grosse_cerise_tardive: "Wild cherry tree Grosse cerise tardive" #< prunus_avium
+        prunus_avium_guigne_noire_de_ruesnes: "Wild cherry tree Guigne noire de Ruesnes" #< prunus_avium
+        prunus_avium_guigne_noire_du_pevele: "Wild cherry tree Guigne noire du Pévèle" #< prunus_avium
+        prunus_avium_guindoux_du_poitou: "Wild cherry tree Guindoux du Poitou" #< prunus_avium
+        prunus_avium_marin: "Wild cherry tree Marin"       #< prunus_avium
+        prunus_avium_merisier: "Wild cherry tree Merisier" #< prunus_avium
+        prunus_avium_mourette_amourette: "Wild cherry tree Mourette - Amourette" #< prunus_avium
+        prunus_avium_muant: "Wild cherry tree Muant"       #< prunus_avium
+        prunus_avium_noire_d_itxassou_geresi_belxa: "Wild cherry tree Noire d'Itxassou - Geresi belxa" #< prunus_avium
+        prunus_avium_noire_tardive_a_longue_queue: "Wild cherry tree Noire tardive à longue queue" #< prunus_avium
+        prunus_avium_petite_noire: "Wild cherry tree Petite noire" #< prunus_avium
+        prunus_avium_precoce_de_la_marche: "Wild cherry tree Précoce de la marche" #< prunus_avium
+        prunus_avium_precoce_du_pays: "Wild cherry tree Précoce du pays" #< prunus_avium
+        prunus_avium_triaux_des_fondettes: "Wild cherry tree Triaux des Fondettes" #< prunus_avium
+        prunus_avium_xapata_chapata: "Wild cherry tree Xapata (Chapata)" #< prunus_avium
+        prunus_cerasifera: "Cherry plum tree"              #< prunus
+        prunus_cerasus: "Sour cherry tree"                 #< prunus
+        prunus_cerasus_griotte_de_leme: "Sour cherry tree Griotte de Lemé" #< prunus_cerasus
+        prunus_cerasus_griotte_du_vieux_conde: "Sour cherry tree Griotte du Vieux-Condé" #< prunus_cerasus
+        prunus_cerasus_griotte_jaune_d_oullins: "Sour cherry tree Griotte jaune d'Oullins" #< prunus_cerasus
+        prunus_cerasus_griotte_precoce_de_samer: "Sour cherry tree Griotte Précoce de Samer" #< prunus_cerasus
         prunus_domestica: "Plum tree"                      #< prunus
         prunus_domestica_abricotee_jaune: "Plum tree Abricotée jaune" #< prunus_domestica
         prunus_domestica_amarblanc_amarouge: "Plum tree Amarblanc Amarouge" #< prunus_domestica

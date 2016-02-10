@@ -37,7 +37,7 @@
   <item-merging item="activity_families#snail_farming"        into="animal_farming"/>
   <item-merging item="activity_families#sturgeon_farming"     into="animal_farming"/>
   <item-merging item="activity_families#mussel_farming"       into="animal_farming"/>
-  
+
   <item-change  item="activity_families#vegetal_crops" name="plant_farming"/>
   <item-merging item="activity_families#alfalfa_crops"        into="plant_farming"/>
   <item-merging item="activity_families#almond_orchards"      into="plant_farming"/>
@@ -131,5 +131,5 @@
   <item-change item="document_categories#vegetal_crops"  name="plant_farming"/>
   <item-change item="document_categories#vinification"   name="wine_making"/>
   <item-change item="document_categories#transformation" name="processing"/>
-  
+
 </migration>
