@@ -79,7 +79,7 @@ module Onoma
     def find(*args)
       options = args.extract_options!
       name = args.shift
-      if args.size == 0
+      if args.empty?
         return @@set[name]
       elsif args.size == 1
         return @@set[name].find(args.shift) if @@set[name]
