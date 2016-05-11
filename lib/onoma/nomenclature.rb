@@ -27,10 +27,10 @@ module Onoma
         options[:translateable] = !(element.attr('translateable').to_s == 'false')
         name = element.attr('name').to_s
         nomenclature = new(name, options)
-        for property in element.xpath('xmlns:properties/xmlns:property')
+        element.xpath('xmlns:properties/xmlns:property').each do |property|
           nomenclature.harvest_property(property)
         end
-        for item in element.xpath('xmlns:items/xmlns:item')
+        element.xpath('xmlns:items/xmlns:item').each do |item|
           nomenclature.harvest_item(item)
         end
         nomenclature.rebuild_tree!
@@ -245,7 +245,7 @@ module Onoma
 
     def check!
       # Check properties
-      for property in @properties.values
+      @properties.values.each do |property|
         if property.choices_nomenclature && !property.inline_choices? && !Onoma[property.choices_nomenclature.to_s]
           raise InvalidProperty, "[#{name}] #{property.name} nomenclature property must refer to an existing nomenclature. Got #{property.choices_nomenclature.inspect}. Expecting: #{Onoma.names.inspect}"
         end
@@ -256,8 +256,8 @@ module Onoma
       end
 
       # Check items
-      for item in list
-        for property in @properties.values
+      list.each do |item|
+        @properties.values.each do |property|
           choices = property.choices
           if item.property(property.name) && property.type == :choice
             # Cleans for parametric reference
@@ -282,7 +282,11 @@ module Onoma
     end
 
     def inspect
-      "Onoma::#{name.to_s.classify}"
+      "Nomen::#{name.to_s.classify}"
+    end
+
+    def table_name
+      @name.to_s.pluralize
     end
 
     # Returns hash with items in tree: {a => nil, b => {c => nil}}
@@ -378,6 +382,10 @@ module Onoma
       selection
     end
 
+    def degree_of_kinship(a, b)
+      a.degree_of_kinship_with(b)
+    end
+
     # Return first item name
     def first(item_name = nil)
       all(item_name).first
@@ -409,14 +417,14 @@ module Onoma
 
     def find!(item_name)
       unless i = @items[item_name]
-        raise "Cannot find item #{item_name.inspect}:#{item_name.class.name} in #{name}"
+        raise "Cannot find item #{item_name} in #{name}"
       end
       i
     end
 
     # Returns list of items as an Array
     def list
-      Onoma::Relation.new(@items.values)
+      Onoma::Relation.new(self, @items.values)
     end
 
     # Iterates on items
@@ -501,6 +509,8 @@ module Onoma
           value = value.to_d
         elsif property.type == :integer
           value = value.to_i
+        elsif property.type == :date
+          value = (value.blank? ? nil : value.to_date)
         elsif property.type == :symbol
           unless value =~ /\A\w+\z/
             raise InvalidProperty, "A property '#{name}' must contains a symbol. /[a-z0-9_]/ accepted. No spaces. Got #{value.inspect}"
