@@ -68,9 +68,11 @@ module Onoma
       end
       puts "== #{label}: migrated (#{duration.real.round(4)}s)".ljust(80, '=')
       # puts "Write DB in #{Onoma.reference_path.relative_path_from(Onoma.root)}".yellow
-      versions_dir = Onoma.root.join('tmp', 'versions')
-      FileUtils.mkdir_p(versions_dir)
-      conn.copy(versions_dir.join("#{number}.xml"))
+      if @steps
+        versions_dir = Onoma.root.join('tmp', 'versions')
+        FileUtils.mkdir_p(versions_dir)
+        conn.copy(versions_dir.join("#{number}.xml"))
+      end
     end
   end
 
