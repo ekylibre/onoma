@@ -18,6 +18,7 @@ module Onoma
         self.parent = parent
       end
       @attributes = ActiveSupport::HashWithIndifferentAccess.new
+      @children = Set.new
       options.each do |k, v|
         set(k, v)
       end
@@ -29,6 +30,7 @@ module Onoma
 
     def parent=(item)
       old_parent_name = @parent_name
+      old_parent = @parent
       if item.nil?
         @parent = nil
         @parent_name = nil
@@ -45,7 +47,19 @@ module Onoma
         @parent = item
         @parent_name = @parent.name.to_s
       end
-      @nomenclature.rebuild_tree! if old_parent_name != @parent_name
+      if old_parent_name != @parent_name
+        old_parent.delete_child(self) if old_parent
+        @parent.add_child(self) if @parent
+        @nomenclature.rebuild_tree!
+      end
+    end
+
+    def add_child(item)
+      @children << item
+    end
+
+    def delete_child(item)
+      @children.delete(item)
     end
 
     # Changes parent without rebuilding
@@ -59,7 +73,15 @@ module Onoma
     end
 
     def parent
-      @parent ||= @nomenclature.find(@parent_name)
+      return @parent if @parent
+      @parent = find_parent
+      @parent.add_child(self) if @parent
+      @parent
+    end
+    alias fetch_parent parent
+
+    def find_parent
+      @nomenclature.find(@parent_name)
     end
 
     def degree_of_kinship_with(other)
@@ -84,11 +106,9 @@ module Onoma
     def children(options = {})
       if options[:index].is_a?(FalseClass)
         if options[:recursively].is_a?(FalseClass)
-          return nomenclature.list.select do |item|
-            (item.parent == self)
-          end
+          @children.to_a
         else
-          return children(index: false, recursive: false).each_with_object([]) do |item, list|
+          children(index: false, recursive: false).each_with_object([]) do |item, list|
             list << item
             list += item.children(index: false, recursive: true)
             list
@@ -96,12 +116,12 @@ module Onoma
         end
       else
         if options[:recursively].is_a?(FalseClass)
-          return nomenclature.list.select do |item|
+          nomenclature.list.select do |item|
             @left < item.left && item.right < @right && item.depth == @depth + 1
           end
         else
           # @children ||=
-          return nomenclature.list.select do |item|
+          nomenclature.list.select do |item|
             @left < item.left && item.right < @right
           end
         end
@@ -227,11 +247,12 @@ module Onoma
 
     # Returns property value
     def property(name)
+      return @name.to_sym if name == :name
       property = @nomenclature.properties[name]
       value = @attributes[name]
       if property
         if value.nil? && property.fallbacks
-          for fallback in property.fallbacks
+          property.fallbacks.each do |fallback|
             value ||= @attributes[fallback]
             break if value
           end
@@ -268,7 +289,7 @@ module Onoma
     end
 
     def set(name, value)
-      raise "Invalid property: #{name.inspect}" if [:name, :parent].include?(name.to_sym)
+      raise "Invalid property: #{name.inspect}" if %i[name parent].include?(name.to_sym)
       # # TODO: check format
       # if property = nomenclature.properties[name]
       #   value ||= [] if property.list?

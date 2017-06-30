@@ -1,7 +1,7 @@
 module Onoma
   class Property
-    TYPES = [:boolean, :item, :item_list, :choice, :choice_list, :string_list,
-             :date, :decimal, :integer, :nomenclature, :string, :symbol].freeze
+    TYPES = %i[boolean item item_list choice choice_list string_list
+               date decimal integer nomenclature string symbol].freeze
 
     attr_reader :nomenclature, :name, :type, :fallbacks, :default, :source
 
@@ -68,19 +68,19 @@ module Onoma
     # Returns list of choices for a given property
     def choices
       if inline_choices?
-        return @source || []
+        @source || []
       elsif item_reference?
-        return @nomenclature.sibling(@source).all.map(&:to_sym)
+        @nomenclature.sibling(@source).all.map(&:to_sym)
       end
     end
 
     def selection
       if inline_choices?
-        return choices.collect do |c|
+        choices.collect do |c|
           [c, c]
         end
       elsif item_reference?
-        return @nomenclature.sibling(@source).selection
+        @nomenclature.sibling(@source).selection
       end
     end
 

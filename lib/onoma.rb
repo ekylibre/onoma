@@ -14,6 +14,7 @@ require 'onoma/reflection'
 module Onoma
   XMLNS = 'http://www.ekylibre.org/XML/2013/nomenclatures'.freeze
   NS_SEPARATOR = '-'.freeze
+  PROPERTY_TYPES = %i[boolean item item_list choice choice_list string_list date decimal integer nomenclature string symbol].freeze
 
   class MissingNomenclature < StandardError
   end
@@ -63,54 +64,39 @@ module Onoma
 
     # Returns the names of the nomenclatures
     def names
-      @@set.nomenclature_names
+      set.nomenclature_names
     end
 
     def all
-      @@set.nomenclatures
+      set.nomenclatures
     end
 
     # Give access to named nomenclatures
-    def [](name)
-      @@set[name]
-    end
+    delegate :[], to: :set
 
     # Give access to named nomenclatures
     def find(*args)
       options = args.extract_options!
       name = args.shift
       if args.empty?
-        return @@set[name]
+        return set[name]
       elsif args.size == 1
-        return @@set[name].find(args.shift) if @@set[name]
+        return set[name].find(args.shift) if set[name]
       end
       nil
     end
 
     def find_or_initialize(name)
-      @@set[name] || Nomenclature.new(name, set: @@set)
+      set[name] || set.load_data_from_xml(name)
     end
 
     # Browse all nomenclatures
     def each(&block)
-      @@set.each(&block)
+      set.each(&block)
     end
 
-    def load_database
-      @@set = Database.open(reference_path)
-      @database_loaded = true
-      # Rails.logger.info 'Loaded nomenclatures: ' + Onoma.names.to_sentence
-    end
-
-    def database_loaded?
-      @database_loaded
-    end
-
-    # Returns the matching nomenclature
-    def const_missing(name)
-      n = name.to_s.underscore.pluralize
-      return self[n] if @@set.exist?(n)
-      super
+    def set
+      @@set ||= NomenclatureSet.new
     end
   end
 end

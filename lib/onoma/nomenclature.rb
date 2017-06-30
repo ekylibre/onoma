@@ -24,7 +24,7 @@ module Onoma
       def harvest(element, options = {})
         notions = element.attr('notions').to_s.split(/\s*\,\s*/).map(&:to_sym)
         options[:notions] = notions if notions.any?
-        options[:translateable] = !(element.attr('translateable').to_s == 'false')
+        options[:translateable] = element.attr('translateable').to_s != 'false'
         name = element.attr('name').to_s
         nomenclature = new(name, options)
         element.xpath('xmlns:properties/xmlns:property').each do |property|
@@ -33,6 +33,7 @@ module Onoma
         element.xpath('xmlns:items/xmlns:item').each do |item|
           nomenclature.harvest_item(item)
         end
+        nomenclature.list.each(&:fetch_parent)
         nomenclature.rebuild_tree!
         nomenclature
       end
@@ -96,7 +97,7 @@ module Onoma
       name = element.attr('name').to_s
       parent = attributes[:parent] || (element.key?('parent') ? element['parent'] : nil)
       attributes = element.attributes.each_with_object(HashWithIndifferentAccess.new) do |(k, v), h|
-        next if %w(name parent).include?(k)
+        next if %w[name parent].include?(k)
         h[k] = cast_property(k, v.to_s)
       end
       attributes[:parent] = parent if parent
@@ -162,7 +163,7 @@ module Onoma
       new_parent = changes[:parent]
       new_name = changes[:name]
       changes.each do |k, v|
-        next if [:parent, :name].include? k
+        next if %i[parent name].include? k
         i.set(k, v)
       end
       if has_parent
@@ -330,9 +331,9 @@ module Onoma
     # List all item names. Can filter on a given item name and its children
     def to_a(item_name = nil)
       if item_name.present? && @items[item_name]
-        return @items[item_name].self_and_children.map(&:name)
+        @items[item_name].self_and_children.map(&:name)
       else
-        return @items.keys.sort
+        @items.keys.sort
       end
     end
     alias all to_a
@@ -355,7 +356,7 @@ module Onoma
 
     # Returns a list for select as an array of pair (array)
     def selection(item_name = nil)
-      items = (item_name ? @items[item_name].self_and_children : @items.values)
+      items = (item_name ? find!(item_name).self_and_children : @items.values)
       items.collect do |item|
         [item.human_name, item.name.to_s]
       end.sort do |a, b|
@@ -365,21 +366,23 @@ module Onoma
 
     # Returns a list for select as an array of pair (hash)
     def selection_hash(item_name = nil)
-      @items[item_name].self_and_children.map do |item|
+      items = (item_name ? find!(item_name).self_and_children : @items.values)
+      items.collect do |item|
         { label: item.human_name, value: item.name }
       end.sort { |a, b| a[:label].lower_ascii <=> b[:label].lower_ascii }
     end
 
     # Returns a list for select, without specified items
     def select_without(already_imported)
-      selection = @items.values.collect do |item|
+      ActiveSupport::Deprecation.warn 'Nomen::Nomenclature#select_without method is deprecated. Please use Nomen::Nomenclature#without method instead.'
+      select_options = @items.values.collect do |item|
         [item.human_name, item.name.to_s] unless already_imported[item.name.to_s]
       end
-      selection.compact!
-      selection.sort! do |a, b|
+      select_options.compact!
+      select_options.sort! do |a, b|
         a.first <=> b.first
       end
-      selection
+      select_options
     end
 
     def degree_of_kinship(a, b)
@@ -396,11 +399,19 @@ module Onoma
       first(item_name)
     end
 
-    # Return the Item for the given name
+    # Return the Item for the given name. Returns nil if no item found
     def find(item_name)
       @items[item_name]
     end
     alias item find
+
+    # Return the Item for the given name. Raises Nomen::ItemNotFound if no item
+    # found in nomenclature
+    def find!(item_name)
+      i = find(item_name)
+      raise ItemNotFound, "Cannot find item #{item_name.inspect} in #{name}" unless i
+      i
+    end
 
     # Returns +true+ if an item exists in the nomenclature that matches the
     # name, or +false+ otherwise. The argument can take two forms:
@@ -413,13 +424,6 @@ module Onoma
 
     def property(property_name)
       @properties[property_name]
-    end
-
-    def find!(item_name)
-      unless i = @items[item_name]
-        raise "Cannot find item #{item_name} in #{name}"
-      end
-      i
     end
 
     # Returns list of items as an Array
@@ -455,6 +459,13 @@ module Onoma
           end
         end
         valid
+      end
+    end
+
+    def without(*names)
+      excluded = names.flatten.compact.map(&:to_sym)
+      list.reject do |item|
+        excluded.include?(item.name)
       end
     end
 
@@ -517,7 +528,7 @@ module Onoma
           end
           value = value.to_sym
         end
-      elsif !%w(name parent aliases).include?(name.to_s)
+      elsif !%w[name parent aliases].include?(name.to_s)
         raise ArgumentError, "Undefined property '#{name}' in #{@name}"
       end
       value
