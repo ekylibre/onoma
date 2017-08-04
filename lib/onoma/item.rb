@@ -41,7 +41,7 @@ module Onoma
         if item.nomenclature != nomenclature
           raise 'Item must come from same nomenclature'
         end
-        if item.parents.include?(self) || item == self
+        if item.parents.any? { |p| self == p } || self == item
           raise 'Circular dependency. Item can be parent of itself.'
         end
         @parent = item
@@ -269,7 +269,11 @@ module Onoma
           ["nomenclatures.#{@nomenclature.name}.item_lists.#{self.name}.#{name}.#{i}".t, i]
         end
       elsif property.nomenclature?
-        return Onoma[property(name)].list.collect do |i|
+        target_nomenclature = Onoma.find(property(name).to_sym)
+        unless target_nomenclature
+          raise "Cannot find nomenclature: for #{property(name).inspect}"
+        end
+        return target_nomenclature.list.collect do |i|
           [i.human_name, i.name]
         end
       else
