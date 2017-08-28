@@ -10,6 +10,7 @@ require 'onoma/property'
 require 'onoma/reference'
 require 'onoma/relation'
 require 'onoma/reflection'
+require 'pathname'
 
 module Onoma
   XMLNS = 'http://www.ekylibre.org/XML/2013/nomenclatures'.freeze
@@ -96,7 +97,7 @@ module Onoma
     end
 
     def set
-      @@set ||= NomenclatureSet.new
+      @@set ||= Database.new(database_path)
     end
   end
 end
