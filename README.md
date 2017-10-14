@@ -22,7 +22,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In your project adds the gem in your `Gemfile` and use it like example:
+
+```ruby
+Onoma.nomenclature_names       # Returns an array of all nomenclature names
+n = Onoma.find(:molecules)     # Returns an Onoma::Nomenclature object
+n.human_name                   # Returns translation in current locale of the nomenclature
+n.properties                   # Returns the array of properties of the nomenclature
+
+n.find(:dinitrogen)            # Returns an Onoma::Item object
+n.human_name                   # Returns translation in current locale of the item
+n.formula                      # Returns property 'formula' defined in nomenclatures for given item
+
+```
 
 ## Development
 
