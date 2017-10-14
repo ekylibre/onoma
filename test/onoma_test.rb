@@ -6,6 +6,7 @@ class OnomaTest < Minitest::Test
   end
 
   def test_it_does_something_useful
-    assert ::Onoma.set
+    assert ::Onoma
+    assert !::Onoma.nomenclatures.empty?, 'Nomenclatures should be loaded'
   end
 end

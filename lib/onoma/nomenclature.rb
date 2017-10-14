@@ -4,8 +4,8 @@ require 'bigdecimal/util'
 module Onoma
   # This class represents a nomenclature
   class Nomenclature
-    attr_reader :properties, :items, :name, :roots
-    attr_accessor :name, :notions, :translateable, :forest_right
+    attr_reader :properties, :items, :name
+    attr_accessor :notions, :translateable, :forest_right
     alias property_natures properties
 
     # Instanciate a new nomenclature
@@ -225,7 +225,7 @@ module Onoma
     end
 
     def remove_item(name)
-      i = find!(name)
+      find!(name)
       @items.delete(name)
     end
 
@@ -292,12 +292,7 @@ module Onoma
 
     # Returns hash with items in tree: {a => nil, b => {c => nil}}
     def tree
-      x = @roots.collect(&:tree).join
-      return x
-      i.attributes.merge(parent: i.parent_name, name: i.name, left: i.left, right: i.right, depth: i.depth).deep_stringify_keys
-      return x
-      @roots.map do |_i|
-      end
+      @roots.collect(&:tree).join
     end
 
     def translateable?
@@ -495,7 +490,7 @@ module Onoma
 
     def cast_options(options)
       return {} if options.nil?
-      hash = options.each_with_object({}) do |(k, v), h|
+      options.each_with_object({}) do |(k, v), h|
         h[k.to_sym] = if properties[k]
                         cast_property(k, v.to_s)
                       else

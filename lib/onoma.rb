@@ -43,21 +43,6 @@ module Onoma
       database_path.join('reference.xml')
     end
 
-    # # Returns version of DB
-    # def reference_version
-    #   return 0 unless reference_path.exist?
-    #   reference_document.root['version'].to_i
-    # end
-
-    # def reference_document
-    #   f = File.open(reference_path, 'rb')
-    #   document = Nokogiri::XML(f) do |config|
-    #     config.strict.nonet.noblanks.noent
-    #   end
-    #   f.close
-    #   document
-    # end
-
     def connection
       load_database unless database_loaded?
       @@set
@@ -68,16 +53,13 @@ module Onoma
       set.nomenclature_names
     end
 
-    def all
-      set.nomenclatures
-    end
-
     # Give access to named nomenclatures
-    delegate :[], to: :set
+    delegate :[], :nomenclatures, to: :set
+    alias all nomenclatures
 
     # Give access to named nomenclatures
     def find(*args)
-      options = args.extract_options!
+      args.extract_options!
       name = args.shift
       if args.empty?
         return set[name]
@@ -87,17 +69,13 @@ module Onoma
       nil
     end
 
-    def find_or_initialize(name)
-      set[name] || set.load_data_from_xml(name)
-    end
-
     # Browse all nomenclatures
     def each(&block)
       set.each(&block)
     end
 
     def set
-      @@set ||= Database.new(database_path)
+      @@set ||= Database.open(reference_path)
     end
   end
 end

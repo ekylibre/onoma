@@ -35,7 +35,7 @@ module Onoma
           @options.each do |k, v|
             updates << "#{v} as #{k}"
           end
-          sentence = "Create property #{@nomenclature}.#{@name} with " + updates.to_sentence
+          "Create property #{@nomenclature}.#{@name} with " + updates.to_sentence
         end
       end
     end

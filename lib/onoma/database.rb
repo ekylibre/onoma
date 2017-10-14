@@ -155,7 +155,7 @@ module Onoma
     end
 
     def remove_nomenclature(nomenclature_name)
-      nomenclature = find!(nomenclature_name)
+      find!(nomenclature_name)
       @nomenclatures.delete(nomenclature_name)
     end
 
