@@ -301,7 +301,8 @@ module Onoma
 
     # Return human name
     def human_name(options = {})
-      "nomenclatures.#{name}.name".t(options.merge(default: ["labels.#{name}".to_sym, name.to_s.humanize]))
+      I18n.translate("nomenclatures.#{name}.name",
+                     options.merge(default: ["labels.#{name}".to_sym, name.to_s.humanize]))
     end
     alias humanize human_name
 

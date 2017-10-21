@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'test_helper'
 
 class OnomaTest < Minitest::Test
@@ -10,13 +11,16 @@ class OnomaTest < Minitest::Test
     assert !::Onoma.nomenclatures.empty?, 'Nomenclatures should be loaded'
     ::Onoma.nomenclatures.each do |n|
       item = n.items.values.first
-
       assert item, "Nomenclature #{n.name} has no items."
-
-      I18n.available_locales = %i[eng fra]
-
-      assert item.l(locale: :eng)
-      assert item.l(locale: :fra)
     end
+  end
+
+  def test_i18n
+    nomenclature = Onoma.find(:countries)
+    assert_equal 'Pays', nomenclature.human_name(locale: :fra)
+    assert_equal 'Countries', nomenclature.human_name(locale: :eng)
+    item = nomenclature[:ae]
+    assert_equal 'Émirats Arabes Unis', item.l(locale: :fra)
+    assert_equal 'United Arab Emirates', item.l(locale: :eng)
   end
 end

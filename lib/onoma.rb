@@ -77,5 +77,10 @@ module Onoma
     def set
       @@set ||= Database.open(reference_path)
     end
+
+    def load_locales
+      I18n.load_path.concat(Dir.glob(root.join('config', 'locales', '**', '*.yml')))
+    end
   end
 end
+
