@@ -11,6 +11,8 @@ module Onoma
       @name = name.to_s
       @left, @right = @nomenclature.new_boundaries
       @depth = 0
+      @parent = nil
+      @parent_name = nil
       parent = options.delete(:parent)
       if parent.is_a?(Symbol) || parent.is_a?(String)
         @parent_name = parent.to_s
@@ -176,7 +178,7 @@ module Onoma
 
     # Return human name of item
     def human_name(options = {})
-      "nomenclatures.#{nomenclature.name}.items.#{name}".t(options.merge(default: ["items.#{name}".to_sym, "enumerize.#{nomenclature.name}.#{name}".to_sym, "labels.#{name}".to_sym, name.humanize]))
+      I18n.translate("nomenclatures.#{nomenclature.name}.items.#{name}", options.merge(default: ["items.#{name}".to_sym, "enumerize.#{nomenclature.name}.#{name}".to_sym, "labels.#{name}".to_sym, name.humanize]))
     end
     alias humanize human_name
     alias localize human_name
