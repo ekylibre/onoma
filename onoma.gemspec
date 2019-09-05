@@ -24,6 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 12.0'
   spec.add_development_dependency 'minitest'
   spec.add_development_dependency 'i18n-tasks'
-  spec.add_dependency 'activesupport', '4.2.11.1'
+  spec.add_dependency 'activesupport'
   spec.add_dependency 'nokogiri', '~> 1.8.1'
 end
