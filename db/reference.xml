@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20190625152636">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20191112132413">
   <nomenclature name="abilities" translateable="true">
     <properties>
-      <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
+      <property name="parameters" type="choice_list" choices="variety, issue_nature" required="true"/>
     </properties>
     <items>
       <item name="acidify" parameters="variety"/>
@@ -40,6 +40,7 @@
       <item name="implant"/>
       <item name="inseminate" parameters="variety"/>
       <item name="kill" parameters="variety"/>
+      <item name="lift" parameters="variety"/>
       <item name="lubricate" parameters="variety"/>
       <item name="manage" parameters="variety"/>
       <item name="milk" parameters="variety"/>
@@ -74,7 +75,7 @@
   </nomenclature>
   <nomenclature name="accounting_systems" translateable="true">
     <properties>
-      <property name="country" type="item" choices="countries" required="true"/>
+      <property name="country" type="item" choices="countries"/>
     </properties>
     <items>
       <item name="fr_pcg82" country="fr"/>
@@ -84,11 +85,11 @@
   </nomenclature>
   <nomenclature name="accounts" translateable="true">
     <properties>
-      <property name="centralizing" type="boolean" required="true" default="false"/>
-      <property name="debtor" type="boolean" default="false"/>
-      <property name="fr_pcg82" type="string" fallbacks="fr_pcga"/>
-      <property name="fr_pcga" type="string" fallbacks="fr_pcg82"/>
-      <property name="pt_snc" type="string"/>
+      <property name="centralizing" type="boolean" default="false"/>
+      <property name="debtor" type="boolean" required="true" default="false"/>
+      <property name="fr_pcg82" type="string" required="true" fallbacks="fr_pcga"/>
+      <property name="fr_pcga" type="string" required="true" fallbacks="fr_pcg82"/>
+      <property name="pt_snc" type="string" required="true"/>
     </properties>
     <items>
       <item name="accrued_bank_interests" fr_pcg82="518" fr_pcga="518"/>
@@ -97,7 +98,7 @@
       <item name="additionnal_taxes_on_distribution_entity_expenses" fr_pcg82="696" fr_pcga="696"/>
       <item name="adult_animal_asset_depreciations" fr_pcga="2841" fr_pcg82="2841"/>
       <item name="adult_animal_assets" fr_pcga="241" fr_pcg82="241"/>
-      <item name="adult_animal_expenses" fr_pcga="6041" fr_pcg82="6041"/>
+      <item name="adult_animal_expenses" fr_pcga="6041" fr_pcg82="NONE"/>
       <item name="adult_animal_revenues" fr_pcga="7041" fr_pcg82="7041"/>
       <item name="adult_reproductor_animals_inventory_variations" fr_pcga="7121" fr_pcg82="7121"/>
       <item name="advance_noticed_charges_accounts" fr_pcg82="486" fr_pcga="486"/>
@@ -157,6 +158,7 @@
       <item name="cooperative_participation_assets" fr_pcga="2621" fr_pcg82="2621"/>
       <item name="corporeal_asset_depreciations" fr_pcga="281" fr_pcg82="281"/>
       <item name="corporeal_asset_revenues" fr_pcg82="722" fr_pcga="722"/>
+      <item name="corporeal_asset_revenues_of_livestock" fr_pcga="724"/>
       <item name="corporeal_assets" fr_pcga="21" pt_snc="43000000" fr_pcg82="21"/>
       <item name="corporeal_depreciations_inputations_expenses" fr_pcga="68112" fr_pcg82="68112"/>
       <item name="corporeal_depreciations_inputations_expenses_living_goods" fr_pcga="68114" fr_pcg82="68114"/>
@@ -280,6 +282,7 @@
       <item name="installation_sustainable_plant_assets" fr_pcga="2467" fr_pcg82="2467"/>
       <item name="insurance_compensations" fr_pcga="742"/>
       <item name="insurance_expenses" fr_pcg82="616" fr_pcga="616"/>
+      <item name="intangible_fixed_asset_in_progress" fr_pcga="232" fr_pcg82="232"/>
       <item name="intangible_fixed_assets_revenues" fr_pcga="7751" fr_pcg82="7751"/>
       <item name="internal_transfers" fr_pcg82="58" fr_pcga="58"/>
       <item name="inventory_variations" fr_pcga="71" fr_pcg82="71"/>
@@ -298,6 +301,7 @@
       <item name="land_parcel_rent_expenses" fr_pcga="6131" fr_pcg82="6131"/>
       <item name="leasing_expenses" fr_pcg82="612" fr_pcga="612"/>
       <item name="legal_reserves" fr_pcg82="1061" fr_pcga="1061"/>
+      <item name="levies_and_taxes_from_distributions" fr_pcga="4423" fr_pcg82="4423"/>
       <item name="licences_expenses" fr_pcga="651" fr_pcg82="651"/>
       <item name="licenses_revenues" fr_pcga="751" fr_pcg82="751"/>
       <item name="litigious_clients" fr_pcg82="416" fr_pcga="416"/>
@@ -323,7 +327,7 @@
       <item name="maintenances_consumables_expenses" fr_pcga="6022" fr_pcg82="6022"/>
       <item name="maintenances_consumables_stock" fr_pcga="3022" fr_pcg82="3022"/>
       <item name="maintenances_consumables_stocks_variation" fr_pcga="60322"/>
-      <item name="making_services_expenses" fr_pcga="605" fr_pcg82="NONE"/>
+      <item name="making_services_expenses" fr_pcga="605" fr_pcg82="604"/>
       <item name="making_services_revenues" fr_pcga="7084" fr_pcg82="7084"/>
       <item name="management_operation_exceptional_expenses" fr_pcga="671" fr_pcg82="671"/>
       <item name="management_operation_exceptional_revenues" fr_pcg82="771" fr_pcga="771"/>
@@ -344,7 +348,7 @@
       <item name="office_supplies_stock" fr_pcga="3024"/>
       <item name="office_supply_matter_expenses" fr_pcga="6024" fr_pcg82="6024"/>
       <item name="office_supply_matter_stocks_variation" fr_pcga="60324"/>
-      <item name="other_animal_expenses" fr_pcga="6045" fr_pcg82="6045"/>
+      <item name="other_animal_expenses" fr_pcga="6045" fr_pcg82="NONE"/>
       <item name="other_animal_revenues" fr_pcga="7045" fr_pcg82="7045"/>
       <item name="other_asset_depreciations" fr_pcga="28188" fr_pcg82="28188"/>
       <item name="other_assets" fr_pcga="2188" fr_pcg82="2188"/>
@@ -376,6 +380,7 @@
       <item name="other_investment_subventions" fr_pcg82="138" fr_pcga="138"/>
       <item name="other_investment_subventions_in_earnings_statement" fr_pcg82="139" fr_pcga="139"/>
       <item name="other_materials_stock" fr_pcga="3026" fr_pcg82="3026"/>
+      <item name="other_plants_tangible_fixed_asset_in_progress" fr_pcga="2347"/>
       <item name="other_professional_agricultural_participation_assets" fr_pcga="2628" fr_pcg82="2628"/>
       <item name="other_rent_expenses" fr_pcga="6138"/>
       <item name="other_reserves" fr_pcg82="1068" fr_pcga="1068"/>
@@ -419,7 +424,13 @@
       <item name="participation_losses_on_debt_obligation_expenses" fr_pcg82="664" fr_pcga="664"/>
       <item name="participations" fr_pcg82="26" pt_snc="41000000" fr_pcga="26"/>
       <item name="particular_operation_with_state" fr_pcg82="443" fr_pcga="443"/>
+      <item name="partners_or_associates_advance_payments" fr_pcga="4564" fr_pcg82="4564"/>
+      <item name="partners_or_associates_dividends_payable" fr_pcga="457" fr_pcg82="457"/>
       <item name="payment_guarantees" fr_pcg82="275" fr_pcga="275"/>
+      <item name="payments_on_account_on_intangible_fixed_assets" fr_pcga="237"/>
+      <item name="payments_on_account_on_orders_for_tangible_fixed_assets" fr_pcga="238" fr_pcg82="238"/>
+      <item name="payments_on_account_on_orders_for_tangible_fixed_assets_except_for_livestock" fr_pcga="2381"/>
+      <item name="payments_on_account_on_orders_for_tangible_fixed_assets_for_livestock" fr_pcga="2384"/>
       <item name="pending_deposit_payments" fr_pcg82="511" pt_snc="18000000" fr_pcga="511"/>
       <item name="permanent_staff_salary" fr_pcga="64111"/>
       <item name="plant_derivative_stock" fr_pcga="374" centralizing="false" fr_pcg82="374"/>
@@ -472,7 +483,6 @@
       <item name="service_animal_asset_depreciations" fr_pcga="2843" fr_pcg82="2843"/>
       <item name="service_animal_assets" fr_pcga="243" fr_pcg82="243"/>
       <item name="service_discount_and_reductions_expenses" fr_pcg82="619" fr_pcga="619"/>
-      <item name="services_expenses" fr_pcg82="604" fr_pcga="604"/>
       <item name="services_revenues" fr_pcg82="706" fr_pcga="706"/>
       <item name="share_asset_subsidies" fr_pcga="777" fr_pcg82="777"/>
       <item name="share_capital_bonus" fr_pcg82="104" fr_pcga="104"/>
@@ -510,6 +520,7 @@
       <item name="staff_supply_stocks_variation" fr_pcga="60325"/>
       <item name="state_and_other_public_entities" fr_pcg82="44" pt_snc="24000000" fr_pcga="44"/>
       <item name="state_emission_quota_to_restitute" fr_pcg82="449" fr_pcga="449"/>
+      <item name="statutory_or_contractual_reserves" fr_pcga="1063" fr_pcg82="1063"/>
       <item name="stocks" fr_pcg82="3" pt_snc="30000000" fr_pcga="3"/>
       <item name="stocks_variation" fr_pcga="603" pt_snc="60300000" centralizing="false" fr_pcg82="603"/>
       <item name="studies_and_research_expenses" fr_pcga="617" fr_pcg82="617"/>
@@ -531,6 +542,7 @@
       <item name="sustainables_plants_on_own_land_parcel_assets" fr_pcga="2461" fr_pcg82="2461"/>
       <item name="tangible_fixed_assets_revenues_livestock" fr_pcga="7754"/>
       <item name="tangible_fixed_assets_revenues_without_livestock" fr_pcga="7752" fr_pcg82="7752"/>
+      <item name="tax_regulated_reserves" fr_pcga="1064" fr_pcg82="1064"/>
       <item name="taxes_expenses" fr_pcg82="63" fr_pcga="63"/>
       <item name="technical_installation_equipment_and_tools_assets" fr_pcga="215" fr_pcg82="215"/>
       <item name="technical_installation_on_other_land_parcel_assets" fr_pcga="2152" fr_pcg82="2152"/>
@@ -572,9 +584,9 @@
   </nomenclature>
   <nomenclature name="activity_families" translateable="true">
     <properties>
-      <property name="cultivation_variety" type="item" choices="varieties"/>
-      <property name="nature" type="choice" choices="main, auxiliary, standalone" required="true" default="main"/>
-      <property name="support_variety" type="item" choices="varieties"/>
+      <property name="cultivation_variety" type="item" choices="varieties" required="true"/>
+      <property name="nature" type="choice" choices="main, auxiliary, standalone" default="main"/>
+      <property name="support_variety" type="item" choices="varieties" required="true"/>
     </properties>
     <items>
       <item name="administering" nature="auxiliary"/>
@@ -588,8 +600,8 @@
   </nomenclature>
   <nomenclature name="administrative_area_natures" translateable="true">
     <properties>
-      <property name="country" type="item" choices="countries"/>
-      <property name="parent" type="item" choices="administrative_area_natures"/>
+      <property name="country" type="item" choices="countries" required="true"/>
+      <property name="parent" type="item" choices="administrative_area_natures" required="true"/>
     </properties>
     <items>
       <item name="france_commune" parent="france_department" country="fr"/>
@@ -599,9 +611,9 @@
   </nomenclature>
   <nomenclature name="administrative_areas" translateable="true">
     <properties>
-      <property name="code" type="string"/>
-      <property name="nature" type="item" choices="administrative_area_natures"/>
-      <property name="parent_area" type="item" choices="administrative_areas"/>
+      <property name="code" type="string" required="true"/>
+      <property name="nature" type="item" choices="administrative_area_natures" required="true"/>
+      <property name="parent_area" type="item" choices="administrative_areas" required="true"/>
     </properties>
     <items>
       <item name="france_department_ain" code="FR-01" nature="france_department" parent_area="france_region_rhone_alpes"/>
@@ -736,9 +748,9 @@
   </nomenclature>
   <nomenclature name="analysis_natures" translateable="true">
     <properties>
-      <property name="items" type="item_list" choices="indicators" required="true"/>
-      <property name="target_derivative_of" type="item" choices="varieties"/>
-      <property name="target_variety" type="item" choices="varieties" required="true"/>
+      <property name="items" type="item_list" choices="indicators"/>
+      <property name="target_derivative_of" type="item" choices="varieties" required="true"/>
+      <property name="target_variety" type="item" choices="varieties"/>
     </properties>
     <items>
       <item name="cow_milk_analysis" target_variety="milk" target_derivative_of="bos" items="total_bacteria_concentration, inhibitors_presence, fat_matters_concentration, protein_matters_concentration, somatic_cell_concentration, clostridial_spores_concentration, freezing_point_temperature, lipolysis, immunoglobulins_concentration, urea_concentration"/>
@@ -779,8 +791,8 @@
   </nomenclature>
   <nomenclature name="certifications" translateable="true">
     <properties>
-      <property name="labels" type="item_list" choices="certification_labels"/>
-      <property name="land" type="item" choices="lands"/>
+      <property name="labels" type="item_list" choices="certification_labels" required="true"/>
+      <property name="land" type="item" choices="lands" required="true"/>
     </properties>
     <items>
       <item name="bordeaux_blanc" labels="aop, aoc" land="bordeaux"/>
@@ -800,7 +812,7 @@
   </nomenclature>
   <nomenclature name="chemical_classifications" translateable="true">
     <properties>
-      <property name="code" type="string"/>
+      <property name="code" type="string" required="true"/>
     </properties>
     <items>
       <item name="dsd_corrosive" code="C"/>
@@ -1284,16 +1296,16 @@
   </nomenclature>
   <nomenclature name="chemical_elements" translateable="true">
     <properties>
-      <property name="atomic_number" type="integer" required="true"/>
-      <property name="atomic_weight" type="decimal" required="true"/>
-      <property name="boil_temperature" type="decimal"/>
-      <property name="electro_negativity" type="decimal"/>
-      <property name="group" type="integer"/>
-      <property name="mass_density" type="decimal"/>
-      <property name="melt_temperature" type="decimal"/>
-      <property name="period" type="integer"/>
-      <property name="specific_heat_capacity" type="decimal"/>
-      <property name="symbol" type="string" required="true"/>
+      <property name="atomic_number" type="integer"/>
+      <property name="atomic_weight" type="decimal"/>
+      <property name="boil_temperature" type="decimal" required="true"/>
+      <property name="electro_negativity" type="decimal" required="true"/>
+      <property name="group" type="integer" required="true"/>
+      <property name="mass_density" type="decimal" required="true"/>
+      <property name="melt_temperature" type="decimal" required="true"/>
+      <property name="period" type="integer" required="true"/>
+      <property name="specific_heat_capacity" type="decimal" required="true"/>
+      <property name="symbol" type="string"/>
     </properties>
     <items>
       <item name="actinium" atomic_number="89" symbol="Ac" atomic_weight="227.0278" mass_density="10.07" period="7" melt_temperature="1323.0" boil_temperature="3471.0" specific_heat_capacity="0.12" electro_negativity="1.1"/>
@@ -1418,8 +1430,8 @@
   </nomenclature>
   <nomenclature name="countries" translateable="true">
     <properties>
-      <property name="ednotif_eu" type="boolean" default="false"/>
-      <property name="number" type="string"/>
+      <property name="ednotif_eu" type="boolean" required="true" default="false"/>
+      <property name="number" type="string" required="true"/>
     </properties>
     <items>
       <item name="ad"/>
@@ -1673,7 +1685,7 @@
   </nomenclature>
   <nomenclature name="crop_sets" translateable="true">
     <properties>
-      <property name="varieties" type="item_list" choices="varieties" required="true"/>
+      <property name="varieties" type="item_list" choices="varieties"/>
     </properties>
     <items>
       <item name="alfalfa" varieties="medicago"/>
@@ -1717,12 +1729,12 @@
   </nomenclature>
   <nomenclature name="currencies" translateable="true">
     <properties>
-      <property name="active" type="boolean" default="false"/>
-      <property name="cash" type="string_list"/>
-      <property name="countries" type="item_list" choices="countries"/>
-      <property name="number" type="string" required="true" default="2"/>
-      <property name="precision" type="integer" required="true" default="2"/>
-      <property name="symbol" type="string"/>
+      <property name="active" type="boolean" required="true" default="false"/>
+      <property name="cash" type="string_list" required="true"/>
+      <property name="countries" type="item_list" choices="countries" required="true"/>
+      <property name="number" type="string" default="2"/>
+      <property name="precision" type="integer" default="2"/>
+      <property name="symbol" type="string" required="true"/>
     </properties>
     <items>
       <item name="AED" precision="2" active="true" countries="ae" number="784"/>
@@ -1898,7 +1910,7 @@
   </nomenclature>
   <nomenclature name="delivery_modes" translateable="true">
     <properties>
-      <property name="incoterm" type="choice" choices="EXW, FCA, CPT, CIP, DAT, DAP, DDP, FAS, FOB, CFR, CIF"/>
+      <property name="incoterm" type="choice" choices="EXW, FCA, CPT, CIP, DAT, DAP, DDP, FAS, FOB, CFR, CIF" required="true"/>
     </properties>
     <items>
       <item name="delivered_at_place" incoterm="DAP"/>
@@ -1910,7 +1922,7 @@
   </nomenclature>
   <nomenclature name="dimensions" translateable="true">
     <properties>
-      <property name="symbol" type="string" required="true"/>
+      <property name="symbol" type="string"/>
     </properties>
     <items>
       <item name="amount_of_substance" symbol="mol"/>
@@ -1945,7 +1957,7 @@
   </nomenclature>
   <nomenclature name="document_categories" translateable="true">
     <properties>
-      <property name="acta_category" type="string" required="true"/>
+      <property name="acta_category" type="string"/>
     </properties>
     <items>
       <item name="accountancy" acta_category="A"/>
@@ -1967,7 +1979,7 @@
   </nomenclature>
   <nomenclature name="document_natures" translateable="true">
     <properties>
-      <property name="category" type="item_list" choices="document_categories"/>
+      <property name="category" type="item_list" choices="document_categories" required="true"/>
     </properties>
     <items>
       <item name="account_journal_entry_sheet" category="accountancy"/>
@@ -2018,6 +2030,7 @@
       <item name="sales_order" category="marketing"/>
       <item name="security_data_sheet" category="land_parcel_management"/>
       <item name="shipping_note" category="exploitation"/>
+      <item name="short_balance_sheet"/>
       <item name="stocks" category="exploitation"/>
       <item name="tax_assessment" category="accountancy"/>
       <item name="trial_balance" category="accountancy"/>
@@ -2032,9 +2045,9 @@
   </nomenclature>
   <nomenclature name="entity_link_natures" translateable="true" notions="entity, linked">
     <properties>
-      <property name="entity" type="symbol"/>
-      <property name="linked" type="symbol"/>
-      <property name="symmetric" type="boolean" required="true" default="false"/>
+      <property name="entity" type="symbol" required="true"/>
+      <property name="linked" type="symbol" required="true"/>
+      <property name="symmetric" type="boolean" default="false"/>
     </properties>
     <items>
       <item name="collaboration" entity="collaborator" linked="collaborator" symmetric="true"/>
@@ -2048,7 +2061,7 @@
   </nomenclature>
   <nomenclature name="event_natures" translateable="true">
     <properties>
-      <property name="default_duration" type="integer" required="true" default="60"/>
+      <property name="default_duration" type="integer" default="60"/>
     </properties>
     <items>
       <item name="absence"/>
@@ -2099,9 +2112,9 @@
   </nomenclature>
   <nomenclature name="fiscal_positions" translateable="true">
     <properties>
-      <property name="accounting_system" type="item" choices="accounting_systems" required="true"/>
-      <property name="code" type="string" required="true"/>
-      <property name="country" type="item" choices="countries" required="true"/>
+      <property name="accounting_system" type="item" choices="accounting_systems"/>
+      <property name="code" type="string"/>
+      <property name="country" type="item" choices="countries"/>
     </properties>
     <items>
       <item name="fr_ba_ir" country="fr" code="BA-IR" accounting_system="fr_pcga"/>
@@ -2121,8 +2134,8 @@
   </nomenclature>
   <nomenclature name="identifier_natures" translateable="true">
     <properties>
-      <property name="fallbacks" type="string_list"/>
-      <property name="password" type="boolean"/>
+      <property name="fallbacks" type="string_list" required="true"/>
+      <property name="password" type="boolean" required="true"/>
     </properties>
     <items>
       <item name="cartodb_api_key"/>
@@ -2149,16 +2162,16 @@
   </nomenclature>
   <nomenclature name="indicators" translateable="true">
     <properties>
-      <property name="choices" type="nomenclature"/>
-      <property name="curve" type="choice" choices="line, spline, step, bar" default="spline"/>
-      <property name="datatype" type="choice" choices="string, integer, decimal, boolean, choice, measure, point, geometry, multi_polygon" required="true"/>
-      <property name="gathering" type="choice" choices="proportional_to_population"/>
-      <property name="individual_identifier" type="boolean"/>
-      <property name="interpolation" type="choice" choices="none, previous, nearest, linear, sine" default="previous"/>
-      <property name="probe" type="boolean" required="true" default="false"/>
-      <property name="related_to" type="choice" choices="whole, individual" default="individual"/>
-      <property name="sampling_temporal_mode" type="choice" choices="instant, period" required="true" default="instant"/>
-      <property name="unit" type="item" choices="units"/>
+      <property name="choices" type="nomenclature" required="true"/>
+      <property name="curve" type="choice" choices="line, spline, step, bar" required="true" default="spline"/>
+      <property name="datatype" type="choice" choices="string, integer, decimal, boolean, choice, measure, point, geometry, multi_polygon"/>
+      <property name="gathering" type="choice" choices="proportional_to_population" required="true"/>
+      <property name="individual_identifier" type="boolean" required="true"/>
+      <property name="interpolation" type="choice" choices="none, previous, nearest, linear, sine" required="true" default="previous"/>
+      <property name="probe" type="boolean" default="false"/>
+      <property name="related_to" type="choice" choices="whole, individual" required="true" default="individual"/>
+      <property name="sampling_temporal_mode" type="choice" choices="instant, period" default="instant"/>
+      <property name="unit" type="item" choices="units" required="true"/>
     </properties>
     <items>
       <item name="aluminium_concentration" datatype="measure" unit="parts_per_million"/>
@@ -2199,6 +2212,7 @@
       <item name="dry_matter_rate" datatype="measure" unit="mass_percent"/>
       <item name="easement_area" datatype="measure" unit="square_meter" gathering="proportional_to_population"/>
       <item name="economical_milk_index" datatype="measure" unit="unity"/>
+      <item name="element_count" datatype="integer"/>
       <item name="end_of_life_witness" datatype="string"/>
       <item name="energy" datatype="measure" unit="kilowatt_hour"/>
       <item name="entry_date" datatype="string"/>
@@ -2358,9 +2372,9 @@
   </nomenclature>
   <nomenclature name="issue_natures" translateable="true">
     <properties>
-      <property name="cause" type="item_list" choices="varieties"/>
-      <property name="target" type="item_list" choices="varieties" required="true"/>
-      <property name="treatments" type="item_list" choices="procedure_natures"/>
+      <property name="cause" type="item_list" choices="varieties" required="true"/>
+      <property name="target" type="item_list" choices="varieties"/>
+      <property name="treatments" type="item_list" choices="procedure_natures" required="true"/>
     </properties>
     <items>
       <item name="acarine_gall_mite" parent="insecta_disease" cause="phytoptus_avellanae" target="corylus"/>
@@ -2613,7 +2627,7 @@
   </nomenclature>
   <nomenclature name="molecules" translateable="true">
     <properties>
-      <property name="formula" type="string"/>
+      <property name="formula" type="string" required="true"/>
     </properties>
     <items>
       <item name="ammonia" formula="N(H)(H)(H)"/>
@@ -2641,10 +2655,10 @@
   </nomenclature>
   <nomenclature name="net_services" translateable="true">
     <properties>
-      <property name="approach" type="choice" choices="human, rest, soap, email"/>
-      <property name="identifiers" type="item_list" choices="identifier_natures" required="true"/>
-      <property name="nature" type="item" choices="activity_families" required="true"/>
-      <property name="url" type="string"/>
+      <property name="approach" type="choice" choices="human, rest, soap, email" required="true"/>
+      <property name="identifiers" type="item_list" choices="identifier_natures"/>
+      <property name="nature" type="item" choices="activity_families"/>
+      <property name="url" type="string" required="true"/>
     </properties>
     <items>
       <item name="cartodb" nature="administering" url="https://cartodb.com" approach="human" identifiers="cartodb_login, password"/>
@@ -2680,7 +2694,7 @@
   </nomenclature>
   <nomenclature name="plant_life_states" translateable="true">
     <properties>
-      <property name="order" type="integer" required="true"/>
+      <property name="order" type="integer"/>
     </properties>
     <items>
       <item name="booting" order="500"/>
@@ -2864,7 +2878,7 @@
   </nomenclature>
   <nomenclature name="procedure_categories" translateable="true">
     <properties>
-      <property name="activity_family" type="item_list" choices="activity_families"/>
+      <property name="activity_family" type="item_list" choices="activity_families" required="true"/>
     </properties>
     <items>
       <item name="administrative_tasks" activity_family="administering"/>
@@ -2901,8 +2915,8 @@
   </nomenclature>
   <nomenclature name="procedure_natures" translateable="true">
     <properties>
-      <property name="activity_families" type="item_list" choices="activity_families" required="true"/>
-      <property name="roles" type="item_list" choices="procedure_roles"/>
+      <property name="activity_families" type="item_list" choices="activity_families"/>
+      <property name="roles" type="item_list" choices="procedure_roles" required="true"/>
     </properties>
     <items>
       <item name="addition" parent="transformation" roles="input_origin, input, target, doer" activity_families="processing"/>
@@ -3012,21 +3026,21 @@
   </nomenclature>
   <nomenclature name="product_nature_categories" translateable="true">
     <properties>
-      <property name="asset_fixable" type="boolean" required="true" default="false"/>
-      <property name="charge_account" type="item" choices="accounts"/>
-      <property name="depreciable" type="boolean" required="true" default="false"/>
-      <property name="depreciation_percentage" type="decimal"/>
-      <property name="fixed_asset_account" type="item" choices="accounts"/>
-      <property name="fixed_asset_allocation_account" type="item" choices="accounts"/>
-      <property name="fixed_asset_expenses_account" type="item" choices="accounts"/>
-      <property name="pictogram" type="choice" choices="cc, fax, truck, laptop, land_parcels, wrench, wheat, tasks, subscription, plane, tractor, truck, umbrella, drop, plane, phone, mushroom, medkit, matter, male, legal, light_bulb, lemon, leaf, home, building, group, credit_card, cow, food, bug, beaker, car, barn, bolt, pill, desktop, gift, road, fish, user, undefined, money, bank, book"/>
-      <property name="product_account" type="item" choices="accounts"/>
-      <property name="purchasable" type="boolean" required="true" default="false"/>
-      <property name="reductible" type="boolean" required="true" default="false"/>
-      <property name="saleable" type="boolean" required="true" default="false"/>
-      <property name="stock_account" type="item" choices="accounts"/>
-      <property name="stock_movement_account" type="item" choices="accounts"/>
-      <property name="storable" type="boolean" required="true" default="false"/>
+      <property name="asset_fixable" type="boolean" default="false"/>
+      <property name="charge_account" type="item" choices="accounts" required="true"/>
+      <property name="depreciable" type="boolean" default="false"/>
+      <property name="depreciation_percentage" type="decimal" required="true"/>
+      <property name="fixed_asset_account" type="item" choices="accounts" required="true"/>
+      <property name="fixed_asset_allocation_account" type="item" choices="accounts" required="true"/>
+      <property name="fixed_asset_expenses_account" type="item" choices="accounts" required="true"/>
+      <property name="pictogram" type="choice" choices="cc, fax, truck, laptop, land_parcels, wrench, wheat, tasks, subscription, plane, tractor, truck, umbrella, drop, plane, phone, mushroom, medkit, matter, male, legal, light_bulb, lemon, leaf, home, building, group, credit_card, cow, food, bug, beaker, car, barn, bolt, pill, desktop, gift, road, fish, user, undefined, money, bank, book" required="true"/>
+      <property name="product_account" type="item" choices="accounts" required="true"/>
+      <property name="purchasable" type="boolean" default="false"/>
+      <property name="reductible" type="boolean" default="false"/>
+      <property name="saleable" type="boolean" default="false"/>
+      <property name="stock_account" type="item" choices="accounts" required="true"/>
+      <property name="stock_movement_account" type="item" choices="accounts" required="true"/>
+      <property name="storable" type="boolean" default="false"/>
     </properties>
     <items>
       <item name="adult_cat" fixed_asset_account="adult_animal_assets" fixed_asset_allocation_account="adult_animal_asset_depreciations" fixed_asset_expenses_account="corporeal_depreciations_inputations_expenses_living_goods" charge_account="adult_animal_expenses" product_account="adult_animal_revenues" stock_account="long_time_animal_stock" purchasable="true" saleable="true" depreciable="true" storable="true" pictogram="cow" stock_movement_account="long_cycle_animals_inventory_variations" asset_fixable="true"/>
@@ -3149,11 +3163,11 @@
   </nomenclature>
   <nomenclature name="product_nature_variants" translateable="true">
     <properties>
-      <property name="derivative_of" type="item" choices="varieties"/>
-      <property name="frozen_indicators_values" type="string"/>
-      <property name="nature" type="item" choices="product_natures" required="true"/>
-      <property name="unit_name" type="choice" choices="month, server, domain, 100g_dose, dose, 1l_dose, quintal, 10ml_dose, 20ml_dose, 50ml_dose, 10kg_bag, 12kg_bag, 20kg_bag, 25kg_bag, 50tg_bag, 150tg_bag, 220tg_bag, bag, box, building, can, 24liter_can, cubic_meter, equipment, head, hectare, meal, night, square_meter, day, hour, kilogram, kilometer, kilowatt_hour, liter, person, room, ton, unit, hectoliter, band, round_bale, big_rectangular_bale, small_rectangular_bale, 75cl_bottle, 100cl_bottle, plant, gram, 2g_pill, 5g_pill, group, subject, herd, roll, stake, package" required="true" default="unit"/>
-      <property name="variety" type="item" choices="varieties"/>
+      <property name="derivative_of" type="item" choices="varieties" required="true"/>
+      <property name="frozen_indicators_values" type="string" required="true"/>
+      <property name="nature" type="item" choices="product_natures"/>
+      <property name="unit_name" type="choice" choices="month, server, domain, 100g_dose, dose, 1l_dose, quintal, 10ml_dose, 20ml_dose, 50ml_dose, 10kg_bag, 12kg_bag, 20kg_bag, 25kg_bag, 50tg_bag, 150tg_bag, 220tg_bag, bag, box, building, can, 24liter_can, cubic_meter, equipment, head, hectare, meal, night, square_meter, day, hour, kilogram, kilometer, kilowatt_hour, liter, person, room, ton, unit, hectoliter, band, round_bale, big_rectangular_bale, small_rectangular_bale, 75cl_bottle, 100cl_bottle, plant, gram, 2g_pill, 5g_pill, group, subject, herd, roll, stake, package" default="unit"/>
+      <property name="variety" type="item" choices="varieties" required="true"/>
     </properties>
     <items>
       <item name="115g_jam" nature="packaged_process_food" derivative_of="fruit" frozen_indicators_values="net_mass: 115gram, net_volume: 115milliliter"/>
@@ -3181,12 +3195,21 @@
       <item name="animals_making_service" nature="animals_making_services"/>
       <item name="annual_fallow_crop" nature="crop" variety="poa" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="anti_slug" nature="molluscicide" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.00kilogram" unit_name="kilogram"/>
+      <item name="antidrift_panel_lv" nature="sprayer"/>
+      <item name="antidrift_panel_tv" nature="sprayer"/>
       <item name="apple_crop" nature="fruit_crop" variety="malus" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
+      <item name="arboreal_tractor" nature="tractor"/>
+      <item name="arboricultural_cultivator" nature="superficial_plow"/>
+      <item name="arboricultural_mounted_jet_sprayer" nature="sprayer"/>
+      <item name="arboricultural_platform" nature="platform"/>
+      <item name="arboricultural_pneumatic_sprayer" nature="sprayer"/>
+      <item name="arboricultural_weeding_boom" nature="sprayer"/>
       <item name="arezzo_wheat_crop" nature="cereal_crop" variety="triticum_aestivum_arezzo" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="ascott_wheat_crop" nature="cereal_crop" variety="triticum_aestivum_ascott" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="ascott_wheat_seed_25" nature="seed" derivative_of="triticum_aestivum_ascott" frozen_indicators_values="net_mass: 25.00kilogram, thousand_grains_mass: 50gram" unit_name="25kg_bag"/>
       <item name="asparagus_crop" nature="vegetable_crop" variety="asparagus" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="associate_social_contribution" nature="associate_social_contribution"/>
+      <item name="back_arboricultural_hay_rake" nature="hay_rake"/>
       <item name="bale_collector" nature="bale_collector" unit_name="equipment"/>
       <item name="baler" nature="baler" frozen_indicators_values="" unit_name="equipment"/>
       <item name="bank_service" nature="bank_service"/>
@@ -3205,6 +3228,7 @@
       <item name="big_sticker" nature="catalog_and_print"/>
       <item name="blackcurrant_crop" nature="fruit_crop" variety="ribes_nigrum" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="plant"/>
       <item name="blackcurrant_seedling" nature="seedling" derivative_of="ribes_nigrum"/>
+      <item name="blade_intercep_vtv" nature="weeder"/>
       <item name="bolt" nature="mechanic_item" frozen_indicators_values="net_volume: 40milliliter, net_mass: 40gram"/>
       <item name="bordelaise_100cl_bottle" nature="bottle" variety="cork_bottle" frozen_indicators_values="net_volume: 100.00centiliter" unit_name="100cl_bottle"/>
       <item name="bordelaise_75cl_bottle" nature="bottle" variety="cork_bottle" frozen_indicators_values="net_volume: 75.00centiliter" unit_name="75cl_bottle"/>
@@ -3221,6 +3245,8 @@
       <item name="bottle_75cl_wine" nature="wine" frozen_indicators_values="net_mass: 760gram, net_volume: 75.00centiliter" unit_name="75cl_bottle"/>
       <item name="bottle_900cl_wine" nature="wine" frozen_indicators_values="net_mass: 9150gram, net_volume: 900.00centiliter"/>
       <item name="brassicaceae_fungicide" nature="fungicide" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.00kilogram" unit_name="liter"/>
+      <item name="brush_intercep_tv" nature="weeder"/>
+      <item name="brush_intercep_vtv" nature="weeder"/>
       <item name="buckwheat_crop" nature="cereal_crop" variety="fagopyrum_esculentum" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="buckwheat_grain" nature="grain" derivative_of="fagopyrum_esculentum" frozen_indicators_values="net_mass: 1.00ton" unit_name="ton"/>
       <item name="buckwheat_seed" nature="seed" variety="seed" derivative_of="fagopyrum" frozen_indicators_values="net_mass: 1.00gram, grains_count: 50unity, thousand_grains_mass: 20.00gram"/>
@@ -3256,6 +3282,12 @@
       <item name="car_moving_travel" nature="moving_travel" unit_name="kilometer"/>
       <item name="card" nature="catalog_and_print"/>
       <item name="carriage" nature="carriage"/>
+      <item name="carrier_confined_sprayer_lv" nature="sprayer"/>
+      <item name="carrier_manure_spreader" nature="spreader"/>
+      <item name="carrier_pre_pruner_lv" nature="cutting_equipment"/>
+      <item name="carrier_sprayer_lv" nature="sprayer"/>
+      <item name="carrier_topper_trimmer_lv" nature="cutting_equipment"/>
+      <item name="carrier_topper_trimmer_tv" nature="cutting_equipment"/>
       <item name="carrot" nature="carrot" derivative_of="daucus_carota" frozen_indicators_values="net_mass: 1.00ton"/>
       <item name="carrot_crop" nature="vegetable_crop" variety="daucus" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="carrot_seed" nature="seed" variety="seed" derivative_of="daucus_carota" frozen_indicators_values="net_mass: 1.00gram, grains_count: 1thousand, thousand_grains_mass: 1.00gram"/>
@@ -3271,11 +3303,13 @@
       <item name="chandler_walnut" nature="walnut" derivative_of="juglans_regia_chandler" frozen_indicators_values="net_mass: 1.00kilogram" unit_name="kilogram"/>
       <item name="chard" nature="chard" derivative_of="beta_vulgaris_cicla" frozen_indicators_values="net_mass: 1.00ton"/>
       <item name="chemical_fertilizer_division" nature="preparation_division" frozen_indicators_values="" unit_name="room"/>
+      <item name="chemical_trunck_cleaner_lv" nature="cutting_equipment"/>
       <item name="cherry_laurel_crop" nature="fruit_crop" variety="prunus_laurocerasus" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="chick_hen_band" nature="hen_band" frozen_indicators_values="sex: undefined, reproductor: false" unit_name="subject"/>
       <item name="chicken_egg" nature="egg" derivative_of="gallus" frozen_indicators_values="net_volume: 80milliliter, net_mass: 53gram"/>
       <item name="chicken_meat" nature="poultry_meat" derivative_of="gallus_gallus_domesticus" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.00kilogram" unit_name="kilogram"/>
       <item name="chicory_crop" nature="crop" variety="cichorium" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
+      <item name="claw_interrow_vtv" nature="harrow"/>
       <item name="common_beta_crop" nature="crop" variety="beta_vulgaris" frozen_indicators_values="net_surface_area: 1.00hectare"/>
       <item name="common_carrot_crop" nature="vegetable_crop" variety="daucus_carota" frozen_indicators_values="net_surface_area: 1.00hectare"/>
       <item name="common_consumable" nature="common_consumable" frozen_indicators_values="net_mass: 1kilogram, net_volume: 1.00liter" unit_name="liter"/>
@@ -3284,10 +3318,12 @@
       <item name="common_onion_crop" nature="crop" variety="allium_cepa" frozen_indicators_values="net_surface_area: 1.00hectare"/>
       <item name="common_package" nature="common_package"/>
       <item name="complete_herbicide" nature="herbicide" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.00kilogram" unit_name="liter"/>
+      <item name="compost_spreader_lv" nature="spreader"/>
       <item name="computer_display" nature="computer_device"/>
       <item name="computer_item" nature="computer_device"/>
       <item name="computer_mouse" nature="computer_device"/>
       <item name="concrete_tank" nature="wine_tank" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="confined_sprayer_lv" nature="sprayer"/>
       <item name="congress" nature="congress"/>
       <item name="consumer_goods_office_item" nature="consumer_goods_office_item"/>
       <item name="coop:adexar_5l" nature="fungicide" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.00kilogram" unit_name="liter"/>
@@ -3408,15 +3444,20 @@
       <item name="cover_crop" nature="crop" unit_name="equipment"/>
       <item name="cover_implanter" nature="cover_implanter" frozen_indicators_values="" unit_name="equipment"/>
       <item name="cow_milk" nature="milk" derivative_of="bos" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.03kilogram" unit_name="liter"/>
+      <item name="crawler_tractor" nature="tractor"/>
       <item name="creation_society_study" nature="installing_charge"/>
+      <item name="crop_duster" nature="sprayer"/>
       <item name="crop_residue" nature="crop_residue" frozen_indicators_values="net_mass: 1.00ton, net_volume: 20.00cubic_meter" unit_name="ton"/>
       <item name="cultivable_zone" nature="cultivable_zone" variety="cultivable_zone" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="daily_project_management" nature="project_management" frozen_indicators_values="usage_duration: 1day" unit_name="day"/>
       <item name="daily_software_engineering" nature="software_engineering" frozen_indicators_values="usage_duration: 1day" unit_name="day"/>
       <item name="daily_training_course" nature="training_course" frozen_indicators_values="usage_duration: 1day" unit_name="day"/>
       <item name="dairy_equipment_cleaner" nature="mineral_cleaner" frozen_indicators_values="net_mass: 24kilogram, net_volume: 24.00liter" unit_name="24liter_can"/>
+      <item name="destructive_crush_roller" nature="roll"/>
       <item name="diesel" nature="fuel" frozen_indicators_values="energy: 10.67kilowatt_hour, net_volume: 1liter, net_mass: 0.8kilogram" unit_name="liter"/>
       <item name="disc_harrow" nature="superficial_plow" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="disc_harrow_lv" nature="soil_grinder"/>
+      <item name="disc_intercep_vtv" nature="weeder"/>
       <item name="discount_and_reduction" nature="discount_and_reduction"/>
       <item name="disinfectant_product" nature="disinfectant_product" variety="preparation" frozen_indicators_values="net_mass: 1kilogram, net_volume: 1.00liter" unit_name="liter"/>
       <item name="domain_name_subscription" nature="numeric_subscription" unit_name="domain"/>
@@ -3428,7 +3469,9 @@
       <item name="duck_slurry" nature="organic_fertilizer" variety="slurry" derivative_of="anas" frozen_indicators_values="net_volume: 1.00cubic_meter, net_mass: 1.00ton, nitrogen_concentration: 0.68percent" unit_name="cubic_meter"/>
       <item name="dumper" nature="dumper" frozen_indicators_values="" unit_name="equipment"/>
       <item name="eco_participation" nature="recycling_contribution"/>
+      <item name="electric_pruning" nature="cutting_equipment"/>
       <item name="electricity" nature="electricity" frozen_indicators_values="energy: 1.00kilowatt_hour" unit_name="kilowatt_hour"/>
+      <item name="electronic_mechanical_pruner_lv" nature="cutting_equipment"/>
       <item name="employee" nature="technician" frozen_indicators_values="" unit_name="person"/>
       <item name="ennis_hazelnut" nature="hazelnut" derivative_of="corylus_avellana_ennis" frozen_indicators_values="net_mass: 1.00kilogram" unit_name="kilogram"/>
       <item name="equipment" nature="equipment" frozen_indicators_values="" unit_name="equipment"/>
@@ -3487,6 +3530,7 @@
       <item name="franquette_walnut" nature="walnut" derivative_of="juglans_regia_franquette" frozen_indicators_values="net_mass: 1.00kilogram" unit_name="kilogram"/>
       <item name="freelance_sofware_development" nature="freelance"/>
       <item name="freezer_tank" nature="freezer_tank" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="front_arboricultural_hay_rake" nature="hay_rake"/>
       <item name="frozen_fruit" nature="fruit" derivative_of="plant" frozen_indicators_values="net_mass: 1.00kilogram, net_volume: 1.00liter, best_before_period: 180day" unit_name="kilogram"/>
       <item name="fruit_derivative_good" nature="process_food" derivative_of="fruit"/>
       <item name="fuel_tank" nature="fuel_tank" frozen_indicators_values="" unit_name="equipment"/>
@@ -3506,6 +3550,8 @@
       <item name="grain_crusher" nature="food_distributor" frozen_indicators_values="" unit_name="equipment"/>
       <item name="grain_tank" nature="grain_tank" frozen_indicators_values="" unit_name="equipment"/>
       <item name="granulated_insecticide_12" nature="insecticide" frozen_indicators_values="net_volume: 12.00liter, net_mass: 12.00kilogram" unit_name="12kg_bag"/>
+      <item name="grape_harvester_lv" nature="harvester"/>
+      <item name="grape_harvester_tv" nature="harvester"/>
       <item name="grape_reaper" nature="grape_reaper" frozen_indicators_values="" unit_name="equipment"/>
       <item name="grape_trailer" nature="grape_trailer" frozen_indicators_values="" unit_name="equipment"/>
       <item name="grass" nature="grass" derivative_of="plant" frozen_indicators_values="net_mass: 1.00ton" unit_name="ton"/>
@@ -3513,9 +3559,11 @@
       <item name="grass_silage" nature="silage" derivative_of="poa" frozen_indicators_values="net_mass: 1.00ton, net_volume: 1.351cubic_meter" unit_name="ton"/>
       <item name="green_compost" nature="organic_fertilizer" variety="compost" derivative_of="plant" frozen_indicators_values="net_volume: 1.50cubic_meter, net_mass: 1.00ton, nitrogen_concentration: 1.2percent" unit_name="ton"/>
       <item name="grinder" nature="grinder" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="grinder_vine_shoot_extractor" nature="vine_shoot_extractor"/>
       <item name="growth_regulator" nature="growth_regulator" frozen_indicators_values="net_volume: 1.00liter"/>
       <item name="guineafowl_manure" nature="organic_fertilizer" variety="manure" derivative_of="numida" frozen_indicators_values="net_volume: 1.50cubic_meter, net_mass: 1.00ton, nitrogen_concentration: 2.2percent" unit_name="ton"/>
       <item name="hand_drawn" nature="hand_drawn" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="hand_tying_lv" nature="tool"/>
       <item name="hanging_scroll" nature="catalog_and_print"/>
       <item name="hard_wheat_crop" nature="cereal_crop" variety="triticum_durum" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="hard_wheat_grain" nature="grain" derivative_of="triticum_durum" frozen_indicators_values="net_mass: 1.00ton" unit_name="ton"/>
@@ -3552,7 +3600,12 @@
       <item name="hourly_training_course" nature="training_course" frozen_indicators_values="usage_duration: 1hour" unit_name="hour"/>
       <item name="hourly_user_support" nature="user_support" frozen_indicators_values="usage_duration: 1hour" unit_name="hour"/>
       <item name="howard_walnut" nature="walnut" derivative_of="juglans_regia_howard" frozen_indicators_values="net_mass: 1.00kilogram" unit_name="kilogram"/>
+      <item name="hydraulic_blade_intercep_tv" nature="weeder"/>
+      <item name="hydraulic_intercep_lv" nature="weeder"/>
       <item name="hydraulic_oil" nature="hydraulic_oil" frozen_indicators_values="net_volume: 1liter, net_mass: 0.8kilogram" unit_name="liter"/>
+      <item name="hydraulic_plow_lv" nature="plow"/>
+      <item name="hydraulic_plow_tv" nature="plow"/>
+      <item name="hydraulic_trunck_cleaner_lv" nature="cutting_equipment"/>
       <item name="ichn_subsidies" nature="exploitation_subsidies"/>
       <item name="implanter" nature="implanter" frozen_indicators_values="" unit_name="equipment"/>
       <item name="infirmity_and_death_insurance" nature="infirmity_and_death_insurance"/>
@@ -3561,6 +3614,7 @@
       <item name="inseminator" nature="inseminator" frozen_indicators_values="" unit_name="person"/>
       <item name="insurance" nature="insurance"/>
       <item name="internet_line_subscription" nature="radio_subscription"/>
+      <item name="interrow_sower_lv" nature="sower"/>
       <item name="intership" nature="bonus_staff_expense"/>
       <item name="ip_address_subscription" nature="numeric_subscription" unit_name="domain"/>
       <item name="irrigation_pivot" nature="irrigation_pivot" frozen_indicators_values="" unit_name="equipment"/>
@@ -3621,10 +3675,16 @@
       <item name="malic_acid_25kg" nature="wine_acidifying" frozen_indicators_values="net_mass: 25.00kilogram" unit_name="25kg_bag"/>
       <item name="manager" nature="manager" frozen_indicators_values="" unit_name="person"/>
       <item name="manual_implanter" nature="implanter" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="manual_mechanical_pruner_lv" nature="cutting_equipment"/>
       <item name="manure_division" nature="manure_division" frozen_indicators_values="" unit_name="room"/>
+      <item name="manure_spreader_lv" nature="spreader"/>
+      <item name="manure_spreader_tv" nature="spreader"/>
       <item name="market_gardening_crop" nature="vegetable_crop" variety="plant" frozen_indicators_values="net_surface_area: 1.00square_meter" unit_name="square_meter"/>
       <item name="meadow_grass" nature="grass" derivative_of="poa" frozen_indicators_values="net_mass: 1.00ton" unit_name="ton"/>
       <item name="meal_travel" nature="meal_travel" unit_name="meal"/>
+      <item name="mechanical_blade_intercep_tv" nature="weeder"/>
+      <item name="mechanical_plow_lv" nature="plow"/>
+      <item name="mechanical_plow_tv" nature="plow"/>
       <item name="merlot_noir_so4_vine_seedling" nature="usual_vine_seedling" derivative_of="vitis_vinifera_merlot_noir" frozen_indicators_values="woodstock_variety: vitis_cinerea_x_vitis_riparia_SO4"/>
       <item name="merveille_hazelnut" nature="hazelnut" derivative_of="corylus_avellana_merveille" frozen_indicators_values="net_mass: 1.00kilogram" unit_name="kilogram"/>
       <item name="milk_tank" nature="milk_tank" frozen_indicators_values="" unit_name="equipment"/>
@@ -3648,6 +3708,10 @@
       <item name="monthly_enterprise_support" nature="user_support" frozen_indicators_values="usage_duration: 30day" unit_name="month"/>
       <item name="motor_hoe" nature="hoe" frozen_indicators_values="" unit_name="equipment"/>
       <item name="motor_oil" nature="motor_oil" frozen_indicators_values="net_volume: 1liter, net_mass: 0.8kilogram" unit_name="liter"/>
+      <item name="mounted_jet_sprayer_lv" nature="sprayer"/>
+      <item name="mounted_jet_sprayer_tv" nature="sprayer"/>
+      <item name="mounted_jet_sprayer_vtv" nature="sprayer"/>
+      <item name="mounted_pneumatic_sprayer_tv" nature="sprayer"/>
       <item name="moving_travel" nature="moving_travel"/>
       <item name="mower" nature="mower" frozen_indicators_values="" unit_name="equipment"/>
       <item name="mud" nature="organic_fertilizer" variety="slurry" derivative_of="animal" frozen_indicators_values="net_volume: 1.50cubic_meter, net_mass: 1.00ton, nitrogen_concentration: 0.20percent" unit_name="ton"/>
@@ -3696,13 +3760,17 @@
       <item name="pig_slurry" nature="organic_fertilizer" variety="slurry" derivative_of="sus" frozen_indicators_values="net_volume: 1.00cubic_meter, net_mass: 1.00ton, nitrogen_concentration: 0.45percent" unit_name="cubic_meter"/>
       <item name="piglet_band" nature="piglet_band" frozen_indicators_values="reproductor: false" unit_name="head"/>
       <item name="piglet_meat" nature="pork_meat" derivative_of="sus" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.00kilogram" unit_name="kilogram"/>
+      <item name="plant_cover_sower" nature="sower"/>
       <item name="plant_medicine_tank" nature="plant_medicine_tank" frozen_indicators_values="" unit_name="equipment"/>
       <item name="plastic_cover_500m" nature="plastic_cover" frozen_indicators_values="net_length: 500.00meter, width: 1.00meter" unit_name="roll"/>
       <item name="plow" nature="plow" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="plow_interrow_vtv" nature="plow"/>
       <item name="plum" nature="plum" derivative_of="prunus_domestica" frozen_indicators_values="net_mass: 1.00kilogram" unit_name="kilogram"/>
       <item name="plum_crop" nature="fruit_crop" variety="prunus_domestica" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="plum_reaper" nature="plum_reaper" frozen_indicators_values="" unit_name="equipment"/>
       <item name="plum_seedling" nature="plum_seedling" derivative_of="prunus"/>
+      <item name="pneumatic_pruning" nature="cutting_equipment"/>
+      <item name="pneumatic_sprayer_vtv" nature="sprayer"/>
       <item name="poaceae_fungicide" nature="fungicide" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.00kilogram" unit_name="liter"/>
       <item name="poaceae_herbicide" nature="herbicide" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.00kilogram" unit_name="liter"/>
       <item name="pollination_tool" nature="pollination_tool" unit_name="equipment"/>
@@ -3721,10 +3789,15 @@
       <item name="potato" nature="potato" derivative_of="solanum_tuberosum" frozen_indicators_values="net_mass: 1.00ton"/>
       <item name="potato_crop" nature="crop" variety="solanum_tuberosum" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="poultry_sausage" nature="processed_poultry_meat" frozen_indicators_values="net_mass: 1000gram, net_volume: 100.00centiliter" unit_name="kilogram"/>
+      <item name="pre_pruner_lv" nature="cutting_equipment"/>
+      <item name="pre_pruner_pruner_lv" nature="cutting_equipment"/>
+      <item name="pre_pruner_tv" nature="cutting_equipment"/>
       <item name="preparation_division" nature="preparation_division" frozen_indicators_values="" unit_name="room"/>
       <item name="printer" nature="computer"/>
       <item name="product_warranty" nature="product_insurance"/>
       <item name="project_study" nature="studies_and_research"/>
+      <item name="projected_jet_sprayer_tv" nature="sprayer"/>
+      <item name="projected_jet_sprayer_vtv" nature="sprayer"/>
       <item name="protective_canvas" nature="protective_canvas" unit_name="meter"/>
       <item name="protective_net" nature="protective_canvas"/>
       <item name="pruning_platform" nature="pruning_platform" frozen_indicators_values="" unit_name="equipment"/>
@@ -3746,10 +3819,19 @@
       <item name="riflexine" nature="animal_medicine" frozen_indicators_values="net_mass: 10g, net_volume: 10ml, meat_withdrawal_period: 5day, milk_withdrawal_period: 6day" unit_name="10ml_dose"/>
       <item name="roast_veal_meat" nature="beef_meat" derivative_of="bos_taurus" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.00kilogram" unit_name="kilogram"/>
       <item name="roll" nature="roll" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="roller_stripper_lv" nature="cutting_equipment"/>
       <item name="rollup" nature="catalog_and_print"/>
       <item name="ronde_de_piemont_hazelnut" nature="hazelnut" derivative_of="corylus_avellana_ronde_de_piemont" frozen_indicators_values="net_mass: 1.00kilogram" unit_name="kilogram"/>
       <item name="rose_crop" nature="fruit_crop" variety="rosa" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="rose_seedling" nature="seedling" derivative_of="rosa"/>
+      <item name="rotary_cultivator_lv" nature="superficial_plow"/>
+      <item name="rotary_cultivator_tv" nature="superficial_plow"/>
+      <item name="rotary_flail_intercep_vtv" nature="weeder"/>
+      <item name="rotary_grinder_tv" nature="plant_grinder"/>
+      <item name="rotary_spade_interrow_vtv" nature="superficial_plow"/>
+      <item name="rotary_trimmer_lv" nature="cutting_equipment"/>
+      <item name="rotary_trimmer_tv" nature="cutting_equipment"/>
+      <item name="rotative_intercep_lv" nature="weeder"/>
       <item name="rotavator" nature="seedbed_preparator" frozen_indicators_values="" unit_name="equipment"/>
       <item name="rubisko_wheat_crop" nature="cereal_crop" variety="triticum_aestivum_rubisko" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="running_water" nature="running_water" frozen_indicators_values="net_volume: 1.00cubic_meter, net_mass: 1.00ton" unit_name="cubic_meter"/>
@@ -3762,14 +3844,20 @@
       <item name="saffron_seedling" nature="seedling" derivative_of="crocus_sativus"/>
       <item name="salary_social_contribution" nature="salary_social_contribution"/>
       <item name="salmon_band" nature="salmon_band" unit_name="subject"/>
+      <item name="scarifier_tv" nature="plow"/>
       <item name="screed_building" nature="building" frozen_indicators_values="" unit_name="building"/>
       <item name="seed" nature="seed" derivative_of="plant" frozen_indicators_values="net_mass: 1.00kilogram, thousand_grains_mass: 45gram, grains_count: 1.00thousand" unit_name="kilogram"/>
       <item name="seedling" nature="seedling" derivative_of="plant" frozen_indicators_values="items_count: 1"/>
       <item name="segorbe_hazelnut" nature="hazelnut" derivative_of="corylus_avellana_segorbe" frozen_indicators_values="net_mass: 1.00kilogram" unit_name="kilogram"/>
+      <item name="self_propelled_carrier" nature="tractor"/>
+      <item name="self_propelled_grape_harvester_lv" nature="self_propelled_harvester"/>
+      <item name="self_propelled_grape_harvester_tv" nature="self_propelled_harvester"/>
       <item name="server_certificate_subscription" nature="numeric_subscription" unit_name="domain"/>
       <item name="server_rental" nature="numeric_hosting_rental" unit_name="server"/>
       <item name="settlement" nature="settlement" frozen_indicators_values="" unit_name="building"/>
       <item name="sheep_herd" nature="sheep_herd" derivative_of="ovis" frozen_indicators_values="" unit_name="band"/>
+      <item name="shoot_grinder_lv" nature="plant_grinder"/>
+      <item name="shoot_hay_rake_lv" nature="hay_rake"/>
       <item name="shoulder_veal_meat" nature="beef_meat" derivative_of="bos_taurus" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.00kilogram" unit_name="kilogram"/>
       <item name="sieve_shaker" nature="sieve_shaker" frozen_indicators_values="" unit_name="equipment"/>
       <item name="silage_distributor" nature="food_distributor" frozen_indicators_values="" unit_name="equipment"/>
@@ -3795,18 +3883,29 @@
       <item name="sprayer" nature="sprayer" frozen_indicators_values="" unit_name="equipment"/>
       <item name="spread_renting" nature="spread_renting" frozen_indicators_values="usage_duration: 1hour" unit_name="hour"/>
       <item name="spreader" nature="spreader" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="spreader_lv" nature="spreader"/>
       <item name="spreader_trailer" nature="spreader_trailer" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="spreader_tv" nature="spreader"/>
       <item name="spring_barley_crop" nature="cereal_crop" variety="hordeum_distichum" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="spring_barley_seed_25" nature="seed" derivative_of="hordeum_distichum" frozen_indicators_values="net_mass: 25.00kilogram, thousand_grains_mass: 42gram" unit_name="25kg_bag"/>
       <item name="spring_oat_crop" nature="cereal_crop" variety="avena" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="squash" nature="squash" derivative_of="cucurbita" frozen_indicators_values="net_mass: 1.00ton"/>
       <item name="stainless_steel_tank" nature="wine_tank" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="star_intercep_vtv" nature="weeder"/>
       <item name="steam_engine" nature="steam_engine" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="stone_grinder" nature="soil_grinder"/>
+      <item name="straddle_tractor" nature="tractor"/>
+      <item name="straddle_tractor_shoot_grinder_tv" nature="plant_grinder"/>
+      <item name="straddle_tractor_trimmer_tv" nature="cutting_equipment"/>
+      <item name="strap_trunck_cleaner_tv" nature="cutting_equipment"/>
       <item name="strawberry_crop" nature="fruit_crop" variety="fragaria" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="plant"/>
       <item name="strawberry_seedling" nature="seedling" derivative_of="fragaria"/>
+      <item name="stripper_lv" nature="cutting_equipment"/>
+      <item name="stripper_tv" nature="cutting_equipment"/>
       <item name="stubble_cultivator" nature="superficial_plow" frozen_indicators_values="" unit_name="equipment"/>
       <item name="subscription_professional_society" nature="professional_subscription"/>
       <item name="subsoil_plow" nature="plow" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="subsoiler_lv" nature="soil_loosener"/>
       <item name="sugar_vinasse" nature="organic_fertilizer" variety="pomace" derivative_of="grape" frozen_indicators_values="net_volume: 1.50cubic_meter, net_mass: 1.00ton, nitrogen_concentration: 4.0percent" unit_name="ton"/>
       <item name="sunflower_crop" nature="grain_crop" variety="helianthus" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="sunflower_grain" nature="grain" derivative_of="helianthus" frozen_indicators_values="net_mass: 1.00ton" unit_name="ton"/>
@@ -3815,6 +3914,8 @@
       <item name="tablur_hard_wheat_crop" nature="cereal_crop" variety="triticum_durum_tablur" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="tablur_hard_wheat_seed_25" nature="seed" derivative_of="triticum_durum_tablur" frozen_indicators_values="net_mass: 25.00kilogram, thousand_grains_mass: 50gram" unit_name="25kg_bag"/>
       <item name="tangerine_crop" nature="fruit_crop" variety="citrus_reticulata" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="plant"/>
+      <item name="tank_pump_lv" nature="sprayer"/>
+      <item name="tank_pump_tv" nature="sprayer"/>
       <item name="taxe" nature="taxe"/>
       <item name="technician" nature="technician" frozen_indicators_values="" unit_name="person"/>
       <item name="telescopic_handler" nature="telescopic_handler"/>
@@ -3823,9 +3924,15 @@
       <item name="tobacco_crop" nature="crop" variety="nicotiana" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="tonda_giffoni_hazelnut" nature="hazelnut" derivative_of="corylus_avellana_tonda_giffoni" frozen_indicators_values="net_mass: 1.00kilogram" unit_name="kilogram"/>
       <item name="topper" nature="topper" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="topper_trimmer_lv" nature="cutting_equipment"/>
       <item name="tractor" nature="tractor" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="tractor_shoot_grinder_tv" nature="plant_grinder"/>
+      <item name="trailed_pneumatic_sprayer_lv" nature="sprayer"/>
+      <item name="trailed_pneumatic_sprayer_tv" nature="sprayer"/>
       <item name="trailer" nature="trailer" frozen_indicators_values="" unit_name="equipment"/>
       <item name="trimmer" nature="trimmer" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="trimmer_lv" nature="cutting_equipment"/>
+      <item name="trimmer_tv" nature="cutting_equipment"/>
       <item name="triticale_crop" nature="cereal_crop" variety="triticosecale" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="triticale_grain" nature="grain" derivative_of="triticosecale" frozen_indicators_values="net_mass: 1.00ton" unit_name="ton"/>
       <item name="triticale_seed" nature="seed" variety="seed" derivative_of="triticale" frozen_indicators_values="net_mass: 1.00gram, grains_count: 22unity, thousand_grains_mass: 45.00gram"/>
@@ -3837,17 +3944,23 @@
       <item name="various_loan_interest" nature="various_loan_interest"/>
       <item name="veal_meat" nature="beef_meat" derivative_of="bos_taurus" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.00kilogram" unit_name="kilogram"/>
       <item name="vibrocultivator" nature="seedbed_preparator" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="vine_and_ochard_tractor" nature="tractor"/>
       <item name="vine_grape_berry" nature="grape" derivative_of="vitis_vinifera" frozen_indicators_values="net_mass: 1.00kilogram, net_volume: 1.00liter" unit_name="kilogram"/>
       <item name="vine_grape_crop" nature="wine_crop" variety="vitis_vinifera" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="plant"/>
       <item name="vine_grape_juice" nature="grape_juice" derivative_of="grape" frozen_indicators_values="net_mass: 100.00 kilogram, net_volume: 100.00liter" unit_name="hectoliter"/>
       <item name="vine_grape_must" nature="fermented_grape_juice" derivative_of="grape" frozen_indicators_values="net_mass: 100.00 kilogram, net_volume: 100.00liter" unit_name="hectoliter"/>
+      <item name="vine_lifter_lv" nature="vine_lifter"/>
       <item name="vine_residu" nature="fruit_residu" variety="pomace" frozen_indicators_values="net_mass: 1.00kilogram, net_volume: 1.00liter" unit_name="kilogram"/>
+      <item name="vine_shoot_extractor" nature="vine_shoot_extractor"/>
+      <item name="vine_tractor" nature="tractor"/>
       <item name="vines_harvest_insurance" nature="harvest_insurance"/>
       <item name="walnut" nature="walnut" derivative_of="juglans_regia" frozen_indicators_values="net_mass: 1.00kilogram" unit_name="kilogram"/>
       <item name="walnut_crop" nature="walnut_crop" variety="juglans" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="water_bowser" nature="water_tank" frozen_indicators_values="" unit_name="equipment"/>
       <item name="water_spreader" nature="water_spreader" frozen_indicators_values="" unit_name="equipment"/>
       <item name="weeder" nature="weeder" frozen_indicators_values="" unit_name="equipment"/>
+      <item name="weeding_boom_lv" nature="sprayer"/>
+      <item name="weeding_boom_tv" nature="sprayer"/>
       <item name="weeding_kit" nature="weeding_kit" unit_name="equipment"/>
       <item name="wheat_crop" nature="cereal_crop" variety="triticum_aestivum" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="wheat_grain" nature="grain" derivative_of="triticum_aestivum" frozen_indicators_values="net_mass: 1.00ton" unit_name="ton"/>
@@ -3858,8 +3971,12 @@
       <item name="wheel_loader" nature="wheel_loader" unit_name="equipment"/>
       <item name="white_sugar_25kg" nature="sugar" frozen_indicators_values="net_mass: 25.00kilogram" unit_name="25kg_bag"/>
       <item name="wine" nature="wine" frozen_indicators_values="net_mass: 100.00 kilogram, net_volume: 100.00liter" unit_name="hectoliter"/>
+      <item name="wine_cultivator_lv" nature="superficial_plow"/>
+      <item name="wine_cultivator_tv" nature="superficial_plow"/>
+      <item name="wine_disc_stubble_cultivator" nature="superficial_plow"/>
       <item name="wine_press" nature="wine_press" frozen_indicators_values="" unit_name="equipment"/>
       <item name="wine_storage_division" nature="wine_storage_division" frozen_indicators_values="" unit_name="room"/>
+      <item name="wine_tipper_trailer" nature="trailer"/>
       <item name="wine_vinasse" nature="organic_fertilizer" variety="grain" derivative_of="raw_matter" frozen_indicators_values="net_volume: 1.50cubic_meter, net_mass: 1.00ton, nitrogen_concentration: 0.002percent" unit_name="cubic_meter"/>
       <item name="winter_barley_crop" nature="cereal_crop" variety="hordeum_hexastichum" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare"/>
       <item name="winter_barley_seed_25" nature="seed" derivative_of="hordeum_hexastichum" frozen_indicators_values="net_mass: 25.00kilogram, thousand_grains_mass: 42gram" unit_name="25kg_bag"/>
@@ -3875,16 +3992,16 @@
   </nomenclature>
   <nomenclature name="product_natures" translateable="true">
     <properties>
-      <property name="abilities" type="string"/>
-      <property name="category" type="item" choices="product_nature_categories" required="true"/>
-      <property name="derivative_of" type="string"/>
-      <property name="derivatives" type="item_list" choices="varieties"/>
-      <property name="frozen_indicators" type="item_list" choices="indicators"/>
-      <property name="linkage_points" type="choice_list" choices="rear, front"/>
-      <property name="population_counting" type="choice" choices="unitary, integer, decimal" required="true"/>
-      <property name="reductible" type="boolean" required="true" default="false"/>
-      <property name="variable_indicators" type="item_list" choices="indicators"/>
-      <property name="variety" type="item" choices="varieties" required="true"/>
+      <property name="abilities" type="string" required="true"/>
+      <property name="category" type="item" choices="product_nature_categories"/>
+      <property name="derivative_of" type="string" required="true"/>
+      <property name="derivatives" type="item_list" choices="varieties" required="true"/>
+      <property name="frozen_indicators" type="item_list" choices="indicators" required="true"/>
+      <property name="linkage_points" type="choice_list" choices="rear, front" required="true"/>
+      <property name="population_counting" type="choice" choices="unitary, integer, decimal"/>
+      <property name="reductible" type="boolean" default="false"/>
+      <property name="variable_indicators" type="item_list" choices="indicators" required="true"/>
+      <property name="variety" type="item" choices="varieties"/>
     </properties>
     <items>
       <item name="accommodation_travel" category="travel" variety="service" population_counting="integer" variable_indicators=""/>
@@ -3946,6 +4063,7 @@
       <item name="crop_residue" category="straw" variety="straw" derivative_of="plant" population_counting="decimal" variable_indicators="" frozen_indicators="net_mass, net_volume"/>
       <item name="crop_taxe" category="agricultural_taxe" variety="service" population_counting="decimal" variable_indicators=""/>
       <item name="cultivable_zone" category="land" variety="cultivable_zone" population_counting="decimal" abilities="consume(water), consume(seed), produce(plant), store(plant), store(animal), store(fungus)" variable_indicators="fence_perimeter, shape, soil_cultural_state" frozen_indicators="net_surface_area"/>
+      <item name="cutting_equipment" category="equipment" variety="equipment" population_counting="unitary" frozen_indicators="application_width, element_count, length, rows_count" abilities="cut"/>
       <item name="discount_and_reduction" category="discount_and_reduction" variety="service" population_counting="decimal" variable_indicators=""/>
       <item name="disinfectant_product" category="other_consumable" variety="preparation" population_counting="decimal" abilities="clean(building_division), kill(bacteria)" frozen_indicators="net_mass, net_volume"/>
       <item name="draining_item" category="small_equipment" derivative_of="equipment" variety="matter" population_counting="integer" abilities="drain" variable_indicators="diameter, length"/>
@@ -4102,8 +4220,10 @@
       <item name="pig_band" category="pig_band" variety="sus" population_counting="unitary" abilities="move, consume(water), consume(poaceae), produce(excrement), consume(mix)" variable_indicators="healthy" frozen_indicators="sex, reproductor" derivatives="meat"/>
       <item name="pig_herd" category="cattle_herd" variety="animal_group" derivative_of="sus" population_counting="unitary" abilities="move, consume(water), consume(poaceae), produce(excrement), consume(mix), consume(silage)" frozen_indicators=""/>
       <item name="piglet_band" category="pig_band" variety="sus" population_counting="unitary" abilities="move, consume(water), consume(poaceae), produce(excrement), consume(mix)" variable_indicators="healthy" frozen_indicators="reproductor" derivatives="meat"/>
+      <item name="plant_grinder" category="equipment" variety="equipment" population_counting="unitary" frozen_indicators="application_width, rows_count" abilities="grind(matter)"/>
       <item name="plant_medicine_tank" category="equipment" variety="tank" population_counting="unitary" abilities="store(preparation)" variable_indicators="nominal_storable_net_volume" frozen_indicators=""/>
       <item name="plastic_cover" category="small_equipment" variety="canvas_cover" population_counting="decimal" abilities="wrap(cultivable_zone),wrap(equipment),wrap(silage)" variable_indicators="" frozen_indicators="net_length, width"/>
+      <item name="platform" category="equipment" variety="equipment" population_counting="unitary" abilities="lift(worker)"/>
       <item name="plow" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="plow" variable_indicators="geolocation" frozen_indicators="application_width, plowshare_count, theoretical_working_speed"/>
       <item name="plum" category="fruit" variety="plum" derivative_of="prunus_domestica" population_counting="decimal" variable_indicators="impurity_concentration, water_content_rate" frozen_indicators="net_mass"/>
       <item name="plum_reaper" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="harvest(plum), consume(oil), consume(fuel)" variable_indicators="application_width" frozen_indicators=""/>
@@ -4142,6 +4262,7 @@
       <item name="seed" category="seed" variety="seed" derivative_of="plant" population_counting="decimal" abilities="grow" variable_indicators="" frozen_indicators="net_mass, thousand_grains_mass, grains_count"/>
       <item name="seedbed_preparator" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="plow_superficially, implant" frozen_indicators="application_width, theoretical_working_speed" variable_indicators="geolocation"/>
       <item name="seedling" category="plant" variety="seedling" population_counting="integer" abilities="grow" variable_indicators="" frozen_indicators="net_mass, items_count" derivative_of="plant"/>
+      <item name="self_propelled_harvester" category="equipment" variety="equipment" population_counting="unitary" frozen_indicators="application_width, fuel_consumption, motor_power, rows_count" abilities="harvest(plant), move, consume(oil), consume(fuel)"/>
       <item name="settlement" category="settlement" variety="settlement" population_counting="unitary" abilities="store(building), store(building_division)" variable_indicators="net_surface_area, shape" frozen_indicators=""/>
       <item name="share" category="equity" variety="service" population_counting="decimal" variable_indicators=""/>
       <item name="sheep_herd" category="cattle_herd" variety="animal_group" derivative_of="ovis" population_counting="unitary" abilities="move, consume(water), consume(poaceae), produce(excrement), consume(mix), consume(silage)" frozen_indicators=""/>
@@ -4152,6 +4273,7 @@
       <item name="small_equipment" category="small_equipment" variety="equipment" population_counting="unitary" variable_indicators="net_mass" frozen_indicators=""/>
       <item name="so2_solution" category="oenological_product" variety="preparation" population_counting="decimal" abilities="sulfurize(wine)" variable_indicators="" frozen_indicators="net_volume, net_mass, sulfur_dioxide_concentration"/>
       <item name="software_engineering" category="service" variety="service" population_counting="decimal" variable_indicators="" frozen_indicators="usage_duration"/>
+      <item name="soil_grinder" category="equipment" variety="equipment" population_counting="unitary" frozen_indicators="application_width, rows_count" abilities="grind(cultivable_zone)"/>
       <item name="soil_loosener" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="uncompact" frozen_indicators="application_width, theoretical_working_speed" variable_indicators="geolocation"/>
       <item name="sower" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="sow" variable_indicators="geolocation" frozen_indicators="nominal_storable_net_volume, application_width, rows_count, theoretical_working_speed"/>
       <item name="species" category="fruit" variety="pollen" derivative_of="plant" population_counting="decimal" variable_indicators="reference_year" frozen_indicators="net_mass, net_volume"/>
@@ -4170,6 +4292,7 @@
       <item name="taxe" category="taxe" variety="service" population_counting="decimal" variable_indicators=""/>
       <item name="technician" category="worker" variety="worker" population_counting="unitary" abilities="drive(equipment), move, milk(mammalia), repair(equipment), administer_care(animal)" variable_indicators="geolocation" frozen_indicators=""/>
       <item name="telescopic_handler" category="equipment" variety="handling_equipment" population_counting="unitary" variable_indicators="geolocation" abilities="catch(product)"/>
+      <item name="tool" category="equipment" variety="equipment" population_counting="unitary"/>
       <item name="topper" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="cut" frozen_indicators="application_width, theoretical_working_speed" variable_indicators="geolocation"/>
       <item name="tractor" category="equipment" variety="tractor" population_counting="unitary" abilities="catch(matter), move, tow(matter), consume(oil), consume(fuel)" variable_indicators="net_surface_area, motor_power, geolocation, hour_counter" frozen_indicators="" linkage_points="rear, front"/>
       <item name="trade_show" category="trade_show" variety="service" population_counting="integer" variable_indicators=""/>
@@ -4186,6 +4309,8 @@
       <item name="vegetable_crop" category="crop" variety="plant" population_counting="decimal" abilities="consume(water), consume(preparation), produce(vegetable)" variable_indicators="fresh_mass, plant_life_state, plant_reproduction_state, plants_count, shape, tiller_count" frozen_indicators="net_surface_area" derivatives="vegetable"/>
       <item name="vegetals_making_services" category="vegetals_making_services" variety="service" population_counting="decimal" variable_indicators=""/>
       <item name="vial" category="animal_reproduction" variety="vial" derivative_of="animal" population_counting="integer" abilities="inseminate(animal)" variable_indicators="economical_milk_index, sex, unique_synthesis_index"/>
+      <item name="vine_lifter" category="equipment" variety="equipment" population_counting="unitary" abilities="remove(vitis)"/>
+      <item name="vine_shoot_extractor" category="equipment" variety="equipment" population_counting="unitary" frozen_indicators="rows_count" abilities="remove(matter)"/>
       <item name="walnut" category="fruit" variety="walnut" derivative_of="juglans" population_counting="decimal" variable_indicators="impurity_concentration, water_content_rate" frozen_indicators="net_mass"/>
       <item name="walnut_crop" category="crop" variety="plant" population_counting="decimal" abilities="consume(water), consume(preparation), produce(fruit), produce(straw)" variable_indicators="plant_life_state, plants_count, plants_interval, rows_interval, shape" frozen_indicators="net_surface_area" derivatives="walnut, straw"/>
       <item name="water_spreader" category="equipment" variety="equipment" population_counting="unitary" abilities="spread(water)" variable_indicators="application_width" frozen_indicators="length, diameter"/>
@@ -4206,10 +4331,10 @@
   </nomenclature>
   <nomenclature name="production_natures" translateable="false">
     <properties>
-      <property name="activity" type="item" choices="activity_families" required="true"/>
-      <property name="production_code" type="string"/>
-      <property name="telepac_crop_code" type="string"/>
-      <property name="variant_support" type="item" choices="product_nature_variants"/>
+      <property name="activity" type="item" choices="activity_families"/>
+      <property name="production_code" type="string" required="true"/>
+      <property name="telepac_crop_code" type="string" required="true"/>
+      <property name="variant_support" type="item" choices="product_nature_variants" required="true"/>
     </properties>
     <items>
       <item name="administrative" production_code="A100" activity="administering"/>
@@ -4322,7 +4447,7 @@
   </nomenclature>
   <nomenclature name="production_usages" translateable="true">
     <properties>
-      <property name="crop_sets" type="item_list" choices="crop_sets"/>
+      <property name="crop_sets" type="item_list" choices="crop_sets" required="true"/>
     </properties>
     <items>
       <item name="fallow_land"/>
@@ -4346,7 +4471,7 @@
   </nomenclature>
   <nomenclature name="roles" translateable="true">
     <properties>
-      <property name="accesses" type="string_list"/>
+      <property name="accesses" type="string_list" required="true"/>
     </properties>
     <items>
       <item name="accountant" accesses="accounts-all, bank_statements-all, journals-all, fixed_assets-all, financial_years-all"/>
@@ -4359,15 +4484,15 @@
   </nomenclature>
   <nomenclature name="running_costs" translateable="true">
     <properties>
-      <property name="average_purchase_price" type="decimal" required="true"/>
-      <property name="currency" type="item" choices="currencies" required="true" default="EUR"/>
-      <property name="hourly_cost" type="decimal" required="true"/>
-      <property name="maximum_power" type="integer" required="true" default="720"/>
-      <property name="minimum_power" type="integer" required="true" default="0"/>
-      <property name="origin" type="choice" choices="french_cooperation_scale" required="true"/>
-      <property name="power_unit" type="item" choices="units" required="true"/>
-      <property name="variant" type="item" choices="product_nature_variants" required="true"/>
-      <property name="year" type="integer" required="true"/>
+      <property name="average_purchase_price" type="decimal"/>
+      <property name="currency" type="item" choices="currencies" default="EUR"/>
+      <property name="hourly_cost" type="decimal"/>
+      <property name="maximum_power" type="integer" default="720"/>
+      <property name="minimum_power" type="integer" default="0"/>
+      <property name="origin" type="choice" choices="french_cooperation_scale"/>
+      <property name="power_unit" type="item" choices="units"/>
+      <property name="variant" type="item" choices="product_nature_variants"/>
+      <property name="year" type="integer"/>
     </properties>
     <items>
       <item name="2014_small_tractor_56_to_64_fhp" origin="french_cooperation_scale" variant="tractor" minimum_power="56" maximum_power="65" power_unit="french_horsepower" average_purchase_price="28000.0" hourly_cost="9.45" year="2014"/>
@@ -4419,9 +4544,9 @@
   </nomenclature>
   <nomenclature name="spatial_reference_systems" translateable="false">
     <properties>
-      <property name="authority_reference" type="string"/>
-      <property name="srid" type="integer" required="true"/>
-      <property name="urn" type="string"/>
+      <property name="authority_reference" type="string" required="true"/>
+      <property name="srid" type="integer"/>
+      <property name="urn" type="string" required="true"/>
     </properties>
     <items>
       <item name="EPSG_2000" authority_reference="EPSG:2000" srid="2000"/>
@@ -9863,12 +9988,12 @@
   </nomenclature>
   <nomenclature name="tax_natures" translateable="true">
     <properties>
-      <property name="collect_account" type="item" choices="accounts" required="true"/>
-      <property name="computation_method" type="choice" choices="percentage, amount" required="true" default="percentage"/>
-      <property name="deduction_account" type="item" choices="accounts" required="true"/>
-      <property name="fixed_asset_collect_account" type="item" choices="accounts"/>
-      <property name="fixed_asset_deduction_account" type="item" choices="accounts"/>
-      <property name="suffix" type="string"/>
+      <property name="collect_account" type="item" choices="accounts"/>
+      <property name="computation_method" type="choice" choices="percentage, amount" default="percentage"/>
+      <property name="deduction_account" type="item" choices="accounts"/>
+      <property name="fixed_asset_collect_account" type="item" choices="accounts" required="true"/>
+      <property name="fixed_asset_deduction_account" type="item" choices="accounts" required="true"/>
+      <property name="suffix" type="string" required="true"/>
     </properties>
     <items>
       <item name="eu_vat" computation_method="percentage" deduction_account="deductible_intra_eu_vat" fixed_asset_deduction_account="deductible_intra_eu_vat" collect_account="collected_vat" suffix="2"/>
@@ -9883,11 +10008,11 @@
   </nomenclature>
   <nomenclature name="taxes" translateable="true">
     <properties>
-      <property name="amount" type="decimal" required="true"/>
-      <property name="country" type="item" choices="countries" required="true"/>
-      <property name="nature" type="item" choices="tax_natures" required="true"/>
-      <property name="started_on" type="date" required="true"/>
-      <property name="stopped_on" type="date"/>
+      <property name="amount" type="decimal"/>
+      <property name="country" type="item" choices="countries"/>
+      <property name="nature" type="item" choices="tax_natures"/>
+      <property name="started_on" type="date"/>
+      <property name="stopped_on" type="date" required="true"/>
     </properties>
     <items>
       <item name="algerian_vat_normal" country="dz" nature="normal_vat" amount="17.0" started_on="1962-07-05" stopped_on="2016-12-31"/>
@@ -9928,128 +10053,150 @@
   </nomenclature>
   <nomenclature name="units" translateable="true">
     <properties>
-      <property name="a" type="decimal" default="1"/>
-      <property name="b" type="decimal" default="0"/>
-      <property name="d" type="decimal" default="1"/>
-      <property name="dimension" type="item" choices="dimensions" required="true"/>
-      <property name="symbol" type="string" required="true"/>
+      <property name="a" type="decimal" required="true" default="1"/>
+      <property name="b" type="decimal" required="true" default="0"/>
+      <property name="base_dimension" type="string"/>
+      <property name="base_unit" type="item" choices="units"/>
+      <property name="d" type="decimal" required="true" default="1"/>
+      <property name="dimension" type="item" choices="dimensions"/>
+      <property name="repartition_dimension" type="item" choices="strings"/>
+      <property name="repartition_unit" type="item" choices="units"/>
+      <property name="symbol" type="string"/>
     </properties>
     <items>
-      <item name="acre" dimension="surface_area" symbol="acre" a="4046.8564224"/>
-      <item name="ampere" dimension="electric_current" symbol="A"/>
-      <item name="are" dimension="surface_area" symbol="a" a="100.0"/>
-      <item name="bar" dimension="pressure" symbol="bar" a="100000.0"/>
-      <item name="billion" dimension="none" symbol="G." a="1000000000.0"/>
-      <item name="billion_per_gram" dimension="mass_density" symbol="G./g" a="1000000000.0" d="1000.0"/>
-      <item name="billionth" dimension="none" symbol="n." a="1.0e-09"/>
-      <item name="candela" dimension="luminous_intensity" symbol="cd"/>
-      <item name="celsius" dimension="temperature" symbol="&#xB0;C" b="273.15"/>
-      <item name="centiliter" dimension="volume" symbol="cl" a="1.0e-05"/>
-      <item name="centiliter_per_hectoliter" dimension="volume_concentration" symbol="cl/hl" a="1.0e-05" d="0.1"/>
-      <item name="centiliter_per_liter" dimension="volume_concentration" symbol="cl/l" a="1.0e-05" d="0.001"/>
-      <item name="centimeter" dimension="distance" symbol="cm" a="0.01"/>
-      <item name="centimole" dimension="amount_of_substance" symbol="cmol" a="0.01"/>
-      <item name="centimole_per_kilogram" dimension="amount_of_substance_density" symbol="cmol/kg" a="0.01"/>
-      <item name="cubic_centimeter" dimension="volume" symbol="cm&#xB3;" a="1.0e-06"/>
-      <item name="cubic_meter" dimension="volume" symbol="m&#xB3;"/>
-      <item name="cubic_meter_per_hectare" dimension="volume_area_density" symbol="cm&#xB3;/ha" a="1.0e-06" d="10000.0"/>
-      <item name="cubic_meter_per_hour" dimension="volume_flow" symbol="m&#xB3;/h" d="3600.0"/>
-      <item name="day" dimension="time" symbol="d" a="86400.0"/>
-      <item name="degree" dimension="angle" symbol="&#xB0;" a="3.141592653589793" d="180.0"/>
-      <item name="dozen" dimension="none" symbol="dz" a="12.0"/>
-      <item name="english_horsepower" dimension="power" symbol="hp" a="745.6998"/>
-      <item name="farenheit" dimension="temperature" symbol="&#xB0;F" a="1.8" b="459.67"/>
-      <item name="french_horsepower" dimension="power" symbol="ch" a="735.5"/>
-      <item name="gradian" dimension="angle" symbol="gr" a="3.141592653589793" d="200.0"/>
-      <item name="gram" dimension="mass" symbol="g" a="0.001"/>
-      <item name="gram_per_hectoliter" dimension="mass_concentration" symbol="g/hl" a="0.01" d="0.1"/>
-      <item name="gram_per_kilogram" dimension="none" symbol="g/kg" d="10000.0"/>
-      <item name="gram_per_liter" dimension="mass_concentration" symbol="g/l" a="0.01" d="0.001"/>
-      <item name="gram_per_square_meter" dimension="mass_area_density" symbol="g/m&#xB2;" a="0.001"/>
-      <item name="hectare" dimension="surface_area" symbol="ha" a="10000.0"/>
-      <item name="hectare_per_hour" dimension="surface_area_flow" symbol="ha/h" a="10000.0" d="3600.0"/>
-      <item name="hectoliter" dimension="volume" symbol="hl" a="0.1"/>
-      <item name="hectoliter_per_hectare" dimension="volume_area_density" symbol="hl/ha" a="0.1" d="10000.0"/>
-      <item name="hectopascal" dimension="pressure" symbol="hPa" a="100.0"/>
-      <item name="hour" dimension="time" symbol="h" a="3600.0"/>
-      <item name="hundred" dimension="none" symbol="h." a="100.0"/>
-      <item name="joule" dimension="energy" symbol="J"/>
-      <item name="kelvin" dimension="temperature" symbol="K"/>
-      <item name="kilogram" dimension="mass" symbol="kg"/>
-      <item name="kilogram_per_day" dimension="mass_flow" symbol="kg/d" d="86400.0"/>
-      <item name="kilogram_per_hectare" dimension="mass_area_density" symbol="kg/ha" d="10000.0"/>
-      <item name="kilogram_per_hectoliter" dimension="mass_concentration" symbol="kg/hl" d="0.1"/>
-      <item name="kilogram_per_liter" dimension="mass_concentration" symbol="kg/l" d="0.001"/>
-      <item name="kilogram_per_second" dimension="mass_flow" symbol="kg/s"/>
-      <item name="kilogram_per_square_meter" dimension="mass_area_density" symbol="kg/m&#xB2;"/>
-      <item name="kilometer" dimension="distance" symbol="km" a="1000.0"/>
-      <item name="kilometer_per_hour" dimension="distance_speed" symbol="km/h" a="1000.0" d="3600.0"/>
-      <item name="kilometer_per_second" dimension="distance_speed" symbol="km/s" a="1000.0"/>
-      <item name="kilopascal" dimension="pressure" symbol="kPa" a="1000.0"/>
-      <item name="kilowatt" dimension="power" symbol="kW" a="1000.0"/>
-      <item name="kilowatt_hour" dimension="energy" symbol="kWh" a="3600000.0"/>
-      <item name="liter" dimension="volume" symbol="l" a="0.001"/>
-      <item name="liter_per_hectare" dimension="volume_area_density" symbol="l/ha" a="0.001" d="10000.0"/>
-      <item name="liter_per_hour" dimension="volume_flow" symbol="l/h" a="0.001" d="3600.0"/>
-      <item name="liter_per_minute" dimension="volume_flow" symbol="l/min" a="0.001" d="60.0"/>
-      <item name="liter_per_square_meter" dimension="volume_area_density" symbol="l/m&#xB2;" a="0.001"/>
-      <item name="mass_percent" dimension="none" symbol="%kg" d="100.0"/>
-      <item name="megawatt" dimension="power" symbol="MW" a="1000000.0"/>
-      <item name="meter" dimension="distance" symbol="m"/>
-      <item name="meter_per_second" dimension="distance_speed" symbol="m/s"/>
-      <item name="microgram" dimension="mass" symbol="&#xB5;g" a="1.0e-09"/>
-      <item name="microgram_per_liter" dimension="mass_concentration" symbol="&#xB5;g/l" a="1.0e-06" d="0.001"/>
-      <item name="milliampere" dimension="electric_current" symbol="mA" a="0.001"/>
-      <item name="milliequivalent" dimension="amount_of_substance" symbol="meq" a="0.001"/>
-      <item name="milliequivalent_per_hundred_gram" dimension="amount_of_substance_density" symbol="meq/100g" a="0.1" d="0.1"/>
-      <item name="milligram" dimension="mass" symbol="mg" a="1.0e-06"/>
-      <item name="milligram_per_kilogram" dimension="none" symbol="mg/kg" d="1000000.0"/>
-      <item name="milligram_per_liter" dimension="mass_concentration" symbol="mg/l" a="0.001" d="0.001"/>
-      <item name="milliliter" dimension="volume" symbol="ml" a="1.0e-06"/>
-      <item name="milliliter_per_liter" dimension="volume_concentration" symbol="ml/l" a="1.0e-06" d="0.001"/>
-      <item name="millimeter" dimension="distance" symbol="mm" a="0.001"/>
-      <item name="millimeter_per_hour" dimension="distance_speed" symbol="mm/h" a="0.001" d="3600.0"/>
-      <item name="million" dimension="none" symbol="M." a="1000000.0"/>
-      <item name="million_per_hectare" dimension="surface_area_density" symbol="M./ha" a="1000000.0" d="10000.0"/>
-      <item name="million_per_liter" dimension="concentration" symbol="M./l" a="1000000.0" d="0.001"/>
-      <item name="millionth" dimension="none" symbol="&#xB5;." a="1.0e-06"/>
-      <item name="millisecond" dimension="time" symbol="ms" a="0.001"/>
-      <item name="minute" dimension="time" symbol="min" a="60.0"/>
-      <item name="mole" dimension="amount_of_substance" symbol="mol"/>
-      <item name="mole_per_kilogram" dimension="amount_of_substance_density" symbol="mol/kg"/>
-      <item name="parts_per_million" dimension="none" symbol="ppm" d="1000000.0"/>
-      <item name="pascal" dimension="pressure" symbol="Pa"/>
-      <item name="percent" dimension="none" symbol="%" d="100.0"/>
-      <item name="quintal" dimension="mass" symbol="qt" a="100.0"/>
-      <item name="quintal_per_hectare" dimension="mass_area_density" symbol="qt/ha" a="100.0" d="10000.0"/>
-      <item name="radian" dimension="angle" symbol="rad"/>
-      <item name="second" dimension="time" symbol="s"/>
-      <item name="square_centimeter" dimension="surface_area" symbol="cm&#xB2;" a="0.0001"/>
-      <item name="square_meter" dimension="surface_area" symbol="m&#xB2;"/>
-      <item name="thousand" dimension="none" symbol="k." a="1000.0"/>
-      <item name="thousand_per_hectare" dimension="surface_area_density" symbol="k./ha" a="1000.0" d="10000.0"/>
-      <item name="thousand_per_hectogram" dimension="mass_density" symbol="k./hg" a="1000.0" d="0.1"/>
-      <item name="thousand_per_kilogram" dimension="mass_density" symbol="k./kg" a="1000.0"/>
-      <item name="thousand_per_liter" dimension="concentration" symbol="k./l" a="1000.0" d="0.001"/>
-      <item name="thousand_per_milliliter" dimension="concentration" symbol="k./ml" a="1000.0" d="1.0e-06"/>
-      <item name="thousandth" dimension="none" symbol="m." a="0.001"/>
-      <item name="ton" dimension="mass" symbol="t" a="1000.0"/>
-      <item name="ton_per_hectare" dimension="mass_area_density" symbol="t/ha" a="1000.0" d="10000.0"/>
-      <item name="unity" dimension="none" symbol="."/>
-      <item name="unity_per_hectare" dimension="surface_area_density" symbol="./ha" d="10000.0"/>
-      <item name="unity_per_kilogram" dimension="mass_density" symbol="./kg"/>
-      <item name="unity_per_liter" dimension="concentration" symbol="./l" d="0.001"/>
-      <item name="unity_per_square_meter" dimension="surface_area_density" symbol="./m&#xB2;"/>
-      <item name="watt" dimension="power" symbol="W"/>
-      <item name="watt_per_square_meter" dimension="heat_flux_density" symbol="W/m&#xB2;"/>
+      <item name="acre" dimension="surface_area" symbol="acre" a="4046.8564224" base_unit="acre" base_dimension="surface_area"/>
+      <item name="ampere" dimension="electric_current" symbol="A" base_unit="ampere" base_dimension="electric_current"/>
+      <item name="are" dimension="surface_area" symbol="a" a="100.0" base_unit="are" base_dimension="surface_area"/>
+      <item name="bar" dimension="pressure" symbol="bar" a="100000.0" base_unit="bar" base_dimension="pressure"/>
+      <item name="billion" dimension="none" symbol="G." a="1000000000.0" base_unit="billion" base_dimension="none"/>
+      <item name="billion_per_gram" dimension="mass_density" symbol="G./g" a="1000000000.0" d="1000.0" base_unit="billion" base_dimension="none" repartition_unit="gram" repartition_dimension="mass"/>
+      <item name="billionth" dimension="none" symbol="n." a="1.0e-09" base_unit="billionth" base_dimension="none"/>
+      <item name="candela" dimension="luminous_intensity" symbol="cd" base_unit="candela" base_dimension="luminous_intensity"/>
+      <item name="celsius" dimension="temperature" symbol="&#xB0;C" b="273.15" base_unit="celsius" base_dimension="temperature"/>
+      <item name="centiliter" dimension="volume" symbol="cl" a="1.0e-05" base_unit="centiliter" base_dimension="volume"/>
+      <item name="centiliter_per_hectoliter" dimension="volume_concentration" symbol="cl/hl" a="1.0e-05" d="0.1" base_unit="centiliter" base_dimension="volume" repartition_unit="hectoliter" repartition_dimension="volume"/>
+      <item name="centiliter_per_liter" dimension="volume_concentration" symbol="cl/l" a="1.0e-05" d="0.001" base_unit="centiliter" base_dimension="volume" repartition_unit="liter" repartition_dimension="volume"/>
+      <item name="centimeter" dimension="distance" symbol="cm" a="0.01" base_unit="centimeter" base_dimension="distance"/>
+      <item name="centimole" dimension="amount_of_substance" symbol="cmol" a="0.01" base_unit="centimole" base_dimension="amount_of_substance"/>
+      <item name="centimole_per_kilogram" dimension="amount_of_substance_density" symbol="cmol/kg" a="0.01" base_unit="centimole" base_dimension="amount_of_substance" repartition_unit="kilogram" repartition_dimension="mass"/>
+      <item name="cubic_centimeter" dimension="volume" symbol="cm&#xB3;" a="1.0e-06" base_unit="cubic_centimeter" base_dimension="volume"/>
+      <item name="cubic_meter" dimension="volume" symbol="m&#xB3;" base_unit="cubic_meter" base_dimension="volume"/>
+      <item name="cubic_meter_per_hectare" dimension="volume_area_density" symbol="m&#xB3;/ha" a="1.0e-06" d="10000.0" base_unit="cubic_meter" base_dimension="volume" repartition_unit="hectare" repartition_dimension="surface_area"/>
+      <item name="cubic_meter_per_hour" dimension="volume_flow" symbol="m&#xB3;/h" d="3600.0" base_unit="cubic_meter" base_dimension="volume" repartition_unit="hour" repartition_dimension="time"/>
+      <item name="cubic_meter_per_square_meter" dimension="volume_area_density" symbol="m&#xB3;/m&#xB2;" a="1.0" base_unit="cubic_meter" base_dimension="volume" repartition_unit="square_meter" repartition_dimension="surface_area"/>
+      <item name="day" dimension="time" symbol="d" a="86400.0" base_unit="day" base_dimension="time"/>
+      <item name="degree" dimension="angle" symbol="&#xB0;" a="3.141592653589793" d="180.0" base_unit="degree" base_dimension="angle"/>
+      <item name="dozen" dimension="none" symbol="dz" a="12.0" base_unit="dozen" base_dimension="none"/>
+      <item name="english_horsepower" dimension="power" symbol="hp" a="745.6998" base_unit="english_horsepower" base_dimension="power"/>
+      <item name="farenheit" dimension="temperature" symbol="&#xB0;F" a="1.8" b="459.67" base_unit="farenheit" base_dimension="temperature"/>
+      <item name="french_horsepower" dimension="power" symbol="ch" a="735.5" base_unit="french_horsepower" base_dimension="power"/>
+      <item name="gradian" dimension="angle" symbol="gr" a="3.141592653589793" d="200.0" base_unit="gradian" base_dimension="angle"/>
+      <item name="gram" dimension="mass" symbol="g" a="0.001" base_unit="gram" base_dimension="mass"/>
+      <item name="gram_per_acre" dimension="mass_area_density" symbol="g/acre" a="2.4710538146e-07" base_unit="gram" base_dimension="mass" repartition_unit="acre" repartition_dimension="surface_area"/>
+      <item name="gram_per_are" dimension="mass_area_density" symbol="g/a" a="1.0e-05" base_unit="gram" base_dimension="mass" repartition_unit="are" repartition_dimension="surface_area"/>
+      <item name="gram_per_hectare" dimension="mass_area_density" symbol="g/ha" a="1.0e-07" base_unit="gram" base_dimension="mass" repartition_unit="hectare" repartition_dimension="surface_area"/>
+      <item name="gram_per_hectoliter" dimension="mass_concentration" symbol="g/hl" a="0.01" d="0.1" base_unit="gram" base_dimension="mass" repartition_unit="hectoliter" repartition_dimension="volume"/>
+      <item name="gram_per_kilogram" dimension="none" symbol="g/kg" d="10000.0" base_unit="gram" base_dimension="mass" repartition_unit="kilogram" repartition_dimension="mass"/>
+      <item name="gram_per_liter" dimension="mass_concentration" symbol="g/l" a="0.01" d="0.001" base_unit="gram" base_dimension="mass" repartition_unit="liter" repartition_dimension="volume"/>
+      <item name="gram_per_square_centimeter" dimension="mass_area_density" symbol="g/cm&#xB2;" a="10.0" base_unit="gram" base_dimension="mass" repartition_unit="square_centimeter" repartition_dimension="surface_area"/>
+      <item name="gram_per_square_meter" dimension="mass_area_density" symbol="g/m&#xB2;" a="0.001" base_unit="gram" base_dimension="mass" repartition_unit="square_meter" repartition_dimension="surface_area"/>
+      <item name="hectare" dimension="surface_area" symbol="ha" a="10000.0" base_unit="hectare" base_dimension="surface_area"/>
+      <item name="hectare_per_hour" dimension="surface_area_flow" symbol="ha/h" a="10000.0" d="3600.0" base_unit="hectare" base_dimension="surface_area" repartition_unit="hour" repartition_dimension="time"/>
+      <item name="hectoliter" dimension="volume" symbol="hl" a="0.1" base_unit="hectoliter" base_dimension="volume"/>
+      <item name="hectoliter_per_hectare" dimension="volume_area_density" symbol="hl/ha" a="0.1" d="10000.0" base_unit="hectoliter" base_dimension="volume" repartition_unit="hectare" repartition_dimension="surface_area"/>
+      <item name="hectoliter_per_square_meter" dimension="volume_area_density" symbol="hl/m&#xB2;" a="0.1" base_unit="hectoliter" base_dimension="volume" repartition_unit="square_meter" repartition_dimension="surface_area"/>
+      <item name="hectopascal" dimension="pressure" symbol="hPa" a="100.0" base_unit="hectopascal" base_dimension="pressure"/>
+      <item name="hour" dimension="time" symbol="h" a="3600.0" base_unit="hour" base_dimension="time"/>
+      <item name="hundred" dimension="none" symbol="h." a="100.0" base_unit="hundred" base_dimension="none"/>
+      <item name="joule" dimension="energy" symbol="J" base_unit="joule" base_dimension="energy"/>
+      <item name="kelvin" dimension="temperature" symbol="K" base_unit="kelvin" base_dimension="temperature"/>
+      <item name="kilogram" dimension="mass" symbol="kg" base_unit="kilogram" base_dimension="mass"/>
+      <item name="kilogram_per_acre" dimension="mass_area_density" symbol="kg/acre" a="0.00024710538146" base_unit="kilogram" base_dimension="mass" repartition_unit="acre" repartition_dimension="surface_area"/>
+      <item name="kilogram_per_are" dimension="mass_area_density" symbol="kg/a" a="0.01" base_unit="kilogram" base_dimension="mass" repartition_unit="are" repartition_dimension="surface_area"/>
+      <item name="kilogram_per_day" dimension="mass_flow" symbol="kg/d" d="86400.0" base_unit="kilogram" base_dimension="mass" repartition_unit="day" repartition_dimension="time"/>
+      <item name="kilogram_per_hectare" dimension="mass_area_density" symbol="kg/ha" d="10000.0" base_unit="kilogram" base_dimension="mass" repartition_unit="hectare" repartition_dimension="surface_area"/>
+      <item name="kilogram_per_hectoliter" dimension="mass_concentration" symbol="kg/hl" d="0.1" base_unit="kilogram" base_dimension="mass" repartition_unit="hectoliter" repartition_dimension="volume"/>
+      <item name="kilogram_per_liter" dimension="mass_concentration" symbol="kg/l" d="0.001" base_unit="kilogram" base_dimension="mass" repartition_unit="liter" repartition_dimension="volume"/>
+      <item name="kilogram_per_second" dimension="mass_flow" symbol="kg/s" base_unit="kilogram" base_dimension="mass" repartition_unit="second" repartition_dimension="time"/>
+      <item name="kilogram_per_square_centimeter" dimension="mass_area_density" symbol="kg/cm&#xB2;" a="10000.0" base_unit="kilogram" base_dimension="mass" repartition_unit="square_centimeter" repartition_dimension="surface_area"/>
+      <item name="kilogram_per_square_meter" dimension="mass_area_density" symbol="kg/m&#xB2;" base_unit="kilogram" base_dimension="mass" repartition_unit="square_meter" repartition_dimension="surface_area"/>
+      <item name="kilometer" dimension="distance" symbol="km" a="1000.0" base_unit="kilometer" base_dimension="distance"/>
+      <item name="kilometer_per_hour" dimension="distance_speed" symbol="km/h" a="1000.0" d="3600.0" base_unit="kilometer" base_dimension="distance" repartition_unit="hour" repartition_dimension="time"/>
+      <item name="kilometer_per_second" dimension="distance_speed" symbol="km/s" a="1000.0" base_unit="kilometer" base_dimension="distance" repartition_unit="second" repartition_dimension="time"/>
+      <item name="kilopascal" dimension="pressure" symbol="kPa" a="1000.0" base_unit="kilopascal" base_dimension="pressure"/>
+      <item name="kilowatt" dimension="power" symbol="kW" a="1000.0" base_unit="kilowatt" base_dimension="power"/>
+      <item name="kilowatt_hour" dimension="energy" symbol="kWh" a="3600000.0" base_unit="kilowatt_hour" base_dimension="energy"/>
+      <item name="liter" dimension="volume" symbol="l" a="0.001" base_unit="liter" base_dimension="volume"/>
+      <item name="liter_per_hectare" dimension="volume_area_density" symbol="l/ha" a="0.001" d="10000.0" base_unit="liter" base_dimension="volume" repartition_unit="hectare" repartition_dimension="surface_area"/>
+      <item name="liter_per_hour" dimension="volume_flow" symbol="l/h" a="0.001" d="3600.0" base_unit="liter" base_dimension="volume" repartition_unit="hour" repartition_dimension="time"/>
+      <item name="liter_per_minute" dimension="volume_flow" symbol="l/min" a="0.001" d="60.0" base_unit="liter" base_dimension="volume" repartition_unit="minute" repartition_dimension="time"/>
+      <item name="liter_per_square_meter" dimension="volume_area_density" symbol="l/m&#xB2;" a="0.001" base_unit="liter" base_dimension="volume" repartition_unit="square_meter" repartition_dimension="surface_area"/>
+      <item name="mass_percent" dimension="none" symbol="%kg" d="100.0" base_unit="mass_percent" base_dimension="none"/>
+      <item name="megawatt" dimension="power" symbol="MW" a="1000000.0" base_unit="megawatt" base_dimension="power"/>
+      <item name="meter" dimension="distance" symbol="m" base_unit="meter" base_dimension="distance"/>
+      <item name="meter_per_second" dimension="distance_speed" symbol="m/s" base_unit="meter" base_dimension="distance" repartition_unit="second" repartition_dimension="time"/>
+      <item name="microgram" dimension="mass" symbol="&#xB5;g" a="1.0e-09" base_unit="microgram" base_dimension="mass"/>
+      <item name="microgram_per_liter" dimension="mass_concentration" symbol="&#xB5;g/l" a="1.0e-06" d="0.001" base_unit="microgram" base_dimension="mass" repartition_unit="liter" repartition_dimension="volume"/>
+      <item name="milliampere" dimension="electric_current" symbol="mA" a="0.001" base_unit="milliampere" base_dimension="electric_current"/>
+      <item name="milliequivalent" dimension="amount_of_substance" symbol="meq" a="0.001" base_unit="milliequivalent" base_dimension="amount_of_substance"/>
+      <item name="milliequivalent_per_hundred_gram" dimension="amount_of_substance_density" symbol="meq/100g" a="0.1" d="0.1" base_unit="milliequivalent" base_dimension="amount_of_substance" repartition_unit="hundred_gram"/>
+      <item name="milligram" dimension="mass" symbol="mg" a="1.0e-06" base_unit="milligram" base_dimension="mass"/>
+      <item name="milligram_per_kilogram" dimension="none" symbol="mg/kg" d="1000000.0" base_unit="milligram" base_dimension="mass" repartition_unit="kilogram" repartition_dimension="mass"/>
+      <item name="milligram_per_liter" dimension="mass_concentration" symbol="mg/l" a="0.001" d="0.001" base_unit="milligram" base_dimension="mass" repartition_unit="liter" repartition_dimension="volume"/>
+      <item name="milliliter" dimension="volume" symbol="ml" a="1.0e-06" base_unit="milliliter" base_dimension="volume"/>
+      <item name="milliliter_per_liter" dimension="volume_concentration" symbol="ml/l" a="1.0e-06" d="0.001" base_unit="milliliter" base_dimension="volume" repartition_unit="liter" repartition_dimension="volume"/>
+      <item name="millimeter" dimension="distance" symbol="mm" a="0.001" base_unit="millimeter" base_dimension="distance"/>
+      <item name="millimeter_per_hour" dimension="distance_speed" symbol="mm/h" a="0.001" d="3600.0" base_unit="millimeter" base_dimension="distance" repartition_unit="hour" repartition_dimension="time"/>
+      <item name="million" dimension="none" symbol="M." a="1000000.0" base_unit="million" base_dimension="none"/>
+      <item name="million_per_hectare" dimension="surface_area_density" symbol="M./ha" a="1000000.0" d="10000.0" base_unit="million" base_dimension="none" repartition_unit="hectare" repartition_dimension="surface_area"/>
+      <item name="million_per_liter" dimension="concentration" symbol="M./l" a="1000000.0" d="0.001" base_unit="million" base_dimension="none" repartition_unit="liter" repartition_dimension="volume"/>
+      <item name="millionth" dimension="none" symbol="&#xB5;." a="1.0e-06" base_unit="millionth" base_dimension="none"/>
+      <item name="millisecond" dimension="time" symbol="ms" a="0.001" base_unit="millisecond" base_dimension="time"/>
+      <item name="minute" dimension="time" symbol="min" a="60.0" base_unit="minute" base_dimension="time"/>
+      <item name="mole" dimension="amount_of_substance" symbol="mol" base_unit="mole" base_dimension="amount_of_substance"/>
+      <item name="mole_per_kilogram" dimension="amount_of_substance_density" symbol="mol/kg" base_unit="mole" base_dimension="amount_of_substance" repartition_unit="kilogram" repartition_dimension="mass"/>
+      <item name="parts_per_million" dimension="none" symbol="ppm" d="1000000.0" base_unit="parts" base_dimension="" repartition_unit="million" repartition_dimension="none"/>
+      <item name="pascal" dimension="pressure" symbol="Pa" base_unit="pascal" base_dimension="pressure"/>
+      <item name="percent" dimension="none" symbol="%" d="100.0" base_unit="percent" base_dimension="none"/>
+      <item name="quintal" dimension="mass" symbol="q" a="100.0" base_unit="quintal" base_dimension="mass"/>
+      <item name="quintal_per_acre" dimension="mass_area_density" symbol="qt/acre" a="0.024710538146" base_unit="quintal" base_dimension="mass" repartition_unit="acre" repartition_dimension="surface_area"/>
+      <item name="quintal_per_are" dimension="mass_area_density" symbol="qt/a" a="1.0" base_unit="quintal" base_dimension="mass" repartition_unit="are" repartition_dimension="surface_area"/>
+      <item name="quintal_per_hectare" dimension="mass_area_density" symbol="qt/ha" a="100.0" d="10000.0" base_unit="quintal" base_dimension="mass" repartition_unit="hectare" repartition_dimension="surface_area"/>
+      <item name="quintal_per_square_centimeter" dimension="mass_area_density" symbol="qt/cm&#xB2;" a="1000000.0" base_unit="quintal" base_dimension="mass" repartition_unit="square_centimeter" repartition_dimension="surface_area"/>
+      <item name="quintal_per_square_meter" dimension="mass_area_density" symbol="qt/m&#xB2;" a="100.0" base_unit="quintal" base_dimension="mass" repartition_unit="square_meter" repartition_dimension="surface_area"/>
+      <item name="radian" dimension="angle" symbol="rad" base_unit="radian" base_dimension="angle"/>
+      <item name="second" dimension="time" symbol="s" base_unit="second" base_dimension="time"/>
+      <item name="square_centimeter" dimension="surface_area" symbol="cm&#xB2;" a="0.0001" base_unit="square_centimeter" base_dimension="surface_area"/>
+      <item name="square_meter" dimension="surface_area" symbol="m&#xB2;" base_unit="square_meter" base_dimension="surface_area"/>
+      <item name="thousand" dimension="none" symbol="k." a="1000.0" base_unit="thousand" base_dimension="none"/>
+      <item name="thousand_per_hectare" dimension="surface_area_density" symbol="k./ha" a="1000.0" d="10000.0" base_unit="thousand" base_dimension="none" repartition_unit="hectare" repartition_dimension="surface_area"/>
+      <item name="thousand_per_hectogram" dimension="mass_density" symbol="k./hg" a="1000.0" d="0.1" base_unit="thousand" base_dimension="none" repartition_unit="hectogram"/>
+      <item name="thousand_per_kilogram" dimension="mass_density" symbol="k./kg" a="1000.0" base_unit="thousand" base_dimension="none" repartition_unit="kilogram" repartition_dimension="mass"/>
+      <item name="thousand_per_liter" dimension="concentration" symbol="k./l" a="1000.0" d="0.001" base_unit="thousand" base_dimension="none" repartition_unit="liter" repartition_dimension="volume"/>
+      <item name="thousand_per_milliliter" dimension="concentration" symbol="k./ml" a="1000.0" d="1.0e-06" base_unit="thousand" base_dimension="none" repartition_unit="milliliter" repartition_dimension="volume"/>
+      <item name="thousand_per_square_meter" dimension="surface_area_density" symbol="k./m&#xB2;" a="1000.0" base_unit="thousand" base_dimension="none" repartition_unit="square_meter" repartition_dimension="surface_area"/>
+      <item name="thousandth" dimension="none" symbol="m." a="0.001" base_unit="thousandth" base_dimension="none"/>
+      <item name="ton" dimension="mass" symbol="t" a="1000.0" base_unit="ton" base_dimension="mass"/>
+      <item name="ton_per_acre" dimension="mass_area_density" symbol="t/acre" a="0.24710538146" base_unit="ton" base_dimension="mass" repartition_unit="acre" repartition_dimension="surface_area"/>
+      <item name="ton_per_are" dimension="mass_area_density" symbol="t/a" a="10.0" base_unit="ton" base_dimension="mass" repartition_unit="are" repartition_dimension="surface_area"/>
+      <item name="ton_per_hectare" dimension="mass_area_density" symbol="t/ha" a="1000.0" d="10000.0" base_unit="ton" base_dimension="mass" repartition_unit="hectare" repartition_dimension="surface_area"/>
+      <item name="ton_per_square_centimeter" dimension="mass_area_density" symbol="t/cm" a="10000000.0" base_unit="ton" base_dimension="mass" repartition_unit="square_centimeter" repartition_dimension="surface_area"/>
+      <item name="ton_per_square_meter" dimension="mass_area_density" symbol="t/m&#xB2;" a="1000.0" base_unit="ton" base_dimension="mass" repartition_unit="square_meter" repartition_dimension="surface_area"/>
+      <item name="unity" dimension="none" symbol="." base_unit="unity" base_dimension="none"/>
+      <item name="unity_per_hectare" dimension="surface_area_density" symbol="./ha" d="10000.0" base_unit="unity" base_dimension="none" repartition_unit="hectare" repartition_dimension="surface_area"/>
+      <item name="unity_per_kilogram" dimension="mass_density" symbol="./kg" base_unit="unity" base_dimension="none" repartition_unit="kilogram" repartition_dimension="mass"/>
+      <item name="unity_per_liter" dimension="concentration" symbol="./l" d="0.001" base_unit="unity" base_dimension="none" repartition_unit="liter" repartition_dimension="volume"/>
+      <item name="unity_per_square_meter" dimension="surface_area_density" symbol="./m&#xB2;" base_unit="unity" base_dimension="none" repartition_unit="square_meter" repartition_dimension="surface_area"/>
+      <item name="watt" dimension="power" symbol="W" base_unit="watt" base_dimension="power"/>
+      <item name="watt_per_square_meter" dimension="heat_flux_density" symbol="W/m&#xB2;" base_unit="watt" base_dimension="power" repartition_unit="square_meter" repartition_dimension="surface_area"/>
     </items>
   </nomenclature>
   <nomenclature name="varieties" translateable="true">
     <properties>
-      <property name="derivative_of" type="item" choices="varieties"/>
-      <property name="europa_tsn" type="string"/>
-      <property name="french_race_code" type="string"/>
-      <property name="itis_tsn" type="integer"/>
+      <property name="derivative_of" type="item" choices="varieties" required="true"/>
+      <property name="europa_tsn" type="string" required="true"/>
+      <property name="french_race_code" type="string" required="true"/>
+      <property name="itis_tsn" type="integer" required="true"/>
     </properties>
     <items>
       <item name="acer" parent="sapindaceae" itis_tsn="28727"/>
@@ -12777,7 +12924,7 @@
   </nomenclature>
   <nomenclature name="working_sets" translateable="true">
     <properties>
-      <property name="expression" type="string" required="true"/>
+      <property name="expression" type="string"/>
     </properties>
     <items>
       <item name="animal_foods" expression="is matter and can feed(animal)"/>
