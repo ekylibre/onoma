@@ -1,5 +1,5 @@
 module Onoma
-  class Migration
+  module Migration
     module Actions
       class Base
         def self.action_name
@@ -8,10 +8,6 @@ module Onoma
 
         def action_name
           self.class.action_name
-        end
-
-        def label
-          action_name
         end
       end
     end

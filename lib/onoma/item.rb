@@ -1,3 +1,5 @@
+require 'set'
+
 module Onoma
   # An item of a nomenclature is the core data.
   class Item
@@ -19,7 +21,7 @@ module Onoma
       else
         self.parent = parent
       end
-      @attributes = ActiveSupport::HashWithIndifferentAccess.new
+      @attributes = {}.with_indifferent_access
       @children = Set.new
       options.each do |k, v|
         set(k, v)
@@ -178,14 +180,28 @@ module Onoma
 
     # Return human name of item
     def human_name(options = {})
-      I18n.translate("nomenclatures.#{nomenclature.name}.items.#{name}", options.merge(default: ["items.#{name}".to_sym, "enumerize.#{nomenclature.name}.#{name}".to_sym, "labels.#{name}".to_sym, name.humanize]))
+      scope = options.delete(:scope)
+      no_attribute_translation = "nomenclatures.#{Onoma.escape_key(nomenclature.name)}.items.#{Onoma.escape_key(name)}"
+      if scope
+        scope_attribute = scope
+        other_attributes = attributes.except(scope_attribute)
+        scope_translation = "nomenclatures.#{Onoma.escape_key(nomenclature.name)}.items.#{Onoma.escape_key(scope_attribute)}.#{Onoma.escape_key(name)}"
+        other_translations = other_attributes.map { |attr_name, _value| "nomenclatures.#{Onoma.escape_key(nomenclature.name)}.items.#{Onoma.escape_key(attr_name)}.#{Onoma.escape_key(name)}" }
+        root = scope_translation
+        defaults = [no_attribute_translation, *other_translations]
+      else
+        scoped_by_attributes = attributes.map { |attr_name, _value| "nomenclatures.#{Onoma.escape_key(nomenclature.name)}.items.#{Onoma.escape_key(attr_name)}.#{Onoma.escape_key(name)}" }
+        root = "nomenclatures.#{Onoma.escape_key(nomenclature.name)}.items.#{Onoma.escape_key(name)}"
+        defaults = scoped_by_attributes
+      end
+      I18n.t(root, options.merge(default: [*defaults.map(&:to_sym), "items.#{Onoma.escape_key(name)}".to_sym, "enumerize.#{Onoma.escape_key(nomenclature.name)}.#{Onoma.escape_key(name)}".to_sym, "labels.#{Onoma.escape_key(name)}".to_sym, name.humanize]))
     end
     alias humanize human_name
     alias localize human_name
     alias l localize
 
     def human_notion_name(notion_name, options = {})
-      "nomenclatures.#{nomenclature.name}.notions.#{notion_name}.#{name}".t(options.merge(default: ["labels.#{name}".to_sym]))
+      I18n.t("nomenclatures.#{nomenclature.name}.notions.#{notion_name}.#{name}", options.merge(default: ["labels.#{name}".to_sym]))
     end
 
     def ==(other)

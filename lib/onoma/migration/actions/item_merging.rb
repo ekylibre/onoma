@@ -1,5 +1,5 @@
 module Onoma
-  class Migration
+  module Migration
     module Actions
       class ItemMerging < Onoma::Migration::Actions::Base
         attr_reader :nomenclature, :name, :into
@@ -8,10 +8,6 @@ module Onoma
           @nomenclature = name.first
           @name = name.second
           @into = element['into'].to_s
-        end
-
-        def label
-          "merge_item #{@nomenclature}##{@name} into " + @into.to_s
         end
 
         def human_name

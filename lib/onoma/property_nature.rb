@@ -1,8 +1,5 @@
 module Onoma
-  class Property
-    TYPES = %i[boolean item item_list choice choice_list string_list
-               date decimal integer nomenclature string symbol].freeze
-
+  class PropertyNature
     attr_reader :nomenclature, :name, :type, :fallbacks, :default, :source
 
     # New item
@@ -10,14 +7,14 @@ module Onoma
       @nomenclature = nomenclature
       @name = name.to_sym
       @type = type
-      raise "Invalid type: #{@type.inspect}" unless TYPES.include?(@type)
+      raise "Invalid type: #{@type.inspect}" unless Onoma::PROPERTY_TYPES.include?(@type)
       @fallbacks = options[:fallbacks] if options[:fallbacks]
       @default = options[:default] if options[:default]
       @required = !!options[:required]
       @source = options[:choices] if reference? && options[:choices]
     end
 
-    TYPES.each do |type|
+    Onoma::PROPERTY_TYPES.each do |type|
       define_method "#{type}?" do
         @type == type
       end
@@ -77,7 +74,7 @@ module Onoma
     def selection
       if inline_choices?
         choices.collect do |c|
-          [c, c]
+          ["nomenclatures.#{@nomenclature.name}.choices.#{name}.#{c}".t, c]
         end
       elsif item_reference?
         @nomenclature.sibling(@source).selection
@@ -86,7 +83,7 @@ module Onoma
 
     # Return human name of property
     def human_name
-      "nomenclatures.#{nomenclature.name}.properties.#{name}".t(default: ["nomenclatures.#{nomenclature.name}.properties.#{name}".to_sym, "properties.#{name}".to_sym, "enumerize.#{nomenclature.name}.#{name}".to_sym, "labels.#{name}".to_sym, name.humanize])
+      I18n.t("nomenclatures.#{nomenclature.name}.property_natures.#{name}", default: ["nomenclatures.#{nomenclature.name}.properties.#{name}".to_sym, "properties.#{name}".to_sym, "enumerize.#{nomenclature.name}.#{name}".to_sym, "labels.#{name}".to_sym, name.humanize])
     end
 
     alias humanize human_name
