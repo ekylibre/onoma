@@ -1,0 +1,14 @@
+stages:
+  - test
+
+test:
+  image: registry.gitlab.com/ekylibre/docker-base-images/ruby2.6:1
+  before_script:
+    - gem install bundler
+    - bundle install --path vendor/bundle
+  cache:
+    key: bundle
+    paths:
+      - vendor/bundle
+  script:
+    - bundle exec rake test
