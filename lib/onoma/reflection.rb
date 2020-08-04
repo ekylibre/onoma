@@ -4,7 +4,7 @@ module Onoma
 
     # name:       things
     # class_name: Thing
-    # klass:      Nomen::Thing
+    # klass:      Onoma::Thing
     def initialize(active_record, name, options = {})
       @options = options
       @name = name.to_s
@@ -12,8 +12,8 @@ module Onoma
       @class_name = options[:class_name] || name.to_s.classify
       @foreign_key = (options[:foreign_key] || name).to_s
       @scope = options[:scope]
-      @nomenclature = class_name.underscore.pluralize
-      @klass = Onoma.find(@nomenclature)
+      @nomenclature = class_name.tableize
+      @klass = "Onoma::#{@class_name}".constantize
     end
 
     alias model active_record

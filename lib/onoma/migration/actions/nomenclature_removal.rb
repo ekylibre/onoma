@@ -1,5 +1,5 @@
 module Onoma
-  class Migration
+  module Migration
     module Actions
       class NomenclatureRemoval < Onoma::Migration::Actions::Base
         attr_reader :nomenclature
@@ -10,10 +10,6 @@ module Onoma
         end
 
         alias name nomenclature
-
-        def label
-          "remove_nomenclature #{@name}"
-        end
 
         def human_name
           "Remove nomenclature #{@name}"

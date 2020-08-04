@@ -1,6 +1,3 @@
-require 'bigdecimal'
-require 'bigdecimal/util'
-
 module Onoma
   # This class represents a nomenclature
   class Nomenclature
@@ -12,10 +9,10 @@ module Onoma
     def initialize(name, options = {})
       @name = name.to_sym
       @set = options.delete(:set)
-      @items = ActiveSupport::HashWithIndifferentAccess.new
+      @items = HashWithIndifferentAccess.new
       @forest_right = 0
       @roots = []
-      @properties = ActiveSupport::HashWithIndifferentAccess.new
+      @properties = {}.with_indifferent_access
       @translateable = !options[:translateable].is_a?(FalseClass)
       @notions = options[:notions] || []
     end
@@ -116,7 +113,7 @@ module Onoma
       if element.has_attribute?('default')
         options[:default] = element.attr('default').to_sym
       end
-      options[:required] = !!(element.attr('required').to_s != 'true')
+      options[:required] = element.attr('required').to_s == 'true'
       # options[:inherit]  = !!(element.attr('inherit').to_s == 'true')
       if type == :list
         type = element.has_attribute?('nomenclature') ? :item_list : :choice_list
@@ -138,7 +135,7 @@ module Onoma
           raise MissingChoices, "[#{@name}] Property #{name} must have nomenclature as choices"
         end
       end
-      unless Property::TYPES.include?(type)
+      unless Onoma::PROPERTY_TYPES.include?(type)
         raise ArgumentError, "Property #{name} type is unknown: #{type.inspect}"
       end
       add_property(name, type, options)
@@ -231,7 +228,7 @@ module Onoma
 
     # Add an property to the nomenclature
     def add_property(name, type, options = {})
-      p = Property.new(self, name, type, options)
+      p = PropertyNature.new(self, name, type, options)
       if @properties[p.name]
         raise "Property #{p.name} is already defined in nomenclature #{@name}"
       end
@@ -248,11 +245,11 @@ module Onoma
       # Check properties
       @properties.values.each do |property|
         if property.choices_nomenclature && !property.inline_choices? && !Onoma[property.choices_nomenclature.to_s]
-          raise InvalidProperty, "[#{name}] #{property.name} nomenclature property must refer to an existing nomenclature. Got #{property.choices_nomenclature.inspect}. Expecting: #{Onoma.names.inspect}"
+          raise InvalidPropertyNature, "[#{name}] #{property.name} nomenclature property must refer to an existing nomenclature. Got #{property.choices_nomenclature.inspect}. Expecting: #{Onoma.names.inspect}"
         end
         next unless property.type == :choice && property.default
         unless property.choices.include?(property.default)
-          raise InvalidProperty, "The default choice #{property.default.inspect} is invalid (in #{name}##{property.name}). Pick one from #{property.choices.sort.inspect}."
+          raise InvalidPropertyNature, "The default choice #{property.default.inspect} is invalid (in #{name}##{property.name}). Pick one from #{property.choices.sort.inspect}."
         end
       end
 
@@ -283,7 +280,7 @@ module Onoma
     end
 
     def inspect
-      "Nomen::#{name.to_s.classify}"
+      "Onoma::#{name.to_s.classify}"
     end
 
     def table_name
@@ -301,8 +298,7 @@ module Onoma
 
     # Return human name
     def human_name(options = {})
-      I18n.translate("nomenclatures.#{name}.name",
-                     options.merge(default: ["labels.#{name}".to_sym, name.to_s.humanize]))
+      I18n.t("nomenclatures.#{Onoma.escape_key(name)}.name", options.merge(default: ["labels.#{Onoma.escape_key(name)}".to_sym, name.to_s.humanize]))
     end
     alias humanize human_name
 
@@ -370,7 +366,7 @@ module Onoma
 
     # Returns a list for select, without specified items
     def select_without(already_imported)
-      ActiveSupport::Deprecation.warn 'Nomen::Nomenclature#select_without method is deprecated. Please use Nomen::Nomenclature#without method instead.'
+      ActiveSupport::Deprecation.warn 'Onoma::Nomenclature#select_without method is deprecated. Please use Onoma::Nomenclature#without method instead.'
       select_options = @items.values.collect do |item|
         [item.human_name, item.name.to_s] unless already_imported[item.name.to_s]
       end
@@ -401,7 +397,7 @@ module Onoma
     end
     alias item find
 
-    # Return the Item for the given name. Raises Nomen::ItemNotFound if no item
+    # Return the Item for the given name. Raises Onoma::ItemNotFound if no item
     # found in nomenclature
     def find!(item_name)
       i = find(item_name)
@@ -412,7 +408,7 @@ module Onoma
     # Returns +true+ if an item exists in the nomenclature that matches the
     # name, or +false+ otherwise. The argument can take two forms:
     #  * String/Symbol - Find an item with this primary name
-    #  * Nomen::Item - Find an item with the same name of the item
+    #  * Onoma::Item - Find an item with the same name of the item
     def exists?(item)
       @items[item.respond_to?(:name) ? item.name : item].present?
     end
@@ -433,8 +429,8 @@ module Onoma
     end
 
     # List items with properties filtering
-    def where(properties)
-      list.select do |item|
+    def where(properties, collection = list)
+      collection.select do |item|
         valid = true
         properties.each do |name, value|
           item_value = item.property(name)
@@ -461,7 +457,7 @@ module Onoma
     def without(*names)
       excluded = names.flatten.compact.map(&:to_sym)
       list.reject do |item|
-        excluded.include?(item.name)
+        excluded.include?(item.name.to_sym)
       end
     end
 
@@ -505,7 +501,7 @@ module Onoma
       if property = properties[name]
         if property.type == :choice || property.type == :item
           if value =~ /\,/
-            raise InvalidProperty, 'A property nature of choice type cannot contain commas'
+            raise InvalidPropertyNature, 'A property nature of choice type cannot contain commas'
           end
           value = value.strip.to_sym
         elsif property.list?
@@ -513,14 +509,14 @@ module Onoma
         elsif property.type == :boolean
           value = (value == 'true' ? true : value == 'false' ? false : nil)
         elsif property.type == :decimal
-          value = value.to_d
+          value = BigDecimal(value)
         elsif property.type == :integer
           value = value.to_i
         elsif property.type == :date
-          value = (value.blank? ? nil : value.to_date)
+          value = (value.blank? ? nil : Date.parse(value))
         elsif property.type == :symbol
           unless value =~ /\A\w+\z/
-            raise InvalidProperty, "A property '#{name}' must contains a symbol. /[a-z0-9_]/ accepted. No spaces. Got #{value.inspect}"
+            raise InvalidPropertyNature, "A property '#{name}' must contains a symbol. /[a-z0-9_]/ accepted. No spaces. Got #{value.inspect}"
           end
           value = value.to_sym
         end

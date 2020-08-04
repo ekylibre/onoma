@@ -1,5 +1,5 @@
 module Onoma
-  class Migration
+  module Migration
     module Actions
       class ItemChange < Onoma::Migration::Actions::Base
         attr_reader :nomenclature, :name, :changes
@@ -20,10 +20,6 @@ module Onoma
 
         def new_name
           @changes[:name]
-        end
-
-        def label
-          "change_item #{@nomenclature}##{@name}(" + changes.simple_print + ')'
         end
 
         def human_name

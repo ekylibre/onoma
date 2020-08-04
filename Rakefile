@@ -59,12 +59,6 @@ namespace :db do
       puts "Create #{file.relative_path_from(Onoma.root).to_s.yellow}"
     end
 
-    task :model do
-      Onoma.missing_migrations.each do |migration|
-        Onoma::Migrator::Model.run(migration)
-      end
-    end
-
     task :translation do
       Onoma.missing_migrations.each do |migration|
         Onoma::Migrator::Translation.run(migration)
@@ -80,6 +74,9 @@ namespace :db do
 
   desc 'Migrates data'
   task :migrate do
+    I18n.available_locales = %i[eng fra]
+
+    Onoma::load_locales
     Onoma::Migrator.migrate
   end
 
