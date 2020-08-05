@@ -12,6 +12,7 @@ require 'yaml'
 require 'zeitwerk'
 
 loader = Zeitwerk::Loader.for_gem
+loader.collapse('lib/onoma/models')
 loader.setup
 
 module Onoma
