@@ -2,6 +2,11 @@
 require 'test_helper'
 
 class OnomaTest < Minitest::Test
+  def test_models_are_loadable
+    assert Onoma::Record::Base
+    assert Onoma::Unit
+  end
+
   def test_that_it_has_a_version_number
     refute_nil ::Onoma::VERSION
   end

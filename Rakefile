@@ -74,7 +74,7 @@ namespace :db do
 
   desc 'Migrates data'
   task :migrate do
-    I18n.available_locales = %i[eng fra]
+    I18n.available_locales = %i[arb cmn deu eng fra ita jpn por spa]
 
     Onoma::load_locales
     Onoma::Migrator.migrate
