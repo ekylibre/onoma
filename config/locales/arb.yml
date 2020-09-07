@@ -700,33 +700,6 @@ arb:
       name: "الدول الحياة الحيوانية"
     cation_exchange_capacity_analysis_methods:
       name: "طرق تحليل قدرة تبادل الأيونات الموجبة"
-    certification_labels:
-      items:
-        aop: "اوب"
-        aor: "منطقة المسؤولية"
-        bio: "السيرة الذاتية"
-        igp: "المفتش العام للشرطة"
-        label_rouge: "تسمية الحمر"
-      name: "ملصق شهادة"
-    certifications:
-      items:
-        bordeaux_blanc: "بوردو بلان"
-        bordeaux_blanc_avec_sucres: "بوردو بلان AVEC سوكر"
-        bordeaux_clairet: "بوردو clairet"
-        bordeaux_claret: "بوردو كلاريت"
-        bordeaux_haut_benauge: "بوردو أوت Benauge"
-        bordeaux_haut_benauge_avec_sucres: "بوردو أوت Benauge سوكر AVEC"
-        bordeaux_rose: "بوردو ردة"
-        bordeaux_rouge: "بوردو شفتين"
-        bordeaux_superieur_blanc: "بوردو العالي بلان"
-        bordeaux_superieur_rouge: "بوردو العالي للشفتين"
-        cognac: "كونياك"
-        eau_de_vie_de_cognac: "الاتحاد الأوراسي دي تتنافس كونياك دي"
-        eau_de_vie_des_charentes: "الاتحاد الأوراسي دي تتنافس قصر شارانت"
-      name: "الشهادات"
-      property_natures:
-        labels: "تسميات"
-        land: "أرض"
     chemical_classifications:
       items:
         dsd_corrosive: "تآكل"
@@ -2382,14 +2355,6 @@ arb:
         cause: "سبب"
         target: "الهدف"
         treatments: "العلاجات"
-    lands:
-      items:
-        blaye: "بلايي"
-        bordeaux: "بوردو"
-        bordeaux_haut_benauge: "بوردو هوت benauge"
-        bordeaux_superieur: "بوردو SUPERIEUR"
-        cognac: "كونياك"
-      name: "اراضي"
     languages:
       items:
         afr: "لغة أفريقانية"

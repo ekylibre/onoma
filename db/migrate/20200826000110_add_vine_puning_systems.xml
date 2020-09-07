@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add vine puning systems">
+  <nomenclature-creation name="vine_pruning_systems" translateable="true"/>
+  <item-creation item="vine_pruning_systems#cordon_pruning"/>
+  <item-creation item="vine_pruning_systems#formation_pruning"/>
+  <item-creation item="vine_pruning_systems#gobelet_pruning"/>
+  <item-creation item="vine_pruning_systems#guyot_double_pruning"/>
+  <item-creation item="vine_pruning_systems#guyot_simple_pruning"/>
+</migration>

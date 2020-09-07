@@ -701,30 +701,6 @@ cmn:
       name: "动物的生活状态"
     cation_exchange_capacity_analysis_methods:
       name: "阳离子交换量分析方法"
-    certification_labels:
-      items:
-        bio: "生物"
-        label_rouge: "红标签"
-      name: "认证标签"
-    certifications:
-      items:
-        bordeaux_blanc: "波尔多相思"
-        bordeaux_blanc_avec_sucres: "波尔多相思AVEC苏克雷"
-        bordeaux_clairet: "波尔多clairet"
-        bordeaux_claret: "波尔多红葡萄酒"
-        bordeaux_haut_benauge: "波尔多的Haut-Benauge"
-        bordeaux_haut_benauge_avec_sucres: "波尔多的Haut-Benauge AVEC苏克雷"
-        bordeaux_rose: "波尔多玫瑰"
-        bordeaux_rouge: "波尔多胭脂"
-        bordeaux_superieur_blanc: "波尔多Superieur的相思"
-        bordeaux_superieur_rouge: "波尔多Superieur的胭脂"
-        cognac: "科涅克白兰地"
-        eau_de_vie_de_cognac: "香水争夺科尼亚克"
-        eau_de_vie_des_charentes: "香水争夺德夏朗德"
-      name: "认证"
-      property_natures:
-        labels: "标签"
-        land: "土地"
     chemical_classifications:
       items:
         dsd_corrosive: "腐蚀性的"
@@ -2366,14 +2342,6 @@ cmn:
         cause: "原因"
         target: "目标"
         treatments: "治疗"
-    lands:
-      items:
-        blaye: "布莱"
-        bordeaux: "波尔多"
-        bordeaux_haut_benauge: "波尔多的Haut benauge"
-        bordeaux_superieur: "波尔多Superieur的"
-        cognac: "科涅克白兰地"
-      name: "土地"
     languages:
       items:
         afr: "南非荷兰语"

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Update viti product nauture variant">
+  <item-change item="product_nature_variants#merlot_noir_so4_vine_seedling" derivative_of="vitis" frozen_indicators_values="rootstock_variety: vitis"/>
+  <item-change item="product_nature_variants#so4_vine_seedling" frozen_indicators_values="rootstock_variety: vitis"/>
+  <item-change item="product_nature_variants#vine_grape_berry" derivative_of="vitis"/>
+  <item-change item="product_nature_variants#vine_grape_crop" nature="vine_crop" variety="vitis" unit_name="hectare"/>
+  <item-removal item="product_natures#wine_crop"/>
+  <item-creation item="product_natures#vine_crop" category="crop" variety="vitis" population_counting="decimal" abilities="consume(water), consume(preparation), produce(fruit), produce(straw)" variable_indicators="certification, certification_label, complanted_vine_stock, dead_vine_stock, layered_vine_stock, missing_vine_stock, plants_count, plants_interval, plant_life_state, vine_stock_bud_charge, rows_interval, shape, vine_pruning_system" frozen_indicators="net_surface_area" derivatives="fruit, straw" nature="crop"/>
+  <item-change item="product_natures#usual_vine_seedling" frozen_indicators="rootstock_variety"/>
+</migration>

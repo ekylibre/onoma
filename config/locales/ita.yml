@@ -699,22 +699,6 @@ ita:
       name: "Stati vita degli animali"
     cation_exchange_capacity_analysis_methods:
       name: "metodi di analisi capacità di scambio cationico"
-    certification_labels:
-      name: "marchi di certificazione"
-    certifications:
-      items:
-        bordeaux_blanc: "Bordeaux Blanc"
-        bordeaux_blanc_avec_sucres: "Bordeaux blanc avec sucre"
-        bordeaux_haut_benauge_avec_sucres: "Bordeaux Haut-Benauge Sucres avec"
-        bordeaux_rose: "Bordeaux rosa"
-        bordeaux_superieur_blanc: "Bordeaux Supérieur blanc"
-        bordeaux_superieur_rouge: "Bordeaux Supérieur rouge"
-        eau_de_vie_de_cognac: "Eau de vie de Cognac"
-        eau_de_vie_des_charentes: "Eau de vie des Charentes"
-      name: "certificazioni"
-      property_natures:
-        labels: "Etichette"
-        land: "Sbarcare"
     chemical_classifications:
       items:
         dsd_corrosive: "Corrosivo"
@@ -2151,12 +2135,6 @@ ita:
         cause: "Causa"
         target: "Bersaglio"
         treatments: "trattamenti"
-    lands:
-      items:
-        bordeaux: "bordò"
-        bordeaux_haut_benauge: "Bordeaux haut Benauge"
-        bordeaux_superieur: "Bordeaux Supérieur"
-      name: "terre"
     languages:
       items:
         afr: "afrikaans"

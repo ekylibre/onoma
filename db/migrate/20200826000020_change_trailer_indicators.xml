@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Change trailer indicators">
+  <item-change item="product_natures#spreader_trailer" frozen_indicators="nominal_storable_net_volume, nominal_storable_net_mass" variable_indicators="geolocation"/>
+  <item-change item="product_natures#grape_trailer" frozen_indicators="nominal_storable_net_volume, nominal_storable_net_mass" variable_indicators="geolocation"/>
+</migration>

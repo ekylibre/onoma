@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20200722091859">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20200826000130">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -28,6 +28,7 @@
       <item name="drive" parameters="variety"/>
       <item name="earth_up"/>
       <item name="enclose"/>
+      <item name="extract" parameters="variety"/>
       <item name="feed" parameters="variety"/>
       <item name="fermentize" parameters="variety"/>
       <item name="fertilize"/>
@@ -36,6 +37,7 @@
       <item name="grind" parameters="variety"/>
       <item name="grow"/>
       <item name="harvest" parameters="variety"/>
+      <item name="heat"/>
       <item name="hoe"/>
       <item name="implant"/>
       <item name="inseminate" parameters="variety"/>
@@ -66,6 +68,7 @@
       <item name="store_liquid"/>
       <item name="sulfurize" parameters="variety"/>
       <item name="tamp"/>
+      <item name="tie" parameters="variety"/>
       <item name="tow" parameters="variety"/>
       <item name="treat" parameters="issue_nature, variety"/>
       <item name="uncompact"/>
@@ -596,6 +599,7 @@
       <item name="processing"/>
       <item name="service_delivering"/>
       <item name="tool_maintaining" nature="auxiliary" cultivation_variety="equipment" support_variety="equipment_fleet"/>
+      <item name="vine_farming" support_variety="land_parcel" cultivation_variety="vitis"/>
       <item name="wine_making" parent="processing"/>
     </items>
   </nomenclature>
@@ -777,38 +781,6 @@
     <items>
       <item name="cobaltihexamine"/>
       <item name="metson"/>
-    </items>
-  </nomenclature>
-  <nomenclature name="certification_labels" translateable="true">
-    <items>
-      <item name="aoc"/>
-      <item name="aop"/>
-      <item name="aor"/>
-      <item name="bio"/>
-      <item name="ig"/>
-      <item name="igp"/>
-      <item name="label_rouge"/>
-    </items>
-  </nomenclature>
-  <nomenclature name="certifications" translateable="true">
-    <properties>
-      <property name="labels" type="item_list" choices="certification_labels"/>
-      <property name="land" type="item" choices="lands"/>
-    </properties>
-    <items>
-      <item name="bordeaux_blanc" labels="aop, aoc" land="bordeaux"/>
-      <item name="bordeaux_blanc_avec_sucres" labels="aop, aoc" land="bordeaux"/>
-      <item name="bordeaux_clairet" labels="aop, aoc" land="bordeaux"/>
-      <item name="bordeaux_claret" labels="aop, aoc" land="bordeaux"/>
-      <item name="bordeaux_haut_benauge" labels="aop, aoc" land="bordeaux_haut_benauge"/>
-      <item name="bordeaux_haut_benauge_avec_sucres" labels="aop, aoc" land="bordeaux_haut_benauge"/>
-      <item name="bordeaux_rose" labels="aop, aoc" land="bordeaux"/>
-      <item name="bordeaux_rouge" labels="aop, aoc" land="bordeaux"/>
-      <item name="bordeaux_superieur_blanc" labels="aop, aoc" land="bordeaux_superieur"/>
-      <item name="bordeaux_superieur_rouge" labels="aop, aoc" land="bordeaux_superieur"/>
-      <item name="cognac" labels="aoc" land="cognac"/>
-      <item name="eau_de_vie_de_cognac" labels="aoc" land="cognac"/>
-      <item name="eau_de_vie_des_charentes" labels="aoc" land="cognac"/>
     </items>
   </nomenclature>
   <nomenclature name="chemical_classifications" translateable="true">
@@ -2204,8 +2176,10 @@
       <item name="cation_exchange_capacity_analysis_method" datatype="choice" choices="cation_exchange_capacity_analysis_methods"/>
       <item name="cells_concentration" datatype="measure" unit="million_per_liter"/>
       <item name="cells_mass_concentration" datatype="measure" unit="billion_per_gram"/>
-      <item name="certification" datatype="choice" choices="certifications"/>
+      <item name="certification" datatype="string"/>
+      <item name="certification_label" datatype="string"/>
       <item name="clostridial_spores_concentration" datatype="measure" unit="unity_per_liter"/>
+      <item name="complanted_vine_stock" datatype="integer"/>
       <item name="consumption_period" datatype="measure" unit="day"/>
       <item name="copper_concentration" datatype="measure" unit="parts_per_million"/>
       <item name="country_code" datatype="string"/>
@@ -2214,6 +2188,7 @@
       <item name="daily_average_working_time" datatype="measure" unit="hour"/>
       <item name="daily_nitrogen_production" datatype="measure" unit="kilogram"/>
       <item name="daily_pest_count" datatype="integer"/>
+      <item name="dead_vine_stock" datatype="integer"/>
       <item name="diameter" datatype="measure" unit="meter"/>
       <item name="dry_matter_rate" datatype="measure" unit="mass_percent"/>
       <item name="easement_area" datatype="measure" unit="square_meter" gathering="proportional_to_population"/>
@@ -2255,6 +2230,7 @@
       <item name="items_count" datatype="integer" unit="unity"/>
       <item name="lactating" datatype="boolean"/>
       <item name="last_birth_children_count" datatype="integer"/>
+      <item name="layered_vine_stock" datatype="integer"/>
       <item name="length" datatype="measure" unit="meter"/>
       <item name="lifespan" datatype="measure" unit="hour"/>
       <item name="lipolysis" datatype="measure" unit="thousand_per_hectogram"/>
@@ -2290,6 +2266,7 @@
       <item name="minimal_solar_irradiance" datatype="measure" unit="watt_per_square_meter" sampling_temporal_mode="period"/>
       <item name="minimal_temperature" datatype="measure" unit="celsius" sampling_temporal_mode="period"/>
       <item name="minimal_wind_speed" datatype="measure" unit="kilometer_per_hour" sampling_temporal_mode="period"/>
+      <item name="missing_vine_stock" datatype="integer"/>
       <item name="molybdenum_concentration" datatype="measure" unit="parts_per_million"/>
       <item name="mother_country_code" datatype="string"/>
       <item name="mother_identification_number" datatype="string"/>
@@ -2329,6 +2306,7 @@
       <item name="relative_humidity" datatype="measure" unit="percent" sampling_temporal_mode="instant"/>
       <item name="reproductor" datatype="boolean"/>
       <item name="residue_elimination_method" datatype="choice" choices="residue_elimination_methods"/>
+      <item name="rootstock_variety" datatype="string"/>
       <item name="rows_count" datatype="integer"/>
       <item name="rows_interval" datatype="measure" unit="meter"/>
       <item name="rows_orientation" datatype="measure" unit="degree"/>
@@ -2361,6 +2339,8 @@
       <item name="untreated_zone_length" datatype="measure" unit="meter"/>
       <item name="urea_concentration" datatype="measure" unit="milligram_per_liter"/>
       <item name="usage_duration" datatype="measure" unit="hour"/>
+      <item name="vine_pruning_system" datatype="choice" choices="vine_pruning_systems"/>
+      <item name="vine_stock_bud_charge" datatype="integer"/>
       <item name="volume_area_density" datatype="measure" unit="liter_per_square_meter"/>
       <item name="volume_density" datatype="measure" unit="centiliter_per_hectoliter"/>
       <item name="volume_flow" datatype="measure" unit="cubic_meter_per_hour"/>
@@ -2372,7 +2352,6 @@
       <item name="wind_direction" datatype="measure" unit="degree" sampling_temporal_mode="instant"/>
       <item name="wind_speed" datatype="measure" unit="kilometer_per_hour" sampling_temporal_mode="instant"/>
       <item name="witness" datatype="string"/>
-      <item name="woodstock_variety" datatype="choice" choices="varieties"/>
       <item name="working_lifespan" datatype="measure" unit="hour"/>
       <item name="zinc_concentration" datatype="measure" unit="parts_per_million"/>
     </items>
@@ -2497,15 +2476,6 @@
       <item name="wood_leopard_moth" parent="insecta_disease" cause="zeuzera_pyrina" target="corylus"/>
       <item name="yellow_acarine" parent="insecta_disease" cause="eotetranychus_coryli" target="corylus"/>
       <item name="yellow_rust" parent="fungus_disease" cause="fungus" target="poa"/>
-    </items>
-  </nomenclature>
-  <nomenclature name="lands" translateable="true">
-    <items>
-      <item name="blaye"/>
-      <item name="bordeaux"/>
-      <item name="bordeaux_haut_benauge"/>
-      <item name="bordeaux_superieur"/>
-      <item name="cognac"/>
     </items>
   </nomenclature>
   <nomenclature name="languages" translateable="true">
@@ -2746,6 +2716,7 @@
       <item name="bactericide"/>
       <item name="biostimulation"/>
       <item name="bird_repellent"/>
+      <item name="braiding"/>
       <item name="bridge_construction"/>
       <item name="building_construction"/>
       <item name="building_extension_construction"/>
@@ -2764,6 +2735,7 @@
       <item name="detasseling"/>
       <item name="disease_protection"/>
       <item name="disease_treatment"/>
+      <item name="doubling"/>
       <item name="drainage_improvement"/>
       <item name="drainage_system_installation"/>
       <item name="draining"/>
@@ -2776,7 +2748,10 @@
       <item name="fermentation"/>
       <item name="fertilization"/>
       <item name="field_plant_sorting"/>
+      <item name="finishing_rerun"/>
       <item name="fireproofing"/>
+      <item name="first_lifting"/>
+      <item name="folding"/>
       <item name="food_preparation"/>
       <item name="forest_grinding"/>
       <item name="frost_protection"/>
@@ -2789,10 +2764,13 @@
       <item name="greasing"/>
       <item name="greenhouse_assembling"/>
       <item name="growth_regulator"/>
+      <item name="hail_protection"/>
       <item name="handling"/>
       <item name="hardpan_destruction"/>
       <item name="harvest"/>
+      <item name="heading"/>
       <item name="herbicide"/>
+      <item name="herbicide_protection"/>
       <item name="hilling"/>
       <item name="hilling_for_sifting"/>
       <item name="hoof_trimming"/>
@@ -2845,7 +2823,9 @@
       <item name="rain_protection"/>
       <item name="residue_destruction"/>
       <item name="ridging"/>
+      <item name="rodent_protection"/>
       <item name="rodenticide"/>
+      <item name="second_lifting"/>
       <item name="seedbed_preparing"/>
       <item name="semen_collecting"/>
       <item name="semen_freezing"/>
@@ -2865,12 +2845,16 @@
       <item name="talpicide"/>
       <item name="temperature_improvement"/>
       <item name="topkilling"/>
+      <item name="topping"/>
       <item name="tractor_troubleshooting"/>
       <item name="transportation"/>
+      <item name="trimming"/>
       <item name="troubleshooting"/>
+      <item name="trunking"/>
       <item name="tunnel_installation"/>
       <item name="tunnel_removal"/>
       <item name="tunnel_removing"/>
+      <item name="tying"/>
       <item name="upgrading_maintenance"/>
       <item name="virucide"/>
       <item name="water_flow_improvement"/>
@@ -2916,6 +2900,13 @@
       <item name="soil_working" activity_family="plant_farming"/>
       <item name="textile_transformation" activity_family="processing"/>
       <item name="troubleshooting" activity_family="tool_maintaining"/>
+      <item name="vine_fertilizing" activity_family="vine_farming"/>
+      <item name="vine_land_maintenance" activity_family="vine_farming"/>
+      <item name="vine_planting" activity_family="vine_farming"/>
+      <item name="vine_protection" activity_family="vine_farming"/>
+      <item name="vine_soil_working_and_maintenance" activity_family="vine_farming"/>
+      <item name="vineyard_maintenance" activity_family="vine_farming"/>
+      <item name="vintage" activity_family="vine_farming"/>
       <item name="viticulture_transformation" activity_family="processing"/>
       <item name="washing_packaging_transformation" activity_family="processing"/>
     </items>
@@ -3695,7 +3686,7 @@
       <item name="mechanical_blade_intercep_tv" nature="weeder" type="equipment"/>
       <item name="mechanical_plow_lv" nature="plow" type="equipment"/>
       <item name="mechanical_plow_tv" nature="plow" type="equipment"/>
-      <item name="merlot_noir_so4_vine_seedling" nature="usual_vine_seedling" derivative_of="vitis_vinifera_merlot_noir" frozen_indicators_values="woodstock_variety: vitis_cinerea_x_vitis_riparia_SO4" type="article" sub_type="seed_and_plant"/>
+      <item name="merlot_noir_so4_vine_seedling" nature="usual_vine_seedling" derivative_of="vitis" frozen_indicators_values="rootstock_variety: vitis" type="article" sub_type="seed_and_plant"/>
       <item name="merveille_hazelnut" nature="hazelnut" derivative_of="corylus_avellana_merveille" frozen_indicators_values="net_mass: 1.00kilogram" unit_name="kilogram" type="article"/>
       <item name="milk_tank" nature="milk_tank" frozen_indicators_values="" unit_name="equipment" type="equipment"/>
       <item name="milk_taxe" nature="animal_product_taxe" type="fee_and_service"/>
@@ -3878,7 +3869,7 @@
       <item name="so2_liquid_p10" nature="so2_solution" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.00kilogram, sulfur_dioxide_concentration: 10percent" unit_name="liter" type="article"/>
       <item name="so2_solid_2g" nature="so2_solution" frozen_indicators_values="net_mass: 2.00gram, sulfur_dioxide_concentration: 100percent" unit_name="2g_pill" type="article"/>
       <item name="so2_solid_5g" nature="so2_solution" frozen_indicators_values="net_mass: 5.00gram, sulfur_dioxide_concentration: 100percent" unit_name="5g_pill" type="article"/>
-      <item name="so4_vine_seedling" nature="usual_vine_seedling" frozen_indicators_values="woodstock_variety: vitis_cinerea_x_vitis_riparia_SO4" type="article" sub_type="seed_and_plant"/>
+      <item name="so4_vine_seedling" nature="usual_vine_seedling" frozen_indicators_values="rootstock_variety: vitis" type="article" sub_type="seed_and_plant"/>
       <item name="soil_loosener" nature="soil_loosener" frozen_indicators_values="" unit_name="equipment" type="equipment"/>
       <item name="sorghum_crop" nature="crop" variety="sorghum" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare" type="crop"/>
       <item name="sorghum_seed_25" nature="seed" derivative_of="sorghum" frozen_indicators_values="net_mass: 25.00kilogram, thousand_grains_mass: 42gram" unit_name="25kg_bag" type="article" sub_type="seed_and_plant"/>
@@ -3955,8 +3946,8 @@
       <item name="veal_meat" nature="beef_meat" derivative_of="bos_taurus" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.00kilogram" unit_name="kilogram" type="article"/>
       <item name="vibrocultivator" nature="seedbed_preparator" frozen_indicators_values="" unit_name="equipment" type="equipment"/>
       <item name="vine_and_ochard_tractor" nature="tractor" type="equipment"/>
-      <item name="vine_grape_berry" nature="grape" derivative_of="vitis_vinifera" frozen_indicators_values="net_mass: 1.00kilogram, net_volume: 1.00liter" unit_name="kilogram" type="article"/>
-      <item name="vine_grape_crop" nature="wine_crop" variety="vitis_vinifera" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="plant" type="crop"/>
+      <item name="vine_grape_berry" nature="grape" derivative_of="vitis" frozen_indicators_values="net_mass: 1.00kilogram, net_volume: 1.00liter" unit_name="kilogram" type="article"/>
+      <item name="vine_grape_crop" nature="vine_crop" variety="vitis" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="hectare" type="crop"/>
       <item name="vine_grape_juice" nature="grape_juice" derivative_of="grape" frozen_indicators_values="net_mass: 100.00 kilogram, net_volume: 100.00liter" unit_name="hectoliter" type="article"/>
       <item name="vine_grape_must" nature="fermented_grape_juice" derivative_of="grape" frozen_indicators_values="net_mass: 100.00 kilogram, net_volume: 100.00liter" unit_name="hectoliter" type="article"/>
       <item name="vine_lifter_lv" nature="vine_lifter" type="equipment"/>
@@ -4136,7 +4127,7 @@
       <item name="grape" category="fruit" variety="grape" derivative_of="vitis" population_counting="decimal" abilities="produce(juice)" variable_indicators="sucrose_concentration" frozen_indicators="net_mass, net_volume" nature="article"/>
       <item name="grape_juice" category="fruit" variety="juice" derivative_of="grape" population_counting="decimal" abilities="produce(fermented_juice)" variable_indicators="sucrose_concentration" frozen_indicators="net_mass, net_volume" nature="article"/>
       <item name="grape_reaper" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="harvest(grape), consume(oil), consume(fuel)" variable_indicators="application_width, geolocation" frozen_indicators="" nature="equipment"/>
-      <item name="grape_trailer" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="store(grape), store(juice), store(fermented_juice), store_liquid" variable_indicators="nominal_storable_net_volume, nominal_storable_net_mass" frozen_indicators="" nature="equipment"/>
+      <item name="grape_trailer" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="store(grape), store(juice), store(fermented_juice), store_liquid" variable_indicators="geolocation" frozen_indicators="nominal_storable_net_volume, nominal_storable_net_mass" nature="equipment"/>
       <item name="grass" category="grass" variety="grass" derivative_of="plant" population_counting="decimal" abilities="feed(animal)" variable_indicators="dry_matter_rate" frozen_indicators="net_mass, net_volume" nature="article"/>
       <item name="grinder" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="grind(plant), grind(cultivable_zone)" variable_indicators="geolocation" frozen_indicators="application_width, theoretical_working_speed" nature="equipment"/>
       <item name="growth_regulator" category="plant_medicine" variety="preparation" population_counting="decimal" frozen_indicators="net_volume, net_mass" abilities="care(plant)" nature="article"/>
@@ -4292,7 +4283,7 @@
       <item name="sprayer" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="spray" variable_indicators="geolocation" frozen_indicators="nominal_storable_net_volume, application_width, theoretical_working_speed" nature="equipment"/>
       <item name="spread_renting" category="equipment_rent" variety="service" population_counting="decimal" abilities="spread(preparation)" variable_indicators="" frozen_indicators="usage_duration" nature="fee_and_service"/>
       <item name="spreader" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="spread(preparation)" variable_indicators="geolocation" frozen_indicators="nominal_storable_net_volume, application_width, theoretical_working_speed" nature="equipment"/>
-      <item name="spreader_trailer" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="store(excrement), move, spread(excrement), store(raw_matter), store_fluid, spread(preparation)" variable_indicators="nominal_storable_net_mass, nominal_storable_net_volume, geolocation" frozen_indicators="" nature="equipment"/>
+      <item name="spreader_trailer" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="store(excrement), move, spread(excrement), store(raw_matter), store_fluid, spread(preparation)" variable_indicators="geolocation" frozen_indicators="nominal_storable_net_volume, nominal_storable_net_mass" nature="equipment"/>
       <item name="squash" category="vegetable" variety="vegetable" derivative_of="cucurbita" population_counting="decimal" abilities="feed(animal)" variable_indicators="" frozen_indicators="net_mass" nature="article"/>
       <item name="stake" category="small_equipment" variety="stake" population_counting="integer" abilities="enclose" variable_indicators="" frozen_indicators="height, diameter" nature="article"/>
       <item name="steam_engine" category="equipment" variety="portable_equipment" population_counting="unitary" abilities="store_liquid, kill(plant)" frozen_indicators="nominal_storable_net_volume, application_width, theoretical_working_speed" variable_indicators="geolocation" nature="equipment"/>
@@ -4314,12 +4305,13 @@
       <item name="turnip" category="vegetable" variety="vegetable" derivative_of="brassica_rapa_rapa" population_counting="decimal" abilities="feed(animal)" variable_indicators="" frozen_indicators="net_mass" nature="article"/>
       <item name="uncover" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="uncover(plant)" frozen_indicators="application_width, theoretical_working_speed" variable_indicators="geolocation" nature="equipment"/>
       <item name="user_support" category="service" variety="service" population_counting="decimal" variable_indicators="" frozen_indicators="usage_duration" nature="fee_and_service"/>
-      <item name="usual_vine_seedling" category="plant" variety="seedling" derivative_of="vitis" population_counting="integer" abilities="grow" variable_indicators="" frozen_indicators="woodstock_variety" nature="article"/>
+      <item name="usual_vine_seedling" category="plant" variety="seedling" derivative_of="vitis" population_counting="integer" abilities="grow" variable_indicators="" frozen_indicators="rootstock_variety" nature="article"/>
       <item name="various_loan_interest" category="various_loan_interest" variety="service" population_counting="decimal" variable_indicators="" nature="fee_and_service"/>
       <item name="vegetable" category="vegetable" variety="vegetable" derivative_of="plant" population_counting="decimal" abilities="feed(animal)" variable_indicators="" frozen_indicators="net_mass, net_volume" nature="article"/>
       <item name="vegetable_crop" category="crop" variety="plant" population_counting="decimal" abilities="consume(water), consume(preparation), produce(vegetable)" variable_indicators="fresh_mass, plant_life_state, plant_reproduction_state, plants_count, shape, tiller_count" frozen_indicators="net_surface_area" derivatives="vegetable" nature="crop"/>
       <item name="vegetals_making_services" category="vegetals_making_services" variety="service" population_counting="decimal" variable_indicators="" nature="fee_and_service"/>
       <item name="vial" category="animal_reproduction" variety="vial" derivative_of="animal" population_counting="integer" abilities="inseminate(animal)" variable_indicators="economical_milk_index, sex, unique_synthesis_index" nature="article"/>
+      <item name="vine_crop" category="crop" variety="vitis" population_counting="decimal" abilities="consume(water), consume(preparation), produce(fruit), produce(straw)" variable_indicators="certification, certification_label, complanted_vine_stock, dead_vine_stock, layered_vine_stock, missing_vine_stock, plants_count, plants_interval, plant_life_state, vine_stock_bud_charge, rows_interval, shape, vine_pruning_system" frozen_indicators="net_surface_area" derivatives="fruit, straw" nature="crop"/>
       <item name="vine_lifter" category="equipment" variety="equipment" population_counting="unitary" abilities="remove(vitis)" nature="equipment"/>
       <item name="vine_shoot_extractor" category="equipment" variety="equipment" population_counting="unitary" frozen_indicators="rows_count" abilities="remove(matter)" nature="equipment"/>
       <item name="walnut" category="fruit" variety="walnut" derivative_of="juglans" population_counting="decimal" variable_indicators="impurity_concentration, water_content_rate" frozen_indicators="net_mass" nature="article"/>
@@ -4332,7 +4324,6 @@
       <item name="wine" category="wine" variety="wine" derivative_of="grape" population_counting="decimal" variable_indicators="certification, reference_year, temperature, total_bacteria_concentration" frozen_indicators="net_volume, net_mass" nature="article"/>
       <item name="wine_acidifying" category="oenological_product" variety="preparation" population_counting="decimal" abilities="acidify(fermented_juice), acidify(wine)" variable_indicators="" frozen_indicators="net_mass" nature="article"/>
       <item name="wine_alkalinizing" category="oenological_product" variety="preparation" population_counting="decimal" abilities="alkalinize(fermented_juice), alkalinize(wine)" variable_indicators="" frozen_indicators="net_mass" nature="article"/>
-      <item name="wine_crop" category="crop" variety="vitis" population_counting="decimal" abilities="consume(water), consume(preparation), produce(fruit), produce(straw)" variable_indicators="certification, plant_life_state, plants_count, plants_interval, rows_interval, shape, woodstock_variety" frozen_indicators="net_surface_area" derivatives="fruit, straw" nature="crop"/>
       <item name="wine_press" category="equipment" variety="equipment" population_counting="unitary" abilities="press(grape), press(juice), press(fermented_juice), press(wine)" variable_indicators="nominal_storable_net_volume" frozen_indicators="" nature="equipment"/>
       <item name="wine_storage_division" category="building_division" variety="building_division" population_counting="unitary" abilities="store(wine)" variable_indicators="net_surface_area, shape, nominal_storable_net_volume, nominal_storable_easement_area" frozen_indicators="" nature="zone"/>
       <item name="wine_tank" category="equipment" variety="tank" population_counting="unitary" abilities="store(wine), store(grape), store(fermented_juice), store(juice), store_liquid" variable_indicators="geolocation" frozen_indicators="nominal_storable_net_volume" nature="equipment"/>
@@ -4449,7 +4440,10 @@
   </nomenclature>
   <nomenclature name="production_systems" translateable="true">
     <items>
+      <item name="biodynamic_agriculture"/>
+      <item name="conservation_agriculture"/>
       <item name="extensive_farming"/>
+      <item name="integrated_agriculture"/>
       <item name="intensive_farming"/>
       <item name="organic_farming"/>
       <item name="permaculture"/>
@@ -10084,6 +10078,7 @@
       <item name="billionth" dimension="none" symbol="n." a="1.0e-09" base_unit="billionth" base_dimension="none"/>
       <item name="candela" dimension="luminous_intensity" symbol="cd" base_unit="candela" base_dimension="luminous_intensity"/>
       <item name="celsius" dimension="temperature" symbol="&#xB0;C" b="273.15" base_unit="celsius" base_dimension="temperature"/>
+      <item name="centiare" dimension="surface_area" symbol="ca" a="1.0" base_unit="centiare" base_dimension="surface_area"/>
       <item name="centiliter" dimension="volume" symbol="cl" a="1.0e-05" base_unit="centiliter" base_dimension="volume"/>
       <item name="centiliter_per_hectoliter" dimension="volume_concentration" symbol="cl/hl" a="1.0e-05" d="0.1" base_unit="centiliter" base_dimension="volume" repartition_unit="hectoliter" repartition_dimension="volume"/>
       <item name="centiliter_per_liter" dimension="volume_concentration" symbol="cl/l" a="1.0e-05" d="0.001" base_unit="centiliter" base_dimension="volume" repartition_unit="liter" repartition_dimension="volume"/>
@@ -12810,55 +12805,6 @@
       <item name="vitex" parent="lamiaceae" itis_tsn="32220"/>
       <item name="vitex_agnus_castus" parent="vitex" itis_tsn="32221"/>
       <item name="vitis" parent="vitaceae" itis_tsn="28606"/>
-      <item name="vitis_cinerea" parent="vitis" itis_tsn="28629" aliases="vitis_berlandieri,vitis_helleri"/>
-      <item name="vitis_cinerea_x_vitis_riparia" parent="vitis" itis_tsn="0" aliases="vitis_riparia_x_vitis_cinerea"/>
-      <item name="vitis_cinerea_x_vitis_riparia_125aa" parent="vitis_cinerea_x_vitis_riparia" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_riparia_161_49c" parent="vitis_cinerea_x_vitis_riparia" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_riparia_34em" parent="vitis_cinerea_x_vitis_riparia" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_riparia_420a" parent="vitis_cinerea_x_vitis_riparia" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_riparia_5bb" parent="vitis_cinerea_x_vitis_riparia" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_riparia_5c" parent="vitis_cinerea_x_vitis_riparia" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_riparia_8b" parent="vitis_cinerea_x_vitis_riparia" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_riparia_rsb1" parent="vitis_cinerea_x_vitis_riparia" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_riparia_so4" parent="vitis_cinerea_x_vitis_riparia" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_rupestris" parent="vitis" itis_tsn="0" aliases="vitis_rupestris_x_vitis_cinerea"/>
-      <item name="vitis_cinerea_x_vitis_rupestris_1103p" parent="vitis_cinerea_x_vitis_rupestris" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_rupestris_110r" parent="vitis_cinerea_x_vitis_rupestris" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_rupestris_140ru" parent="vitis_cinerea_x_vitis_rupestris" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_rupestris_1447p" parent="vitis_cinerea_x_vitis_rupestris" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_rupestris_99r" parent="vitis_cinerea_x_vitis_rupestris" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_vinifera" parent="vitis" itis_tsn="0" aliases="vitis_vinifera_x_vitis_cinerea"/>
-      <item name="vitis_cinerea_x_vitis_vinifera_333em" parent="vitis_cinerea_x_vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_vinifera_41b" parent="vitis_cinerea_x_vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_vinifera_bc2" parent="vitis_cinerea_x_vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_cinerea_x_vitis_vinifera_fercal" parent="vitis_cinerea_x_vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_labrusca" parent="vitis" itis_tsn="28629"/>
-      <item name="vitis_riparia" parent="vitis" itis_tsn="28629"/>
-      <item name="vitis_riparia_x_vitis_rupestris" parent="vitis" itis_tsn="0" aliases="vitis_rupestris_x_vitis_riparia"/>
-      <item name="vitis_riparia_x_vitis_rupestris_101_14mg" parent="vitis_riparia_x_vitis_rupestris" itis_tsn="0"/>
-      <item name="vitis_riparia_x_vitis_rupestris_3309c" parent="vitis_riparia_x_vitis_rupestris" itis_tsn="0"/>
-      <item name="vitis_rupestris" parent="vitis" itis_tsn="28629"/>
-      <item name="vitis_vinifera" parent="vitis" itis_tsn="28629"/>
-      <item name="vitis_vinifera_cabernet_franc_noir" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_cabernet_sauvignon_noir" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_carignan" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_carmenere_noir" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_chardonnay" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_colombar_blanc" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_cot_noir" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_grenache" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_grenache_noir" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_merlot_blanc" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_merlot_noir" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_muscadelle_blanc" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_petit_verdot_noir" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_pinot_noir" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_sauvignon_blanc" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_sauvignon_gris" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_sauvignon_noir" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_semillon_blanc" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_syrah_noir" parent="vitis_vinifera" itis_tsn="0"/>
-      <item name="vitis_vinifera_ugni_blanc" parent="vitis_vinifera" itis_tsn="0"/>
       <item name="walnut" parent="fruit" derivative_of="juglans"/>
       <item name="water" parent="matter"/>
       <item name="weigela" parent="diervillaceae" itis_tsn="500613"/>
@@ -12941,6 +12887,15 @@
       <item name="zingiberaceae" parent="plant" itis_tsn="42392"/>
       <item name="zone" parent="product"/>
       <item name="zone_property_title" parent="property_title"/>
+    </items>
+  </nomenclature>
+  <nomenclature name="vine_pruning_systems" translateable="true">
+    <items>
+      <item name="cordon_pruning"/>
+      <item name="formation_pruning"/>
+      <item name="gobelet_pruning"/>
+      <item name="guyot_double_pruning"/>
+      <item name="guyot_simple_pruning"/>
     </items>
   </nomenclature>
   <nomenclature name="working_sets" translateable="true">

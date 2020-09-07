@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add area units">
+  <item-creation item="units#centiare" dimension="surface_area" symbol="ca" a="1.0" base_unit="centiare" base_dimension="surface_area"/>
+</migration>

@@ -695,17 +695,6 @@ deu:
       name: "Das Tierleben Staaten"
     cation_exchange_capacity_analysis_methods:
       name: "Kationenaustauschkapazität Analysemethoden"
-    certification_labels:
-      items:
-        ig: "ICH G"
-      name: "Zulassungsetiketten"
-    certifications:
-      items:
-        bordeaux_claret: "Bordeaux Rotwein"
-        bordeaux_rose: "Bordeaux Rose"
-        eau_de_vie_de_cognac: "Eau de vie de Cognac"
-        eau_de_vie_des_charentes: "Eau de vie des Charentes"
-      name: "Zertifizierungen"
     chemical_classifications:
       items:
         dsd_corrosive: "Ätzend"
@@ -2085,10 +2074,6 @@ deu:
         cause: "Ursache"
         target: "Ziel"
         treatments: "Behandlungen"
-    lands:
-      items:
-        bordeaux_haut_benauge: "Bordeaux Haut Benauge"
-        bordeaux_superieur: "Bordeaux Supérieur"
     languages:
       items:
         amh: "Amharisch"

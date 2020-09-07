@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="add viti abilities">
+  <item-creation item="abilities#extract" parameters="variety" />
+  <item-creation item="abilities#heat"/>
+  <item-creation item="abilities#tie" parameters="variety" />
+</migration>

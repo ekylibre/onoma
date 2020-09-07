@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add vine procedure categories">
+  <item-creation item="procedure_categories#vine_fertilizing" activity_family="vine_farming"/>
+  <item-creation item="procedure_categories#vine_land_maintenance" activity_family="vine_farming"/>
+  <item-creation item="procedure_categories#vine_planting" activity_family="vine_farming"/>
+  <item-creation item="procedure_categories#vine_protection" activity_family="vine_farming"/>
+  <item-creation item="procedure_categories#vine_soil_working_and_maintenance" activity_family="vine_farming"/>
+  <item-creation item="procedure_categories#vineyard_maintenance" activity_family="vine_farming"/>
+  <item-creation item="procedure_categories#vintage" activity_family="vine_farming"/>
+</migration>

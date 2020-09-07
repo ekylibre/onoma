@@ -701,22 +701,6 @@ por:
       name: "Estados vida animal"
     cation_exchange_capacity_analysis_methods:
       name: "Métodos de análise de capacidade de troca catiônica"
-    certification_labels:
-      items:
-        bio: "Bio"
-      name: "As etiquetas de certificação"
-    certifications:
-      items:
-        bordeaux_claret: "Bordeaux clarete"
-        bordeaux_haut_benauge_avec_sucres: "Bordeaux Haut-Benauge sucres avec"
-        bordeaux_rose: "Bordeaux Rose"
-        bordeaux_superieur_blanc: "Bordeaux blanc supérieur"
-        bordeaux_superieur_rouge: "Bordeaux Supérieur rouge"
-        cognac: "Conhaque"
-        eau_de_vie_des_charentes: "Eau de vie des Charentes"
-      name: "Certificações"
-      property_natures:
-        land: "Terra"
     chemical_classifications:
       items:
         dsd_corrosive: "Corrosivo"
@@ -2187,11 +2171,6 @@ por:
         cause: "Causa"
         target: "Alvo"
         treatments: "Tratamentos"
-    lands:
-      items:
-        bordeaux_haut_benauge: "Bordeaux Benauge haut"
-        bordeaux_superieur: "Bordeaux Superieur"
-        cognac: "Conhaque"
     languages:
       items:
         afr: "Afrikaans"
