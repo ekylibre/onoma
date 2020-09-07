@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add viti procedure actions">
+  <item-creation item="procedure_actions#braiding"/>
+  <item-creation item="procedure_actions#finishing_rerun"/>
+  <item-creation item="procedure_actions#first_lifting"/>
+  <item-creation item="procedure_actions#folding"/>
+  <item-creation item="procedure_actions#hail_protection"/>
+  <item-creation item="procedure_actions#heading"/>
+  <item-creation item="procedure_actions#herbicide_protection"/>
+  <item-creation item="procedure_actions#rodent_protection"/>
+  <item-creation item="procedure_actions#second_lifting"/>
+  <item-creation item="procedure_actions#topping"/>
+  <item-creation item="procedure_actions#trimming"/>
+  <item-creation item="procedure_actions#trunking"/>
+  <item-creation item="procedure_actions#tying"/>
+  <item-creation item="procedure_actions#doubling"/>
+</migration>
+
+

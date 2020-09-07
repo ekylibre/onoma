@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add new production systems">
+  <item-creation item="production_systems#integrated_agriculture"/>
+  <item-creation item="production_systems#biodynamic_agriculture"/>
+  <item-creation item="production_systems#conservation_agriculture"/>
+</migration>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add new indicators">
+  <item-removal item="indicators#certification"/>
+  <item-creation item="indicators#certification" datatype="string"/>
+  <item-creation item="indicators#certification_label" datatype="string"/>
+  <item-creation item="indicators#complanted_vine_stock" datatype="integer"/>
+  <item-creation item="indicators#dead_vine_stock" datatype="integer"/>
+  <item-creation item="indicators#layered_vine_stock" datatype="integer"/>
+  <item-creation item="indicators#missing_vine_stock" datatype="integer"/>
+  <item-creation item="indicators#rootstock_variety" datatype="string"/>
+  <item-creation item="indicators#vine_pruning_system" datatype="choice" choices="vine_pruning_systems"/>
+  <item-creation item="indicators#vine_stock_bud_charge" datatype="integer"/>
+  <item-removal item="indicators#woodstock_variety"/>
+</migration>

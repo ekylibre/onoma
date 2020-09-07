@@ -697,29 +697,6 @@ spa:
       name: "Estados vida animal"
     cation_exchange_capacity_analysis_methods:
       name: "Métodos de análisis de capacidad de intercambio catiónico"
-    certification_labels:
-      items:
-        ig: "YO G"
-      name: "Las etiquetas de certificación"
-    certifications:
-      items:
-        bordeaux_blanc: "Blanc Burdeos"
-        bordeaux_blanc_avec_sucres: "Burdeos blanc avec sucres"
-        bordeaux_clairet: "Clairet Burdeos"
-        bordeaux_claret: "Claret Burdeos"
-        bordeaux_haut_benauge: "Burdeos Haut-Benauge"
-        bordeaux_haut_benauge_avec_sucres: "Burdeos Haut-Benauge sucres avec"
-        bordeaux_rose: "Rosa Burdeos"
-        bordeaux_rouge: "Rouge Burdeos"
-        bordeaux_superieur_blanc: "Burdeos blanc Superior"
-        bordeaux_superieur_rouge: "Burdeos rouge Superior"
-        cognac: "Coñac"
-        eau_de_vie_de_cognac: "Eau de vie de coñac"
-        eau_de_vie_des_charentes: "Eau de vie des Charentes"
-      name: "Certificaciones"
-      property_natures:
-        labels: "Etiquetas"
-        land: "Tierra"
     chemical_classifications:
       items:
         dsd_corrosive: "Corrosivo"
@@ -2349,13 +2326,6 @@ spa:
         cause: "Porque"
         target: "Objetivo"
         treatments: "Tratos"
-    lands:
-      items:
-        bordeaux: "Burdeos"
-        bordeaux_haut_benauge: "Burdeos Benauge haut"
-        bordeaux_superieur: "Superieur Burdeos"
-        cognac: "Coñac"
-      name: "Tierras"
     languages:
       items:
         afr: "Afrikaans"

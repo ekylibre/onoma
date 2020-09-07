@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Create vine farming activity famillies">
+  <item-creation item="activity_families#vine_farming" support_variety="land_parcel" cultivation_variety="vitis"/>
+</migration>
