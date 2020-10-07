@@ -4662,6 +4662,9 @@ fra:
         milk: "Lait"
         seed: "Semence"
         vegetable: "Légume"
+        wood: "Bois"
+        plant: "Plant"
+        flower: "Fleur"
       name: "Usages"
       property_natures:
         crop_sets: "Typologies de culture"

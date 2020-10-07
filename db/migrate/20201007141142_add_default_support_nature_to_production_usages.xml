@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add default support nature to production usages">
+  <property-creation property="production_usages.production_support_nature" type="item" choices="production_support_natures"/>  
+  <item-change item="production_usages#fallow_land" production_support_nature="fallow_land"/>
+  <item-change item="production_usages#fruit" production_support_nature="cultivation"/>
+  <item-change item="production_usages#seed" production_support_nature="cultivation"/>
+  <item-change item="production_usages#vegetable" production_support_nature="cultivation"/>
+</migration>

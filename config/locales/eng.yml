@@ -4425,6 +4425,9 @@ eng:
         milk: "Milk"
         seed: "Seed"
         vegetable: "Vegetable"
+        wood: "Wood"
+        plant: "Plant"
+        flower: "Flower"
       name: "Production usages"
       property_natures:
         crop_sets: "Crop sets"
