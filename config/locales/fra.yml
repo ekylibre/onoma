@@ -4630,6 +4630,15 @@ fra:
         production_code: "Code"
         telepac_crop_code: "Code de type de culture TéléPAC"
         variant_support: "Variant"
+    production_support_natures:
+      items:
+        animal_group: "Groupe d’animaux"
+        border: "Bordure"
+        buffer: "Zone tampon"
+        cultivation: "Culture"
+        headland_cultivation: "Culture avec tournières"
+        fallow_land: "Jachère"
+        none: "Aucun"
     production_systems:
       items:
         biodynamic_agriculture: "Biodynamie"

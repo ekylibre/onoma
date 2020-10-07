@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add production nature support">
+  <nomenclature-creation name="production_support_natures"/>
+  <item-creation item="production_support_natures#headland_cultivation"/>
+  <item-creation item="production_support_natures#cultivation"/>
+  <item-creation item="production_support_natures#fallow_land"/>
+  <item-creation item="production_support_natures#buffer"/>
+  <item-creation item="production_support_natures#border"/> 
+  <item-creation item="production_support_natures#none"/>
+  <item-creation item="production_support_natures#animal_group"/>
+</migration>

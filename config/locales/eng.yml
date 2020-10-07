@@ -4393,6 +4393,15 @@ eng:
         variety: "Variety"
     production_natures:
       name: "Production natures"
+    production_support_natures:
+      items:
+        animal_group: "Animal group"
+        border: "Border"
+        buffer: "Buffer"
+        cultivation: "Cultivation"
+        headland_cultivation: "Headland cultivation"
+        fallow_land: "Fallow land"
+        none: "None"
     production_systems:
       items:
         biodynamic_agriculture: "Biodynamic agriculture"
