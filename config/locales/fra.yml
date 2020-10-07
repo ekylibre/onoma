@@ -4636,8 +4636,8 @@ fra:
         border: "Bordure"
         buffer: "Zone tampon"
         cultivation: "Culture"
-        headland_cultivation: "Culture avec tournières"
         fallow_land: "Jachère"
+        headland_cultivation: "Culture avec tournières"
         none: "Aucun"
     production_systems:
       items:

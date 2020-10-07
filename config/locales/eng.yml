@@ -4399,8 +4399,8 @@ eng:
         border: "Border"
         buffer: "Buffer"
         cultivation: "Cultivation"
-        headland_cultivation: "Headland cultivation"
         fallow_land: "Fallow land"
+        headland_cultivation: "Headland cultivation"
         none: "None"
     production_systems:
       items:
