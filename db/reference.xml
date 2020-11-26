@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20200925153320">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20201126160135">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -1977,6 +1977,7 @@
       <item name="gain_and_loss_fixed_asset_registry" category="accountancy"/>
       <item name="general_journal" category="accountancy"/>
       <item name="general_ledger" category="accountancy" signed="true"/>
+      <item name="general_ledger_with_variant" category="accountancy" signed="true"/>
       <item name="income_statement" category="accountancy"/>
       <item name="incoming_delivery_docket" category="exploitation"/>
       <item name="intervention_register" category="management"/>

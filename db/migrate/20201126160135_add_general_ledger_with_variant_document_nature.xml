@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <migration name="Add general_ledger_with_variant document_nature">
   <!-- Add your changes here -->
-  <item-creation item="document_natures#general_ledger_with_variant" category="accountancy"/>
+  <item-creation item="document_natures#general_ledger_with_variant" category="accountancy" signed="true"/>
 </migration>
