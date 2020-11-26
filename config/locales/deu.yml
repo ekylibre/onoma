@@ -1342,7 +1342,7 @@ deu:
         nc: "Neu-Kaledonien"
         nf: "Norfolkinsel"
         nl: "Niederlande"
-        no: "Norwegen"
+        __no__: "Norwegen"
         nz: "Neuseeland"
         pf: "Französisch Polynesien"
         pg: "Papua Neu-Guinea"
