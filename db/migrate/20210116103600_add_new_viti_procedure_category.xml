@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add new viti procedure category">
+  <item-creation item="procedure_categories#trellising" activity_family="vine_farming"/>
+</migration>
