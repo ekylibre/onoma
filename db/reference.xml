@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20200925153320">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20200925153330">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -766,6 +766,7 @@
       <item name="silage_analysis" target_variety="silage" target_derivative_of="plant" items="dry_matter_rate, protein_concentration"/>
       <item name="soil_analysis" target_variety="land_parcel" items="soil_nature, organic_matter_concentration, nitrogen_concentration, potential_hydrogen, cation_exchange_capacity, phosphate_concentration, potash_concentration, magnesium_concentration, boron_concentration, zinc_concentration, manganese_concentration, copper_concentration, iron_concentration"/>
       <item name="unitary_cow_milk_analysis" target_variety="milk" target_derivative_of="bos" items="fat_matters_concentration, protein_matters_concentration, somatic_cell_concentration, milk_daily_production"/>
+      <item name="vine_harvesting_analysis" target_variety="grape" items="estimated_harvest_alcoholic_volumetric_concentration, estimated_pressed_harvest_alcoholic_volumetric_concentration, potential_hydrogen, temperature, assimilated_nitrogen_concentration, amino_nitrogen_concentration, ammoniacal_nitrogen_concentration, total_acid_concentration, malic_acid_concentration, sanitary_vine_harvesting_state, must_tasting"/>
       <item name="water_analysis" target_variety="water" items="nitrogen_concentration, phosphate_concentration, potash_concentration, magnesium_concentration, boron_concentration, zinc_concentration, manganese_concentration, copper_concentration, iron_concentration"/>
     </items>
   </nomenclature>
@@ -2153,10 +2154,13 @@
     </properties>
     <items>
       <item name="aluminium_concentration" datatype="measure" unit="parts_per_million"/>
+      <item name="amino_nitrogen_concentration" datatype="measure" unit="milligram_per_liter"/>
+      <item name="ammoniacal_nitrogen_concentration" datatype="measure" unit="milligram_per_liter"/>
       <item name="animal_life_state" datatype="choice" choices="animal_life_states"/>
       <item name="application_width" datatype="measure" unit="meter" gathering="proportional_to_population"/>
       <item name="approved_input_dose" datatype="measure" unit="kilogram_per_hectare"/>
       <item name="approved_input_volume" datatype="measure" unit="liter_per_hectare"/>
+      <item name="assimilated_nitrogen_concentration" datatype="measure" unit="milligram_per_liter"/>
       <item name="atmospheric_pressure" datatype="measure" unit="hectopascal" sampling_temporal_mode="instant"/>
       <item name="available_water_capacity_per_area" datatype="measure" unit="liter_per_square_meter"/>
       <item name="average_atmospheric_pressure" datatype="measure" unit="hectopascal" sampling_temporal_mode="period"/>
@@ -2199,6 +2203,8 @@
       <item name="energy" datatype="measure" unit="kilowatt_hour"/>
       <item name="entry_date" datatype="string"/>
       <item name="entry_reason" datatype="string"/>
+      <item name="estimated_harvest_alcoholic_volumetric_concentration" datatype="measure" unit="volume_percent"/>
+      <item name="estimated_pressed_harvest_alcoholic_volumetric_concentration" datatype="measure" unit="volume_percent"/>
       <item name="exit_date" datatype="string"/>
       <item name="exit_reason" datatype="string"/>
       <item name="fat_matter_concentration_index" datatype="measure" unit="unity"/>
@@ -2237,6 +2243,7 @@
       <item name="lipolysis" datatype="measure" unit="thousand_per_hectogram"/>
       <item name="livestock_unit" datatype="decimal" gathering="proportional_to_population"/>
       <item name="magnesium_concentration" datatype="measure" unit="mass_percent"/>
+      <item name="malic_acid_concentration" datatype="measure" unit="gram_per_liter"/>
       <item name="mammalia_birth_condition" datatype="choice" choices="mammalia_birth_conditions"/>
       <item name="mammalia_birth_count" datatype="integer"/>
       <item name="mammalia_reproduction_event_abortion" datatype="boolean"/>
@@ -2273,6 +2280,7 @@
       <item name="mother_identification_number" datatype="string"/>
       <item name="mother_race_code" datatype="string"/>
       <item name="motor_power" datatype="measure" unit="french_horsepower"/>
+      <item name="must_tasting" datatype="string"/>
       <item name="net_length" datatype="measure" unit="meter" gathering="proportional_to_population"/>
       <item name="net_mass" datatype="measure" unit="kilogram" gathering="proportional_to_population"/>
       <item name="net_surface_area" datatype="measure" unit="square_meter" gathering="proportional_to_population"/>
@@ -2311,6 +2319,7 @@
       <item name="rows_count" datatype="integer"/>
       <item name="rows_interval" datatype="measure" unit="meter"/>
       <item name="rows_orientation" datatype="measure" unit="degree"/>
+      <item name="sanitary_vine_harvesting_state" datatype="string"/>
       <item name="seedling_area_density" datatype="measure" unit="unity_per_square_meter"/>
       <item name="seedling_count" datatype="measure" unit="thousand"/>
       <item name="sex" datatype="choice" choices="sexes"/>
@@ -2335,6 +2344,7 @@
       <item name="theoretical_working_speed" datatype="measure" unit="hectare_per_hour"/>
       <item name="thousand_grains_mass" datatype="measure" unit="gram"/>
       <item name="tiller_count" datatype="integer"/>
+      <item name="total_acid_concentration" datatype="measure" unit="gram_per_liter"/>
       <item name="total_bacteria_concentration" datatype="measure" unit="thousand_per_milliliter"/>
       <item name="unique_synthesis_index" datatype="measure" unit="unity"/>
       <item name="untreated_zone_length" datatype="measure" unit="meter"/>
@@ -10196,6 +10206,7 @@
       <item name="unity_per_kilogram" dimension="mass_density" symbol="./kg" base_unit="unity" base_dimension="none" repartition_unit="kilogram" repartition_dimension="mass"/>
       <item name="unity_per_liter" dimension="concentration" symbol="./l" d="0.001" base_unit="unity" base_dimension="none" repartition_unit="liter" repartition_dimension="volume"/>
       <item name="unity_per_square_meter" dimension="surface_area_density" symbol="./m&#xB2;" base_unit="unity" base_dimension="none" repartition_unit="square_meter" repartition_dimension="surface_area"/>
+      <item name="volume_percent" dimension="none" symbol="%vol." d="100.0" base_unit="volume_percent" base_dimension="none"/>
       <item name="watt" dimension="power" symbol="W" base_unit="watt" base_dimension="power"/>
       <item name="watt_per_square_meter" dimension="heat_flux_density" symbol="W/m&#xB2;" base_unit="watt" base_dimension="power" repartition_unit="square_meter" repartition_dimension="surface_area"/>
     </items>
