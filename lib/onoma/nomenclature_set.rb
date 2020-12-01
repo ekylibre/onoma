@@ -62,6 +62,7 @@ module Onoma
       unless nomenclature = @nomenclatures[name]
         raise "Nomenclature #{name} does not exist"
       end
+
       nomenclature
     end
 
@@ -119,6 +120,7 @@ module Onoma
 
     def add_nomenclature(name, options = {})
       raise "Nomenclature #{name} already exists" if @nomenclatures[name]
+
       options[:set] = self
       @nomenclatures[name] = Nomenclature.new(name, options)
     end
@@ -128,6 +130,7 @@ module Onoma
         raise "Nomenclature #{old_name} does not exist"
       end
       raise "Nomenclature #{new_name} already exists" if @nomenclatures[new_name]
+
       @nomenclatures[new_name] = @nomenclatures.delete(old_name)
       @nomenclatures[new_name]
     end

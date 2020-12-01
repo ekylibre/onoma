@@ -1,6 +1,6 @@
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'byebug'
-require 'onoma'
+# frozen_string_literal: true
+
+require_relative '../lib/onoma'
 
 require 'minitest/autorun'
 

@@ -38,6 +38,7 @@ module Onoma
           def hash_to_yaml(hash, depth = nil)
             code = hash.sort_by { |a| a[0].to_s.tr('_', ' ').strip }.map do |k, v|
               next unless v
+
               pair_to_yaml(k, v)
             end.join("\n")
             code = "\n" + code.indent(depth).gsub(/^\s+$/, '') unless depth.nil?
@@ -54,7 +55,7 @@ module Onoma
             elsif value.is_a?(Numeric)
               value.to_s
             else
-              v = value.to_s.gsub("\\u00A0", '\\_')
+              v = value.to_s.gsub('\\u00A0', '\\_')
               value =~ /\n/ ? "|\n" + v.strip.indent : '"' + v + '"'
             end
           end

@@ -62,6 +62,7 @@ module Onoma
     # Returns version of DB
     def reference_version
       return 0 unless reference_path.exist?
+
       reference_document.root['version'].to_i
     end
 
@@ -116,6 +117,7 @@ module Onoma
       elsif args.size == 1
         return nomenclature.find(args.shift) if nomenclature
       end
+
       nil
     end
 

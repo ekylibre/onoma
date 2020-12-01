@@ -1,5 +1,16 @@
 stages:
+  - lint
   - test
+  - release
+
+rubocop:
+  image: ruby:2.6-alpine
+  stage: lint
+  variables:
+     GIT_DEPTH: 1
+  script:
+    - gem install rubocop --version=1.3.1
+    - rubocop --parallel
 
 test:
   image: registry.gitlab.com/ekylibre/docker-base-images/ruby2.6:1
@@ -12,3 +23,30 @@ test:
       - vendor/bundle
   script:
     - bundle exec rake test
+
+.rubygems-model: &rubygems-model
+  image: ruby:2.6-alpine
+  stage: release
+  when: manual
+  only:
+    - tags
+  before_script:
+    - mkdir -p ~/.gem
+    - cp $RUBYGEMS_CREDENTIALS ~/.gem/credentials
+    - chmod 0600 /root/.gem/credentials
+  script:
+    - |-
+      VERSION=$(ruby -e "puts Gem::Specification::load('${GEMSPEC}.gemspec').version.to_s.strip")
+      if [ "$CI_COMMIT_TAG" == "$VERSION" ]
+      then
+        gem build "${GEMSPEC}.gemspec"
+        gem push "${GEMSPEC}-${VERSION}.gem"
+      else
+        echo "The version of the Gem does not match the tag!"
+        exit 1
+      fi
+
+rubygems:
+  <<: *rubygems-model
+  variables:
+    GEMSPEC: onoma
