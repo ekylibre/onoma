@@ -1,3 +1,4 @@
+# rubocop:disable Style/MissingRespondToMissing
 module Onoma
   # This class represents a nomenclature
   class Nomenclature
@@ -67,7 +68,18 @@ module Onoma
       properties = @properties.values
       CSV.open(file, 'wb') do |csv|
         csv << [:name] + properties.map do |p|
-          suffix = (p.decimal? ? ' D' : p.integer? ? ' I' : p.boolean? ? ' B' : p.item? ? " R(#{p.choices_nomenclature})" : '')
+          suffix = if p.decimal?
+                     ' D'
+                   elsif p.integer?
+                     ' I'
+                   elsif p.boolean?
+                     ' B'
+                   elsif p.item?
+                     " R(#{p.choices_nomenclature})"
+                   else
+                     ''
+                   end
+
           "#{p.name}#{suffix}"
         end
         @items.values.each do |i|
@@ -95,6 +107,7 @@ module Onoma
       parent = attributes[:parent] || (element.key?('parent') ? element['parent'] : nil)
       attributes = element.attributes.each_with_object(HashWithIndifferentAccess.new) do |(k, v), h|
         next if %w[name parent].include?(k)
+
         h[k] = cast_property(k, v.to_s)
       end
       attributes[:parent] = parent if parent
@@ -132,12 +145,13 @@ module Onoma
         elsif element.has_attribute?('nomenclature')
           options[:choices] = element.attr('nomenclature').to_s.strip.to_sym
         else
-          raise MissingChoices, "[#{@name}] Property #{name} must have nomenclature as choices"
+          raise MissingChoices.new("[#{@name}] Property #{name} must have nomenclature as choices")
         end
       end
       unless Onoma::PROPERTY_TYPES.include?(type)
-        raise ArgumentError, "Property #{name} type is unknown: #{type.inspect}"
+        raise ArgumentError.new("Property #{name} type is unknown: #{type.inspect}")
       end
+
       add_property(name, type, options)
     end
 
@@ -147,6 +161,7 @@ module Onoma
       if @items[i.name]
         raise "Item #{i.name} is already defined in nomenclature #{@name}"
       end
+
       @items[i.name] = i
       @roots << i unless i.parent?
       i.rebuild_tree! unless options[:rebuild].is_a?(FalseClass)
@@ -161,6 +176,7 @@ module Onoma
       new_name = changes[:name]
       changes.each do |k, v|
         next if %i[parent name].include? k
+
         i.set(k, v)
       end
       if has_parent
@@ -176,6 +192,7 @@ module Onoma
       if @items[new_name]
         raise "Item #{new_name} is already defined in nomenclature #{@name}. Use merging instead."
       end
+
       i = find!(name)
       i.children.each do |child|
         child.parent_name = new_name
@@ -191,6 +208,7 @@ module Onoma
     def cascade_item_renaming(name, new_name)
       @set.references.each do |reference|
         next unless reference.foreign_nomenclature == self
+
         p = reference.property
         if p.list?
           reference.nomenclature.find_each do |item|
@@ -232,6 +250,7 @@ module Onoma
       if @properties[p.name]
         raise "Property #{p.name} is already defined in nomenclature #{@name}"
       end
+
       @properties[p.name] = p
       @references = nil
       p
@@ -245,11 +264,11 @@ module Onoma
       # Check properties
       @properties.values.each do |property|
         if property.choices_nomenclature && !property.inline_choices? && !Onoma[property.choices_nomenclature.to_s]
-          raise InvalidPropertyNature, "[#{name}] #{property.name} nomenclature property must refer to an existing nomenclature. Got #{property.choices_nomenclature.inspect}. Expecting: #{Onoma.names.inspect}"
+          raise InvalidPropertyNature.new("[#{name}] #{property.name} nomenclature property must refer to an existing nomenclature. Got #{property.choices_nomenclature.inspect}. Expecting: #{Onoma.names.inspect}")
         end
         next unless property.type == :choice && property.default
         unless property.choices.include?(property.default)
-          raise InvalidPropertyNature, "The default choice #{property.default.inspect} is invalid (in #{name}##{property.name}). Pick one from #{property.choices.sort.inspect}."
+          raise InvalidPropertyNature.new("The default choice #{property.default.inspect} is invalid (in #{name}##{property.name}). Pick one from #{property.choices.sort.inspect}.")
         end
       end
 
@@ -261,16 +280,16 @@ module Onoma
             # Cleans for parametric reference
             name = item.property(property.name).to_s.split(/\(/).first.to_sym
             unless choices.include?(name)
-              raise InvalidProperty, "The given choice #{name.inspect} is invalid (in #{self.name}##{item.name}). Pick one from #{choices.sort.inspect}."
+              raise InvalidProperty.new("The given choice #{name.inspect} is invalid (in #{self.name}##{item.name}). Pick one from #{choices.sort.inspect}.")
             end
           elsif item.property(property.name) && property.type == :list && property.choices_nomenclature
-            for name in item.property(property.name) || []
+            (item.property(property.name) || []).each { |name|
               # Cleans for parametric reference
               name = name.to_s.split(/\(/).first.to_sym
               unless choices.include?(name)
-                raise InvalidProperty, "The given choice #{name.inspect} is invalid (in #{self.name}##{item.name}). Pick one from #{choices.sort.inspect}."
+                raise InvalidProperty.new("The given choice #{name.inspect} is invalid (in #{self.name}##{item.name}). Pick one from #{choices.sort.inspect}.")
               end
-            end
+            }
           end
         end
       end
@@ -300,6 +319,7 @@ module Onoma
     def human_name(options = {})
       I18n.t("nomenclatures.#{Onoma.escape_key(name)}.name", options.merge(default: ["labels.#{Onoma.escape_key(name)}".to_sym, name.to_s.humanize]))
     end
+
     alias humanize human_name
 
     def new_boundaries(count = 2)
@@ -328,6 +348,7 @@ module Onoma
         @items.keys.sort
       end
     end
+
     alias all to_a
 
     def <=>(other)
@@ -349,24 +370,21 @@ module Onoma
     # Returns a list for select as an array of pair (array)
     def selection(item_name = nil)
       items = (item_name ? find!(item_name).self_and_children : @items.values)
-      items.collect do |item|
-        [item.human_name, item.name.to_s]
-      end.sort do |a, b|
-        a.first.lower_ascii <=> b.first.lower_ascii
-      end
+      items.map { |item| [item.human_name, item.name.to_s] }
+           .sort { |a, b| a.first.lower_ascii <=> b.first.lower_ascii }
     end
 
     # Returns a list for select as an array of pair (hash)
     def selection_hash(item_name = nil)
       items = (item_name ? find!(item_name).self_and_children : @items.values)
-      items.collect do |item|
-        { label: item.human_name, value: item.name }
-      end.sort { |a, b| a[:label].lower_ascii <=> b[:label].lower_ascii }
+      items.map { |item| { label: item.human_name, value: item.name } }
+           .sort { |a, b| a[:label].lower_ascii <=> b[:label].lower_ascii }
     end
 
     # Returns a list for select, without specified items
     def select_without(already_imported)
       ActiveSupport::Deprecation.warn 'Onoma::Nomenclature#select_without method is deprecated. Please use Onoma::Nomenclature#without method instead.'
+
       select_options = @items.values.collect do |item|
         [item.human_name, item.name.to_s] unless already_imported[item.name.to_s]
       end
@@ -395,13 +413,15 @@ module Onoma
     def find(item_name)
       @items[item_name]
     end
+
     alias item find
 
     # Return the Item for the given name. Raises Onoma::ItemNotFound if no item
     # found in nomenclature
     def find!(item_name)
       i = find(item_name)
-      raise ItemNotFound, "Cannot find item #{item_name.inspect} in #{name}" unless i
+      raise ItemNotFound.new("Cannot find item #{item_name.inspect} in #{name}") unless i
+
       i
     end
 
@@ -412,6 +432,7 @@ module Onoma
     def exists?(item)
       @items[item.respond_to?(:name) ? item.name : item].present?
     end
+
     alias include? exists?
 
     def property(property_name)
@@ -439,8 +460,8 @@ module Onoma
             value.each do |val|
               if val.is_a?(Onoma::Item)
                 one_found = true if item_value == val.name.to_sym
-              else
-                one_found = true if item_value == val
+              elsif item_value == val
+                one_found = true
               end
             end
             valid = false unless one_found
@@ -464,6 +485,7 @@ module Onoma
     def find_by(properties)
       items = where(properties)
       return nil unless items.any?
+
       items.first
     end
 
@@ -475,6 +497,7 @@ module Onoma
           items << item if item.property(property_name) == searched_item.name
         end
         break if items.any?
+
         searched_item = searched_item.parent
       end while searched_item
       items
@@ -487,6 +510,7 @@ module Onoma
 
     def cast_options(options)
       return {} if options.nil?
+
       options.each_with_object({}) do |(k, v), h|
         h[k.to_sym] = if properties[k]
                         cast_property(k, v.to_s)
@@ -501,13 +525,20 @@ module Onoma
       if property = properties[name]
         if property.type == :choice || property.type == :item
           if value =~ /\,/
-            raise InvalidPropertyNature, 'A property nature of choice type cannot contain commas'
+            raise InvalidPropertyNature.new('A property nature of choice type cannot contain commas')
           end
+
           value = value.strip.to_sym
         elsif property.list?
           value = value.strip.split(/[[:space:]]*\,[[:space:]]*/).map(&:to_sym)
         elsif property.type == :boolean
-          value = (value == 'true' ? true : value == 'false' ? false : nil)
+          value = if value == 'true'
+                    true
+                  elsif value == 'false'
+                    false
+                  else
+                    nil
+                  end
         elsif property.type == :decimal
           value = BigDecimal(value)
         elsif property.type == :integer
@@ -516,14 +547,16 @@ module Onoma
           value = (value.blank? ? nil : Date.parse(value))
         elsif property.type == :symbol
           unless value =~ /\A\w+\z/
-            raise InvalidPropertyNature, "A property '#{name}' must contains a symbol. /[a-z0-9_]/ accepted. No spaces. Got #{value.inspect}"
+            raise InvalidPropertyNature.new("A property '#{name}' must contains a symbol. /[a-z0-9_]/ accepted. No spaces. Got #{value.inspect}")
           end
+
           value = value.to_sym
         end
       elsif !%w[name parent aliases].include?(name.to_s)
-        raise ArgumentError, "Undefined property '#{name}' in #{@name}"
+        raise ArgumentError.new("Undefined property '#{name}' in #{@name}")
       end
       value
     end
   end
 end
+# rubocop:enable Style/MissingRespondToMissing

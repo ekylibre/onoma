@@ -1,0 +1,12 @@
+inherit_from: .rubocop_ekylibre.yml
+
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+
+# In a fantasy land, its a good idea. In practice, we have too many classes without comments to enable this.
+Style/Documentation:
+  Enabled: false

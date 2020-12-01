@@ -21,6 +21,7 @@ module Onoma
         if element
           element.children.each do |child|
             next unless child.is_a? Nokogiri::XML::Element
+
             @actions << "Onoma::Migration::Actions::#{child.name.underscore.classify}".constantize.new(child)
           end
         end

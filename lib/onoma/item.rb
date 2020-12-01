@@ -1,3 +1,4 @@
+# rubocop:disable Style/MissingRespondToMissing
 require 'set'
 
 module Onoma
@@ -48,6 +49,7 @@ module Onoma
         if item.parents.any? { |p| self == p } || self == item
           raise 'Circular dependency. Item can be parent of itself.'
         end
+
         @parent = item
         @parent_name = @parent.name.to_s
       end
@@ -78,10 +80,12 @@ module Onoma
 
     def parent
       return @parent if @parent
+
       @parent = find_parent
       @parent.add_child(self) if @parent
       @parent
     end
+
     alias fetch_parent parent
 
     def find_parent
@@ -93,9 +97,11 @@ module Onoma
       a = self_and_parents.reverse
       b = other_item.self_and_parents.reverse
       return nil if a.first != b.first
+
       common_lineage = 0
       a.size.times do |index|
         break if a[index].nil? || b[index].nil? || a[index] != b[index]
+
         common_lineage += 1
       end
       a.size + b.size - 2 * common_lineage
@@ -103,6 +109,7 @@ module Onoma
 
     def original_nomenclature_name
       return parent.name.to_sym unless root?
+
       nil
     end
 
@@ -118,16 +125,14 @@ module Onoma
             list
           end
         end
+      elsif options[:recursively].is_a?(FalseClass)
+        nomenclature.list.select do |item|
+          @left < item.left && item.right < @right && item.depth == @depth + 1
+        end
       else
-        if options[:recursively].is_a?(FalseClass)
-          nomenclature.list.select do |item|
-            @left < item.left && item.right < @right && item.depth == @depth + 1
-          end
-        else
-          # @children ||=
-          nomenclature.list.select do |item|
-            @left < item.left && item.right < @right
-          end
+        # @children ||=
+        nomenclature.list.select do |item|
+          @left < item.left && item.right < @right
         end
       end
     end
@@ -152,6 +157,7 @@ module Onoma
     def rise(&block)
       result = yield(self)
       return result if result
+
       parent ? parent.rise(&block) : nil
     end
 
@@ -196,6 +202,7 @@ module Onoma
       end
       I18n.t(root, options.merge(default: [*defaults.map(&:to_sym), "items.#{Onoma.escape_key(name)}".to_sym, "enumerize.#{Onoma.escape_key(nomenclature.name)}.#{Onoma.escape_key(name)}".to_sym, "labels.#{Onoma.escape_key(name)}".to_sym, name.humanize]))
     end
+
     alias humanize human_name
     alias localize human_name
     alias l localize
@@ -266,6 +273,7 @@ module Onoma
     # Returns property value
     def property(name)
       return @name.to_sym if name == :name
+
       property = @nomenclature.properties[name]
       value = @attributes[name]
       if property
@@ -291,11 +299,12 @@ module Onoma
         unless target_nomenclature
           raise "Cannot find nomenclature: for #{property(name).inspect}"
         end
+
         return target_nomenclature.list.collect do |i|
           [i.human_name, i.name]
         end
       else
-        raise StandardError, 'Cannot call selection for a non-list property'
+        raise StandardError.new('Cannot call selection for a non-list property')
       end
     end
 
@@ -307,11 +316,13 @@ module Onoma
     # Returns property descriptor
     def method_missing(method_name, *args)
       return property(method_name) if has_property?(method_name)
+
       super
     end
 
     def set(name, value)
       raise "Invalid property: #{name.inspect}" if %i[name parent].include?(name.to_sym)
+
       # # TODO: check format
       # if property = nomenclature.properties[name]
       #   value ||= [] if property.list?
@@ -325,16 +336,18 @@ module Onoma
 
     private
 
-    def cast_property(name, value)
-      @nomenclature.cast_property(name, value)
-    end
-
-    def item_for_comparison(other)
-      item = nomenclature[other.is_a?(Item) ? other.name : other]
-      unless item
-        raise StandardError, "Invalid operand to compare: #{other.inspect} not in #{nomenclature.name}"
+      def cast_property(name, value)
+        @nomenclature.cast_property(name, value)
       end
-      item
-    end
+
+      def item_for_comparison(other)
+        item = nomenclature[other.is_a?(Item) ? other.name : other]
+        unless item
+          raise StandardError.new("Invalid operand to compare: #{other.inspect} not in #{nomenclature.name}")
+        end
+
+        item
+      end
   end
 end
+# rubocop:enable Style/MissingRespondToMissing

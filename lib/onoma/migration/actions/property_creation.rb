@@ -9,8 +9,9 @@ module Onoma
           @name = name.second
           @type = element['type'].to_sym
           unless Onoma::PROPERTY_TYPES.include?(@type)
-            raise ArgumentError, "Property #{name} type is unknown: #{@type.inspect}"
+            raise ArgumentError.new("Property #{name} type is unknown: #{@type.inspect}")
           end
+
           @options = {}
           if element.has_attribute?('fallbacks')
             @options[:fallbacks] = element.attr('fallbacks').to_s.strip.split(/[[:space:]]*\,[[:space:]]*/).map(&:to_sym)

@@ -8,6 +8,7 @@ module Onoma
       @name = name.to_sym
       @type = type
       raise "Invalid type: #{@type.inspect}" unless Onoma::PROPERTY_TYPES.include?(@type)
+
       @fallbacks = options[:fallbacks] if options[:fallbacks]
       @default = options[:default] if options[:default]
       @required = !!options[:required]
