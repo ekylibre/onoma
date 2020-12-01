@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="add-vine-harvesting-analysis-indicator">
+  <item-creation item="units#volume_percent" dimension="none" symbol="%vol." d="100.0" base_unit="volume_percent" base_dimension="none"/>
+ 
+  <item-creation item="indicators#estimated_harvest_alcoholic_volumetric_concentration" datatype="measure" unit="volume_percent"/>
+  <item-creation item="indicators#estimated_pressed_harvest_alcoholic_volumetric_concentration" datatype="measure" unit="volume_percent"/>
+  <item-creation item="indicators#assimilated_nitrogen_concentration" datatype="measure" unit="milligram_per_liter"/>
+  <item-creation item="indicators#amino_nitrogen_concentration" datatype="measure" unit="milligram_per_liter"/>
+  <item-creation item="indicators#ammoniacal_nitrogen_concentration" datatype="measure" unit="milligram_per_liter"/>
+  <item-creation item="indicators#total_acid_concentration" datatype="measure" unit="gram_per_liter"/>
+  <item-creation item="indicators#malic_acid_concentration" datatype="measure" unit="gram_per_liter"/>
+  <item-creation item="indicators#sanitary_vine_harvesting_state" datatype="string"/>
+  <item-creation item="indicators#must_tasting" datatype="string"/>
+
+  <item-creation item="analysis_natures#vine_harvesting_analysis" target_variety="grape" items="estimated_harvest_alcoholic_volumetric_concentration, estimated_pressed_harvest_alcoholic_volumetric_concentration, potential_hydrogen, temperature, assimilated_nitrogen_concentration, amino_nitrogen_concentration, ammoniacal_nitrogen_concentration, total_acid_concentration, malic_acid_concentration, sanitary_vine_harvesting_state, must_tasting"/>
+</migration>
