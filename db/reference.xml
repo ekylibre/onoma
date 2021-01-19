@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20200925153330">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20210119122229">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -2848,6 +2848,9 @@
       <item name="solarization"/>
       <item name="sowing"/>
       <item name="sowing_burying"/>
+      <item name="stake_count"/>
+      <item name="stake_distribution"/>
+      <item name="stake_driving"/>
       <item name="sterilization"/>
       <item name="straw_bunching"/>
       <item name="sulfur_addition"/>
