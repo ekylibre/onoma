@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add new actions to vine stake replacing">
+  <item-creation item="procedure_actions#stake_count"/>
+  <item-creation item="procedure_actions#stake_distribution"/>
+  <item-creation item="procedure_actions#stake_driving"/>
+</migration>

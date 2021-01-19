@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add new indicator cut vine">
+  <item-creation item="indicators#cut_vine" datatype="integer" />
+  <item-change item="product_natures#vine_crop" variable_indicators="certification, certification_label, complanted_vine_stock, dead_vine_stock, layered_vine_stock, missing_vine_stock, plants_count, plants_interval, plant_life_state, vine_stock_bud_charge, rows_interval, shape, vine_pruning_system, cut_vine" />
+</migration>
