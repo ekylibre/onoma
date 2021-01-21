@@ -2146,7 +2146,7 @@ eng:
         country_code: "Country code"
         cpb_filiation_status: "Cpb filiation status"
         cumulated_rainfall: "Cumulated rainfall"
-        cut_vine: "Vut vine"
+        cut_vine: "Cut vine"
         daily_average_working_time: "Daily average working time"
         daily_nitrogen_production: "Daily nitrogen production"
         daily_pest_count: "Pest count (last night)"
