@@ -1963,6 +1963,7 @@ eng:
         vine_phytosanitary_register: "Vine phytosanitary register"
         wine_bottling_register: "Wine bottling register"
         wine_detention_register: "Wine detention register"
+        wine_incoming_harvest_register: "Wine incoming harvest register"
         wine_manipulation_register: "Wine manipulation register"
         worker_register: "Worker register"
       name: "Document natures"

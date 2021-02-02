@@ -2019,6 +2019,7 @@
       <item name="vine_phytosanitary_register" category="land_parcel_management"/>
       <item name="wine_bottling_register" category="wine_making"/>
       <item name="wine_detention_register" category="wine_making"/>
+      <item name="wine_incoming_harvest_register" category="wine_making"/>
       <item name="wine_manipulation_register" category="wine_making"/>
       <item name="worker_register" category="management"/>
     </items>
