@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20200925153330">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20210202112031">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -2018,6 +2018,7 @@
       <item name="vine_phytosanitary_register" category="land_parcel_management"/>
       <item name="wine_bottling_register" category="wine_making"/>
       <item name="wine_detention_register" category="wine_making"/>
+      <item name="wine_incoming_harvest_register" category="wine_making"/>
       <item name="wine_manipulation_register" category="wine_making"/>
       <item name="worker_register" category="management"/>
     </items>
