@@ -3555,6 +3555,7 @@
       <item name="gas_engine" nature="gas_engine" frozen_indicators_values="" unit_name="equipment" type="equipment"/>
       <item name="gasoline" nature="fuel" frozen_indicators_values="energy: 9.85kilowatt_hour, net_volume: 1liter, net_mass: 0.8kilogram" unit_name="liter" type="article"/>
       <item name="generic_animal_medicine" nature="animal_medicine" frozen_indicators_values="net_mass: 1000g, net_volume: 1000ml, meat_withdrawal_period: 1day, milk_withdrawal_period: 1day" type="article"/>
+      <item name="geolocation_box" nature="connected_object" type="equipment"/>
       <item name="goat_herd" nature="goat_herd" derivative_of="capra" frozen_indicators_values="" unit_name="band" type="animal"/>
       <item name="goat_milk" nature="milk" derivative_of="capra" frozen_indicators_values="net_volume: 1.00liter, net_mass: 1.031kilogram" unit_name="liter" type="article"/>
       <item name="gooseberry_crop" nature="fruit_crop" variety="ribes" frozen_indicators_values="net_surface_area: 1.00hectare" unit_name="plant" type="crop"/>
@@ -4065,6 +4066,7 @@
       <item name="computer" category="electronic_equipment" variety="equipment" population_counting="integer" variable_indicators="" nature="equipment"/>
       <item name="computer_device" category="small_electronic_equipment" variety="equipment" population_counting="integer" variable_indicators="" nature="equipment"/>
       <item name="congress" category="congress" variety="service" population_counting="decimal" variable_indicators="" nature="fee_and_service"/>
+      <item name="connected_object" category="equipment" variety="connected_object" population_counting="unitary" abilities="" nature="equipment"/>
       <item name="construction_material_in_own_outstanding_installation" category="construction_materials_in_own_outstanding_installation" variety="raw_matter" population_counting="decimal" variable_indicators="" frozen_indicators="net_volume, net_mass" nature="article"/>
       <item name="consumer_goods_office_item" category="consumer_goods_office_item" variety="service" population_counting="integer" variable_indicators="" nature="fee_and_service"/>
       <item name="cooperative_participation" category="cooperative_participation" variety="service" population_counting="decimal" variable_indicators="" nature="fee_and_service"/>
@@ -10723,6 +10725,7 @@
       <item name="coffea_stenophylla" parent="coffea" itis_tsn="506062"/>
       <item name="compost" parent="excrement"/>
       <item name="concentrated_rectified_must" parent="preparation" derivative_of="fruit"/>
+      <item name="connected_object" parent="equipment"/>
       <item name="convolvulaceae" parent="plant" itis_tsn="30648"/>
       <item name="coriandrum" parent="apiaceae" itis_tsn="29621"/>
       <item name="coriandrum_sativum" parent="coriandrum" itis_tsn="29622"/>
