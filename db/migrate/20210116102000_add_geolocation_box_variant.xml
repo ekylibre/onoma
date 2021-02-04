@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add geolocation box variant">
+  <item-creation item="varieties#connected_object" parent="equipment" />
+  <item-creation item="product_natures#connected_object" category="equipment" variety="connected_object" population_counting="unitary" abilities="" nature="equipment"/>
+  <item-creation item="product_nature_variants#geolocation_box" nature="connected_object" unit_name="equipment" type="equipment"/>
+</migration>
