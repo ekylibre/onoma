@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20210119125914">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20210205180200">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -1995,6 +1995,7 @@
       <item name="outgoing_payment_list__check_letter" category="exploitation"/>
       <item name="outgoing_payment_list__standard" category="exploitation"/>
       <item name="pending_vat_register" category="accountancy"/>
+      <item name="pfi_land_parcel_register" category="land_parcel_management"/>
       <item name="phytosanitary_certification" category="land_parcel_management"/>
       <item name="phytosanitary_register" category="land_parcel_management"/>
       <item name="prescription" category="health"/>

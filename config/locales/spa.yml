@@ -1475,7 +1475,7 @@ spa:
         ng: "Nigeria"
         ni: "Nicaragua"
         nl: "Países Bajos"
-        no: "Noruega"
+        __no__: "Noruega"
         np: "Nepal"
         nr: "Nauru"
         nu: "Niue"

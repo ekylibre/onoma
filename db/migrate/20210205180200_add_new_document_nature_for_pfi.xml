@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add new document nature for pfi">
+  <item-creation item="document_natures#pfi_land_parcel_register" category="land_parcel_management"/>
+</migration>
