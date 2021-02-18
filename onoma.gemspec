@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage = 'https://gitlab.com/ekylibre/onoma'
   spec.license = 'AGPL-3.0-only'
 
-  spec.files = Dir.glob(%w[{bin,config,lib}/**/* *.gemspec Gemfile Rakefile *.md LICENSE.txt])
+  spec.files = Dir.glob(%w[{bin,config,lib}/**/* db/reference.xml *.gemspec LICENSE.md])
 
   spec.require_paths = ['lib']
 
