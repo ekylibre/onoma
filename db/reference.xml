@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20210116103600">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20210225180100">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -146,6 +146,7 @@
       <item name="cashes" fr_pcg82="53" pt_snc="11000000" fr_pcga="53"/>
       <item name="catalog_and_print_expenses" fr_pcg82="6236" fr_pcga="6236"/>
       <item name="clients" fr_pcg82="411" pt_snc="21000000" centralizing="true" fr_pcga="411"/>
+      <item name="clients_balance_after_compensation" fr_pcga="412" fr_pcg82="412" centralizing="true"/>
       <item name="co_ownership_and_locative_expenses" fr_pcga="614" fr_pcg82="614"/>
       <item name="collected_intra_eu_vat" fr_pcg82="4452" fr_pcga="4452"/>
       <item name="collected_vat" fr_pcg82="44571" pt_snc="24330000" fr_pcga="44571"/>
@@ -533,7 +534,7 @@
       <item name="subsidy_to_receive" fr_pcg82="441" fr_pcga="441"/>
       <item name="sundry_debtors_and_creditors" fr_pcga="467" pt_snc="27800000" centralizing="false" fr_pcg82="467"/>
       <item name="suppliers" fr_pcg82="401" pt_snc="22100000" centralizing="true" fr_pcga="401"/>
-      <item name="suppliers_balance_after_compensation" fr_pcg82="402" fr_pcga="402"/>
+      <item name="suppliers_balance_after_compensation" fr_pcg82="402" fr_pcga="402" centralizing="true"/>
       <item name="suppliers_invoices_not_received" fr_pcg82="408" pt_snc="22500000" fr_pcga="408"/>
       <item name="supply_stock" fr_pcga="301" centralizing="false" fr_pcg82="301"/>
       <item name="supply_stocks_variation" fr_pcga="6031" fr_pcg82="6031"/>
