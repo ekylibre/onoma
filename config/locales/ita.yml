@@ -1389,7 +1389,7 @@ ita:
         mz: "Mozambico"
         nc: "Nuova Caledonia"
         nl: "Olanda"
-        no: "Norvegia"
+        __no__: "Norvegia"
         nz: "Nuova Zelanda"
         pe: "Perù"
         pf: "Polinesia francese"
