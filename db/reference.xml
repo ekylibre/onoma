@@ -4457,6 +4457,20 @@
       <item name="without_crop" production_code="3900" activity="plant_farming" telepac_crop_code="HC" variant_support="fallow_crop"/>
     </items>
   </nomenclature>
+  <nomenclature name="production_support_natures" translateable="true">
+    <properties>
+      <property name="activity_families" type="item_list" choices="activity_families"/>
+    </properties>
+    <items>
+      <item name="animal_group" activity_families="animal_farming"/>
+      <item name="border" activity_families="plant_farming"/>
+      <item name="buffer" activity_families="plant_farming"/>
+      <item name="cultivation" activity_families="plant_farming, vine_farming"/>
+      <item name="fallow_land" activity_families="plant_farming"/>
+      <item name="headland_cultivation" activity_families="vine_farming"/>
+      <item name="none" activity_families="plant_farming"/>
+    </items>
+  </nomenclature>
   <nomenclature name="production_systems" translateable="true">
     <items>
       <item name="biodynamic_agriculture"/>
@@ -4472,18 +4486,27 @@
   <nomenclature name="production_usages" translateable="true">
     <properties>
       <property name="crop_sets" type="item_list" choices="crop_sets"/>
+      <property name="production_support_nature" type="item" choices="production_support_natures"/>
     </properties>
     <items>
-      <item name="fallow_land"/>
+      <item name="fallow_land" production_support_nature="fallow_land"/>
       <item name="fiber"/>
+      <item name="flower" production_support_nature="cultivation"/>
       <item name="fodder" crop_sets="corn_sorghum, grass_leguminous, secale_phacelia"/>
-      <item name="fruit"/>
+      <item name="fruit" production_support_nature="cultivation"/>
       <item name="grain" crop_sets="wheat, corn, straw_cereal, sunflower"/>
+      <item name="hay"/>
       <item name="meadow"/>
       <item name="meat"/>
       <item name="milk"/>
-      <item name="seed" crop_sets="wheat, corn, straw_cereal, bean, peas"/>
-      <item name="vegetable" crop_sets="bean, peas"/>
+      <item name="plant" production_support_nature="cultivation"/>
+      <item name="root" production_support_nature="cultivation"/>
+      <item name="salt"/>
+      <item name="seed" crop_sets="wheat, corn, straw_cereal, bean, peas" production_support_nature="cultivation"/>
+      <item name="silage"/>
+      <item name="straw"/>
+      <item name="vegetable" crop_sets="bean, peas" production_support_nature="cultivation"/>
+      <item name="wood"/>
     </items>
   </nomenclature>
   <nomenclature name="residue_elimination_methods" translateable="true">
