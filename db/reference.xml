@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20210205180200">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20210505155442">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -1663,8 +1663,11 @@
     </properties>
     <items>
       <item name="alfalfa" varieties="medicago"/>
+      <item name="animals_idea" varieties="anatidae, numididae, gallus, meleagris, bos, capra, ovis, equus_asinus, equus_caballus, sus"/>
       <item name="arboricultural" varieties="citrus, ceratonia_siliqua, prunus_cerasus, castanea, corylus, juglans, olea_europaea, prunus_persica, pistacia_vera, pyrus, prunus_domestica"/>
+      <item name="arboricultural_idea" varieties="actinidia, anacardium_occidentale, mangifera, pistacia_vera, corylus, carica_papaya, diospyros_kaki, ceratonia_siliqua, castanea, juglans, persea_americana, ficus, morus, olea_europaea, malus_pumila, prunus_armeniaca, prunus_domestica, prunus_cerasus, prunus_avium, prunus_dulcis, prunus_persica, pyrus, citrus, fortunella"/>
       <item name="aromatics_and_medicinals" varieties="allium_schoenoprasum, ajuga_reptans, anthriscus_cerefolium, arctium, anethum_graveolens, angelica, artemisia_dracunculus, bellis_perennis, carum_carvi, chamaemelum, centaurea_cyanus, coriandrum_sativum, cuminum, foeniculum, galium, hypericum, lavandula, leucanthemum, malva, melissa, mentha, ocimum_basilicum, origanum_majorana, petroselinum_crispum, plantago_psyllium, pimpinella_anisum, primula, rosmarinus, rumex, satureja, salvia, silybum_marianum, thymus, valeriana, veronica, viola_arvensis"/>
+      <item name="aromatics_and_medicinals_idea" varieties="allium_schoenoprasum, anethum_graveolens, angelica, anthriscus_cerefolium, carum_carvi, coriandrum_sativum, cuminum, foeniculum, petroselinum_crispum, pimpinella_anisum, arctium, artemisia_dracunculus, bellis_perennis, centaurea_cyanus, chamaemelum, leucanthemum, silybum_marianum, ajuga_reptans, lavandula, melissa, mentha, ocimum_basilicum, origanum_majorana, rosmarinus, salvia, satureja, thymus, malva, plantago_psyllium, veronica, rumex, primula, galium, urtica, valeriana, viola_arvensis, hypericum"/>
       <item name="autumn_crop" varieties="hordeum_hexastichum, poa, secale, triticosecale, triticum, avena, brassica_napus"/>
       <item name="bean" varieties="phaseolus"/>
       <item name="beet" varieties="beta"/>
@@ -1674,21 +1677,25 @@
       <item name="corn" varieties="zea_mays"/>
       <item name="corn_sorghum" varieties="zea_mays, sorghum"/>
       <item name="crucifers" varieties="brassicaceae"/>
+      <item name="field_industrial_fodder_crops_idea" varieties="beta_vulgaris_crassa, chenopodium_quinoa, guizotia_abyssinica, helianthus_annuus, boraginaceae, brassica_nigra, brassica_napus_annua, brassica_napus_napus, brassica_rapa_oleifera, camelina_sativa, raphanus_sativus_oleiformis, cannabaceae, arachis_hypogaea, cicer_arietinum, glycine_max, lathyrus_sativus, lens_culinaris, lotus_corniculatus, melilotus, lupinus, medicago, onobrychis, ornithopus_sativus, trifolium, trigonella_foenum_graecum, vicia, vigna_unguiculata, linum, papaver_somniferum, avena, bromus, dactylis, festuca, hordeum, lolium, oryza, panicum, phalaris, phleum, poa_trivialis, secale, setaria, sorghum, triticosecale, triticum, zea, fagopyrum, nicotiana"/>
       <item name="flax" varieties="linum"/>
       <item name="gardening_vegetables" varieties="allium, cynara, asparagus, solanum_melongena, beta_vulgaris, daucus_carota, apium_graveolens, cichorium_endivia, brassica_oleracea, cucumis, cucurbita, spinacia, fragaria, phaseolus, lactuca, valerianella_locusta"/>
       <item name="grass" varieties="poaceae, medicago, trifolium"/>
       <item name="grass_leguminous" varieties="poaceae, fabaceae"/>
       <item name="hemp" varieties="cannabis"/>
+      <item name="industrial_vegetables_idea" varieties="beta_vulgaris_altissima"/>
       <item name="leguminosae" varieties="fabaceae"/>
       <item name="leguminous" varieties="arachis_hypogaea, cicer_arietinum, lathyrus_sativus, lens_culinaris, lotus_corniculatus, medicago_lupulina, trigonella_foenum_graecum, vigna_unguiculata"/>
       <item name="meadow" varieties="borago, bromus, dactylis, festuca, phleum, phacelia, poa_trivialis, lepidium_sativum, lolium"/>
       <item name="nightshade" varieties="solanum"/>
       <item name="oleaginous" varieties="brassica_napus, brassica_nigra, brassica_rapa, camelina_sativa, glycine_max, guizotia_abyssinica, helianthus, linum_usitatissimum, papaver_somniferum"/>
+      <item name="others_trees_idea" varieties="arecaceae, alnus, betula, carpinus, hevea, cercis_siliquastrum, gleditsia, laburnum_anagyroides, robinia, fagus, quercus, tilia, eucalyptus, fraxinus_excelsior, acer, koelreuteria, argania_spinosa"/>
       <item name="peas" varieties="pisum"/>
       <item name="proteaginous" varieties="fabaceae, lupinus, medicago, melilotus, onobrychis, ornithopus_sativus, pisum_sativum, trifolium, vicia_cracca, vicia_faba, vicia_sativa"/>
       <item name="rape" varieties="brassica"/>
       <item name="rapeseed" varieties="brassica_napus"/>
       <item name="secale_phacelia" varieties="secale, phacelia"/>
+      <item name="sheltered_gardening_idea" varieties="beta_vulgaris_cicla, beta_vulgaris_vulgaris, spinacia, allium_ampeloprasum, allium_ascalonicum, allium_cepa, allium_oleraceum, allium_porrum, allium_sativum, allium_scorodoprasum, allium_tricoccum, allium_triquetrum, allium_ursinum, allium_victorialis, allium_vineale, apium_graveolens, daucus_carota, pastinaca_sativa, asparagus, cichorium_endivia, cichorium_intybus, cynara, helianthus_tuberosus, lactuca, tragopogon, brassica_oleracea, brassica_napus_rapifera, brassica_rapa_pekinensis, brassica_rapa_rapa, crambe_maritima, eruca_vesicaria, lepidium_sativum, nasturtium_officinale, pringlea_antiscorbutica, raphanus_sativus_daïkon, raphanus_sativus_expo, raphanus_sativus_flamboyant2, raphanus_sativus_fluo, raphanus_sativus_niger, ipomoea_batatas, citrullus_lanatus, cucumis, cucurbita, phaseolus, pisum_sativum, ribes, fragaria, rubus_idaeus, capsicum, solanum_melongena, solanum_tuberosum, solanum_lycopersicum, valerianella_locusta"/>
       <item name="sorghum" varieties="sorghum"/>
       <item name="spring_crop" varieties="hordeum_distichum, zea, helianthus, cannabis, nicotiana, linum"/>
       <item name="spring_straw_cereal" varieties="hordeum_distichum"/>
@@ -1697,6 +1704,7 @@
       <item name="tropicals" varieties="ananas_comosus, musa, coffea, saccharum, curcuma, vanilla, chrysopogon, cananga_odorata"/>
       <item name="vegetables" varieties="allium_sativum, allium_cepa, allium_porrum, apium_graveolens, beta_vulgaris, brassica_oleracea, brassica_rapa, capsicum, cichorium, citrullus_lanatus, cucumis_melo, cynara_scolymus, daucus_carota, persea_americana, pisum, phaseolus, raphanus_sativus, solanum_lycopersicum, solanum_melongena, solanum_tuberosum"/>
       <item name="vetch" varieties="vicia"/>
+      <item name="vineyard_idea" varieties="vitis"/>
       <item name="wheat" varieties="triticum"/>
       <item name="winter_straw_cereal" varieties="hordeum_hexastichum, poa, secale, triticosecale, triticum, avena"/>
     </items>
@@ -10261,6 +10269,7 @@
       <item name="allium_cepa_b010283" parent="allium_cepa" itis_tsn="42720"/>
       <item name="allium_cepa_b010284" parent="allium_cepa" itis_tsn="42720"/>
       <item name="allium_cepa_valenciana" parent="allium_cepa" itis_tsn="42720"/>
+      <item name="allium_fistulosum" parent="allium" itis_tsn="185463"/>
       <item name="allium_oleraceum" parent="allium" itis_tsn="42689"/>
       <item name="allium_porrum" parent="allium" itis_tsn="42659"/>
       <item name="allium_porrum_belton" parent="allium_porrum" itis_tsn="42659"/>
@@ -10621,7 +10630,9 @@
       <item name="capra_hircus_corse" parent="capra_hircus"/>
       <item name="capra_hircus_creole" parent="capra_hircus"/>
       <item name="capra_hircus_des_fosses" parent="capra_hircus"/>
+      <item name="capra_hircus_lorraine" parent="capra_hircus"/>
       <item name="capra_hircus_massif_central" parent="capra_hircus"/>
+      <item name="capra_hircus_pei" parent="capra_hircus"/>
       <item name="capra_hircus_poitevine" parent="capra_hircus"/>
       <item name="capra_hircus_provencale" parent="capra_hircus"/>
       <item name="capra_hircus_pyreneenne" parent="capra_hircus"/>
@@ -10932,6 +10943,7 @@
       <item name="dioscoreaceae" parent="plant" itis_tsn="43365"/>
       <item name="diospyros" parent="ebenaceae" itis_tsn="23853"/>
       <item name="diospyros_kaki" parent="diospyros" itis_tsn="896176"/>
+      <item name="diplotaxis_tenuifolia" parent="eruca" itis_tsn="502098"/>
       <item name="easement" parent="zone"/>
       <item name="ebenaceae" parent="plant" itis_tsn="23852"/>
       <item name="egg" parent="raw_matter" derivative_of="aves"/>
@@ -10946,15 +10958,38 @@
       <item name="equipment_part" parent="matter"/>
       <item name="equus" parent="equidae"/>
       <item name="equus_asinus" parent="equus" itis_tsn="180690"/>
+      <item name="equus_asinus_black_berry" parent="equus_asinus"/>
+      <item name="equus_asinus_bourbonnais" parent="equus_asinus"/>
+      <item name="equus_asinus_cotentin" parent="equus_asinus"/>
+      <item name="equus_asinus_normand" parent="equus_asinus"/>
+      <item name="equus_asinus_poitou" parent="equus_asinus"/>
+      <item name="equus_asinus_provence" parent="equus_asinus"/>
+      <item name="equus_asinus_pyrenees" parent="equus_asinus"/>
       <item name="equus_caballus" parent="equus" itis_tsn="180691"/>
       <item name="equus_caballus_arabe" parent="equus_caballus"/>
+      <item name="equus_caballus_ardennais" parent="equus_caballus"/>
+      <item name="equus_caballus_auvergne" parent="equus_caballus"/>
+      <item name="equus_caballus_auxois" parent="equus_caballus"/>
+      <item name="equus_caballus_boulonnais" parent="equus_caballus"/>
+      <item name="equus_caballus_breton" parent="equus_caballus"/>
       <item name="equus_caballus_camargue" parent="equus_caballus"/>
+      <item name="equus_caballus_castillonnais" parent="equus_caballus"/>
+      <item name="equus_caballus_cob_normand" parent="equus_caballus"/>
+      <item name="equus_caballus_comtois" parent="equus_caballus"/>
+      <item name="equus_caballus_corse" parent="equus_caballus"/>
       <item name="equus_caballus_irish_cob" parent="equus_caballus"/>
+      <item name="equus_caballus_landais" parent="equus_caballus"/>
+      <item name="equus_caballus_merens" parent="equus_caballus"/>
+      <item name="equus_caballus_north_trait" parent="equus_caballus"/>
+      <item name="equus_caballus_percheron" parent="equus_caballus"/>
+      <item name="equus_caballus_poitevin_mulassier" parent="equus_caballus"/>
+      <item name="equus_caballus_pottok" parent="equus_caballus"/>
       <item name="equus_caballus_pur_sang" parent="equus_caballus"/>
       <item name="equus_caballus_shetland" parent="equus_caballus"/>
       <item name="equus_zebra" parent="equus" itis_tsn="202401"/>
       <item name="eremocitrus" parent="rutaceae" itis_tsn="500744"/>
       <item name="eruca" parent="brassicaceae" itis_tsn="23123"/>
+      <item name="eruca_sativa" parent="eruca" itis_tsn="23124"/>
       <item name="eruca_vesicaria" parent="eruca" itis_tsn="502429"/>
       <item name="erysiphaceae" parent="fungus" itis_tsn="194121"/>
       <item name="eucalyptus" parent="myrtaceae" itis_tsn="27187"/>
@@ -11685,6 +11720,29 @@
       <item name="ostreidae" parent="bivalvia" itis_tsn="79866"/>
       <item name="ovis" parent="bovidae" itis_tsn="180709"/>
       <item name="ovis_aries" parent="ovis" itis_tsn="552475"/>
+      <item name="ovis_avranchin" parent="ovis"/>
+      <item name="ovis_baregeoise" parent="ovis"/>
+      <item name="ovis_belle_ile" parent="ovis"/>
+      <item name="ovis_berrichon_indre" parent="ovis"/>
+      <item name="ovis_black_montain" parent="ovis"/>
+      <item name="ovis_blue_maine" parent="ovis"/>
+      <item name="ovis_boulonnais" parent="ovis"/>
+      <item name="ovis_brigasque" parent="ovis"/>
+      <item name="ovis_britain_landes" parent="ovis"/>
+      <item name="ovis_castillonnaise" parent="ovis"/>
+      <item name="ovis_caussenarde_garrigues" parent="ovis"/>
+      <item name="ovis_cotentin" parent="ovis"/>
+      <item name="ovis_hague_roussin" parent="ovis"/>
+      <item name="ovis_landaise" parent="ovis"/>
+      <item name="ovis_lourdaise" parent="ovis"/>
+      <item name="ovis_martinik" parent="ovis"/>
+      <item name="ovis_merinos_precoce" parent="ovis"/>
+      <item name="ovis_merinos_rambouillet" parent="ovis"/>
+      <item name="ovis_ouessant" parent="ovis"/>
+      <item name="ovis_raiole" parent="ovis"/>
+      <item name="ovis_red_roussillon" parent="ovis"/>
+      <item name="ovis_solognote" parent="ovis"/>
+      <item name="ovis_southdown_french" parent="ovis"/>
       <item name="packaged_matter" parent="preparation"/>
       <item name="palaquium" parent="sapotaceae" itis_tsn="500654"/>
       <item name="palaquium_gutta" parent="palaquium" itis_tsn="505957"/>
@@ -12032,6 +12090,7 @@
       <item name="raspberry" parent="fruit" derivative_of="rubus"/>
       <item name="raw_matter" parent="preparation"/>
       <item name="rhagoletis_completa" parent="insecta"/>
+      <item name="rheum_rhaponticum" parent="polygonaceae" itis_tsn="21319"/>
       <item name="ribes" parent="grossulariaceae" itis_tsn="24448"/>
       <item name="ribes_nigrum" parent="ribes" itis_tsn="24488"/>
       <item name="ribes_nigrum_andega" parent="ribes_nigrum" itis_tsn="0"/>
