@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add vine irrigating">
+  <item-creation item="procedure_categories#vine_irrigating" activity_family="vine_farming"/>
+</migration>
