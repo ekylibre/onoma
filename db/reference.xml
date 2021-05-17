@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20210505155442">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20210514104034">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -1695,7 +1695,7 @@
       <item name="rape" varieties="brassica"/>
       <item name="rapeseed" varieties="brassica_napus"/>
       <item name="secale_phacelia" varieties="secale, phacelia"/>
-      <item name="sheltered_gardening_idea" varieties="beta_vulgaris_cicla, beta_vulgaris_vulgaris, spinacia, allium_ampeloprasum, allium_ascalonicum, allium_cepa, allium_oleraceum, allium_porrum, allium_sativum, allium_scorodoprasum, allium_tricoccum, allium_triquetrum, allium_ursinum, allium_victorialis, allium_vineale, apium_graveolens, daucus_carota, pastinaca_sativa, asparagus, cichorium_endivia, cichorium_intybus, cynara, helianthus_tuberosus, lactuca, tragopogon, brassica_oleracea, brassica_napus_rapifera, brassica_rapa_pekinensis, brassica_rapa_rapa, crambe_maritima, eruca_vesicaria, lepidium_sativum, nasturtium_officinale, pringlea_antiscorbutica, raphanus_sativus_daïkon, raphanus_sativus_expo, raphanus_sativus_flamboyant2, raphanus_sativus_fluo, raphanus_sativus_niger, ipomoea_batatas, citrullus_lanatus, cucumis, cucurbita, phaseolus, pisum_sativum, ribes, fragaria, rubus_idaeus, capsicum, solanum_melongena, solanum_tuberosum, solanum_lycopersicum, valerianella_locusta"/>
+      <item name="sheltered_gardening_idea" varieties="beta_vulgaris_cicla, beta_vulgaris_vulgaris, spinacia, allium_ampeloprasum, allium_ascalonicum, allium_cepa, allium_oleraceum, allium_porrum, allium_sativum, allium_scorodoprasum, allium_tricoccum, allium_triquetrum, allium_ursinum, allium_victorialis, allium_vineale, apium_graveolens, daucus_carota, pastinaca_sativa, asparagus, cichorium_endivia, cichorium_intybus, cynara, helianthus_tuberosus, lactuca, tragopogon, brassica_oleracea, brassica_napus_rapifera, brassica_rapa_pekinensis, brassica_rapa_rapa, crambe_maritima, eruca_vesicaria, lepidium_sativum, nasturtium_officinale, pringlea_antiscorbutica, raphanus_sativus_da&#xEF;kon, raphanus_sativus_expo, raphanus_sativus_flamboyant2, raphanus_sativus_fluo, raphanus_sativus_niger, ipomoea_batatas, citrullus_lanatus, cucumis, cucurbita, phaseolus, pisum_sativum, ribes, fragaria, rubus_idaeus, capsicum, solanum_melongena, solanum_tuberosum, solanum_lycopersicum, valerianella_locusta"/>
       <item name="sorghum" varieties="sorghum"/>
       <item name="spring_crop" varieties="hordeum_distichum, zea, helianthus, cannabis, nicotiana, linum"/>
       <item name="spring_straw_cereal" varieties="hordeum_distichum"/>
@@ -2927,6 +2927,7 @@
       <item name="trellising" activity_family="vine_farming"/>
       <item name="troubleshooting" activity_family="tool_maintaining"/>
       <item name="vine_fertilizing" activity_family="vine_farming"/>
+      <item name="vine_irrigating" activity_family="vine_farming"/>
       <item name="vine_land_maintenance" activity_family="vine_farming"/>
       <item name="vine_planting" activity_family="vine_farming"/>
       <item name="vine_protection" activity_family="vine_farming"/>
