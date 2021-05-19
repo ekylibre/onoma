@@ -7,6 +7,9 @@
 /tmp/
 
 *~
+
+.idea/
+.ruby-version
 /*.gem
 /.byebug_history
 /.ruby-version
