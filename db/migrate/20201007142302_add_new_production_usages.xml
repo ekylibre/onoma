@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add new production usages">
+  <item-creation item="production_usages#plant" production_support_nature="cultivation"/>
+  <item-creation item="production_usages#flower" production_support_nature="cultivation"/>
+  <item-creation item="production_usages#wood"/>
+  <item-creation item="production_usages#silage" />
+  <item-creation item="production_usages#root" production_support_nature="cultivation"/>
+  <item-creation item="production_usages#straw"/>
+  <item-creation item="production_usages#salt"/>
+  <item-creation item="production_usages#hay"/>
+</migration>
