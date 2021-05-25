@@ -4632,6 +4632,15 @@ fra:
         production_code: "Code"
         telepac_crop_code: "Code de type de culture TéléPAC"
         variant_support: "Variant"
+    production_support_natures:
+      items:
+        animal_group: "Groupe d’animaux"
+        border: "Bordure"
+        buffer: "Zone tampon"
+        cultivation: "Culture"
+        fallow_land: "Jachère"
+        headland_cultivation: "Culture avec tournières"
+        none: "Aucun"
     production_systems:
       items:
         biodynamic_agriculture: "Biodynamie"
@@ -4647,14 +4656,22 @@ fra:
       items:
         fallow_land: "Jachère"
         fiber: "Fibre"
+        flower: "Fleur"
         fodder: "Fourrage"
         fruit: "Fruit"
         grain: "Grain"
+        hay: "Foin"
         meadow: "Prairie"
         meat: "Viande"
         milk: "Lait"
+        plant: "Plant"
+        root: "Racine"
+        salt: "Sel"
         seed: "Semence"
+        silage: "Ensilage"
+        straw: "Paille"
         vegetable: "Légume"
+        wood: "Bois"
       name: "Usages"
       property_natures:
         crop_sets: "Typologies de culture"
