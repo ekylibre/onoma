@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add varieties and abilities for Lexicon 5">
+  <item-creation item="abilities#sort" parameters="variety"/>
+  <item-creation item="abilities#transform" parameters="variety"/>
+  <item-creation item="varieties#fixed_equipment" parent="equipment"/>
+  <item-creation item="varieties#packaging" parent="preparation"/>
+  <item-creation item="varieties#lactuca_sativa_capitata" parent="lactuca_sativa"/>
+  <item-creation item="varieties#ericaceae" parent="plant"/>
+  <item-creation item="varieties#vaccinium" parent="ericaceae"/>
+  <item-creation item="varieties#vigna_unguiculata_unguiculata" parent="vigna_unguiculata"/>
+  <item-creation item="varieties#plantago_afra" parent="plantago"/>
+  <item-creation item="varieties#plantago_ovata" parent="plantago"/>
+  <item-creation item="varieties#manihot_esculenta" parent="manihot"/>
+  <item-creation item="varieties#ricinus_communis" parent="ricinus"/>
+  <item-creation item="varieties#vigna_unguiculata_cylindrica" parent="vigna_unguiculata"/>
+  <item-creation item="varieties#citrus_clementina" parent="citrus"/>
+  <item-creation item="varieties#x_festulolium" parent="poaceae"/>
+  <item-creation item="varieties#lavandula_x_intermedia" parent="lavandula"/>
+  <item-creation item="varieties#melissa_officinalis" parent="melissa"/>
+  <item-creation item="varieties#citrus_x_limon" parent="citrus"/>
+  <item-creation item="varieties#prunus_persica_nucipersica" parent="prunus_persica"/>
+  <item-creation item="varieties#lactuca_sativa_crispa" parent="lactuca_sativa"/>
+  <item-creation item="varieties#origanum_vulgare" parent="origanum"/>
+  <item-creation item="varieties#portulacaceae" parent="plant"/>
+  <item-creation item="varieties#portulaca" parent="portulacaceae"/>
+  <item-creation item="varieties#portulaca_oleracea" parent="portulaca"/>
+  <item-creation item="varieties#rheum" parent="polygonaceae"/>
+  <item-creation item="varieties#rheum_rhabarbarum" parent="rheum"/>
+  <item-creation item="varieties#cichorium_intybus_sativum" parent="cichorium_intybus"/>
+  <item-creation item="varieties#tragopogon_porrifolius" parent="tragopogon"/>
+  <item-creation item="varieties#cichorium_intybus_foliosum" parent="cichorium_intybus"/>
+  <item-creation item="varieties#manilkara" parent="sapotaceae"/>
+  <item-change item="varieties#manilkara_zapota" parent="manilkara"/>
+  <item-creation item="varieties#pringlea" parent="brassicaceae"/>
+  <item-change item="varieties#pringlea_antiscorbutica" parent="pringlea"/>
+</migration>
