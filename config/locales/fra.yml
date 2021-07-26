@@ -1978,7 +1978,7 @@ fra:
     document_natures:
       items:
         account_journal_entry_sheet: "Extrait de compte"
-        activity_cost: "Coût de production détaillé"
+        activity_cost: "Coûts de production détaillés"
         animal_husbandry_register: "Registre d’élevage"
         animal_list: "Liste des animaux"
         animal_sheet: "Fiche animal"
@@ -1997,7 +1997,7 @@ fra:
         fr_pcga_profit_and_loss_statement: "Compte de résultat (FR - PCGA)"
         gain_and_loss_fixed_asset_registry: "État des plus et moins-values"
         general_journal: "Journal centralisateur"
-        general_ledger: "Grand livre"
+        general_ledger: "Grand-livre"
         income_statement: "Compte de résultat"
         incoming_delivery_docket: "Bon de réception"
         intervention_register: "Registre des interventions"
