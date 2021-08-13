@@ -4788,6 +4788,7 @@ fra:
         algerian_vat_null: "TVA null Algérie"
         algerian_vat_reduced: "TVA algérienne réduite"
         algerian_vat_reduced_2017: "TVA algérienne réduite 2017"
+        danemark_vat_normal: "TVA Danoise normale"
         fr_vat_intermediate: "TVA française intermédiaire"
         fr_vat_normal: "TVA française normale"
         fr_vat_null: "TVA française nulle"
