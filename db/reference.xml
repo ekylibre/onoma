@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20210514104034">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20210728122411">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -10082,6 +10082,7 @@
       <item name="algerian_vat_null" country="dz" nature="null_vat" amount="0.0" started_on="1962-07-05"/>
       <item name="algerian_vat_reduced" country="dz" nature="reduced_vat" amount="7.0" started_on="1962-07-05" stopped_on="2016-12-31"/>
       <item name="algerian_vat_reduced_2017" country="dz" nature="reduced_vat" amount="9.0" started_on="2017-01-01"/>
+      <item name="danemark_vat_normal" country="dk" nature="normal_vat" amount="25.0" started_on="1962-07-05"/>
       <item name="french_vat_eu" country="fr" nature="eu_vat" started_on="1954-04-10" amount="0.0"/>
       <item name="french_vat_import_export" country="fr" nature="import_export_vat" started_on="1954-04-10" amount="0.0"/>
       <item name="french_vat_intermediate_2012" country="fr" nature="intermediate_vat" amount="7.0" started_on="2011-12-28" stopped_on="2011-12-31"/>
@@ -11435,9 +11436,9 @@
       <item name="raspberry" parent="fruit" derivative_of="rubus"/>
       <item name="raw_matter" parent="preparation"/>
       <item name="rhagoletis_completa" parent="insecta"/>
-      <item name="rheum_rhaponticum" parent="polygonaceae" itis_tsn="21319"/>
       <item name="rheum" parent="polygonaceae"/>
       <item name="rheum_rhabarbarum" parent="rheum"/>
+      <item name="rheum_rhaponticum" parent="polygonaceae" itis_tsn="21319"/>
       <item name="ribes" parent="grossulariaceae" itis_tsn="24448"/>
       <item name="ribes_nigrum" parent="ribes" itis_tsn="24488"/>
       <item name="ribes_rubrum" parent="ribes" itis_tsn="0"/>
