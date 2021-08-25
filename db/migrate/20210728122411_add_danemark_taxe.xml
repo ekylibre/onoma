@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add danemark taxe">
+  <item-creation item="taxes#danemark_vat_normal" name="danemark_vat_normal" country="dk" nature="normal_vat" amount="25.0" started_on="1962-07-05"/>
+</migration>
