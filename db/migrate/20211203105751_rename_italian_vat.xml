@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Rename italian vat">
+  <!-- Add your changes here -->
+  <item-removal item="taxes#danemark_italy_vat_normal"/>
+  <item-creation item="taxes#italy_vat_normal" name="italy_vat_normal" country="it" nature="normal_vat" amount="22.0" started_on="1970-01-01"/>
+</migration>

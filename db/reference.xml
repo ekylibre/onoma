@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20210728122411">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20211203105751">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -10082,7 +10082,16 @@
       <item name="algerian_vat_null" country="dz" nature="null_vat" amount="0.0" started_on="1962-07-05"/>
       <item name="algerian_vat_reduced" country="dz" nature="reduced_vat" amount="7.0" started_on="1962-07-05" stopped_on="2016-12-31"/>
       <item name="algerian_vat_reduced_2017" country="dz" nature="reduced_vat" amount="9.0" started_on="2017-01-01"/>
+      <item name="austria_vat_normal" country="at" nature="normal_vat" amount="20.0" started_on="1970-01-01"/>
+      <item name="austria_vat_reduced" country="at" nature="reduced_vat" amount="13.0" started_on="1970-01-01"/>
+      <item name="belgium_vat_normal" country="be" nature="normal_vat" amount="21.0" started_on="1970-01-01"/>
+      <item name="bulgaria_vat_normal" country="bg" nature="normal_vat" amount="20.0" started_on="1970-01-01"/>
+      <item name="croatia_vat_normal" country="hr" nature="normal_vat" amount="25.0" started_on="1970-01-01"/>
+      <item name="cyprus_vat_normal" country="cy" nature="normal_vat" amount="19.0" started_on="1970-01-01"/>
+      <item name="czechia_vat_normal" country="cz" nature="normal_vat" amount="21.0" started_on="1970-01-01"/>
       <item name="danemark_vat_normal" country="dk" nature="normal_vat" amount="25.0" started_on="1962-07-05"/>
+      <item name="estonia_vat_normal" country="ee" nature="normal_vat" amount="20.0" started_on="1970-01-01"/>
+      <item name="finland_vat_normal" country="fi" nature="normal_vat" amount="24.0" started_on="1970-01-01"/>
       <item name="french_vat_eu" country="fr" nature="eu_vat" started_on="1954-04-10" amount="0.0"/>
       <item name="french_vat_import_export" country="fr" nature="import_export_vat" started_on="1954-04-10" amount="0.0"/>
       <item name="french_vat_intermediate_2012" country="fr" nature="intermediate_vat" amount="7.0" started_on="2011-12-28" stopped_on="2011-12-31"/>
@@ -10096,22 +10105,40 @@
       <item name="french_vat_particular_1982" country="fr" nature="particular_vat" amount="5.5" started_on="1982-04-01" stopped_on="1989-12-28"/>
       <item name="french_vat_particular_1989" country="fr" nature="particular_vat" amount="2.1" started_on="1989-12-29"/>
       <item name="french_vat_reduced" country="fr" nature="reduced_vat" amount="5.5" started_on="1989-12-29"/>
+      <item name="germany_vat_normal" country="de" nature="normal_vat" amount="19.0" started_on="1970-01-01"/>
+      <item name="greece_vat_normal" country="gr" nature="normal_vat" amount="23.0" started_on="1970-01-01"/>
+      <item name="hungary_vat_normal" country="hu" nature="normal_vat" amount="27.0" started_on="1970-01-01"/>
+      <item name="ireland_vat_normal" country="ie" nature="normal_vat" amount="23.0" started_on="1970-01-01"/>
+      <item name="italy_vat_normal" country="it" nature="normal_vat" amount="22.0" started_on="1970-01-01"/>
+      <item name="latvia_vat_normal" country="lv" nature="normal_vat" amount="21.0" started_on="1970-01-01"/>
+      <item name="lithuania_vat_normal" country="lt" nature="normal_vat" amount="21.0" started_on="1970-01-01"/>
+      <item name="luxembourg_vat_normal" country="lu" nature="normal_vat" amount="17.0" started_on="1970-01-01"/>
+      <item name="luxembourg_vat_reduced" country="lu" nature="reduced_vat" amount="14.0" started_on="1970-01-01"/>
+      <item name="malta_vat_normal" country="mt" nature="normal_vat" amount="18.0" started_on="1970-01-01"/>
+      <item name="netherlands_vat_normal" country="nl" nature="normal_vat" amount="21.0" started_on="1970-01-01"/>
+      <item name="poland_vat_normal" country="pl" nature="normal_vat" amount="23.0" started_on="1970-01-01"/>
       <item name="portugal_vat_eu" country="pt" nature="eu_vat" started_on="1954-04-10" amount="0.0"/>
       <item name="portugal_vat_import_export" country="pt" nature="import_export_vat" started_on="1954-04-10" amount="0.0"/>
       <item name="portugal_vat_normal" country="pt" nature="normal_vat" started_on="1954-04-10" amount="23.0"/>
       <item name="portugal_vat_null" country="pt" nature="null_vat" started_on="1954-04-10" amount="0.0"/>
       <item name="portugal_vat_particular" country="pt" nature="reduced_vat" started_on="1954-04-10" amount="6.0"/>
       <item name="portugal_vat_reduced" country="pt" nature="intermediate_vat" started_on="1954-04-10" amount="13.0"/>
+      <item name="romania_vat_normal" country="ro" nature="normal_vat" amount="20.0" started_on="1970-01-01"/>
+      <item name="slovakia_vat_normal" country="sk" nature="normal_vat" amount="20.0" started_on="1970-01-01"/>
+      <item name="slovania_vat_normal" country="si" nature="normal_vat" amount="22.0" started_on="1970-01-01"/>
       <item name="spain_vat_eu" country="es" nature="eu_vat" started_on="1954-04-10" amount="0.0"/>
       <item name="spain_vat_import_export" country="es" nature="import_export_vat" started_on="1954-04-10" amount="0.0"/>
       <item name="spain_vat_intermediate_2013" country="es" nature="intermediate_vat" amount="10.0" started_on="2012-09-01"/>
+      <item name="spain_vat_normal" country="es" nature="normal_vat" amount="21.0" started_on="1970-01-01"/>
       <item name="spain_vat_normal_2013" country="es" nature="normal_vat" amount="21.0" started_on="2012-09-01"/>
       <item name="spain_vat_null" country="es" nature="null_vat" started_on="1954-04-10" amount="0.0"/>
       <item name="spain_vat_reduced_2013" country="es" nature="reduced_vat" amount="4.0" started_on="2012-09-01"/>
+      <item name="sweden_vat_normal" country="se" nature="normal_vat" amount="25.0" started_on="1970-01-01"/>
       <item name="swiss_vat_normal_2011" country="ch" nature="normal_vat" amount="8.0" started_on="2011-01-01"/>
       <item name="swiss_vat_null_2011" country="ch" nature="null_vat" amount="0.0" started_on="2011-01-01"/>
       <item name="swiss_vat_particular_2011" country="ch" nature="particular_vat" amount="3.8" started_on="2011-01-01"/>
       <item name="swiss_vat_reduced_2011" country="ch" nature="reduced_vat" amount="2.5" started_on="2011-01-01"/>
+      <item name="uk_vat_normal" country="gb" nature="normal_vat" amount="20.0" started_on="1970-01-01"/>
     </items>
   </nomenclature>
   <nomenclature name="units" translateable="true">
