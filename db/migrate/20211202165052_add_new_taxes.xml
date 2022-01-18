@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add new taxes">
+  <item-creation item="taxes#austria_vat_normal" name="austria_vat_normal" country="at" nature="normal_vat" amount="20.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#austria_vat_reduced" name="austria_vat_reduced" country="at" nature="reduced_vat" amount="13.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#belgium_vat_normal" name="belgium_vat_normal" country="be" nature="normal_vat" amount="21.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#bulgaria_vat_normal" name="bulgaria_vat_normal" country="bg" nature="normal_vat" amount="20.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#cyprus_vat_normal" name="cyprus_vat_normal" country="cy" nature="normal_vat" amount="19.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#czechia_vat_normal" name="czechia_vat_normal" country="cz" nature="normal_vat" amount="21.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#germany_vat_normal" name="germany_vat_normal" country="de" nature="normal_vat" amount="19.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#estonia_vat_normal" name="estonia_vat_normal" country="ee" nature="normal_vat" amount="20.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#spain_vat_normal" name="spain_vat_normal" country="es" nature="normal_vat" amount="21.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#finland_vat_normal" name="finland_vat_normal" country="fi" nature="normal_vat" amount="24.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#uk_vat_normal" name="uk_vat_normal" country="gb" nature="normal_vat" amount="20.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#greece_vat_normal" name="greece_vat_normal" country="gr" nature="normal_vat" amount="23.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#croatia_vat_normal" name="croatia_vat_normal" country="hr" nature="normal_vat" amount="25.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#hungary_vat_normal" name="hungary_vat_normal" country="hu" nature="normal_vat" amount="27.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#ireland_vat_normal" name="ireland_vat_normal" country="ie" nature="normal_vat" amount="23.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#danemark_italy_vat_normal" name="italy_vat_normal" country="it" nature="normal_vat" amount="22.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#lithuania_vat_normal" name="lithuania_vat_normal" country="lt" nature="normal_vat" amount="21.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#luxembourg_vat_normal" name="luxembourg_vat_normal" country="lu" nature="normal_vat" amount="17.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#luxembourg_vat_reduced" name="luxembourg_vat_reduced" country="lu" nature="reduced_vat" amount="14.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#latvia_vat_normal" name="latvia_vat_normal" country="lv" nature="normal_vat" amount="21.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#malta_vat_normal" name="malta_vat_normal" country="mt" nature="normal_vat" amount="18.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#netherlands_vat_normal" name="netherlands_vat_normal" country="nl" nature="normal_vat" amount="21.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#poland_vat_normal" name="poland_vat_normal" country="pl" nature="normal_vat" amount="23.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#romania_vat_normal" name="romania_vat_normal" country="ro" nature="normal_vat" amount="20.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#sweden_vat_normal" name="sweden_vat_normal" country="se" nature="normal_vat" amount="25.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#slovania_vat_normal" name="slovania_vat_normal" country="si" nature="normal_vat" amount="22.0" started_on="1970-01-01"/>
+  <item-creation item="taxes#slovakia_vat_normal" name="slovakia_vat_normal" country="sk" nature="normal_vat" amount="20.0" started_on="1970-01-01"/>
+</migration>
