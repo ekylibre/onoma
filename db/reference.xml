@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20211203105751">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20220206082500">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -2020,6 +2020,7 @@
       <item name="purchases_original" category="exploitation"/>
       <item name="sales_estimate" category="marketing"/>
       <item name="sales_invoice" category="marketing" signed="true"/>
+      <item name="sales_invoice_shipment" category="marketing" signed="true"/>
       <item name="sales_order" category="marketing"/>
       <item name="security_data_sheet" category="land_parcel_management"/>
       <item name="shipping_note" category="exploitation"/>

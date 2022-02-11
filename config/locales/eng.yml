@@ -1953,6 +1953,7 @@ eng:
         purchases_original: "Purchases original"
         sales_estimate: "Sales estimate"
         sales_invoice: "Sales invoice"
+        sales_invoice_shipment: "Sales invoice (shipments)"
         sales_order: "Sales order"
         security_data_sheet: "Security data sheet"
         shipping_note: "Shipping note"
