@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add new document nature for sale shipment">
+  <item-creation item="document_natures#sales_invoice_shipment" category="marketing" signed="true"/>
+</migration>

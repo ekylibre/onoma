@@ -2027,6 +2027,7 @@ fra:
         purchases_original: "Pièce originale d’achat"
         sales_estimate: "Devis de vente"
         sales_invoice: "Facture de vente"
+        sales_invoice_shipment: "Facture de vente (expéditions)"
         sales_order: "Commande de vente"
         security_data_sheet: "Fiche de données de sécurité"
         shipping_note: "Bon de livraison"
