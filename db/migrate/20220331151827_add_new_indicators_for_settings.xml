@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add new indicators for settings">
+  <item-creation item="indicators#nozzle_count" datatype="integer"/>
+  <item-creation item="indicators#nozzle_type" datatype="string"/>
+  <item-creation item="indicators#spray_pressure" datatype="measure" unit="bar"/>
+  <item-creation item="indicators#engine_speed" datatype="measure" unit="revolution_per_minute"/>
+  <item-creation item="indicators#ground_speed" datatype="measure" unit="kilometer_per_hour"/>
+  <item-creation item="indicators#spray_mix_volume_area_density" datatype="measure" unit="liter_per_hectare"/>
+
+  <item-creation item="dimensions#angular_velocity" symbol="rad/s"/>
+  <item-creation item="units#radian_per_second" dimension="angular_velocity" symbol="rad/s" repartition_unit="second" repartition_dimension="time" base_unit="radian" base_dimension="angle"/>
+  <item-creation item="units#revolution_per_minute" dimension="angular_velocity" symbol="tr/min" a="0.10471975511965977" d="60" repartition_unit="minute" repartition_dimension="time"/>
+</migration>

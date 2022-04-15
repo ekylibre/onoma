@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20220206082500">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20220331151827">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -1913,6 +1913,7 @@
       <item name="amount_of_substance" symbol="mol"/>
       <item name="amount_of_substance_density" symbol="mol/kg"/>
       <item name="angle" symbol="rad"/>
+      <item name="angular_velocity" symbol="rad/s"/>
       <item name="concentration" symbol="./m&#xB3;"/>
       <item name="distance" symbol="m"/>
       <item name="distance_speed" symbol="m/s"/>
@@ -2218,6 +2219,7 @@
       <item name="element_count" datatype="integer"/>
       <item name="end_of_life_witness" datatype="string"/>
       <item name="energy" datatype="measure" unit="kilowatt_hour"/>
+      <item name="engine_speed" datatype="measure" unit="revolution_per_minute"/>
       <item name="entry_date" datatype="string"/>
       <item name="entry_reason" datatype="string"/>
       <item name="estimated_harvest_alcoholic_volumetric_concentration" datatype="measure" unit="volume_percent"/>
@@ -2241,6 +2243,7 @@
       <item name="germination_rate" datatype="measure" unit="percent"/>
       <item name="grains_area_density" datatype="measure" unit="unity_per_square_meter"/>
       <item name="grains_count" datatype="measure" unit="thousand"/>
+      <item name="ground_speed" datatype="measure" unit="kilometer_per_hour"/>
       <item name="hagberg_falling_number" datatype="measure" unit="second"/>
       <item name="healthy" datatype="boolean"/>
       <item name="height" datatype="measure" unit="meter"/>
@@ -2307,6 +2310,8 @@
       <item name="nominal_storable_easement_area" datatype="measure" unit="square_meter"/>
       <item name="nominal_storable_net_mass" datatype="measure" unit="kilogram"/>
       <item name="nominal_storable_net_volume" datatype="measure" unit="liter"/>
+      <item name="nozzle_count" datatype="integer"/>
+      <item name="nozzle_type" datatype="string"/>
       <item name="organic_matter_concentration" datatype="measure" unit="mass_percent"/>
       <item name="origin_country_code" datatype="string"/>
       <item name="origin_identification_number" datatype="string"/>
@@ -2350,6 +2355,8 @@
       <item name="spans_count" datatype="integer"/>
       <item name="species_purity" datatype="measure" unit="percent"/>
       <item name="specific_weight" datatype="measure" unit="kilogram_per_hectoliter"/>
+      <item name="spray_mix_volume_area_density" datatype="measure" unit="liter_per_hectare"/>
+      <item name="spray_pressure" datatype="measure" unit="bar"/>
       <item name="stakes_count" datatype="integer" gathering="proportional_to_population"/>
       <item name="subsoil_nature" datatype="choice" choices="soil_natures"/>
       <item name="sucrose_concentration" datatype="measure" unit="mass_percent"/>
@@ -10259,6 +10266,8 @@
       <item name="quintal_per_square_centimeter" dimension="mass_area_density" symbol="qt/cm&#xB2;" a="1000000.0" base_unit="quintal" base_dimension="mass" repartition_unit="square_centimeter" repartition_dimension="surface_area"/>
       <item name="quintal_per_square_meter" dimension="mass_area_density" symbol="qt/m&#xB2;" a="100.0" base_unit="quintal" base_dimension="mass" repartition_unit="square_meter" repartition_dimension="surface_area"/>
       <item name="radian" dimension="angle" symbol="rad" base_unit="radian" base_dimension="angle"/>
+      <item name="radian_per_second" dimension="angular_velocity" symbol="rad/s" repartition_unit="second" repartition_dimension="time" base_unit="radian" base_dimension="angle"/>
+      <item name="revolution_per_minute" dimension="angular_velocity" symbol="tr/min" a="0.10471975511965977" d="60.0" repartition_unit="minute" repartition_dimension="time"/>
       <item name="second" dimension="time" symbol="s" base_unit="second" base_dimension="time"/>
       <item name="square_centimeter" dimension="surface_area" symbol="cm&#xB2;" a="0.0001" base_unit="square_centimeter" base_dimension="surface_area"/>
       <item name="square_meter" dimension="surface_area" symbol="m&#xB2;" base_unit="square_meter" base_dimension="surface_area"/>
