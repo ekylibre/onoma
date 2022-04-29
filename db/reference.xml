@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20220331151827">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20220429084101">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -4322,7 +4322,7 @@
       <item name="sower" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="sow" variable_indicators="geolocation" frozen_indicators="nominal_storable_net_volume, application_width, rows_count, theoretical_working_speed" nature="equipment"/>
       <item name="species" category="fruit" variety="pollen" derivative_of="plant" population_counting="decimal" variable_indicators="reference_year" frozen_indicators="net_mass, net_volume" nature="article"/>
       <item name="spinach" category="vegetable" variety="vegetable" derivative_of="spinacia_oleracea" population_counting="decimal" abilities="feed(animal)" variable_indicators="" frozen_indicators="net_mass" nature="article"/>
-      <item name="sprayer" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="spray" variable_indicators="geolocation" frozen_indicators="nominal_storable_net_volume, application_width, theoretical_working_speed" nature="equipment"/>
+      <item name="sprayer" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="spray" variable_indicators="geolocation, application_width, element_count, nominal_storable_net_volume, rows_count, theoretical_working_speed" frozen_indicators="" nature="equipment"/>
       <item name="spread_renting" category="equipment_rent" variety="service" population_counting="decimal" abilities="spread(preparation)" variable_indicators="" frozen_indicators="usage_duration" nature="fee_and_service"/>
       <item name="spreader" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="spread(preparation)" variable_indicators="geolocation" frozen_indicators="nominal_storable_net_volume, application_width, theoretical_working_speed" nature="equipment"/>
       <item name="spreader_trailer" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="store(excrement), move, spread(excrement), store(raw_matter), store_fluid, spread(preparation)" variable_indicators="geolocation" frozen_indicators="nominal_storable_net_volume, nominal_storable_net_mass" nature="equipment"/>
@@ -4338,7 +4338,7 @@
       <item name="telescopic_handler" category="equipment" variety="handling_equipment" population_counting="unitary" variable_indicators="geolocation" abilities="catch(product)" nature="equipment"/>
       <item name="tool" category="equipment" variety="equipment" population_counting="unitary" nature="equipment"/>
       <item name="topper" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="cut" frozen_indicators="application_width, theoretical_working_speed" variable_indicators="geolocation" nature="equipment"/>
-      <item name="tractor" category="equipment" variety="tractor" population_counting="unitary" abilities="catch(matter), move, tow(matter), consume(oil), consume(fuel)" variable_indicators="net_surface_area, motor_power, geolocation, hour_counter" frozen_indicators="" linkage_points="rear, front" nature="equipment"/>
+      <item name="tractor" category="equipment" variety="tractor" population_counting="unitary" abilities="catch(matter), move, tow(matter), consume(oil), consume(fuel)" variable_indicators="fuel_consumption, geolocation, motor_power, hour_counter, ground_speed" frozen_indicators="" linkage_points="rear, front" nature="equipment"/>
       <item name="trade_show" category="trade_show" variety="service" population_counting="integer" variable_indicators="" nature="fee_and_service"/>
       <item name="trailer" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="store_fluid, store(grain), store(grass), store(raw_matter), store(silage), move" variable_indicators="geolocation" frozen_indicators="nominal_storable_net_volume, nominal_storable_net_mass" nature="equipment"/>
       <item name="training_course" category="service" variety="service" population_counting="decimal" variable_indicators="" frozen_indicators="usage_duration" nature="fee_and_service"/>

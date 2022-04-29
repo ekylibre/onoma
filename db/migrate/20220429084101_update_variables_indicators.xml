@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Update viti product nauture variant">
+  <item-change item="product_natures#tractor" variable_indicators="fuel_consumption,geolocation, motor_power, hour_counter, ground_speed" frozen_indicators=""/>
+  <item-change item="product_natures#sprayer" variable_indicators="geolocation, application_width, element_count, nominal_storable_net_volume, rows_count, theoretical_working_speed" frozen_indicators=""/>
+</migration>
