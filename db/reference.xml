@@ -1978,6 +1978,7 @@
       <item name="by_account_fixed_asset_registry" category="accountancy"/>
       <item name="cultivable_zone_sheet" category="land_parcel_management"/>
       <item name="deposit_list" category="exploitation"/>
+      <item name="draaf_sheet" category="management"/>
       <item name="entity_sheet" category="exploitation"/>
       <item name="equipment_certification" category="land_parcel_management"/>
       <item name="exchange_accountancy_file_fr" category="accountancy"/>
@@ -2010,6 +2011,7 @@
       <item name="outgoing_payment_list__standard" category="exploitation"/>
       <item name="pending_vat_register" category="accountancy"/>
       <item name="pfi_land_parcel_register" category="land_parcel_management"/>
+      <item name="phytosanitary_applicator_sheet" category="management"/>
       <item name="phytosanitary_certification" category="land_parcel_management"/>
       <item name="phytosanitary_register" category="land_parcel_management"/>
       <item name="prescription" category="health"/>
