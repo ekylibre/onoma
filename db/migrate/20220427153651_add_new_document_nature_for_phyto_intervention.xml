@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add new document nature for phyto intervention">
+  <item-creation item="document_natures#phytosanitary_applicator_sheet" category="management"/>
+  <item-creation item="document_natures#draaf_sheet" category="management"/>
+</migration>

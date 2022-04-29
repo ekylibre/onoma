@@ -42,7 +42,7 @@ namespace :db do
         exit 1
       end
       name = name.downcase.gsub(/[\s\-\_]+/, '_')
-      full_name = Time.zone.now.l(format: '%Y%m%d%H%M%S') + "_#{name}"
+      full_name = Time.now.strftime('%Y%m%d%H%M%S') + "_#{name}"
       file = Onoma.root.join('db', 'migrate', "#{full_name}.xml")
       found = Dir.glob(Onoma.migrations_path.join('*.xml')).detect do |file|
         File.basename(file).to_s =~ /^\d+\_#{name}\.xml/
@@ -56,7 +56,7 @@ namespace :db do
       xml << "  <!-- Add your changes here -->\n"
       xml << "</migration>\n"
       File.write(file, xml)
-      puts "Create #{file.relative_path_from(Onoma.root).to_s.yellow}"
+      puts "Create #{file.relative_path_from(Onoma.root).to_s}"
     end
 
     task :translation do
