@@ -1905,6 +1905,7 @@ eng:
         acta_category: "Acta category"
     document_natures:
       items:
+        ac_work_sheet: "AC work sheet"
         account_journal_entry_sheet: "Account journal entry sheet"
         activity_cost: "Activity cost"
         animal_husbandry_register: "Animal husbandry register"
@@ -1913,7 +1914,6 @@ eng:
         balance_sheet: "Balance sheet"
         by_account_fixed_asset_registry: "Fixed asset registry by account"
         deposit_list: "Deposit list"
-        draaf_sheet: "DRAAF sheet"
         entity_sheet: "Entity sheet"
         equipment_certification: "Equipment certification"
         exchange_accountancy_file_fr: "Exchange accountancy file fr"

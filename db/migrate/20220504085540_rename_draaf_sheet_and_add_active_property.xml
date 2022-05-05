@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Rename draaf sheet and add active property">
+  <item-removal item="document_natures#draaf_sheet" />
+  <property-creation property="document_natures.active" type="boolean" default="true"/>
+  <item-creation item="document_natures#ac_work_sheet" category="management" active="false"/>
+</migration>
