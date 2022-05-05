@@ -283,7 +283,7 @@ module Onoma
             break if value
           end
         end
-        value ||= cast_property(name, property.default) if property.default
+        value = cast_property(name, property.default) if property.default && value.nil?
       end
       value
     end

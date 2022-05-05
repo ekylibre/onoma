@@ -1977,6 +1977,7 @@ fra:
         acta_category: "Catégorie ACTA"
     document_natures:
       items:
+        ac_work_sheet: "Fiche de chantier ETA"
         account_journal_entry_sheet: "Extrait de compte"
         activity_cost: "Coûts de production détaillés"
         animal_husbandry_register: "Registre d’élevage"
@@ -1986,7 +1987,6 @@ fra:
         by_account_fixed_asset_registry: "État des immobilisations par compte"
         deposit: "Remise en banque"
         deposit_list: "Remise en banque"
-        draaf_sheet: "Fiche DRAAF"
         entity_sheet: "Fiche tiers"
         equipment_certification: "Certification des équipements"
         exchange_accountancy_file_fr: "Écritures comptables (FEC)"
