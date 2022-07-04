@@ -1,6 +1,7 @@
 module Onoma
   class PropertyNature
-    attr_reader :nomenclature, :name, :type, :fallbacks, :default, :source
+    attr_reader :nomenclature
+    attr_accessor :name, :type, :fallbacks, :default, :source
 
     # New item
     def initialize(nomenclature, name, type, options = {})
