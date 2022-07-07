@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Fallback currency symbol">
+  <property_change property="currencies.symbol" fallbacks="name"/>
+</migration>

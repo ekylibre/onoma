@@ -279,6 +279,7 @@ module Onoma
       if property
         if value.nil? && property.fallbacks
           property.fallbacks.each do |fallback|
+            value ||= @name if fallback == :name
             value ||= @attributes[fallback]
             break if value
           end

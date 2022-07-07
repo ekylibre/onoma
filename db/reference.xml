@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20220504085540">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20220704161519">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -1719,7 +1719,7 @@
       <property name="countries" type="item_list" choices="countries"/>
       <property name="number" type="string" required="true" default="2"/>
       <property name="precision" type="integer" required="true" default="2"/>
-      <property name="symbol" type="string"/>
+      <property name="symbol" type="string" fallbacks="name"/>
     </properties>
     <items>
       <item name="AED" precision="2" active="true" countries="ae" number="784"/>
@@ -1821,7 +1821,7 @@
       <item name="MNT" precision="2" active="true" countries="mn" number="496"/>
       <item name="MOP" precision="2" active="true" countries="mo" number="446"/>
       <item name="MRO" precision="2" active="true" countries="mr" number="478"/>
-      <item name="MUR" precision="2" active="true" countries="mu" number="480"/>
+      <item name="MUR" precision="2" active="true" countries="mu" number="480" symbol="Rs"/>
       <item name="MVR" precision="2" active="true" countries="mv" number="462"/>
       <item name="MWK" precision="2" active="true" countries="mw" number="454"/>
       <item name="MXN" precision="2" active="true" countries="mx" number="484"/>
