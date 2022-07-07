@@ -256,6 +256,22 @@ module Onoma
       p
     end
 
+    def change_property(name, updates = {})
+      property = property_natures[name]
+
+      unless property
+        raise "Property #{p.name} doesn't exist in nomenclature #{@name}"
+      end
+
+      updates.each do |k, v|
+        begin
+          property.send("#{k}=", v)
+        rescue NoMethodError => e
+          "#{k} attribute doesn't exist for property nature"
+        end
+      end
+    end
+
     def sibling(name)
       @set.find(name)
     end

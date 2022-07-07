@@ -48,7 +48,7 @@ module Onoma
       end
 
       def property_change(action)
-        @set.add_property(action.nomenclature, action.name, action.changes)
+        @set.change_property(action.nomenclature, action.name, action.changes)
       end
 
       def item_creation(action)

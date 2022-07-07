@@ -151,8 +151,9 @@ module Onoma
       nomenclature.add_property(property_name, type, options)
     end
 
-    def change_property(_nomenclature_name, _property_name, _updates = {})
-      raise NotImplementedError
+    def change_property(nomenclature_name, property_name, updates = {})
+      nomenclature = find!(nomenclature_name)
+      nomenclature.change_property(property_name, updates)
     end
 
     def remove_property(_nomenclature_name, _property_name, _options = {})
