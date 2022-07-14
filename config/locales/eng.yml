@@ -4708,6 +4708,7 @@ eng:
         parts_per_million: "Parts per million"
         pascal: "Pascal"
         percent: "Percent"
+        plant_per_hour: "Plant per hour"
         quintal: "Quintal"
         quintal_per_hectare: "Quintal per hectare"
         radian: "Radian"

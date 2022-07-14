@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20220714160001">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20220714161601">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -10263,6 +10263,7 @@
       <item name="parts_per_million" dimension="none" symbol="ppm" d="1000000.0" base_unit="parts" base_dimension="" repartition_unit="million" repartition_dimension="none"/>
       <item name="pascal" dimension="pressure" symbol="Pa" base_unit="pascal" base_dimension="pressure"/>
       <item name="percent" dimension="none" symbol="%" d="100.0" base_unit="percent" base_dimension="none"/>
+      <item name="plant_per_hour" dimension="unity_flow" symbol="plant/h" a="1.0" d="3600.0" base_unit="unity" base_dimension="none" repartition_unit="hour" repartition_dimension="time"/>
       <item name="quintal" dimension="mass" symbol="q" a="100.0" base_unit="quintal" base_dimension="mass"/>
       <item name="quintal_per_acre" dimension="mass_area_density" symbol="qt/acre" a="0.024710538146" base_unit="quintal" base_dimension="mass" repartition_unit="acre" repartition_dimension="surface_area"/>
       <item name="quintal_per_are" dimension="mass_area_density" symbol="qt/a" a="1.0" base_unit="quintal" base_dimension="mass" repartition_unit="are" repartition_dimension="surface_area"/>
