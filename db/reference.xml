@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20220704161519">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20220714160001">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -1935,6 +1935,7 @@
       <item name="surface_area_flow" symbol="m&#xB2;/s"/>
       <item name="temperature" symbol="K"/>
       <item name="time" symbol="s"/>
+      <item name="unity_flow" symbol="./s"/>
       <item name="volume" symbol="m&#xB3;"/>
       <item name="volume_area_density" symbol="m&#xB3;/m&#xB2;"/>
       <item name="volume_concentration" symbol="m&#xB3;/m&#xB3;"/>
@@ -10290,6 +10291,7 @@
       <item name="ton_per_square_meter" dimension="mass_area_density" symbol="t/m&#xB2;" a="1000.0" base_unit="ton" base_dimension="mass" repartition_unit="square_meter" repartition_dimension="surface_area"/>
       <item name="unity" dimension="none" symbol="." base_unit="unity" base_dimension="none"/>
       <item name="unity_per_hectare" dimension="surface_area_density" symbol="./ha" d="10000.0" base_unit="unity" base_dimension="none" repartition_unit="hectare" repartition_dimension="surface_area"/>
+      <item name="unity_per_hour" dimension="unity_flow" symbol="./h" a="1.0" d="3600.0" base_unit="unity" base_dimension="none" repartition_unit="hour" repartition_dimension="time"/>
       <item name="unity_per_kilogram" dimension="mass_density" symbol="./kg" base_unit="unity" base_dimension="none" repartition_unit="kilogram" repartition_dimension="mass"/>
       <item name="unity_per_liter" dimension="concentration" symbol="./l" d="0.001" base_unit="unity" base_dimension="none" repartition_unit="liter" repartition_dimension="volume"/>
       <item name="unity_per_square_meter" dimension="surface_area_density" symbol="./m&#xB2;" base_unit="unity" base_dimension="none" repartition_unit="square_meter" repartition_dimension="surface_area"/>
