@@ -7,7 +7,7 @@ module Onoma
           Onoma.find_or_initialize(name.tableize.sub(%r{\Aonoma/}, '')).send(*args, &block)
         end
 
-        def respond_to?(method_name)
+        def respond_to?(method_name, include_all = false)
           Onoma.find_or_initialize(name.tableize.sub(%r{\Aonoma/}, '')).respond_to?(method_name) || super
         end
       end
