@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add new document for budget exporting">
+  <item-creation item="document_natures#planned_budget_sheet" category="management"/>
+</migration>

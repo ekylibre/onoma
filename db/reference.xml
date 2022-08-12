@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20220714161601">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20220809095601">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -2016,6 +2016,7 @@
       <item name="phytosanitary_applicator_sheet" category="management"/>
       <item name="phytosanitary_certification" category="land_parcel_management"/>
       <item name="phytosanitary_register" category="land_parcel_management"/>
+      <item name="planned_budget_sheet" category="management"/>
       <item name="prescription" category="health"/>
       <item name="products_sheet" category="management"/>
       <item name="provisional_manure_management_plan" category="land_parcel_management"/>
