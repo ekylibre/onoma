@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add new document for itk exporting">
+  <item-creation item="document_natures#technical_itinerary_sheet" category="production"/>
+</migration>
