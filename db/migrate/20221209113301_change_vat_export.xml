@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Change vat export">
+  <item-creation item="accounts#country_locale_vat" fr_pcg82="4675" fr_pcga="4675"/>
+  <item-creation item="tax_natures#export_private_eu_vat" computation_method="percentage" deduction_account="country_locale_vat" collect_account="country_locale_vat" suffix="1"/>
+  <!-- add tax from used location for sale on physical person from FR -->
+</migration>
