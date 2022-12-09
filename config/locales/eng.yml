@@ -154,6 +154,7 @@ eng:
         corporeal_depreciations_inputations_expenses: "Land parcel construction depreciations inputations expenses"
         corporeal_depreciations_inputations_expenses_living_goods: "Animals depreciations inputations expenses"
         corporeals_and_incorporeals_depreciations_inputations_expenses: "Corporeals and incorporeals depreciations inputations expenses"
+        country_locale_vat: "Country locale vat"
         credit_retained_earnings: "Credit retained earnings"
         creditor_clients: "Creditor clients"
         debit_retained_earnings: "Debit retained earnings"
@@ -4544,6 +4545,7 @@ eng:
         null_vat: "Null VAT"
         particular_vat: "Particular VAT"
         reduced_vat: "Reduced VAT"
+        export_private_eu_vat: "Export private VAT"
       name: "Tax natures"
       property_natures:
         collect_account: "Collect account"

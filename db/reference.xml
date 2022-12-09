@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20221104131501">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20221209113301">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -169,6 +169,7 @@
       <item name="corporeal_depreciations_inputations_expenses" fr_pcga="68112" fr_pcg82="68112"/>
       <item name="corporeal_depreciations_inputations_expenses_living_goods" fr_pcga="68114" fr_pcg82="68114"/>
       <item name="corporeals_and_incorporeals_depreciations_inputations_expenses" fr_pcg82="6811" fr_pcga="6811"/>
+      <item name="country_locale_vat" fr_pcg82="4675" fr_pcga="4675"/>
       <item name="credit_retained_earnings" fr_pcg82="110" fr_pcga="110"/>
       <item name="creditor_clients" fr_pcg82="419" pt_snc="21900000" fr_pcga="419"/>
       <item name="debit_retained_earnings" fr_pcg82="119" fr_pcga="119"/>
@@ -10073,6 +10074,7 @@
     </properties>
     <items>
       <item name="eu_vat" computation_method="percentage" deduction_account="deductible_intra_eu_vat" fixed_asset_deduction_account="deductible_intra_eu_vat" collect_account="collected_vat" suffix="2"/>
+      <item name="export_private_eu_vat" computation_method="percentage" deduction_account="country_locale_vat" collect_account="country_locale_vat" suffix="1"/>
       <item name="import_export_vat" computation_method="percentage" deduction_account="deductible_products_and_services_vat" collect_account="collected_vat" fixed_asset_deduction_account="deductible_asset_vat" suffix="6"/>
       <item name="inflated_vat" computation_method="percentage" deduction_account="deductible_products_and_services_vat" collect_account="collected_vat" suffix="8"/>
       <item name="intermediate_vat" computation_method="percentage" deduction_account="deductible_products_and_services_vat" collect_account="collected_vat" suffix="3"/>
