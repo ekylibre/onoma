@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add unit for animal">
+  <item-creation item="dimensions#mass_unity_density" symbol="kg/."/>
+  <item-creation item="dimensions#volume_unity_density" symbol="m&#xB3;/."/>
+  <item-creation item="dimensions#unity_unity_density" symbol="./."/>
+  <item-creation item="units#head" dimension="none" symbol="♞" base_unit="unity" base_dimension="none"/>
+  <item-creation item="units#kilogram_per_head" dimension="mass_unity_density" symbol="kg/♞" d="1.0" base_unit="kilogram" base_dimension="mass" repartition_unit="head" repartition_dimension="none"/>
+  <item-creation item="units#liter_per_head" dimension="volume_unity_density" symbol="l/♞" a="0.001" d="1.0" base_unit="liter" base_dimension="volume" repartition_unit="head" repartition_dimension="none"/>
+  <item-creation item="units#unity_per_head" dimension="unity_unity_density" symbol="./♞" d="1.0" base_unit="unity" base_dimension="none" repartition_unit="head" repartition_dimension="none"/>
+</migration>

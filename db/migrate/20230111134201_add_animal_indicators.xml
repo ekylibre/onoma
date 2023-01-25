@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add animal indicators">
+  <item-creation item="indicators#mass_head_density" datatype="measure" unit="kilogram_per_head"/>
+  <item-creation item="indicators#volume_head_density" datatype="measure" unit="liter_per_head"/>
+  <item-creation item="indicators#unity_head_density" datatype="measure" unit="unity_per_head"/>
+</migration>

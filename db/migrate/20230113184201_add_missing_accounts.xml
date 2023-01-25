@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add missing accounts ">
+  <item-creation item="accounts#ecotax" fr_pcga="60711" fr_pcg82="60711"/>
+  <item-creation item="accounts#waste_contribution" fr_pcga="60712" fr_pcg82="60712"/>
+</migration>

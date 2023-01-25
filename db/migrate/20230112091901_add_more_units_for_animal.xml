@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add more unit for animal">
+  <item-creation item="units#gram_per_head" dimension="mass_unity_density" symbol="g/♞" a='0.001' d="1" base_unit="gram" base_dimension="mass" repartition_unit="head" repartition_dimension="none"/>
+  <item-creation item="units#milliter_per_head" dimension="volume_unity_density" symbol="ml/♞" a="0.000001" d="1.0" base_unit="milliliter" base_dimension="volume" repartition_unit="head" repartition_dimension="none"/>
+</migration>
