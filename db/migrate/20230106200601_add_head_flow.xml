@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add unity flow">
+  <item-creation item="units#head_per_hour" dimension="unity_flow" symbol="m&#xB3;/h" a="1.0" d="3600.0" base_unit="unity" base_dimension="none" repartition_unit="hour" repartition_dimension="time"/>
+</migration>

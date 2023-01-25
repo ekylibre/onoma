@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20221209113301">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20230113184201">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -189,6 +189,7 @@
       <item name="discount_from_cooperatives" fr_pcga="754" fr_pcg82="754"/>
       <item name="discount_granted_expenses" fr_pcg82="665" fr_pcga="665"/>
       <item name="donation_exceptional_expenses" fr_pcga="6713" fr_pcg82="6713"/>
+      <item name="ecotax" fr_pcga="60711" fr_pcg82="60711"/>
       <item name="electricity_expenses" fr_pcga="6063" fr_pcg82="6061"/>
       <item name="employee_participation_and_income_taxes_and_assimilated_payments_expenses" fr_pcg82="69" fr_pcga="69"/>
       <item name="employee_participation_expenses" fr_pcg82="691" fr_pcga="691"/>
@@ -579,6 +580,7 @@
       <item name="vegetals_making_services_expenses" fr_pcga="6051" fr_pcg82="6051"/>
       <item name="veterinary_fees_expenses" fr_pcga="6225" fr_pcg82="6225"/>
       <item name="waiting_vat" fr_pcg82="4458" fr_pcga="4458"/>
+      <item name="waste_contribution" fr_pcga="60712" fr_pcg82="60712"/>
       <item name="water_expenses" fr_pcga="6061" fr_pcg82="6061"/>
       <item name="workshop_and_warehouse_supplies_expenses" fr_pcga="6023"/>
       <item name="workshop_and_warehouse_supplies_stocks_variation" fr_pcga="60323"/>
@@ -1927,6 +1929,7 @@
       <item name="mass_concentration" symbol="kg/m&#xB3;"/>
       <item name="mass_density" symbol="./kg"/>
       <item name="mass_flow" symbol="kg/s"/>
+      <item name="mass_unity_density" symbol="kg/."/>
       <item name="none" symbol="."/>
       <item name="power" symbol="J/s"/>
       <item name="pressure" symbol="N/m&#xB2;"/>
@@ -1937,10 +1940,12 @@
       <item name="temperature" symbol="K"/>
       <item name="time" symbol="s"/>
       <item name="unity_flow" symbol="./s"/>
+      <item name="unity_unity_density" symbol="./."/>
       <item name="volume" symbol="m&#xB3;"/>
       <item name="volume_area_density" symbol="m&#xB3;/m&#xB2;"/>
       <item name="volume_concentration" symbol="m&#xB3;/m&#xB3;"/>
       <item name="volume_flow" symbol="m&#xB3;/s"/>
+      <item name="volume_unity_density" symbol="m&#xB3;/."/>
     </items>
   </nomenclature>
   <nomenclature name="document_categories" translateable="true">
@@ -2279,6 +2284,7 @@
       <item name="manganese_concentration" datatype="measure" unit="parts_per_million"/>
       <item name="mass_area_density" datatype="measure" unit="kilogram_per_square_meter"/>
       <item name="mass_area_yield" datatype="measure" unit="quintal_per_hectare"/>
+      <item name="mass_head_density" datatype="measure" unit="kilogram_per_head"/>
       <item name="mass_volume_density" datatype="measure" unit="kilogram_per_liter"/>
       <item name="maximal_atmospheric_pressure" datatype="measure" unit="hectopascal" sampling_temporal_mode="period"/>
       <item name="maximal_rainfall" datatype="measure" unit="millimeter_per_hour" sampling_temporal_mode="period"/>
@@ -2378,6 +2384,7 @@
       <item name="total_acid_concentration" datatype="measure" unit="gram_per_liter"/>
       <item name="total_bacteria_concentration" datatype="measure" unit="thousand_per_milliliter"/>
       <item name="unique_synthesis_index" datatype="measure" unit="unity"/>
+      <item name="unity_head_density" datatype="measure" unit="unity_per_head"/>
       <item name="untreated_zone_length" datatype="measure" unit="meter"/>
       <item name="urea_concentration" datatype="measure" unit="milligram_per_liter"/>
       <item name="usage_duration" datatype="measure" unit="hour"/>
@@ -2386,6 +2393,7 @@
       <item name="volume_area_density" datatype="measure" unit="liter_per_square_meter"/>
       <item name="volume_density" datatype="measure" unit="centiliter_per_hectoliter"/>
       <item name="volume_flow" datatype="measure" unit="cubic_meter_per_hour"/>
+      <item name="volume_head_density" datatype="measure" unit="liter_per_head"/>
       <item name="wait_before_entering_period" datatype="measure" unit="day"/>
       <item name="wait_before_harvest_period" datatype="measure" unit="day"/>
       <item name="water_content_rate" datatype="measure" unit="mass_percent"/>
@@ -10201,12 +10209,15 @@
       <item name="gram" dimension="mass" symbol="g" a="0.001" base_unit="gram" base_dimension="mass"/>
       <item name="gram_per_acre" dimension="mass_area_density" symbol="g/acre" a="2.4710538146e-07" base_unit="gram" base_dimension="mass" repartition_unit="acre" repartition_dimension="surface_area"/>
       <item name="gram_per_are" dimension="mass_area_density" symbol="g/a" a="1.0e-05" base_unit="gram" base_dimension="mass" repartition_unit="are" repartition_dimension="surface_area"/>
+      <item name="gram_per_head" dimension="mass_unity_density" symbol="g/&#x265E;" a="0.001" d="1.0" base_unit="gram" base_dimension="mass" repartition_unit="head" repartition_dimension="none"/>
       <item name="gram_per_hectare" dimension="mass_area_density" symbol="g/ha" a="1.0e-07" base_unit="gram" base_dimension="mass" repartition_unit="hectare" repartition_dimension="surface_area"/>
       <item name="gram_per_hectoliter" dimension="mass_concentration" symbol="g/hl" a="0.01" d="0.1" base_unit="gram" base_dimension="mass" repartition_unit="hectoliter" repartition_dimension="volume"/>
       <item name="gram_per_kilogram" dimension="none" symbol="g/kg" d="10000.0" base_unit="gram" base_dimension="mass" repartition_unit="kilogram" repartition_dimension="mass"/>
       <item name="gram_per_liter" dimension="mass_concentration" symbol="g/l" a="0.01" d="0.001" base_unit="gram" base_dimension="mass" repartition_unit="liter" repartition_dimension="volume"/>
       <item name="gram_per_square_centimeter" dimension="mass_area_density" symbol="g/cm&#xB2;" a="10.0" base_unit="gram" base_dimension="mass" repartition_unit="square_centimeter" repartition_dimension="surface_area"/>
       <item name="gram_per_square_meter" dimension="mass_area_density" symbol="g/m&#xB2;" a="0.001" base_unit="gram" base_dimension="mass" repartition_unit="square_meter" repartition_dimension="surface_area"/>
+      <item name="head" dimension="none" symbol="&#x265E;" base_unit="unity" base_dimension="none"/>
+      <item name="head_per_hour" dimension="unity_flow" symbol="m&#xB3;/h" a="1.0" d="3600.0" base_unit="unity" base_dimension="none" repartition_unit="hour" repartition_dimension="time"/>
       <item name="hectare" dimension="surface_area" symbol="ha" a="10000.0" base_unit="hectare" base_dimension="surface_area"/>
       <item name="hectare_per_hour" dimension="surface_area_flow" symbol="ha/h" a="10000.0" d="3600.0" base_unit="hectare" base_dimension="surface_area" repartition_unit="hour" repartition_dimension="time"/>
       <item name="hectoliter" dimension="volume" symbol="hl" a="0.1" base_unit="hectoliter" base_dimension="volume"/>
@@ -10222,6 +10233,7 @@
       <item name="kilogram_per_are" dimension="mass_area_density" symbol="kg/a" a="0.01" base_unit="kilogram" base_dimension="mass" repartition_unit="are" repartition_dimension="surface_area"/>
       <item name="kilogram_per_cubic_meter" dimension="mass_concentration" symbol="kg/m&#xB3;"/>
       <item name="kilogram_per_day" dimension="mass_flow" symbol="kg/d" d="86400.0" base_unit="kilogram" base_dimension="mass" repartition_unit="day" repartition_dimension="time"/>
+      <item name="kilogram_per_head" dimension="mass_unity_density" symbol="kg/&#x265E;" d="1.0" base_unit="kilogram" base_dimension="mass" repartition_unit="head" repartition_dimension="none"/>
       <item name="kilogram_per_hectare" dimension="mass_area_density" symbol="kg/ha" d="10000.0" base_unit="kilogram" base_dimension="mass" repartition_unit="hectare" repartition_dimension="surface_area"/>
       <item name="kilogram_per_hectoliter" dimension="mass_concentration" symbol="kg/hl" d="0.1" base_unit="kilogram" base_dimension="mass" repartition_unit="hectoliter" repartition_dimension="volume"/>
       <item name="kilogram_per_liter" dimension="mass_concentration" symbol="kg/l" d="0.001" base_unit="kilogram" base_dimension="mass" repartition_unit="liter" repartition_dimension="volume"/>
@@ -10235,6 +10247,7 @@
       <item name="kilowatt" dimension="power" symbol="kW" a="1000.0" base_unit="kilowatt" base_dimension="power"/>
       <item name="kilowatt_hour" dimension="energy" symbol="kWh" a="3600000.0" base_unit="kilowatt_hour" base_dimension="energy"/>
       <item name="liter" dimension="volume" symbol="l" a="0.001" base_unit="liter" base_dimension="volume"/>
+      <item name="liter_per_head" dimension="volume_unity_density" symbol="l/&#x265E;" a="0.001" d="1.0" base_unit="liter" base_dimension="volume" repartition_unit="head" repartition_dimension="none"/>
       <item name="liter_per_hectare" dimension="volume_area_density" symbol="l/ha" a="0.001" d="10000.0" base_unit="liter" base_dimension="volume" repartition_unit="hectare" repartition_dimension="surface_area"/>
       <item name="liter_per_hectoliter" dimension="volume_concentration" symbol="l/hl" a="0.001" d="0.1" base_unit="liter" base_dimension="volume" repartition_unit="hectoliter" repartition_dimension="volume"/>
       <item name="liter_per_hour" dimension="volume_flow" symbol="l/h" a="0.001" d="3600.0" base_unit="liter" base_dimension="volume" repartition_unit="hour" repartition_dimension="time"/>
@@ -10261,6 +10274,7 @@
       <item name="million_per_liter" dimension="concentration" symbol="M./l" a="1000000.0" d="0.001" base_unit="million" base_dimension="none" repartition_unit="liter" repartition_dimension="volume"/>
       <item name="millionth" dimension="none" symbol="&#xB5;." a="1.0e-06" base_unit="millionth" base_dimension="none"/>
       <item name="millisecond" dimension="time" symbol="ms" a="0.001" base_unit="millisecond" base_dimension="time"/>
+      <item name="milliter_per_head" dimension="volume_unity_density" symbol="ml/&#x265E;" a="1.0e-06" d="1.0" base_unit="milliliter" base_dimension="volume" repartition_unit="head" repartition_dimension="none"/>
       <item name="minute" dimension="time" symbol="min" a="60.0" base_unit="minute" base_dimension="time"/>
       <item name="mole" dimension="amount_of_substance" symbol="mol" base_unit="mole" base_dimension="amount_of_substance"/>
       <item name="mole_per_kilogram" dimension="amount_of_substance_density" symbol="mol/kg" base_unit="mole" base_dimension="amount_of_substance" repartition_unit="kilogram" repartition_dimension="mass"/>
@@ -10295,6 +10309,7 @@
       <item name="ton_per_square_centimeter" dimension="mass_area_density" symbol="t/cm" a="10000000.0" base_unit="ton" base_dimension="mass" repartition_unit="square_centimeter" repartition_dimension="surface_area"/>
       <item name="ton_per_square_meter" dimension="mass_area_density" symbol="t/m&#xB2;" a="1000.0" base_unit="ton" base_dimension="mass" repartition_unit="square_meter" repartition_dimension="surface_area"/>
       <item name="unity" dimension="none" symbol="." base_unit="unity" base_dimension="none"/>
+      <item name="unity_per_head" dimension="unity_unity_density" symbol="./&#x265E;" d="1.0" base_unit="unity" base_dimension="none" repartition_unit="head" repartition_dimension="none"/>
       <item name="unity_per_hectare" dimension="surface_area_density" symbol="./ha" d="10000.0" base_unit="unity" base_dimension="none" repartition_unit="hectare" repartition_dimension="surface_area"/>
       <item name="unity_per_hour" dimension="unity_flow" symbol="./h" a="1.0" d="3600.0" base_unit="unity" base_dimension="none" repartition_unit="hour" repartition_dimension="time"/>
       <item name="unity_per_kilogram" dimension="mass_density" symbol="./kg" base_unit="unity" base_dimension="none" repartition_unit="kilogram" repartition_dimension="mass"/>
