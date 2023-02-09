@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20230113184201">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20230209142059">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -1917,7 +1917,7 @@
       <item name="amount_of_substance_density" symbol="mol/kg"/>
       <item name="angle" symbol="rad"/>
       <item name="angular_velocity" symbol="rad/s"/>
-      <item name="concentration" symbol="./m&#xB3;"/>
+      <item name="concentration" symbol="u./m&#xB3;"/>
       <item name="distance" symbol="m"/>
       <item name="distance_speed" symbol="m/s"/>
       <item name="electric_current" symbol="A"/>
@@ -1927,25 +1927,25 @@
       <item name="mass" symbol="kg"/>
       <item name="mass_area_density" symbol="kg/m&#xB2;"/>
       <item name="mass_concentration" symbol="kg/m&#xB3;"/>
-      <item name="mass_density" symbol="./kg"/>
+      <item name="mass_density" symbol="u./kg"/>
       <item name="mass_flow" symbol="kg/s"/>
-      <item name="mass_unity_density" symbol="kg/."/>
-      <item name="none" symbol="."/>
+      <item name="mass_unity_density" symbol="kg/u."/>
+      <item name="none" symbol="u."/>
       <item name="power" symbol="J/s"/>
       <item name="pressure" symbol="N/m&#xB2;"/>
       <item name="specific_volume" symbol="m&#xB3;/kg"/>
       <item name="surface_area" symbol="m&#xB2;"/>
-      <item name="surface_area_density" symbol="./m&#xB2;"/>
+      <item name="surface_area_density" symbol="u./m&#xB2;"/>
       <item name="surface_area_flow" symbol="m&#xB2;/s"/>
       <item name="temperature" symbol="K"/>
       <item name="time" symbol="s"/>
-      <item name="unity_flow" symbol="./s"/>
-      <item name="unity_unity_density" symbol="./."/>
+      <item name="unity_flow" symbol="u./s"/>
+      <item name="unity_unity_density" symbol="u./u."/>
       <item name="volume" symbol="m&#xB3;"/>
       <item name="volume_area_density" symbol="m&#xB3;/m&#xB2;"/>
       <item name="volume_concentration" symbol="m&#xB3;/m&#xB3;"/>
       <item name="volume_flow" symbol="m&#xB3;/s"/>
-      <item name="volume_unity_density" symbol="m&#xB3;/."/>
+      <item name="volume_unity_density" symbol="m&#xB3;/u."/>
     </items>
   </nomenclature>
   <nomenclature name="document_categories" translateable="true">
@@ -10308,13 +10308,13 @@
       <item name="ton_per_hectare" dimension="mass_area_density" symbol="t/ha" a="1000.0" d="10000.0" base_unit="ton" base_dimension="mass" repartition_unit="hectare" repartition_dimension="surface_area"/>
       <item name="ton_per_square_centimeter" dimension="mass_area_density" symbol="t/cm" a="10000000.0" base_unit="ton" base_dimension="mass" repartition_unit="square_centimeter" repartition_dimension="surface_area"/>
       <item name="ton_per_square_meter" dimension="mass_area_density" symbol="t/m&#xB2;" a="1000.0" base_unit="ton" base_dimension="mass" repartition_unit="square_meter" repartition_dimension="surface_area"/>
-      <item name="unity" dimension="none" symbol="." base_unit="unity" base_dimension="none"/>
-      <item name="unity_per_head" dimension="unity_unity_density" symbol="./&#x265E;" d="1.0" base_unit="unity" base_dimension="none" repartition_unit="head" repartition_dimension="none"/>
-      <item name="unity_per_hectare" dimension="surface_area_density" symbol="./ha" d="10000.0" base_unit="unity" base_dimension="none" repartition_unit="hectare" repartition_dimension="surface_area"/>
-      <item name="unity_per_hour" dimension="unity_flow" symbol="./h" a="1.0" d="3600.0" base_unit="unity" base_dimension="none" repartition_unit="hour" repartition_dimension="time"/>
-      <item name="unity_per_kilogram" dimension="mass_density" symbol="./kg" base_unit="unity" base_dimension="none" repartition_unit="kilogram" repartition_dimension="mass"/>
-      <item name="unity_per_liter" dimension="concentration" symbol="./l" d="0.001" base_unit="unity" base_dimension="none" repartition_unit="liter" repartition_dimension="volume"/>
-      <item name="unity_per_square_meter" dimension="surface_area_density" symbol="./m&#xB2;" base_unit="unity" base_dimension="none" repartition_unit="square_meter" repartition_dimension="surface_area"/>
+      <item name="unity" dimension="none" symbol="u." base_unit="unity" base_dimension="none"/>
+      <item name="unity_per_head" dimension="unity_unity_density" symbol="u./&#x265E;" d="1.0" base_unit="unity" base_dimension="none" repartition_unit="head" repartition_dimension="none"/>
+      <item name="unity_per_hectare" dimension="surface_area_density" symbol="u./ha" d="10000.0" base_unit="unity" base_dimension="none" repartition_unit="hectare" repartition_dimension="surface_area"/>
+      <item name="unity_per_hour" dimension="unity_flow" symbol="u./h" a="1.0" d="3600.0" base_unit="unity" base_dimension="none" repartition_unit="hour" repartition_dimension="time"/>
+      <item name="unity_per_kilogram" dimension="mass_density" symbol="u./kg" base_unit="unity" base_dimension="none" repartition_unit="kilogram" repartition_dimension="mass"/>
+      <item name="unity_per_liter" dimension="concentration" symbol="u./l" d="0.001" base_unit="unity" base_dimension="none" repartition_unit="liter" repartition_dimension="volume"/>
+      <item name="unity_per_square_meter" dimension="surface_area_density" symbol="u./m&#xB2;" base_unit="unity" base_dimension="none" repartition_unit="square_meter" repartition_dimension="surface_area"/>
       <item name="volume_percent" dimension="none" symbol="%vol." d="100.0" base_unit="volume_percent" base_dimension="none"/>
       <item name="watt" dimension="power" symbol="W" base_unit="watt" base_dimension="power"/>
       <item name="watt_per_square_meter" dimension="heat_flux_density" symbol="W/m&#xB2;" base_unit="watt" base_dimension="power" repartition_unit="square_meter" repartition_dimension="surface_area"/>

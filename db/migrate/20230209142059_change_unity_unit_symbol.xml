@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Change unity unit symbol">
+  <item-change item="units#unity" symbol="u."/>
+  <item-change item="units#unity_per_head" symbol="u./&#x265E;"/>
+  <item-change item="units#unity_per_hectare" symbol="u./ha"/>
+  <item-change item="units#unity_per_hour" symbol="u./h"/>
+  <item-change item="units#unity_per_kilogram" symbol="u./kg"/>
+  <item-change item="units#unity_per_liter" symbol="u./l"/>
+  <item-change item="units#unity_per_square_meter" symbol="u./m&#xB2;"/>
+
+
+  <item-change item="dimensions#concentration" symbol="u./m&#xB3;"/>
+  <item-change item="dimensions#mass_density" symbol="u./kg"/>
+  <item-change item="dimensions#mass_unity_density" symbol="kg/u."/>
+  <item-change item="dimensions#none" symbol="u."/>
+  <item-change item="dimensions#surface_area_density" symbol="u./m&#xB2;"/>
+  <item-change item="dimensions#unity_flow" symbol="u./s"/>
+  <item-change item="dimensions#unity_unity_density" symbol="u./u."/>
+  <item-change item="dimensions#volume_unity_density" symbol="m&#xB3;/u."/>
+</migration>
