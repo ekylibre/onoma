@@ -1933,6 +1933,7 @@ eng:
         gain_and_loss_fixed_asset_registry: "Gain and loss fixed asset registry"
         general_journal: "General journal"
         general_ledger: "General ledger"
+        harvest_reception: "Harvest reception"
         income_statement: "Profit and loss statement"
         incoming_delivery_docket: "Incoming delivery docket"
         intervention_register: "Intervention register"

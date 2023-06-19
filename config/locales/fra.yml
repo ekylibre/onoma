@@ -2006,6 +2006,7 @@ fra:
         gain_and_loss_fixed_asset_registry: "État des plus et moins-values"
         general_journal: "Journal centralisateur"
         general_ledger: "Grand-livre"
+        harvest_reception: "Réception de récolte"
         income_statement: "Compte de résultat"
         incoming_delivery_docket: "Bon de réception"
         intervention_register: "Registre des interventions"
