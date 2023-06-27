@@ -27,6 +27,7 @@ namespace :db do
       output = Onoma.root.join('tmp', 'nomenclatures')
       FileUtils.rm_rf(output)
       FileUtils.mkdir_p(output)
+      Onoma.load!
       Onoma.all.each do |n|
         n.to_csv(output.join("#{n.name}.csv"))
       end

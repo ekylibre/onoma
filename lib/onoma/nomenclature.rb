@@ -1,4 +1,6 @@
 # rubocop:disable Style/MissingRespondToMissing
+require 'csv'
+
 module Onoma
   # This class represents a nomenclature
   class Nomenclature
