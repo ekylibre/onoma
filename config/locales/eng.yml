@@ -81,6 +81,7 @@ eng:
         parameters: "Parameters"
     accounting_systems:
       items:
+        fr_pcg2019: "French PCG2019"
         fr_pcg82: "French PCG82"
         fr_pcga: "French PCGA"
         pt_snc: "Portuguese SNC"
@@ -547,6 +548,7 @@ eng:
       name: "Accounts"
       property_natures:
         debtor: "Debtor"
+        fr_pcg2019: "French PCG2019"
         fr_pcg82: "French PCG82"
         fr_pcga: "French PCGA"
         pt_snc: "Protuguese SNC"
