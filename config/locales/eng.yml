@@ -1949,7 +1949,7 @@ eng:
         manure_management_plan_sheet: "Manure management plan (detail)"
         outgoing_deliveries_journal: "Outgoing deliveries journal"
         outgoing_delivery_docket: "Outgoing delivery docket"
-        outgoing_payment_list__check_letter: "Outgoing payment list: Check letter"
+        outgoing_payment_list__check_letter: "Outgoing payment list - Check letter"
         outgoing_payment_list__standard: "Outgoing payment list"
         pending_vat_register: "Pending VAT register"
         pfi_land_parcel_register: "Phytosanitary Frequency Indicators register"

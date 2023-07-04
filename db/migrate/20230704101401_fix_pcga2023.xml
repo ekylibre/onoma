@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Fix pcga2023">
+  <item-change item="accounts#long_cycle_cultivation_advances" fr_pcg82="331" fr_pcga="331" fr_pcg2019="331" fr_pcg2023="NONE" fr_pcga2023="331"/>
+  <item-change item="accounts#long_cycle_products_stock" fr_pcg82="NONE" fr_pcga="35" fr_pcg2019="355" fr_pcg2023="NONE" fr_pcga2023="35"/>
+  <item-change item="accounts#long_cycle_vegetals_stock" fr_pcg82="NONE" fr_pcga="33" fr_pcg2019="33121" fr_pcg2023="NONE" fr_pcga2023="33"/>
+  <item-change item="accounts#usual_associates_current_accounts" fr_pcg82="4552" fr_pcga="4552" fr_pcg2019="4552" fr_pcg2023="4551" fr_pcga2023="4551"/>
+</migration>

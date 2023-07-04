@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20230703105201">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20230704101401">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -382,20 +382,20 @@
       <item name="loans" fr_pcg82="164" pt_snc="25000000" fr_pcga="164" fr_pcg2019="164" fr_pcg2023="164" fr_pcga2023="164"/>
       <item name="loans_interests" fr_pcg82="661" pt_snc="66150000" fr_pcga="661" fr_pcg2019="661" fr_pcg2023="661" fr_pcga2023="661"/>
       <item name="long_cycle_animals_inventory_variations" fr_pcga="7131" fr_pcg82="7131" fr_pcg2019="713551" fr_pcg2023="713551" fr_pcga2023="713551"/>
-      <item name="long_cycle_cultivation_advances" fr_pcga="331" fr_pcg82="331" fr_pcg2019="331" fr_pcg2023="NONE" fr_pcga2023="NONE"/>
+      <item name="long_cycle_cultivation_advances" fr_pcga="331" fr_pcg82="331" fr_pcg2019="331" fr_pcg2023="NONE" fr_pcga2023="331"/>
       <item name="long_cycle_cultivation_advances_culturals_ways" fr_pcg2019="NONE" fr_pcg82="NONE" fr_pcga="NONE" pt_snc="NONE" fr_pcg2023="NONE" fr_pcga2023="311415"/>
       <item name="long_cycle_cultivation_advances_fertilizers" fr_pcg2019="NONE" fr_pcg82="NONE" fr_pcga="NONE" pt_snc="NONE" fr_pcg2023="NONE" fr_pcga2023="311411"/>
       <item name="long_cycle_cultivation_advances_plants_medicines" fr_pcg2019="NONE" fr_pcg82="NONE" fr_pcga="NONE" pt_snc="NONE" fr_pcg2023="NONE" fr_pcga2023="311413"/>
       <item name="long_cycle_cultivation_advances_seeds" fr_pcg2019="NONE" fr_pcg82="NONE" fr_pcga="NONE" pt_snc="NONE" fr_pcg2023="NONE" fr_pcga2023="311412"/>
       <item name="long_cycle_product_inventory_variations" fr_pcga="7135" fr_pcg82="7135" fr_pcg2019="7135" fr_pcg2023="7135" fr_pcga2023="7135"/>
       <item name="long_cycle_products_liquors_stock" fr_pcga="352" fr_pcg82="352" fr_pcg2019="33112" fr_pcg2023="33112" fr_pcga2023="33112"/>
-      <item name="long_cycle_products_stock" fr_pcga="35" fr_pcg82="NONE" fr_pcg2019="355" fr_pcg2023="NONE" fr_pcga2023="NONE"/>
+      <item name="long_cycle_products_stock" fr_pcga="35" fr_pcg82="NONE" fr_pcg2019="355" fr_pcg2023="NONE" fr_pcga2023="35"/>
       <item name="long_cycle_products_wines_stock" fr_pcga="351" fr_pcg82="351" fr_pcg2019="33111" fr_pcg2023="33111" fr_pcga2023="33111"/>
       <item name="long_cycle_vegetals_end_product_inventory_variations" fr_pcg2019="NONE" fr_pcg82="NONE" fr_pcga="NONE" pt_snc="NONE" fr_pcg2023="NONE" fr_pcga2023="713553"/>
       <item name="long_cycle_vegetals_garden_stock" fr_pcg2019="NONE" fr_pcg82="NONE" fr_pcga="NONE" pt_snc="NONE" fr_pcg2023="NONE" fr_pcga2023="31142"/>
       <item name="long_cycle_vegetals_inventory_variations" fr_pcga="7133" fr_pcg82="7133" fr_pcg2019="713311" fr_pcg2023="713311" fr_pcga2023="713311"/>
       <item name="long_cycle_vegetals_other_stock" fr_pcg2019="NONE" fr_pcg82="NONE" fr_pcga="NONE" pt_snc="NONE" fr_pcg2023="NONE" fr_pcga2023="31148"/>
-      <item name="long_cycle_vegetals_stock" fr_pcga="33" centralizing="false" fr_pcg82="NONE" fr_pcg2019="33121" fr_pcg2023="NONE" fr_pcga2023="NONE"/>
+      <item name="long_cycle_vegetals_stock" fr_pcga="33" centralizing="false" fr_pcg82="NONE" fr_pcg2019="33121" fr_pcg2023="NONE" fr_pcga2023="33"/>
       <item name="long_term_loans" fr_pcg82="1642" fr_pcga="1642" fr_pcg2019="1642" fr_pcg2023="1642" fr_pcga2023="1642"/>
       <item name="long_term_loans_interests" fr_pcg82="6612" fr_pcga="6612" fr_pcg2019="6612" fr_pcg2023="6612" fr_pcga2023="6612"/>
       <item name="long_time_animal_stock" fr_pcga="31" centralizing="false" fr_pcg82="NONE" fr_pcg2019="3112" fr_pcg2023="NONE" fr_pcga2023="3112"/>
@@ -681,7 +681,7 @@
       <item name="treasur_bonds" fr_pcg2019="NONE" fr_pcg82="NONE" fr_pcga="NONE" pt_snc="NONE" fr_pcg2023="507" fr_pcga2023="507"/>
       <item name="trust_creation_operation_expenses" fr_pcg82="674" fr_pcga="674" fr_pcg2019="674" fr_pcg2023="674" fr_pcga2023="674"/>
       <item name="unstorable_expenses" fr_pcg82="606" fr_pcga="606" fr_pcg2019="606" fr_pcg2023="606" fr_pcga2023="606"/>
-      <item name="usual_associates_current_accounts" fr_pcga="4552" fr_pcg82="4552" fr_pcg2019="4552" fr_pcg2023="NONE" fr_pcga2023="NONE"/>
+      <item name="usual_associates_current_accounts" fr_pcga="4552" fr_pcg82="4552" fr_pcg2019="4552" fr_pcg2023="4551" fr_pcga2023="4551"/>
       <item name="usual_bank_overdraft" fr_pcg82="519" fr_pcga="519" fr_pcg2019="519" fr_pcg2023="519" fr_pcga2023="519"/>
       <item name="various_debtors_and_creditors" fr_pcg2019="NONE" fr_pcg82="NONE" fr_pcga="NONE" pt_snc="NONE" fr_pcg2023="46" fr_pcga2023="46"/>
       <item name="various_exceptional_revenues" fr_pcg82="778" fr_pcga="778" fr_pcg2019="778" fr_pcg2023="778" fr_pcga2023="778"/>
