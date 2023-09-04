@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Change fiscal positions">
+  <item-change item="fiscal_positions#fr_ba_ir" country="fr" code="BA-IR" accounting_system="fr_pcga2023"/>
+  <item-change item="fiscal_positions#fr_ba_is" country="fr" code="BA-IS" accounting_system="fr_pcga2023"/>
+  <item-change item="fiscal_positions#fr_bic_ir" country="fr" code="BIC-IR" accounting_system="fr_pcg2023"/>
+  <item-change item="fiscal_positions#fr_bic_is" country="fr" code="BIC-IS" accounting_system="fr_pcg2023"/>
+  <item-change item="fiscal_positions#fr_bnc_ir" country="fr" code="BNC-IR" accounting_system="fr_pcg2023"/>
+  <item-change item="fiscal_positions#fr_bnc_is" country="fr" code="BNC-IS" accounting_system="fr_pcg2023"/>
+</migration>
