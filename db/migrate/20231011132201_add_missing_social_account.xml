@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add missing social account">
+  <item-creation item="accounts#source_revenue_taxes" fr_pcg2019="4421" fr_pcg82="4421" fr_pcga="4421" pt_snc="NONE" fr_pcg2023="4421" fr_pcga2023="4421"/>
+</migration>

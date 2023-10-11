@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20230904083401">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20231011132201">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -622,6 +622,7 @@
       <item name="social_agricultural_mutuality" fr_pcga="NONE" fr_pcg82="431" fr_pcg2019="4311" fr_pcg2023="4311" fr_pcga2023="4311"/>
       <item name="social_expense_on_vacations" fr_pcg82="438" fr_pcga="438" fr_pcg2019="438" fr_pcg2023="438" fr_pcga2023="438"/>
       <item name="social_security" fr_pcg82="NONE" fr_pcga="431" fr_pcg2019="431" fr_pcg2023="431" fr_pcga2023="431"/>
+      <item name="source_revenue_taxes" fr_pcg2019="4421" fr_pcg82="4421" fr_pcga="4421" pt_snc="NONE" fr_pcg2023="4421" fr_pcga2023="4421"/>
       <item name="staff_advances" fr_pcg82="425" fr_pcga="425" fr_pcg2019="425" fr_pcg2023="425" fr_pcga2023="425"/>
       <item name="staff_and_linked_accounts" fr_pcg82="42" fr_pcga="42" fr_pcg2019="42" fr_pcg2023="42" fr_pcga2023="42"/>
       <item name="staff_bonus_participation" fr_pcg82="424" fr_pcga="424" fr_pcg2019="424" fr_pcg2023="424" fr_pcga2023="424"/>
