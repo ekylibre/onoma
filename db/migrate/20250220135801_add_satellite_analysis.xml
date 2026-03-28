@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add satellite analysis">
+  <item-creation item="indicators#minimal_ndvi_index" datatype="decimal" sampling_temporal_mode="instant"/>
+  <item-creation item="indicators#maximal_ndvi_index" datatype="decimal" sampling_temporal_mode="instant"/>
+  <item-creation item="indicators#median_ndvi_index" datatype="decimal" sampling_temporal_mode="instant"/>
+  <item-creation item="indicators#average_ndvi_index" datatype="decimal" sampling_temporal_mode="instant"/>
+  <item-creation item="indicators#soil_moisture" datatype="measure" unit="percent" sampling_temporal_mode="instant"/>
+  <item-creation item="indicators#soil_surface_temperature" datatype="measure" unit="celsius" sampling_temporal_mode="instant"/>
+  <item-creation item="indicators#soil_10cm_depth_surface_temperature" datatype="measure" unit="celsius" sampling_temporal_mode="instant"/>
+</migration>

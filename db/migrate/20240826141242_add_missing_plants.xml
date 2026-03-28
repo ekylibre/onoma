@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add missing plants">
+  <item-creation item="varieties#phyllostachys" parent="poaceae"/>
+  <item-creation item="varieties#phyllostachys_bissetii" parent="phyllostachys"/>
+  <item-creation item="varieties#phyllostachys_aurea" parent="phyllostachys"/>
+  <item-creation item="varieties#phyllostachys_aureosulcata" parent="phyllostachys"/>
+</migration>

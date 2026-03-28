@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add vat advance payment account">
+  <item-creation item="accounts#advance_vat_payment_taxes" fr_pcg2019="44581" fr_pcg82="44581" fr_pcga="44581" pt_snc="NONE" fr_pcg2023="44581" fr_pcga2023="44581"/>
+  <item-creation item="accounts#refund_request_vat_payment_taxes" fr_pcg2019="44583" fr_pcg82="44583" fr_pcga="44583" pt_snc="NONE" fr_pcg2023="44583" fr_pcga2023="44583"/>
+</migration>

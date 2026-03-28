@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add bamboo seedling">
+  <item-creation item="product_nature_variants#bamboo_seedling" nature="bamboo_seedling" derivative_of="phyllostachys" type="article" sub_type="seed_and_plant"/>
+</migration>

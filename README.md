@@ -56,7 +56,13 @@ To install this gem onto your local machine, run `bundle exec rake install`.
 
 To add more items, you can add migration in db/migrate folder and then run `bin/rake db:migrate`
 
-To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To release a new version : (you must have right in rubygem)
+
+1 - update the version number in `version.rb`
+
+2 - commit your change
+
+3 - run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 

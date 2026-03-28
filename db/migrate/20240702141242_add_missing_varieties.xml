@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add missing varieties">
+  <item-creation item="varieties#urtica_dioica" parent="urtica"/>
+  <item-creation item="varieties#artemisia_argyi" parent="artemisia"/>
+  <item-creation item="varieties#thymus_vulgaris" parent="thymus"/>
+  <item-creation item="varieties#hyssopus" parent="lamiaceae"/>
+  <item-creation item="varieties#hyssopus_officinalis" parent="hyssopus"/>
+  <item-creation item="varieties#salvia_officinalis" parent="salvia"/>
+  <item-creation item="varieties#mentha_piperita" parent="mentha"/>
+  <item-creation item="varieties#lycium" parent="solanaceae"/>
+  <item-creation item="varieties#lycium_chinense" parent="lycium"/>
+  <item-creation item="varieties#lycium_barbarum" parent="lycium"/>
+  <item-creation item="varieties#eschscholzia" parent="papaveraceae"/>
+  <item-creation item="varieties#eschscholzia_californica" parent="eschscholzia"/>
+  <item-creation item="varieties#crassulaceae" parent="plant"/>
+  <item-creation item="varieties#hylotelephium" parent="crassulaceae"/>
+  <item-creation item="varieties#hylotelephium_telephium" parent="hylotelephium"/>
+  <item-creation item="varieties#achillea" parent="asteraceae"/>
+  <item-creation item="varieties#achillea_millefolium" parent="achillea"/>
+  <item-creation item="varieties#sorbus" parent="rosaceae"/>
+  <item-creation item="varieties#sorbus_domestica" parent="sorbus"/>
+  <item-creation item="varieties#tilia_platyphyllos" parent="tilia"/>
+  <item-creation item="varieties#caprifoliaceae" parent="plant"/>
+  <item-creation item="varieties#lonicera" parent="caprifoliaceae"/>
+  <item-creation item="varieties#lonicera_xylosteum" parent="lonicera"/>
+  <item-creation item="varieties#lonicera_nigra" parent="lonicera"/>
+  <item-creation item="varieties#rosa_canina" parent="rosa"/>
+  <item-creation item="varieties#berberis_vulgaris" parent="berberis"/>
+  <item-creation item="varieties#cupressaceae" parent="plant"/>
+  <item-creation item="varieties#juniperus" parent="cupressaceae"/>
+  <item-creation item="varieties#juniperus_communis" parent="juniperus"/>
+  <item-creation item="varieties#mespilus" parent="rosaceae"/>
+  <item-creation item="varieties#mespilus_germanica" parent="mespilus"/>
+  <item-creation item="identifier_natures#mistral_api_key"/>
+  <item-creation item="identifier_natures#groq_api_key"/>
+  <item-creation item="net_services#mistral" nature="administering" url="https://mistral.ai/fr/" approach="rest" identifiers="mistral_api_key"/>
+  <item-creation item="net_services#groq" nature="administering" url="https://groq.com/" approach="rest" identifiers="groq_api_key"/>
+</migration>

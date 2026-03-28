@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20231011132201">
+<nomenclatures xmlns="http://www.ekylibre.org/XML/2013/nomenclatures" version="20250522154901">
   <nomenclature name="abilities" translateable="true">
     <properties>
       <property name="parameters" type="choice_list" choices="variety, issue_nature"/>
@@ -124,6 +124,7 @@
       <item name="adult_reproductor_animals_inventory_variations" fr_pcga="7121" fr_pcg82="7121" fr_pcg2019="713551" fr_pcg2023="713551" fr_pcga2023="713551"/>
       <item name="advance_noticed_charges_accounts" fr_pcg82="486" fr_pcga="486" fr_pcg2019="486" fr_pcg2023="486" fr_pcga2023="486"/>
       <item name="advance_noticed_products_accounts" fr_pcg82="487" fr_pcga="487" fr_pcg2019="487" fr_pcg2023="487" fr_pcga2023="487"/>
+      <item name="advance_vat_payment_taxes" fr_pcg2019="44581" fr_pcg82="44581" fr_pcga="44581" pt_snc="NONE" fr_pcg2023="44581" fr_pcga2023="44581"/>
       <item name="advertisement_expenses" fr_pcg82="6231" fr_pcga="6231" fr_pcg2019="6231" fr_pcg2023="6231" fr_pcga2023="6231"/>
       <item name="advertising_expenses" fr_pcg82="623" fr_pcga="623" fr_pcg2019="623" fr_pcg2023="623" fr_pcga2023="623"/>
       <item name="agricultural_disasters_compensations" fr_pcga="743" fr_pcg82="743" fr_pcg2019="797" fr_pcg2023="797" fr_pcga2023="797"/>
@@ -558,6 +559,7 @@
       <item name="redeemable_land_parcel_construction_assets" fr_pcga="2121" fr_pcg82="2121" fr_pcg2019="2121" fr_pcg2023="2121" fr_pcga2023="2121"/>
       <item name="reductions" fr_pcga="765" fr_pcg82="765" fr_pcg2019="765" fr_pcg2023="765" fr_pcga2023="765"/>
       <item name="reevaluation_gaps" fr_pcg82="105" fr_pcga="105" fr_pcg2019="105" fr_pcg2023="105" fr_pcga2023="105"/>
+      <item name="refund_request_vat_payment_taxes" fr_pcg2019="44583" fr_pcg82="44583" fr_pcga="44583" pt_snc="NONE" fr_pcg2023="44583" fr_pcga2023="44583"/>
       <item name="regularisation_accounts" fr_pcg82="48" fr_pcga="48" fr_pcg2019="48" fr_pcg2023="48" fr_pcga2023="48"/>
       <item name="rent_expenses" fr_pcg82="613" fr_pcga="613" fr_pcg2019="613" fr_pcg2023="613" fr_pcga2023="613"/>
       <item name="repayment_bonus_bond" fr_pcg2019="NONE" fr_pcg82="NONE" fr_pcga="NONE" pt_snc="NONE" fr_pcg2023="169" fr_pcga2023="169"/>
@@ -714,6 +716,7 @@
       <item name="administering" nature="auxiliary"/>
       <item name="animal_farming" support_variety="animal_group" cultivation_variety="animal"/>
       <item name="plant_farming" support_variety="land_parcel" cultivation_variety="plant"/>
+      <item name="plant_nursery"/>
       <item name="processing"/>
       <item name="service_delivering"/>
       <item name="tool_maintaining" nature="auxiliary" cultivation_variety="equipment" support_variety="equipment_fleet"/>
@@ -2259,6 +2262,7 @@
       <property name="password" type="boolean"/>
     </properties>
     <items>
+      <item name="agromonitoring_api_key"/>
       <item name="cartodb_api_key"/>
       <item name="cartodb_login"/>
       <item name="cartodb_subdomain"/>
@@ -2269,10 +2273,12 @@
       <item name="charentes_alliance_extranet_username"/>
       <item name="cooperative_cartodb_account"/>
       <item name="cooperative_cartodb_key"/>
+      <item name="groq_api_key"/>
       <item name="husbandry_owner_number"/>
       <item name="idele_login"/>
       <item name="idele_password" password="true"/>
       <item name="lilco_labratory_code"/>
+      <item name="mistral_api_key"/>
       <item name="msa_username"/>
       <item name="openweathermap_api_key"/>
       <item name="pacage_number"/>
@@ -2306,6 +2312,7 @@
       <item name="atmospheric_pressure" datatype="measure" unit="hectopascal" sampling_temporal_mode="instant"/>
       <item name="available_water_capacity_per_area" datatype="measure" unit="liter_per_square_meter"/>
       <item name="average_atmospheric_pressure" datatype="measure" unit="hectopascal" sampling_temporal_mode="period"/>
+      <item name="average_ndvi_index" datatype="decimal" sampling_temporal_mode="instant"/>
       <item name="average_rainfall" datatype="measure" unit="millimeter_per_hour" sampling_temporal_mode="period"/>
       <item name="average_relative_humidity" datatype="measure" unit="percent" sampling_temporal_mode="period"/>
       <item name="average_solar_irradiance" datatype="measure" unit="watt_per_square_meter" sampling_temporal_mode="period"/>
@@ -2400,6 +2407,7 @@
       <item name="mass_head_density" datatype="measure" unit="kilogram_per_head"/>
       <item name="mass_volume_density" datatype="measure" unit="kilogram_per_liter"/>
       <item name="maximal_atmospheric_pressure" datatype="measure" unit="hectopascal" sampling_temporal_mode="period"/>
+      <item name="maximal_ndvi_index" datatype="decimal" sampling_temporal_mode="instant"/>
       <item name="maximal_rainfall" datatype="measure" unit="millimeter_per_hour" sampling_temporal_mode="period"/>
       <item name="maximal_relative_humidity" datatype="measure" unit="percent" sampling_temporal_mode="period"/>
       <item name="maximal_solar_irradiance" datatype="measure" unit="watt_per_square_meter" sampling_temporal_mode="period"/>
@@ -2409,6 +2417,7 @@
       <item name="maximal_temperature" datatype="measure" unit="celsius" sampling_temporal_mode="period"/>
       <item name="maximal_wind_speed" datatype="measure" unit="kilometer_per_hour" sampling_temporal_mode="period"/>
       <item name="meat_withdrawal_period" datatype="measure" unit="day"/>
+      <item name="median_ndvi_index" datatype="decimal" sampling_temporal_mode="instant"/>
       <item name="members_count" datatype="integer" probe="true"/>
       <item name="members_livestock_unit" datatype="decimal" probe="true"/>
       <item name="members_population" datatype="decimal" probe="true"/>
@@ -2416,6 +2425,7 @@
       <item name="milk_withdrawal_period" datatype="measure" unit="day"/>
       <item name="milker_clusters_number" datatype="integer"/>
       <item name="minimal_atmospheric_pressure" datatype="measure" unit="hectopascal" sampling_temporal_mode="period"/>
+      <item name="minimal_ndvi_index" datatype="decimal" sampling_temporal_mode="instant"/>
       <item name="minimal_relative_humidity" datatype="measure" unit="percent" sampling_temporal_mode="period"/>
       <item name="minimal_solar_irradiance" datatype="measure" unit="watt_per_square_meter" sampling_temporal_mode="period"/>
       <item name="minimal_temperature" datatype="measure" unit="celsius" sampling_temporal_mode="period"/>
@@ -2473,9 +2483,12 @@
       <item name="sex" datatype="choice" choices="sexes"/>
       <item name="shape" datatype="multi_polygon" related_to="whole" individual_identifier="true"/>
       <item name="sodium_concentration" datatype="measure" unit="mass_percent"/>
+      <item name="soil_10cm_depth_surface_temperature" datatype="measure" unit="celsius" sampling_temporal_mode="instant"/>
       <item name="soil_cultural_state" datatype="choice" choices="soil_cultural_states"/>
       <item name="soil_depth" datatype="measure" unit="centimeter"/>
+      <item name="soil_moisture" datatype="measure" unit="percent" sampling_temporal_mode="instant"/>
       <item name="soil_nature" datatype="choice" choices="soil_natures"/>
+      <item name="soil_surface_temperature" datatype="measure" unit="celsius" sampling_temporal_mode="instant"/>
       <item name="solar_irradiance" datatype="measure" unit="watt_per_square_meter" sampling_temporal_mode="instant"/>
       <item name="somatic_cell_concentration" datatype="measure" unit="thousand_per_milliliter"/>
       <item name="spans_count" datatype="integer"/>
@@ -2801,11 +2814,14 @@
       <property name="url" type="string"/>
     </properties>
     <items>
+      <item name="agromonitoring" nature="plant_farming" url="https://agromonitoring.com/" approach="rest" identifiers="agromonitoring_api_key"/>
       <item name="cartodb" nature="administering" url="https://cartodb.com" approach="human" identifiers="cartodb_login, password"/>
       <item name="charentes_alliance_extranet" nature="administering" url="http://www.charentes-alliance.fr/HP/HomePage.aspx" approach="human" identifiers="charentes_alliance_extranet_username, password"/>
       <item name="est_elevage" nature="animal_farming" url="http://www.estelevage.com/" approach="human" identifiers="synel_username, password"/>
+      <item name="groq" nature="administering" url="https://groq.com/" approach="rest" identifiers="groq_api_key"/>
       <item name="idele" nature="administering" url="http://zoe.cmre.fr/wsannuaire/WsAnnuaire?wsdl" approach="human" identifiers="idele_login, idele_password"/>
       <item name="lilco" nature="animal_farming" url="http://www.lilco-s.com/" approach="human" identifiers="lilco_labratory_code, password"/>
+      <item name="mistral" nature="administering" url="https://mistral.ai/fr/" approach="rest" identifiers="mistral_api_key"/>
       <item name="msa" nature="administering" url="http://www.msa.fr/lfr/espace-prive" approach="human" identifiers="msa_username, password"/>
       <item name="openweathermap" nature="administering" url="api.openweathermap.org" approach="rest" identifiers="openweathermap_api_key"/>
       <item name="selso" nature="animal_farming" url="http://www.selso.net/" approach="human" identifiers="synel_username, password"/>
@@ -3381,6 +3397,7 @@
       <item name="back_arboricultural_hay_rake" nature="hay_rake" type="equipment"/>
       <item name="bale_collector" nature="bale_collector" unit_name="equipment" type="equipment"/>
       <item name="baler" nature="baler" frozen_indicators_values="" unit_name="equipment" type="equipment"/>
+      <item name="bamboo_seedling" nature="bamboo_seedling" derivative_of="phyllostachys" type="article" sub_type="seed_and_plant"/>
       <item name="bank_service" nature="bank_service" type="fee_and_service"/>
       <item name="barley_grain" nature="grain" derivative_of="hordeum" frozen_indicators_values="net_mass: 1.00ton" unit_name="ton" type="article"/>
       <item name="battery" nature="office_furniture" type="equipment"/>
@@ -4193,6 +4210,7 @@
       <item name="associate_social_contribution" category="associate_social_contribution" variety="service" population_counting="decimal" variable_indicators="" nature="fee_and_service"/>
       <item name="bale_collector" category="equipment" variety="trailed_equipment" population_counting="unitary" variable_indicators="geolocation" abilities="catch(straw), store(straw)" nature="equipment"/>
       <item name="baler" category="equipment" variety="trailed_equipment" population_counting="unitary" abilities="bunch" variable_indicators="application_width, geolocation" frozen_indicators="" nature="equipment"/>
+      <item name="bamboo_seedling" category="plant" variety="seedling" derivative_of="phyllostachys" population_counting="integer" abilities="grow" frozen_indicators="net_mass, easement_area" nature="article"/>
       <item name="bank_service" category="bank_service" variety="service" population_counting="decimal" variable_indicators="" nature="fee_and_service"/>
       <item name="bean" category="vegetable" variety="vegetable" derivative_of="phaseolus_vulgaris" population_counting="decimal" abilities="feed(animal)" variable_indicators="" frozen_indicators="net_mass" nature="article"/>
       <item name="bee_band" category="bee_band" variety="apis" population_counting="unitary" abilities="move, pollinate(plant), produce(honey)" variable_indicators="healthy" nature="animal"/>
@@ -10449,6 +10467,8 @@
       <item name="acer_saccharum" parent="acer" itis_tsn="28731"/>
       <item name="acer_spicatum" parent="acer" itis_tsn="28758"/>
       <item name="acer_tataricum" parent="acer" itis_tsn="182137"/>
+      <item name="achillea" parent="asteraceae"/>
+      <item name="achillea_millefolium" parent="achillea"/>
       <item name="acipenser" parent="acipenseridae" itis_tsn="161065"/>
       <item name="acipenser_baerii" parent="acipenser" itis_tsn="161066"/>
       <item name="acipenser_sturio" parent="acipenser" itis_tsn="161072"/>
@@ -10549,6 +10569,7 @@
       <item name="argania" parent="sapotaceae"/>
       <item name="argania_spinosa" parent="argania"/>
       <item name="artemisia" parent="asteraceae" itis_tsn="35431"/>
+      <item name="artemisia_argyi" parent="artemisia"/>
       <item name="artemisia_dracunculus" parent="artemisia" itis_tsn="35462"/>
       <item name="artocarpus" parent="moraceae" itis_tsn="19071"/>
       <item name="artocarpus_altilis" parent="artocarpus" itis_tsn="184181"/>
@@ -10574,6 +10595,7 @@
       <item name="bellis_perennis" parent="bellis" itis_tsn="36826"/>
       <item name="berberidaceae" parent="plant" itis_tsn="18811"/>
       <item name="berberis" parent="berberidaceae" itis_tsn="18814"/>
+      <item name="berberis_vulgaris" parent="berberis"/>
       <item name="berberis_x_ottawensis" parent="berberis" itis_tsn="500992"/>
       <item name="beta" parent="amaranthaceae" itis_tsn="20680"/>
       <item name="beta_vulgaris" parent="beta" itis_tsn="20680"/>
@@ -10722,6 +10744,7 @@
       <item name="capra_hircus_pyreneenne" parent="capra_hircus"/>
       <item name="capra_hircus_rove" parent="capra_hircus"/>
       <item name="capra_hircus_saanen" parent="capra_hircus"/>
+      <item name="caprifoliaceae" parent="plant"/>
       <item name="capsicum" parent="solanaceae" itis_tsn="30491"/>
       <item name="capsicum_annuum" parent="capsicum" itis_tsn="30492"/>
       <item name="capsicum_baccatum" parent="capsicum" itis_tsn="510075"/>
@@ -10828,6 +10851,7 @@
       <item name="crassostrea_ariakensis" parent="crassostrea" itis_tsn="693930"/>
       <item name="crassostrea_gigas" parent="crassostrea" itis_tsn="79868"/>
       <item name="crassostrea_virginica" parent="crassostrea" itis_tsn="79872"/>
+      <item name="crassulaceae" parent="plant"/>
       <item name="crataegus" parent="rosaceae" itis_tsn="24539"/>
       <item name="crataegus_monogyna" parent="crataegus" itis_tsn="24586"/>
       <item name="crocus" parent="iridaceae" itis_tsn="43285"/>
@@ -10850,6 +10874,7 @@
       <item name="cucurbitaceae" parent="plant" itis_tsn="22337"/>
       <item name="cultivable_zone" parent="zone"/>
       <item name="cuminum" parent="apiaceae" itis_tsn="500226"/>
+      <item name="cupressaceae" parent="plant"/>
       <item name="curculio_nucum" parent="insecta"/>
       <item name="curcuma" parent="zingiberaceae" itis_tsn="42393"/>
       <item name="curcuma_longa" parent="curcuma" itis_tsn="506512"/>
@@ -10946,6 +10971,8 @@
       <item name="eruca_sativa" parent="eruca" itis_tsn="23124"/>
       <item name="eruca_vesicaria" parent="eruca" itis_tsn="502429"/>
       <item name="erysiphaceae" parent="fungus" itis_tsn="194121"/>
+      <item name="eschscholzia" parent="papaveraceae"/>
+      <item name="eschscholzia_californica" parent="eschscholzia"/>
       <item name="eucalyptus" parent="myrtaceae" itis_tsn="27187"/>
       <item name="euphorbiaceae" parent="plant" itis_tsn="28031"/>
       <item name="euterpe" parent="arecaceae" itis_tsn="500808"/>
@@ -11030,9 +11057,13 @@
       <item name="humulus" parent="cannabaceae" itis_tsn="19159"/>
       <item name="humulus_lupulus" parent="humulus" itis_tsn="19160"/>
       <item name="hydrangeaceae" parent="plant" itis_tsn="24093"/>
+      <item name="hylotelephium" parent="crassulaceae"/>
+      <item name="hylotelephium_telephium" parent="hylotelephium"/>
       <item name="hymenochaetaceae" parent="fungus" itis_tsn="0"/>
       <item name="hypericaceae" parent="plant" itis_tsn="822429"/>
       <item name="hypericum" parent="hypericaceae" itis_tsn="21416"/>
+      <item name="hyssopus" parent="lamiaceae"/>
+      <item name="hyssopus_officinalis" parent="hyssopus"/>
       <item name="immatter" parent="product"/>
       <item name="insecta" parent="animal" itis_tsn="99208"/>
       <item name="ipomoea" parent="convolvulaceae" itis_tsn="30758"/>
@@ -11044,6 +11075,8 @@
       <item name="juglans" parent="juglandaceae" itis_tsn="19248"/>
       <item name="juglans_regia" parent="juglans" itis_tsn="503244"/>
       <item name="juice" parent="preparation" derivative_of="fruit"/>
+      <item name="juniperus" parent="cupressaceae"/>
+      <item name="juniperus_communis" parent="juniperus"/>
       <item name="koelreuteria" parent="sapindaceae" itis_tsn="28685"/>
       <item name="koelreuteria_bipinnata" parent="koelreuteria" itis_tsn="506080"/>
       <item name="koelreuteria_elegans" parent="koelreuteria" itis_tsn="503285"/>
@@ -11086,9 +11119,15 @@
       <item name="lolium_hybridum" parent="lolium" itis_tsn="783684"/>
       <item name="lolium_multiflorum" parent="lolium" itis_tsn="40892"/>
       <item name="lolium_perenne" parent="lolium" itis_tsn="40893"/>
+      <item name="lonicera" parent="caprifoliaceae"/>
+      <item name="lonicera_nigra" parent="lonicera"/>
+      <item name="lonicera_xylosteum" parent="lonicera"/>
       <item name="lotus" parent="fabaceae" itis_tsn="26361"/>
       <item name="lotus_corniculatus" parent="lotus" itis_tsn="26362"/>
       <item name="lupinus" parent="fabaceae" itis_tsn="25916"/>
+      <item name="lycium" parent="solanaceae"/>
+      <item name="lycium_barbarum" parent="lycium"/>
+      <item name="lycium_chinense" parent="lycium"/>
       <item name="malus" parent="rosaceae" itis_tsn="25254"/>
       <item name="malus_domestica" parent="malus" itis_tsn="25254"/>
       <item name="malus_pumila_a_cotes" parent="malus_domestica" itis_tsn="25262"/>
@@ -11368,6 +11407,9 @@
       <item name="melissa_officinalis" parent="melissa"/>
       <item name="melon" parent="fruit" derivative_of="cucumis"/>
       <item name="mentha" parent="lamiaceae" itis_tsn="32264"/>
+      <item name="mentha_piperita" parent="mentha"/>
+      <item name="mespilus" parent="rosaceae"/>
+      <item name="mespilus_germanica" parent="mespilus"/>
       <item name="microcitrus" parent="rutaceae" itis_tsn="500747"/>
       <item name="milk" parent="raw_matter" derivative_of="mammalia"/>
       <item name="miscanthus" parent="poaceae" itis_tsn="41870"/>
@@ -11535,6 +11577,10 @@
       <item name="phasianus_colchicus" parent="phasianus" itis_tsn="175905"/>
       <item name="philadelphus" parent="hydrangeaceae" itis_tsn="24418"/>
       <item name="phleum" parent="poaceae" itis_tsn="41061"/>
+      <item name="phyllostachys" parent="poaceae"/>
+      <item name="phyllostachys_aurea" parent="phyllostachys"/>
+      <item name="phyllostachys_aureosulcata" parent="phyllostachys"/>
+      <item name="phyllostachys_bissetii" parent="phyllostachys"/>
       <item name="phytoptus_avellanae" parent="insecta"/>
       <item name="pimpinella" parent="apiaceae" itis_tsn="29821"/>
       <item name="pimpinella_anisum" parent="pimpinella" itis_tsn="29822"/>
@@ -11625,6 +11671,7 @@
       <item name="robinia_pseudoacacia" parent="robinia" itis_tsn="504804"/>
       <item name="robinia_viscosa" parent="robinia" itis_tsn="26198"/>
       <item name="rosa" parent="rosaceae" itis_tsn="24807"/>
+      <item name="rosa_canina" parent="rosa"/>
       <item name="rosa_centifolia" parent="rosa" itis_tsn="836519"/>
       <item name="rosa_dades" parent="rosa" itis_tsn="0"/>
       <item name="rosa_gallica" parent="rosa" itis_tsn="24827"/>
@@ -11653,6 +11700,7 @@
       <item name="salmonidae" parent="actinopterygii" itis_tsn="161931"/>
       <item name="salt" parent="raw_matter"/>
       <item name="salvia" parent="lamiaceae" itis_tsn="32680"/>
+      <item name="salvia_officinalis" parent="salvia"/>
       <item name="salvia_rosmarinus" parent="salvia" itis_tsn="32676"/>
       <item name="sambucus" parent="adoxaceae" itis_tsn="35315"/>
       <item name="sambucus_nigra" parent="sambucus" itis_tsn="35324"/>
@@ -11686,6 +11734,8 @@
       <item name="solanum_quitoense" parent="solanum" itis_tsn="30475"/>
       <item name="solanum_torvum" parent="solanum" itis_tsn="30460"/>
       <item name="solanum_tuberosum" parent="solanum" itis_tsn="505272"/>
+      <item name="sorbus" parent="rosaceae"/>
+      <item name="sorbus_domestica" parent="sorbus"/>
       <item name="sorghum" parent="poaceae" itis_tsn="42106"/>
       <item name="spinacia" parent="amaranthaceae" itis_tsn="20708"/>
       <item name="spinacia_oleracea" parent="spinacia" itis_tsn="20709"/>
@@ -11743,11 +11793,13 @@
       <item name="theobroma_cacao" parent="theobroma" itis_tsn="505487"/>
       <item name="theobroma_grandiflorum" parent="theobroma" itis_tsn="506108"/>
       <item name="thymus" parent="lamiaceae" itis_tsn="32820"/>
+      <item name="thymus_vulgaris" parent="thymus"/>
       <item name="tieghemella" parent="sapotaceae"/>
       <item name="tieghemella_heckelii" parent="tieghemella"/>
       <item name="tilia" parent="malvaceae" itis_tsn="21535"/>
       <item name="tilia_americana" parent="tilia" itis_tsn="21536"/>
       <item name="tilia_cordata" parent="tilia" itis_tsn="505507"/>
+      <item name="tilia_platyphyllos" parent="tilia"/>
       <item name="tractor" parent="motorized_vehicle"/>
       <item name="tragopogon" parent="asteraceae" itis_tsn="38563"/>
       <item name="tragopogon_porrifolius" parent="tragopogon"/>
@@ -11772,6 +11824,7 @@
       <item name="uncinula" parent="erysiphaceae" itis_tsn="194154"/>
       <item name="uncinula_necator" parent="uncinula" itis_tsn="194154"/>
       <item name="urtica" parent="urticaceae" itis_tsn="19151"/>
+      <item name="urtica_dioica" parent="urtica"/>
       <item name="urticaceae" parent="plant" itis_tsn="19119"/>
       <item name="vaccinium" parent="ericaceae"/>
       <item name="valeriana" parent="valerianaceae" itis_tsn="35350"/>

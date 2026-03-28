@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<migration name="Add indicator on seedling">
+  <item-creation item="product_natures#bamboo_seedling" category="plant" variety="seedling" derivative_of="phyllostachys" population_counting="integer" abilities="grow" frozen_indicators="net_mass, easement_area" nature="article"/>
+</migration>
