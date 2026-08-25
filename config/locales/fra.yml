@@ -2354,6 +2354,7 @@ fra:
         calcium_concentration: "Teneur en Calcium"
         caliber: "Calibre"
         calving_ease_index: "Index de facilité de naissance"
+        carbon_nitrogen_ratio: "Rapport C/N"
         cation_exchange_capacity: "Capacité d’échange cationique (CEC)"
         cation_exchange_capacity_analysis_method: "Méthode d’analyse de la capacité d’échange cationique (CEC)"
         cells_concentration: "Concentration en cellules actives"
