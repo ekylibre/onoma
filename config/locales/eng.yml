@@ -2157,6 +2157,7 @@ eng:
         calcium_concentration: "Calcium concentration"
         caliber: "Caliber"
         calving_ease_index: "Calving ease index"
+        carbon_nitrogen_ratio: "Carbon/Nitrogen ratio"
         cation_exchange_capacity: "Cation exchange capacity"
         cation_exchange_capacity_analysis_method: "Cation exchange capacity analysis method"
         cells_concentration: "Cells concentration"

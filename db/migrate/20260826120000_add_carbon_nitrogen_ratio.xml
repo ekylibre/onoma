@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<migration name="Add carbon nitrogen ratio indicator">
+  <item-creation item="indicators#carbon_nitrogen_ratio" datatype="decimal"/>
+  <item-change
+    item="product_natures#mixed_organic_fertilizer"
+    variable_indicators="nitrogen_concentration, phosphorus_concentration, potassium_concentration, dry_matter_rate, organic_matter_concentration, sulfur_trioxide_concentration, magnesium_concentration, calcium_concentrtion, net_volume, carbon_nitrogen_ratio"/>
+</migration>
