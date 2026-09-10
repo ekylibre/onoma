@@ -20,7 +20,10 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'activesupport', '>= 4.2'
   spec.add_dependency 'nokogiri', '>= 1.10.4'
-  spec.add_dependency 'zeitwerk', '~> 2.4.0'
+  # `~> 2.4.0` bloquait Rails 7.0, qui exige `zeitwerk ~> 2.5` — alors qu'onoma
+  # n'utilise que `Zeitwerk::Loader.for_gem`, présent dans toute la série 2.x.
+  # Borne déclarative, relâchée pour la montée (lot B du plan v6).
+  spec.add_dependency 'zeitwerk', '>= 2.4', '< 3'
 
   spec.add_development_dependency 'bundler', '> 1.15'
   spec.add_development_dependency 'i18n-tasks'
