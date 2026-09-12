@@ -200,7 +200,7 @@ module Onoma
         root = "nomenclatures.#{Onoma.escape_key(nomenclature.name)}.items.#{Onoma.escape_key(name)}"
         defaults = scoped_by_attributes
       end
-      I18n.t(root, options.merge(default: [*defaults.map(&:to_sym), "items.#{Onoma.escape_key(name)}".to_sym, "enumerize.#{Onoma.escape_key(nomenclature.name)}.#{Onoma.escape_key(name)}".to_sym, "labels.#{Onoma.escape_key(name)}".to_sym, name.humanize]))
+      I18n.t(root, **options.merge(default: [*defaults.map(&:to_sym), "items.#{Onoma.escape_key(name)}".to_sym, "enumerize.#{Onoma.escape_key(nomenclature.name)}.#{Onoma.escape_key(name)}".to_sym, "labels.#{Onoma.escape_key(name)}".to_sym, name.humanize]))
     end
 
     alias humanize human_name
@@ -208,7 +208,7 @@ module Onoma
     alias l localize
 
     def human_notion_name(notion_name, options = {})
-      I18n.t("nomenclatures.#{nomenclature.name}.notions.#{notion_name}.#{name}", options.merge(default: ["labels.#{name}".to_sym]))
+      I18n.t("nomenclatures.#{nomenclature.name}.notions.#{notion_name}.#{name}", **options.merge(default: ["labels.#{name}".to_sym]))
     end
 
     def ==(other)

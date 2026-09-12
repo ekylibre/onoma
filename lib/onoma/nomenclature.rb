@@ -335,7 +335,7 @@ module Onoma
 
     # Return human name
     def human_name(options = {})
-      I18n.t("nomenclatures.#{Onoma.escape_key(name)}.name", options.merge(default: ["labels.#{Onoma.escape_key(name)}".to_sym, name.to_s.humanize]))
+      I18n.t("nomenclatures.#{Onoma.escape_key(name)}.name", **options.merge(default: ["labels.#{Onoma.escape_key(name)}".to_sym, name.to_s.humanize]))
     end
 
     alias humanize human_name
